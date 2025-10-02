@@ -1,9 +1,14 @@
-import { DateTime } from 'luxon';
 import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react';
 import Countdown from './Countdown';
 import { getNextDeadline, getDeadlineInfo } from '../utils/parser';
+import { Conference } from '../types/conference';
 
-export default function ConferenceCard({ conference, onClick }) {
+interface ConferenceCardProps {
+  conference: Conference;
+  onClick: () => void;
+}
+
+export default function ConferenceCard({ conference, onClick }: ConferenceCardProps): JSX.Element {
   const nextDeadline = getNextDeadline(conference);
   const allDeadlines = getDeadlineInfo(conference);
 
@@ -43,6 +48,9 @@ export default function ConferenceCard({ conference, onClick }) {
               textTransform="uppercase"
               bg="blue.100"
               color="blue.800"
+              wordBreak="break-word"
+              whiteSpace="normal"
+              maxW="100%"
             >
               {conference.note}
             </Badge>
@@ -82,7 +90,7 @@ export default function ConferenceCard({ conference, onClick }) {
           </Text>
           <Text color="gray.800">{conference.date}</Text>
         </Flex>
-        {conference.hindex > 0 && (
+        {(conference.hindex ?? 0) > 0 && (
           <Flex fontSize="sm">
             <Text color="gray.600" fontWeight="500" minW="100px">
               📊 H-Index:

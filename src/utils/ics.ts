@@ -1,6 +1,18 @@
 import { DateTime } from 'luxon';
+import { Conference } from '../types/conference';
 
-export function createICSContent(events) {
+interface ICSEvent {
+  uid: string;
+  title: string;
+  start: DateTime;
+  end: DateTime;
+  isAllDay: boolean;
+  description?: string;
+  location?: string;
+  url?: string;
+}
+
+export function createICSContent(events: ICSEvent[]): string {
   const lines = [
     'BEGIN:VCALENDAR',
     'VERSION:2.0',
@@ -42,11 +54,11 @@ export function createICSContent(events) {
   return lines.join('\r\n');
 }
 
-function escapeICS(str) {
+function escapeICS(str: string): string {
   return str.replace(/[,;\\]/g, '\\$&').replace(/\n/g, '\\n');
 }
 
-export function downloadICS(content, filename) {
+export function downloadICS(content: string, filename: string): void {
   const blob = new Blob([content], { type: 'text/calendar;charset=utf-8' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
@@ -57,8 +69,8 @@ export function downloadICS(content, filename) {
   URL.revokeObjectURL(link.href);
 }
 
-export function conferenceToICSEvents(conference) {
-  const events = [];
+export function conferenceToICSEvents(conference: Conference): ICSEvent[] {
+  const events: ICSEvent[] = [];
 
   // Conference event (all-day)
   if (conference.start && conference.end) {
@@ -105,13 +117,13 @@ export function conferenceToICSEvents(conference) {
   return events;
 }
 
-export function exportConference(conference) {
+export function exportConference(conference: Conference): void {
   const events = conferenceToICSEvents(conference);
   const content = createICSContent(events);
   downloadICS(content, `${conference.id}-deadlines.ics`);
 }
 
-export function exportAllConferences(conferences) {
+export function exportAllConferences(conferences: Conference[]): void {
   const allEvents = conferences.flatMap(conferenceToICSEvents);
   const content = createICSContent(allEvents);
   downloadICS(content, 'all-conference-deadlines.ics');

@@ -1,11 +1,22 @@
 import { useState, useEffect } from 'react';
 import { DateTime } from 'luxon';
-import { Box, Flex, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
-export default function Countdown({ deadline, label }) {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+interface CountdownProps {
+  deadline: DateTime;
+  label: string;
+}
 
-  function calculateTimeLeft() {
+interface TimeLeft {
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+  expired: boolean;
+}
+
+export default function Countdown({ deadline, label }: CountdownProps): JSX.Element {
+  const calculateTimeLeft = (): TimeLeft => {
     const now = DateTime.now();
     const diff = deadline.diff(now, ['days', 'hours', 'minutes', 'seconds']);
 
@@ -20,7 +31,9 @@ export default function Countdown({ deadline, label }) {
       seconds: Math.floor(diff.seconds),
       expired: false,
     };
-  }
+  };
+
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -61,7 +74,7 @@ export default function Countdown({ deadline, label }) {
         {label}
       </Text>
       <Flex gap="2" align="baseline">
-        {timeLeft.days > 0 && (
+        {(timeLeft.days ?? 0) > 0 && (
           <Text fontSize="sm" color="gray.700">
             <Text as="span" fontSize="lg" fontWeight="700" color="brand.500">
               {timeLeft.days}
@@ -71,19 +84,19 @@ export default function Countdown({ deadline, label }) {
         )}
         <Text fontSize="sm" color="gray.700">
           <Text as="span" fontSize="lg" fontWeight="700" color="brand.500">
-            {timeLeft.hours}
+            {timeLeft.hours ?? 0}
           </Text>
           h
         </Text>
         <Text fontSize="sm" color="gray.700">
           <Text as="span" fontSize="lg" fontWeight="700" color="brand.500">
-            {timeLeft.minutes}
+            {timeLeft.minutes ?? 0}
           </Text>
           m
         </Text>
         <Text fontSize="sm" color="gray.700">
           <Text as="span" fontSize="lg" fontWeight="700" color="brand.500">
-            {timeLeft.seconds}
+            {timeLeft.seconds ?? 0}
           </Text>
           s
         </Text>

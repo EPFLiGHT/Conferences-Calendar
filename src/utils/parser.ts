@@ -1,15 +1,16 @@
 import yaml from 'js-yaml';
 import { DateTime } from 'luxon';
+import type { Conference, DeadlineInfo } from '../types/conference';
 
-const REQUIRED_FIELDS = ['title', 'year', 'id', 'timezone'];
+const REQUIRED_FIELDS = ['title', 'year', 'id', 'timezone'] as const;
 
 const IANA_TIMEZONES = Intl.supportedValuesOf('timeZone');
 
-export function validateConference(conf, index) {
-  const errors = [];
+export function validateConference(conf: any, index: number): string[] {
+  const errors: string[] = [];
 
   // Check required fields
-  REQUIRED_FIELDS.forEach(field => {
+  REQUIRED_FIELDS.forEach((field) => {
     if (!conf[field]) {
       errors.push(`Conference at index ${index}: Missing required field '${field}'`);
     }
@@ -22,7 +23,7 @@ export function validateConference(conf, index) {
 
   // Validate date formats
   const dateFields = ['deadline', 'abstract_deadline', 'start', 'end'];
-  dateFields.forEach(field => {
+  dateFields.forEach((field) => {
     if (conf[field]) {
       const parsed = DateTime.fromISO(conf[field]);
       if (!parsed.isValid) {
@@ -44,23 +45,23 @@ export function validateConference(conf, index) {
   return errors;
 }
 
-export function parseConferences(yamlString) {
+export function parseConferences(yamlString: string): Conference[] {
   try {
-    const conferences = yaml.load(yamlString);
+    const conferences = yaml.load(yamlString) as any[];
 
     if (!Array.isArray(conferences)) {
       throw new Error('YAML must contain an array of conferences');
     }
 
     // Validate all conferences
-    const allErrors = [];
+    const allErrors: string[] = [];
     conferences.forEach((conf, index) => {
       const errors = validateConference(conf, index);
       allErrors.push(...errors);
     });
 
     // Check for duplicate IDs
-    const ids = conferences.map(c => c.id).filter(Boolean);
+    const ids = conferences.map((c) => c.id).filter(Boolean);
     const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
     if (duplicates.length > 0) {
       allErrors.push(`Duplicate conference IDs found: ${duplicates.join(', ')}`);
@@ -71,7 +72,7 @@ export function parseConferences(yamlString) {
     }
 
     // Fill in TBA for missing optional fields
-    return conferences.map(conf => ({
+    return conferences.map((conf) => ({
       ...conf,
       full_name: conf.full_name || conf.title,
       link: conf.link || null,
@@ -86,21 +87,20 @@ export function parseConferences(yamlString) {
       hindex: conf.hindex || 0,
       sub: conf.sub || 'General',
       note: conf.note || '',
-    }));
+    })) as Conference[];
   } catch (error) {
     console.error('Error parsing YAML:', error);
     throw error;
   }
 }
 
-export function getDeadlineInfo(conference, userTimezone = 'local') {
-  const deadlines = [];
+export function getDeadlineInfo(conference: Conference, userTimezone: string = 'local'): DeadlineInfo[] {
+  const deadlines: DeadlineInfo[] = [];
 
   if (conference.abstract_deadline) {
     const dt = DateTime.fromISO(conference.abstract_deadline, { zone: conference.timezone });
     if (dt.isValid) {
       deadlines.push({
-        type: 'abstract',
         label: 'Abstract Deadline',
         datetime: dt,
         localDatetime: userTimezone === 'local' ? dt.toLocal() : dt.setZone(userTimezone),
@@ -112,7 +112,6 @@ export function getDeadlineInfo(conference, userTimezone = 'local') {
     const dt = DateTime.fromISO(conference.deadline, { zone: conference.timezone });
     if (dt.isValid) {
       deadlines.push({
-        type: 'submission',
         label: 'Submission Deadline',
         datetime: dt,
         localDatetime: userTimezone === 'local' ? dt.toLocal() : dt.setZone(userTimezone),
@@ -123,14 +122,14 @@ export function getDeadlineInfo(conference, userTimezone = 'local') {
   return deadlines;
 }
 
-export function getNextDeadline(conference) {
+export function getNextDeadline(conference: Conference): DeadlineInfo | null {
   const deadlines = getDeadlineInfo(conference);
   const now = DateTime.now();
 
-  const upcoming = deadlines.filter(d => d.datetime > now);
+  const upcoming = deadlines.filter((d) => d.datetime > now);
   return upcoming.length > 0 ? upcoming[0] : null;
 }
 
-export function formatDeadline(datetime, timezone) {
+export function formatDeadline(datetime: DateTime, timezone: string): string {
   return datetime.toFormat('MMM dd, yyyy HH:mm') + ` ${timezone}`;
 }

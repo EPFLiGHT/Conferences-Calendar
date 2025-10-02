@@ -1,7 +1,7 @@
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { Box, Container, Flex, HStack, Link, Text, Image } from '@chakra-ui/react';
 
-export default function Header() {
+export default function Header(): JSX.Element {
   const location = useLocation();
 
   return (

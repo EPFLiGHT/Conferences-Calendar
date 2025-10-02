@@ -1,8 +1,19 @@
 import { useMemo } from 'react';
-import { Box, Flex, Grid, Text, Button, Select } from '@chakra-ui/react';
+import { Box, Flex, Grid, Text, Button } from '@chakra-ui/react';
 import { NativeSelectRoot, NativeSelectField } from '@chakra-ui/react';
+import { Conference } from '../types/conference';
 
-export default function Filters({ conferences, filters, onFilterChange }) {
+interface FiltersProps {
+  conferences: Conference[];
+  filters: {
+    sortBy: string;
+    year: string;
+    subject: string;
+  };
+  onFilterChange: (newFilters: { sortBy?: string; year?: string; subject?: string }) => void;
+}
+
+export default function Filters({ conferences, filters, onFilterChange }: FiltersProps): JSX.Element {
   const years = useMemo(() => {
     const uniqueYears = [...new Set(conferences.map(c => c.year))].sort((a, b) => b - a);
     return uniqueYears;

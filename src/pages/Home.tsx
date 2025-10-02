@@ -6,9 +6,14 @@ import ConferenceModal from '../components/ConferenceModal';
 import Filters from '../components/Filters';
 import Search from '../components/Search';
 import { getNextDeadline } from '../utils/parser';
+import { Conference } from '../types/conference';
 
-export default function Home({ conferences }) {
-  const [selectedConference, setSelectedConference] = useState(null);
+interface HomeProps {
+  conferences: Conference[];
+}
+
+export default function Home({ conferences }: HomeProps): JSX.Element {
+  const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [filters, setFilters] = useState({
     sortBy: 'deadline',
@@ -16,7 +21,7 @@ export default function Home({ conferences }) {
     subject: '',
   });
 
-  const handleFilterChange = (newFilters) => {
+  const handleFilterChange = (newFilters: { sortBy?: string; year?: string; subject?: string }) => {
     setFilters(prev => ({ ...prev, ...newFilters }));
   };
 

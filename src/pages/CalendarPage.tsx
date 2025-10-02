@@ -20,19 +20,30 @@ import { DateTime } from 'luxon';
 import Filters from '../components/Filters';
 import Search from '../components/Search';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '../utils/ics';
+import { Conference } from '../types/conference';
+import { EventClickArg } from '@fullcalendar/core';
 
-export default function CalendarPage({ conferences }) {
-  const calendarRef = useRef(null);
+interface CalendarPageProps {
+  conferences: Conference[];
+}
+
+interface SelectedEvent {
+  event: any;
+  el: HTMLElement;
+}
+
+export default function CalendarPage({ conferences }: CalendarPageProps): JSX.Element {
+  const calendarRef = useRef<FullCalendar>(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
+  const [searchQuery, setSearchQuery] = useState<string>(searchParams.get('q') || '');
   const [filters, setFilters] = useState({
     sortBy: 'deadline',
     year: searchParams.get('year') || '',
     subject: searchParams.get('subject') || '',
   });
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvent, setSelectedEvent] = useState<SelectedEvent | null>(null);
 
-  const handleFilterChange = (newFilters) => {
+  const handleFilterChange = (newFilters: { sortBy?: string; year?: string; subject?: string }) => {
     const updated = { ...filters, ...newFilters };
     setFilters(updated);
 
@@ -44,7 +55,7 @@ export default function CalendarPage({ conferences }) {
     setSearchParams(params);
   };
 
-  const handleSearchChange = (query) => {
+  const handleSearchChange = (query: string) => {
     setSearchQuery(query);
     const params = new URLSearchParams(searchParams);
     if (query) {
@@ -140,7 +151,7 @@ export default function CalendarPage({ conferences }) {
     return events;
   }, [filteredConferences]);
 
-  const handleEventClick = (info) => {
+  const handleEventClick = (info: EventClickArg) => {
     setSelectedEvent({
       event: info.event,
       el: info.el,
@@ -205,26 +216,43 @@ export default function CalendarPage({ conferences }) {
         <Flex gap="4" justify="center" mb="8" direction={{ base: 'column', md: 'row' }}>
           <Button
             onClick={handleToday}
-            variant="outline"
-            colorScheme="gray"
+            bg="gray.100"
+            color="gray.700"
+            border="1px"
+            borderColor="gray.300"
+            size="md"
+            px="6"
             transition="all 0.2s ease-in-out"
             position="relative"
             zIndex="1"
-            _hover={{ transform: 'translateY(-1px)', boxShadow: 'sm' }}
-            _active={{ transform: 'scale(0.97)' }}
+            _hover={{
+              bg: 'white',
+              borderColor: 'brand.400',
+              color: 'brand.600',
+              transform: 'translateY(-2px)',
+              boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
+            }}
+            _active={{ transform: 'scale(0.98)' }}
           >
-            Today
+            📍 Today
           </Button>
           <Button
             onClick={handleExportAll}
-            colorScheme="blue"
+            bg="brand.500"
+            color="white"
+            size="md"
+            px="6"
             transition="all 0.2s ease-in-out"
             position="relative"
             zIndex="1"
-            _hover={{ transform: 'translateY(-1px)', boxShadow: 'md' }}
-            _active={{ transform: 'scale(0.97)' }}
+            _hover={{
+              bg: 'brand.600',
+              transform: 'translateY(-2px)',
+              boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4)'
+            }}
+            _active={{ transform: 'scale(0.98)' }}
           >
-            Export All ({filteredConferences.length} conferences)
+            📥 Export All ({filteredConferences.length} conferences)
           </Button>
         </Flex>
 
@@ -232,60 +260,131 @@ export default function CalendarPage({ conferences }) {
           bg="white"
           borderRadius="xl"
           border="1px"
-          borderColor="brand.200"
+          borderColor="gray.200"
           p={{ base: '4', md: '6' }}
-          boxShadow="0 1px 3px rgba(46, 95, 169, 0.08)"
+          boxShadow="0 1px 3px rgba(0, 0, 0, 0.1)"
           css={{
-            '.fc': { fontFamily: 'inherit' },
+            '.fc': {
+              fontFamily: 'inherit',
+            },
+            // Toolbar buttons - same style as our buttons
             '.fc .fc-button': {
               background: 'var(--chakra-colors-brand-500)',
               borderColor: 'var(--chakra-colors-brand-500)',
               textTransform: 'capitalize',
               fontWeight: '500',
               padding: '0.5rem 1rem',
-              borderRadius: '6px',
-              position: 'relative',
-              zIndex: '1',
+              borderRadius: '8px',
+              color: 'white',
+              transition: 'all 0.2s ease-in-out',
+              outline: 'none !important',
+              boxShadow: 'none !important',
             },
             '.fc .fc-button:hover': {
               background: 'var(--chakra-colors-brand-600)',
               borderColor: 'var(--chakra-colors-brand-600)',
+              transform: 'translateY(-1px)',
+              boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4) !important',
+            },
+            '.fc .fc-button:active': {
+              transform: 'scale(0.98)',
+              boxShadow: 'none !important',
+            },
+            '.fc .fc-button:focus, .fc .fc-button:focus-visible': {
+              outline: 'none !important',
+              boxShadow: 'none !important',
+              background: 'var(--chakra-colors-brand-500)',
+              borderColor: 'var(--chakra-colors-brand-500)',
             },
             '.fc .fc-button-active': {
-              background: 'var(--chakra-colors-brand-700)',
-              borderColor: 'var(--chakra-colors-brand-700)',
+              background: 'var(--chakra-colors-brand-600)',
+              borderColor: 'var(--chakra-colors-brand-600)',
+              boxShadow: 'none !important',
             },
+            '.fc .fc-button-active:focus, .fc .fc-button-active:focus-visible': {
+              outline: 'none !important',
+              boxShadow: 'none !important',
+              background: 'var(--chakra-colors-brand-600)',
+              borderColor: 'var(--chakra-colors-brand-600)',
+            },
+            '.fc .fc-button:disabled': {
+              opacity: '0.4',
+              cursor: 'not-allowed',
+            },
+            // Title
             '.fc .fc-toolbar-title': {
               fontSize: '1.5rem',
               fontWeight: '600',
               color: 'var(--chakra-colors-gray-800)',
             },
+            // Grid borders - softer
             '.fc-theme-standard td, .fc-theme-standard th': {
-              borderColor: 'var(--chakra-colors-brand-200)',
+              borderColor: 'var(--chakra-colors-gray-200)',
             },
+            '.fc-theme-standard .fc-scrollgrid': {
+              borderColor: 'var(--chakra-colors-gray-200)',
+            },
+            // Day numbers
             '.fc .fc-daygrid-day-number': {
-              color: 'var(--chakra-colors-gray-800)',
+              color: 'var(--chakra-colors-gray-700)',
+              padding: '0.5rem',
+              fontSize: '0.9rem',
             },
+            '.fc .fc-day-today .fc-daygrid-day-number': {
+              background: 'var(--chakra-colors-brand-500)',
+              color: 'white',
+              borderRadius: '50%',
+              width: '1.8rem',
+              height: '1.8rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            },
+            // Column headers
             '.fc .fc-col-header-cell-cushion': {
               color: 'var(--chakra-colors-gray-600)',
               fontWeight: '600',
+              fontSize: '0.875rem',
+              padding: '0.75rem',
             },
+            '.fc .fc-col-header-cell': {
+              background: 'var(--chakra-colors-gray-50)',
+              borderColor: 'var(--chakra-colors-gray-200)',
+            },
+            // Today background
+            '.fc .fc-day-today': {
+              background: 'var(--chakra-colors-brand-50) !important',
+            },
+            // Events
             '.fc .fc-event': {
               cursor: 'pointer',
-              borderRadius: '4px',
-              padding: '2px 4px',
+              borderRadius: '6px',
+              padding: '2px 6px',
               fontSize: '0.875rem',
+              border: 'none',
+              transition: 'all 0.2s ease-in-out',
+            },
+            '.fc .fc-event:hover': {
+              transform: 'translateY(-1px)',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
             },
             '.fc .fc-event-time': {
               display: 'none !important',
             },
             '.fc-timegrid-event .fc-event-time': {
               display: 'block !important',
+              fontWeight: '600',
             },
+            // Mobile responsive
             '@media (max-width: 768px)': {
               '.fc .fc-toolbar': {
                 flexDirection: 'column',
-                gap: '1rem',
+                gap: '0.75rem',
+                alignItems: 'stretch',
+              },
+              '.fc .fc-toolbar-chunk': {
+                display: 'flex',
+                justifyContent: 'center',
               },
               '.fc .fc-toolbar-title': {
                 fontSize: '1.25rem',
@@ -440,29 +539,45 @@ export default function CalendarPage({ conferences }) {
               <Flex gap="3" wrap="wrap" direction={{ base: 'column', md: 'row' }}>
                 <Button
                   onClick={handleExportEvent}
-                  colorScheme="blue"
+                  bg="brand.500"
+                  color="white"
                   size="sm"
+                  px="4"
                   flex={{ base: '1', md: 'auto' }}
                   transition="all 0.2s ease-in-out"
                   position="relative"
                   zIndex="1"
-                  _hover={{ transform: 'translateY(-1px)', boxShadow: 'md' }}
-                  _active={{ transform: 'scale(0.97)' }}
+                  _hover={{
+                    bg: 'brand.600',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4)'
+                  }}
+                  _active={{ transform: 'scale(0.98)' }}
                 >
-                  Export to Calendar
+                  📅 Export
                 </Button>
                 <Button
                   onClick={handleCopyLink}
-                  variant="outline"
+                  bg="gray.100"
+                  color="gray.700"
+                  border="1px"
+                  borderColor="gray.300"
                   size="sm"
+                  px="4"
                   flex={{ base: '1', md: 'auto' }}
                   transition="all 0.2s ease-in-out"
                   position="relative"
                   zIndex="1"
-                  _hover={{ transform: 'translateY(-1px)', boxShadow: 'sm' }}
-                  _active={{ transform: 'scale(0.97)' }}
+                  _hover={{
+                    bg: 'white',
+                    borderColor: 'brand.400',
+                    color: 'brand.600',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
+                  }}
+                  _active={{ transform: 'scale(0.98)' }}
                 >
-                  Copy Link
+                  🔗 Copy Link
                 </Button>
                 {selectedEvent.event.extendedProps.conference.link && (
                   <Link
@@ -473,16 +588,26 @@ export default function CalendarPage({ conferences }) {
                     flex={{ base: '1', md: 'auto' }}
                   >
                     <Button
-                      variant="outline"
+                      bg="gray.100"
+                      color="gray.700"
+                      border="1px"
+                      borderColor="gray.300"
                       size="sm"
+                      px="4"
                       w="full"
                       transition="all 0.2s ease-in-out"
                       position="relative"
                       zIndex="1"
-                      _hover={{ transform: 'translateY(-1px)', boxShadow: 'sm' }}
-                      _active={{ transform: 'scale(0.97)' }}
+                      _hover={{
+                        bg: 'white',
+                        borderColor: 'brand.400',
+                        color: 'brand.600',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
+                      }}
+                      _active={{ transform: 'scale(0.98)' }}
                     >
-                      Website
+                      🌐 Website
                     </Button>
                   </Link>
                 )}

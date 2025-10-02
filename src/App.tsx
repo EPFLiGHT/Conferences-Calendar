@@ -6,26 +6,27 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import CalendarPage from './pages/CalendarPage';
 import { parseConferences } from './utils/parser';
+import type { Conference } from './types/conference';
 
-function App() {
-  const [conferences, setConferences] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+function App(): JSX.Element {
+  const [conferences, setConferences] = useState<Conference[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch(`${import.meta.env.BASE_URL}data/conferences.yaml`)
-      .then(response => {
+      .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch conferences data');
         }
         return response.text();
       })
-      .then(yamlText => {
+      .then((yamlText) => {
         const parsed = parseConferences(yamlText);
         setConferences(parsed);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err: Error) => {
         setError(err.message);
         setLoading(false);
       });

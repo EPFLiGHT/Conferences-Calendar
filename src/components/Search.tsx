@@ -1,6 +1,11 @@
 import { Box, Input } from '@chakra-ui/react';
 
-export default function Search({ value, onChange }) {
+interface SearchProps {
+  value: string;
+  onChange: (value: string) => void;
+}
+
+export default function Search({ value, onChange }: SearchProps): JSX.Element {
   return (
     <Box mb="8">
       <Input

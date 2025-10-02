@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -8,42 +9,120 @@ import {
   Badge,
   Link,
   VStack,
-} from '@chakra-ui/react';
-import {
-  DialogBackdrop,
-  DialogBody,
-  DialogCloseTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogRoot,
+  Portal,
 } from '@chakra-ui/react';
 import { getDeadlineInfo } from '../utils/parser';
 import { exportConference } from '../utils/ics';
+import { Conference } from '../types/conference';
 
-export default function ConferenceModal({ conference, onClose }) {
+interface ConferenceModalProps {
+  conference: Conference;
+  onClose: () => void;
+}
+
+export default function ConferenceModal({ conference, onClose }: ConferenceModalProps): JSX.Element | null {
+  const [isOpen, setIsOpen] = useState(true);
   const deadlines = getDeadlineInfo(conference);
 
   const handleExport = () => {
     exportConference(conference);
   };
 
-  return (
-    <DialogRoot open={true} onOpenChange={(e) => !e.open && onClose()} size="lg">
-      <DialogBackdrop />
-      <DialogContent>
-        <DialogHeader>
-          <VStack align="start" gap="2">
-            <Heading as="h2" size="xl">
-              {conference.title} {conference.year}
-            </Heading>
-            <Text fontSize="md" color="gray.600">
-              {conference.full_name}
-            </Text>
-          </VStack>
-          <DialogCloseTrigger />
-        </DialogHeader>
+  const handleClose = () => {
+    setIsOpen(false);
+    onClose();
+  };
 
-        <DialogBody>
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === e.currentTarget) {
+      handleClose();
+    }
+  };
+
+  useEffect(() => {
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscapeKey);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.body.style.overflow = 'unset';
+    };
+  }, []);
+
+  if (!isOpen) return null;
+
+  return (
+    <Portal>
+      <Box
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+        bottom="0"
+        bg="rgba(0, 0, 0, 0.5)"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+        zIndex="modal"
+        p="4"
+        onClick={handleBackdropClick}
+      >
+        <Box
+          bg="white"
+          borderRadius="xl"
+          maxW="800px"
+          w="full"
+          maxH="90vh"
+          overflowY="auto"
+          boxShadow="0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+          position="relative"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Header */}
+          <Box
+            position="sticky"
+            top="0"
+            bg="white"
+            borderBottom="1px"
+            borderColor="gray.200"
+            p="6"
+            zIndex="10"
+            borderTopRadius="xl"
+          >
+            <Button
+              position="absolute"
+              top="4"
+              right="4"
+              variant="ghost"
+              size="sm"
+              fontSize="xl"
+              color="gray.600"
+              transition="all 0.2s ease-in-out"
+              _hover={{ bg: 'gray.100', color: 'gray.800' }}
+              _active={{ transform: 'scale(0.95)' }}
+              onClick={handleClose}
+              aria-label="Close"
+            >
+              ✕
+            </Button>
+            <VStack align="start" gap="2" pr="12">
+              <Heading as="h2" size="xl" color="gray.800">
+                {conference.title} {conference.year}
+              </Heading>
+              <Text fontSize="md" color="gray.600">
+                {conference.full_name}
+              </Text>
+            </VStack>
+          </Box>
+
+          {/* Body */}
+          <Box p="6">
           <VStack align="stretch" gap="6">
             {/* Conference Details */}
             <Box>
@@ -81,7 +160,7 @@ export default function ConferenceModal({ conference, onClose }) {
                     {conference.sub}
                   </Badge>
                 </VStack>
-                {conference.hindex > 0 && (
+                {(conference.hindex ?? 0) > 0 && (
                   <VStack align="start" gap="2">
                     <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
                       H-Index
@@ -103,6 +182,9 @@ export default function ConferenceModal({ conference, onClose }) {
                       textTransform="uppercase"
                       bg="blue.100"
                       color="blue.800"
+                      wordBreak="break-word"
+                      whiteSpace="normal"
+                      maxW="100%"
                     >
                       {conference.note}
                     </Badge>
@@ -173,7 +255,7 @@ export default function ConferenceModal({ conference, onClose }) {
 
             {/* Quick Links */}
             <Box>
-              <Heading as="h3" size="md" mb="4">
+              <Heading as="h3" size="md" mb="4" color="gray.800">
                 Quick Links
               </Heading>
               <Flex gap="3" wrap="wrap">
@@ -185,15 +267,21 @@ export default function ConferenceModal({ conference, onClose }) {
                     textDecoration="none"
                   >
                     <Button
-                      colorScheme="blue"
-                      variant="solid"
+                      bg="brand.500"
+                      color="white"
+                      size="md"
+                      px="6"
                       transition="all 0.2s ease-in-out"
                       position="relative"
                       zIndex="1"
-                      _hover={{ transform: 'translateY(-1px)', boxShadow: 'md' }}
-                      _active={{ transform: 'scale(0.97)' }}
+                      _hover={{
+                        bg: 'brand.600',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4)'
+                      }}
+                      _active={{ transform: 'scale(0.98)' }}
                     >
-                      Conference Website
+                      🌐 Conference Website
                     </Button>
                   </Link>
                 )}
@@ -205,14 +293,25 @@ export default function ConferenceModal({ conference, onClose }) {
                     textDecoration="none"
                   >
                     <Button
-                      variant="outline"
+                      bg="gray.100"
+                      color="gray.700"
+                      border="1px"
+                      borderColor="gray.300"
+                      size="md"
+                      px="6"
                       transition="all 0.2s ease-in-out"
                       position="relative"
                       zIndex="1"
-                      _hover={{ transform: 'translateY(-1px)', boxShadow: 'sm' }}
-                      _active={{ transform: 'scale(0.97)' }}
+                      _hover={{
+                        bg: 'white',
+                        borderColor: 'brand.400',
+                        color: 'brand.600',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
+                      }}
+                      _active={{ transform: 'scale(0.98)' }}
                     >
-                      Accepted Papers
+                      📄 Accepted Papers
                     </Button>
                   </Link>
                 )}
@@ -224,33 +323,56 @@ export default function ConferenceModal({ conference, onClose }) {
                     textDecoration="none"
                   >
                     <Button
-                      variant="outline"
+                      bg="gray.100"
+                      color="gray.700"
+                      border="1px"
+                      borderColor="gray.300"
+                      size="md"
+                      px="6"
                       transition="all 0.2s ease-in-out"
                       position="relative"
                       zIndex="1"
-                      _hover={{ transform: 'translateY(-1px)', boxShadow: 'sm' }}
-                      _active={{ transform: 'scale(0.97)' }}
+                      _hover={{
+                        bg: 'white',
+                        borderColor: 'brand.400',
+                        color: 'brand.600',
+                        transform: 'translateY(-2px)',
+                        boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
+                      }}
+                      _active={{ transform: 'scale(0.98)' }}
                     >
-                      Papers with Code
+                      💻 Papers with Code
                     </Button>
                   </Link>
                 )}
                 <Button
                   onClick={handleExport}
-                  variant="outline"
+                  bg="gray.100"
+                  color="gray.700"
+                  border="1px"
+                  borderColor="gray.300"
+                  size="md"
+                  px="6"
                   transition="all 0.2s ease-in-out"
                   position="relative"
                   zIndex="1"
-                  _hover={{ transform: 'translateY(-1px)', boxShadow: 'sm' }}
-                  _active={{ transform: 'scale(0.97)' }}
+                  _hover={{
+                    bg: 'white',
+                    borderColor: 'brand.400',
+                    color: 'brand.600',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
+                  }}
+                  _active={{ transform: 'scale(0.98)' }}
                 >
-                  Export to Calendar
+                  📅 Export to Calendar
                 </Button>
               </Flex>
             </Box>
           </VStack>
-        </DialogBody>
-      </DialogContent>
-    </DialogRoot>
+        </Box>
+      </Box>
+    </Box>
+    </Portal>
   );
 }
