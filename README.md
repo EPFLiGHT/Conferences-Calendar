@@ -16,23 +16,29 @@ A project by [LiGHT Lab](https://github.com/EPFLiGHT)
 
 ## Quick Start
 
+We use **pnpm** to manage packages for faster installation and better disk efficiency.
+
+### Installation
+
+```bash
+# Install pnpm globally (if not already installed)
+npm install -g pnpm
+
+# Install dependencies
+pnpm install
+```
+
 ### Development
 
 ```bash
-# Install dependencies
-npm install
-
 # Start development server
-npm run dev
+pnpm dev
 
 # Run validation
-npm run validate
-
-# Run tests
-npm test
+pnpm validate
 
 # Build for production
-npm run build
+pnpm build
 ```
 
 
@@ -101,7 +107,7 @@ Common values: `ML`, `CV`, `NLP`, `SP`, `AI`, `HCI`, `Systems`, `Security`, `The
 ### 3. Validate Your Changes
 
 ```bash
-npm run validate
+pnpm validate
 ```
 
 This will check:
@@ -114,11 +120,11 @@ This will check:
 ### 4. Test Locally
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) to preview your changes.
+Open [http://localhost:3000](http://localhost:3000) to preview your changes.
 
 ### 5. Submit a Pull Request
 
@@ -172,12 +178,12 @@ Conferences-Calendar/
 
 ## Tech Stack
 
-- **Framework:** React 18 + Vite
-- **Routing:** React Router
+- **Framework:** Next.js 15 + React 19
+- **UI Library:** Chakra UI v3
 - **Calendar:** FullCalendar
 - **Timezone:** Luxon
 - **YAML Parsing:** js-yaml
-- **Testing:** Vitest
+- **Package Manager:** pnpm
 - **Deployment:** GitHub Pages
 
 ## Contributing
@@ -185,8 +191,8 @@ Conferences-Calendar/
 We appreciate all contributions! Please:
 
 1. Follow the conference data schema
-2. Run `npm run validate` before submitting
-3. Test locally with `npm run dev`
+2. Run `pnpm validate` before submitting
+3. Test locally with `pnpm dev`
 4. Write clear commit messages
 5. Submit a pull request
 
