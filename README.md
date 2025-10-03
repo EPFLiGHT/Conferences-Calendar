@@ -1,6 +1,6 @@
 # Conference Deadlines
 
-A clean, static website for tracking research conference deadlines and important dates. Built with React and designed for the academic community.
+A clean website for tracking research conference deadlines and important dates. Built with Next.js and designed for the academic community.
 
 A project by [LiGHT Lab](https://github.com/EPFLiGHT)
 
@@ -41,21 +41,9 @@ pnpm validate
 pnpm build
 ```
 
+## Conference Data
 
-## How to Add a Conference
-
-We welcome contributions! To add a new conference:
-
-### 1. Fork and Clone
-
-```bash
-git clone https://github.com/LiGHT-Lab/Conferences-Calendar.git
-cd Conferences-Calendar
-```
-
-### 2. Edit `public/data/conferences.yaml`
-
-Add your conference following this schema:
+Conference information is stored in `public/data/conferences.yaml`. Each conference entry follows this schema:
 
 ```yaml
 - title: ShortName              # Short conference name (e.g., NeurIPS, CVPR)
@@ -77,71 +65,14 @@ Add your conference following this schema:
   note: Premier ML conference    # Optional: Additional notes
 ```
 
-#### Required Fields
+### Required Fields
 - `title` - Short conference name
 - `year` - Conference year
 - `id` - Unique identifier (format: `lowercasetitle` + last 2 digits of year)
 - `timezone` - Valid [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
-#### Optional Fields
+### Optional Fields
 All other fields are optional. If omitted, they will display as "TBA" (To Be Announced).
-
-#### Field Guidelines
-
-**Timezones:** Use valid IANA timezone names:
-- `UTC` - Coordinated Universal Time
-- `America/New_York` - US Eastern Time
-- `America/Los_Angeles` - US Pacific Time
-- `Europe/London` - UK
-- `Asia/Seoul` - South Korea
-- `Asia/Tokyo` - Japan
-
-**Date Formats:**
-- `deadline` and `abstract_deadline`: `YYYY-MM-DD HH:MM` (24-hour format)
-- `start` and `end`: `YYYY-MM-DD`
-- `date`: Human-readable (e.g., "June 10-17, 2025")
-
-**Subject Areas (sub):**
-Common values: `ML`, `CV`, `NLP`, `SP`, `AI`, `HCI`, `Systems`, `Security`, `Theory`, `General`
-
-### 3. Validate Your Changes
-
-```bash
-pnpm validate
-```
-
-This will check:
-- Required fields are present
-- Unique conference IDs
-- Valid IANA timezones
-- Correct date formats
-- No duplicate entries
-
-### 4. Test Locally
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to preview your changes.
-
-### 5. Submit a Pull Request
-
-```bash
-git add public/data/conferences.yaml
-git commit -m "Add [Conference Name] [Year]"
-git push origin main
-```
-
-Then create a pull request on GitHub.
-
-## Issue Templates
-
-Use our issue templates to:
-- 🎯 [Add a Conference](https://github.com/LiGHT-Lab/Conferences-Calendar/issues/new?template=add-conference.md)
-- 🐛 [Report a Bug](https://github.com/LiGHT-Lab/Conferences-Calendar/issues/new)
-- 💡 [Request a Feature](https://github.com/LiGHT-Lab/Conferences-Calendar/issues/new)
 
 ## Project Structure
 
@@ -152,27 +83,11 @@ Conferences-Calendar/
 │       └── conferences.yaml   # Conference data
 ├── src/
 │   ├── components/            # React components
-│   │   ├── Header.jsx
-│   │   ├── Footer.jsx
-│   │   ├── ConferenceCard.jsx
-│   │   ├── ConferenceModal.jsx
-│   │   ├── Countdown.jsx
-│   │   ├── Filters.jsx
-│   │   └── Search.jsx
-│   ├── pages/
-│   │   ├── Home.jsx           # Home page with cards
-│   │   └── CalendarPage.jsx   # Calendar view
-│   ├── utils/
-│   │   ├── parser.js          # YAML parsing & validation
-│   │   └── ics.js             # ICS export utilities
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
+│   ├── pages/                 # Page components
+│   ├── utils/                 # Utilities
+│   └── styles/                # CSS styles
 ├── scripts/
 │   └── validate.js            # Validation script
-├── .github/
-│   └── workflows/
-│       └── deploy.yml         # CI/CD pipeline
 └── package.json
 ```
 
@@ -186,16 +101,6 @@ Conferences-Calendar/
 - **Package Manager:** pnpm
 - **Deployment:** GitHub Pages
 
-## Contributing
-
-We appreciate all contributions! Please:
-
-1. Follow the conference data schema
-2. Run `pnpm validate` before submitting
-3. Test locally with `pnpm dev`
-4. Write clear commit messages
-5. Submit a pull request
-
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
@@ -204,12 +109,6 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 This project is maintained by [LiGHT Lab](https://github.com/LiGHT-Lab).
 
-## Support
-
-- 📖 [Documentation](https://github.com/LiGHT-Lab/Conferences-Calendar/wiki)
-- 🐛 [Report Issues](https://github.com/LiGHT-Lab/Conferences-Calendar/issues)
-- 💬 [Discussions](https://github.com/LiGHT-Lab/Conferences-Calendar/discussions)
-
 ---
 
-Made with ❤️ by the LiGHT Lab community
+Made with ❤️ by LiGHT Lab
