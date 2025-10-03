@@ -12,7 +12,6 @@ import {
   Badge,
   VStack,
   Link,
-  Wrap,
 } from '@chakra-ui/react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -422,7 +421,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
                   <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
                     Subject{getSubjectsArray(selectedEvent.event.extendedProps.conference.sub).length > 1 ? 's' : ''}:
                   </Text>
-                  <Wrap spacing="2">
+                  <Flex gap="2" wrap="wrap">
                     {getSubjectsArray(selectedEvent.event.extendedProps.conference.sub).map((subject, idx) => {
                       const colors = getSubjectColor(subject);
                       return (
@@ -442,7 +441,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
                         </Badge>
                       );
                     })}
-                  </Wrap>
+                  </Flex>
                 </VStack>
               </VStack>
 

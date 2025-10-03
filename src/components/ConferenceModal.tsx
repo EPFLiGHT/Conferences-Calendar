@@ -10,7 +10,6 @@ import {
   Link,
   VStack,
   Portal,
-  Wrap,
 } from '@chakra-ui/react';
 import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { exportConference } from '../utils/ics';
@@ -147,7 +146,7 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                   <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
                     Subject{getSubjectsArray(conference.sub).length > 1 ? 's' : ''}
                   </Text>
-                  <Wrap spacing="2">
+                  <Flex gap="2" wrap="wrap">
                     {getSubjectsArray(conference.sub).map((subject, idx) => {
                       const colors = getSubjectColor(subject);
                       return (
@@ -167,7 +166,7 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                         </Badge>
                       );
                     })}
-                  </Wrap>
+                  </Flex>
                 </VStack>
                 {(conference.hindex ?? 0) > 0 && (
                   <VStack align="start" gap="2">

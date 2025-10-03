@@ -1,7 +1,7 @@
-import { Box, Flex, Heading, Text, Badge, Link, VStack, Wrap } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
 import Countdown from './Countdown';
-import { getNextDeadline, getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
+import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { Conference } from '../types/conference';
 
 interface ConferenceCardProps {
@@ -10,7 +10,6 @@ interface ConferenceCardProps {
 }
 
 export default function ConferenceCard({ conference, onClick }: ConferenceCardProps): JSX.Element {
-  const nextDeadline = getNextDeadline(conference);
   const allDeadlines = getDeadlineInfo(conference);
 
   return (
@@ -34,51 +33,53 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
       onClick={onClick}
     >
       {/* Card Header */}
-      <Flex justify="space-between" align="start" gap="4" mb="3">
-        <VStack align="start" gap="2" flex="1">
-          <Heading as="h3" size="lg" color="gray.800">
+      <VStack align="stretch" gap="3" mb="3">
+        <Flex justify="space-between" align="start" gap="3" wrap="wrap">
+          <Heading as="h3" size="lg" color="gray.800" flex="1" minW="200px">
             {conference.title} {conference.year}
           </Heading>
-          {conference.note && (
-            <Badge
-              px="2"
-              py="0.5"
-              borderRadius="md"
-              fontSize="xs"
-              fontWeight="600"
-              textTransform="uppercase"
-              bg="blue.100"
-              color="blue.800"
-              wordBreak="break-word"
-              whiteSpace="normal"
-              maxW="100%"
-            >
-              {conference.note}
-            </Badge>
-          )}
-        </VStack>
-        <Wrap spacing="2" justify="flex-end">
-          {getSubjectsArray(conference.sub).map((subject, idx) => {
-            const colors = getSubjectColor(subject);
-            return (
-              <Badge
-                key={idx}
-                px="3"
-                py="1"
-                borderRadius="full"
-                fontSize="xs"
-                fontWeight="600"
-                bg={colors.bg}
-                color={colors.color}
-                border="1px"
-                borderColor={colors.border}
-              >
-                {subject}
-              </Badge>
-            );
-          })}
-        </Wrap>
-      </Flex>
+          <Flex gap="2" wrap="wrap" justify="flex-end" align="center">
+            {getSubjectsArray(conference.sub).map((subject, idx) => {
+              const colors = getSubjectColor(subject);
+              return (
+                <Badge
+                  key={idx}
+                  px="3"
+                  py="1"
+                  borderRadius="full"
+                  fontSize="xs"
+                  fontWeight="600"
+                  bg={colors.bg}
+                  color={colors.color}
+                  border="1px"
+                  borderColor={colors.border}
+                  whiteSpace="nowrap"
+                >
+                  {subject}
+                </Badge>
+              );
+            })}
+          </Flex>
+        </Flex>
+        {conference.note && (
+          <Badge
+            px="2"
+            py="1"
+            borderRadius="md"
+            fontSize="xs"
+            fontWeight="600"
+            textTransform="uppercase"
+            bg="blue.100"
+            color="blue.800"
+            wordBreak="break-word"
+            whiteSpace="normal"
+            alignSelf="flex-start"
+            maxW="fit-content"
+          >
+            {conference.note}
+          </Badge>
+        )}
+      </VStack>
 
       {/* Subtitle */}
       <Text fontSize="sm" color="gray.600" mb="4" lineHeight="1.5">
