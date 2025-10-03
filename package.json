@@ -1,0 +1,38 @@
+{
+  "name": "conference-deadlines",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "validate": "node scripts/validate.js"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.0.0-next.32",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@fullcalendar/core": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.10",
+    "@fullcalendar/list": "^6.1.10",
+    "@fullcalendar/luxon3": "^6.1.10",
+    "@fullcalendar/react": "^6.1.10",
+    "@fullcalendar/timegrid": "^6.1.10",
+    "framer-motion": "^12.23.22",
+    "ics": "^3.7.0",
+    "js-yaml": "^4.1.0",
+    "luxon": "^3.4.4",
+    "next": "^15.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^24.6.2",
+    "@types/react": "^18.3.25",
+    "@types/react-dom": "^18.3.7",
+    "typescript": "^5.9.3"
+  }
+}
