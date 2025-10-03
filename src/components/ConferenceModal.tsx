@@ -10,8 +10,9 @@ import {
   Link,
   VStack,
   Portal,
+  Wrap,
 } from '@chakra-ui/react';
-import { getDeadlineInfo } from '../utils/parser';
+import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { exportConference } from '../utils/ics';
 import { Conference } from '../types/conference';
 
@@ -144,21 +145,29 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                 </VStack>
                 <VStack align="start" gap="2">
                   <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                    Subject
+                    Subject{getSubjectsArray(conference.sub).length > 1 ? 's' : ''}
                   </Text>
-                  <Badge
-                    px="3"
-                    py="1"
-                    borderRadius="full"
-                    fontSize="xs"
-                    fontWeight="500"
-                    bg="brand.50"
-                    color="brand.500"
-                    border="1px"
-                    borderColor="brand.200"
-                  >
-                    {conference.sub}
-                  </Badge>
+                  <Wrap spacing="2">
+                    {getSubjectsArray(conference.sub).map((subject, idx) => {
+                      const colors = getSubjectColor(subject);
+                      return (
+                        <Badge
+                          key={idx}
+                          px="3"
+                          py="1"
+                          borderRadius="full"
+                          fontSize="xs"
+                          fontWeight="600"
+                          bg={colors.bg}
+                          color={colors.color}
+                          border="1px"
+                          borderColor={colors.border}
+                        >
+                          {subject}
+                        </Badge>
+                      );
+                    })}
+                  </Wrap>
                 </VStack>
                 {(conference.hindex ?? 0) > 0 && (
                   <VStack align="start" gap="2">

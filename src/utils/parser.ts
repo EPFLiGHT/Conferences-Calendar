@@ -97,23 +97,10 @@ export function parseConferences(yamlString: string): Conference[] {
 export function getDeadlineInfo(conference: Conference, userTimezone: string = 'local'): DeadlineInfo[] {
   const deadlines: DeadlineInfo[] = [];
 
-  console.log(`[getDeadlineInfo] Conference: ${conference.id}`, {
-    abstract_deadline: conference.abstract_deadline,
-    deadline: conference.deadline,
-    timezone: conference.timezone
-  });
-
   if (conference.abstract_deadline) {
     // Replace space with 'T' to make it ISO 8601 compliant
     const isoString = conference.abstract_deadline.replace(' ', 'T');
     const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
-    console.log(`[getDeadlineInfo] Abstract deadline parse:`, {
-      input: conference.abstract_deadline,
-      isoString,
-      zone: conference.timezone,
-      isValid: dt.isValid,
-      result: dt.isValid ? dt.toISO() : 'INVALID'
-    });
     if (dt.isValid) {
       deadlines.push({
         label: 'Abstract Deadline',
@@ -127,13 +114,6 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
     // Replace space with 'T' to make it ISO 8601 compliant
     const isoString = conference.deadline.replace(' ', 'T');
     const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
-    console.log(`[getDeadlineInfo] Submission deadline parse:`, {
-      input: conference.deadline,
-      isoString,
-      zone: conference.timezone,
-      isValid: dt.isValid,
-      result: dt.isValid ? dt.toISO() : 'INVALID'
-    });
     if (dt.isValid) {
       deadlines.push({
         label: 'Submission Deadline',
@@ -143,7 +123,6 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
     }
   }
 
-  console.log(`[getDeadlineInfo] Total deadlines found: ${deadlines.length}`);
   return deadlines;
 }
 
@@ -163,4 +142,25 @@ export function getNextDeadline(conference: Conference): DeadlineInfo | null {
 
 export function formatDeadline(datetime: DateTime, timezone: string): string {
   return datetime.toFormat('MMM dd, yyyy HH:mm') + ` ${timezone}`;
+}
+
+// Subject color mapping
+const SUBJECT_COLORS: Record<string, { bg: string; color: string; border: string }> = {
+  ML: { bg: 'blue.50', color: 'blue.600', border: 'blue.200' },
+  CV: { bg: 'purple.50', color: 'purple.600', border: 'purple.200' },
+  NLP: { bg: 'green.50', color: 'green.600', border: 'green.200' },
+  DM: { bg: 'orange.50', color: 'orange.600', border: 'orange.200' },
+  SP: { bg: 'red.50', color: 'red.600', border: 'red.200' },
+  HCI: { bg: 'pink.50', color: 'pink.600', border: 'pink.200' },
+  RO: { bg: 'cyan.50', color: 'cyan.600', border: 'cyan.200' },
+};
+
+export function getSubjectColor(subject: string) {
+  return SUBJECT_COLORS[subject] || { bg: 'gray.50', color: 'gray.600', border: 'gray.200' };
+}
+
+export function getSubjectsArray(sub: string | string[]): string[] {
+  if (!sub) return ['General'];
+  if (Array.isArray(sub)) return sub.filter(Boolean);
+  return [sub].filter(Boolean);
 }

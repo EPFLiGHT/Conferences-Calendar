@@ -1,7 +1,7 @@
-import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Badge, Link, VStack, Wrap } from '@chakra-ui/react';
 import { DateTime } from 'luxon';
 import Countdown from './Countdown';
-import { getNextDeadline, getDeadlineInfo } from '../utils/parser';
+import { getNextDeadline, getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { Conference } from '../types/conference';
 
 interface ConferenceCardProps {
@@ -57,19 +57,27 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
             </Badge>
           )}
         </VStack>
-        <Badge
-          px="3"
-          py="1"
-          borderRadius="full"
-          fontSize="xs"
-          fontWeight="500"
-          bg="brand.50"
-          color="brand.500"
-          border="1px"
-          borderColor="brand.200"
-        >
-          {conference.sub}
-        </Badge>
+        <Wrap spacing="2" justify="flex-end">
+          {getSubjectsArray(conference.sub).map((subject, idx) => {
+            const colors = getSubjectColor(subject);
+            return (
+              <Badge
+                key={idx}
+                px="3"
+                py="1"
+                borderRadius="full"
+                fontSize="xs"
+                fontWeight="600"
+                bg={colors.bg}
+                color={colors.color}
+                border="1px"
+                borderColor={colors.border}
+              >
+                {subject}
+              </Badge>
+            );
+          })}
+        </Wrap>
       </Flex>
 
       {/* Subtitle */}

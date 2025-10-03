@@ -12,6 +12,7 @@ import {
   Badge,
   VStack,
   Link,
+  Wrap,
 } from '@chakra-ui/react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -22,6 +23,7 @@ import { DateTime } from 'luxon';
 import Filters from '../components/Filters';
 import Search from '../components/Search';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '../utils/ics';
+import { getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { Conference } from '../types/conference';
 import { EventClickArg } from '@fullcalendar/core';
 import '../styles/calendar.css';
@@ -418,21 +420,29 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
 
                 <VStack align="start" gap="1">
                   <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                    Subject:
+                    Subject{getSubjectsArray(selectedEvent.event.extendedProps.conference.sub).length > 1 ? 's' : ''}:
                   </Text>
-                  <Badge
-                    px="3"
-                    py="1"
-                    borderRadius="full"
-                    fontSize="xs"
-                    fontWeight="500"
-                    bg="brand.50"
-                    color="brand.500"
-                    border="1px"
-                    borderColor="brand.200"
-                  >
-                    {selectedEvent.event.extendedProps.conference.sub}
-                  </Badge>
+                  <Wrap spacing="2">
+                    {getSubjectsArray(selectedEvent.event.extendedProps.conference.sub).map((subject, idx) => {
+                      const colors = getSubjectColor(subject);
+                      return (
+                        <Badge
+                          key={idx}
+                          px="3"
+                          py="1"
+                          borderRadius="full"
+                          fontSize="xs"
+                          fontWeight="600"
+                          bg={colors.bg}
+                          color={colors.color}
+                          border="1px"
+                          borderColor={colors.border}
+                        >
+                          {subject}
+                        </Badge>
+                      );
+                    })}
+                  </Wrap>
                 </VStack>
               </VStack>
 
