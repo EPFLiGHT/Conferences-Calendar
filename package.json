@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^3.0.0-next.32",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@fullcalendar/core": "^6.1.19",
     "@fullcalendar/daygrid": "^6.1.10",
     "@fullcalendar/list": "^6.1.10",
     "@fullcalendar/luxon3": "^6.1.10",

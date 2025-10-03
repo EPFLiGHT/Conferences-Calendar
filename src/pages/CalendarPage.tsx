@@ -47,6 +47,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
   const [selectedEvent, setSelectedEvent] = useState<SelectedEvent | null>(null);
 
   useEffect(() => {
+    if (!searchParams) return;
     setSearchQuery(searchParams.get('q') || '');
     setFilters({
       sortBy: 'deadline',
@@ -71,7 +72,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString() || '');
     if (query) {
       params.set('q', query);
     } else {
@@ -110,7 +111,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
   }, [conferences, searchQuery, filters]);
 
   const calendarEvents = useMemo(() => {
-    const events = [];
+    const events: any[] = [];
 
     filteredConferences.forEach(conf => {
       // Conference event (all-day)

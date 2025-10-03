@@ -17,6 +17,9 @@ importers:
       '@emotion/styled':
         specifier: ^11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.25)(react@19.2.0))(@types/react@18.3.25)(react@19.2.0)
+      '@fullcalendar/core':
+        specifier: ^6.1.19
+        version: 6.1.19
       '@fullcalendar/daygrid':
         specifier: ^6.1.10
         version: 6.1.19(@fullcalendar/core@6.1.19)
