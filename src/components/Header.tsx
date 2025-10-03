@@ -35,7 +35,7 @@ export default function Header(): JSX.Element {
               <Image
                 src={`${process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : ''}/light-logo.svg`}
                 alt="LiGHT Lab"
-                h="75px"
+                h="60px"
                 w="auto"
                 transition="all 0.3s"
                 _hover={{ filter: 'drop-shadow(0 4px 8px rgba(46, 95, 169, 0.3))' }}

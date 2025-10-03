@@ -35,11 +35,11 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
 
     // Filter by search query
     if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      result = result.filter(conf =>
-        conf.title.toLowerCase().includes(query) ||
-        conf.full_name.toLowerCase().includes(query)
-      );
+      const query = searchQuery.toLowerCase().replace(/\s+/g, '');
+      result = result.filter(conf => {
+        const searchableText = `${conf.title}${conf.year}${conf.full_name}`.toLowerCase().replace(/\s+/g, '');
+        return searchableText.includes(query);
+      });
     }
 
     // Filter by year
