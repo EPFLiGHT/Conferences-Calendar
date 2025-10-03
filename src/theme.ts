@@ -17,6 +17,10 @@ export const system = createSystem(defaultConfig, {
           900: { value: '#0a1a3d' },
         },
       },
+      fonts: {
+        body: { value: 'Chillax, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif' },
+        heading: { value: 'Chillax, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif' },
+      },
       animations: {
         'button-transition': { value: 'all 0.2s ease-in-out' },
         'card-transition': { value: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' },

@@ -32,14 +32,7 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
   }, [conferences]);
 
   return (
-    <Box
-      p="6"
-      bg="white"
-      borderRadius="xl"
-      border="1px"
-      borderColor="brand.200"
-      mb="8"
-    >
+    <Box>
       <Grid
         templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
         gap="6"

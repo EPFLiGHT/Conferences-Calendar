@@ -218,22 +218,32 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
   return (
     <Box py={{ base: '6', md: '8' }} pb={{ base: '12', md: '16' }} minH="calc(100vh - 200px)">
       <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
-        <Box mb="8" textAlign="center">
-          <Heading as="h2" size="2xl" mb="2" color="gray.800">
-            Conference Calendar
-          </Heading>
-          <Text fontSize="md" color="gray.600">
-            View all conferences and deadlines in a calendar format
-          </Text>
+        <Box
+          bg="white"
+          borderRadius="xl"
+          border="1px"
+          borderColor="brand.200"
+          p={{ base: '6', md: '8' }}
+          mb="8"
+          boxShadow="0 2px 8px rgba(46, 95, 169, 0.08)"
+        >
+          <Box mb="8" textAlign="center">
+            <Heading as="h2" size="2xl" mb="2" color="gray.800">
+              Conference Calendar
+            </Heading>
+            <Text fontSize="md" color="gray.600">
+              View all conferences and deadlines in a calendar format
+            </Text>
+          </Box>
+
+          <Search value={searchQuery} onChange={handleSearchChange} />
+
+          <Filters
+            conferences={conferences}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+          />
         </Box>
-
-        <Search value={searchQuery} onChange={handleSearchChange} />
-
-        <Filters
-          conferences={conferences}
-          filters={filters}
-          onFilterChange={handleFilterChange}
-        />
 
         <Flex gap="4" justify="center" mb="8" direction={{ base: 'column', md: 'row' }}>
           <Button

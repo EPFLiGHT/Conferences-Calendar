@@ -93,22 +93,32 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
   return (
     <Box py={{ base: '6', md: '8' }} pb={{ base: '12', md: '16' }} minH="calc(100vh - 200px)">
       <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
-        <Box mb="8" textAlign="center">
-          <Heading as="h2" size="2xl" mb="2" color="gray.800">
-            Research Conferences
-          </Heading>
-          <Text fontSize="md" color="gray.600">
-            Track upcoming conferences and never miss a deadline. Click on a card for more details.
-          </Text>
+        <Box
+          bg="white"
+          borderRadius="xl"
+          border="1px"
+          borderColor="brand.200"
+          p={{ base: '6', md: '8' }}
+          mb="8"
+          boxShadow="0 2px 8px rgba(46, 95, 169, 0.08)"
+        >
+          <Box mb="8" textAlign="center">
+            <Heading as="h2" size="2xl" mb="2" color="gray.800">
+              Research Conferences
+            </Heading>
+            <Text fontSize="md" color="gray.600">
+              Track upcoming conferences and never miss a deadline. Click on a card for more details.
+            </Text>
+          </Box>
+
+          <Search value={searchQuery} onChange={setSearchQuery} />
+
+          <Filters
+            conferences={conferences}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+          />
         </Box>
-
-        <Search value={searchQuery} onChange={setSearchQuery} />
-
-        <Filters
-          conferences={conferences}
-          filters={filters}
-          onFilterChange={handleFilterChange}
-        />
 
         <Text fontSize="sm" color="gray.600" mb="6" textAlign="center">
           Showing {paginatedConferences.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}-{Math.min(currentPage * ITEMS_PER_PAGE, filteredAndSortedConferences.length)} of {filteredAndSortedConferences.length} conferences
