@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { DateTime } from 'luxon';
-import { Box, Container, Heading, Text, Grid } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Grid, Button, Flex } from '@chakra-ui/react';
 import ConferenceCard from '../components/ConferenceCard';
 import ConferenceModal from '../components/ConferenceModal';
 import Filters from '../components/Filters';
@@ -12,9 +12,12 @@ interface HomeProps {
   conferences: Conference[];
 }
 
+const ITEMS_PER_PAGE = 12;
+
 export default function Home({ conferences }: HomeProps): JSX.Element {
   const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState({
     sortBy: 'deadline',
     year: '',
@@ -23,9 +26,11 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
 
   const handleFilterChange = (newFilters: { sortBy?: string; year?: string; subject?: string }) => {
     setFilters(prev => ({ ...prev, ...newFilters }));
+    setCurrentPage(1); // Reset to first page when filters change
   };
 
   const filteredAndSortedConferences = useMemo(() => {
+    setCurrentPage(1); // Reset to first page when search changes
     let result = [...conferences];
 
     // Filter by search query
@@ -44,7 +49,12 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
 
     // Filter by subject
     if (filters.subject) {
-      result = result.filter(conf => conf.sub === filters.subject);
+      result = result.filter(conf => {
+        if (Array.isArray(conf.sub)) {
+          return conf.sub.includes(filters.subject);
+        }
+        return conf.sub === filters.subject;
+      });
     }
 
     // Sort
@@ -72,6 +82,14 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
     return result;
   }, [conferences, searchQuery, filters]);
 
+  const paginatedConferences = useMemo(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return filteredAndSortedConferences.slice(startIndex, endIndex);
+  }, [filteredAndSortedConferences, currentPage]);
+
+  const totalPages = Math.ceil(filteredAndSortedConferences.length / ITEMS_PER_PAGE);
+
   return (
     <Box py={{ base: '6', md: '8' }} pb={{ base: '12', md: '16' }} minH="calc(100vh - 200px)">
       <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
@@ -93,21 +111,22 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
         />
 
         <Text fontSize="sm" color="gray.600" mb="6" textAlign="center">
-          Showing {filteredAndSortedConferences.length} of {conferences.length} conferences
+          Showing {paginatedConferences.length > 0 ? (currentPage - 1) * ITEMS_PER_PAGE + 1 : 0}-{Math.min(currentPage * ITEMS_PER_PAGE, filteredAndSortedConferences.length)} of {filteredAndSortedConferences.length} conferences
         </Text>
 
         <Grid
           templateColumns={{ base: '1fr', md: 'repeat(auto-fill, minmax(350px, 1fr))' }}
           gap={{ base: '4', md: '6' }}
+          mb="8"
         >
-          {filteredAndSortedConferences.length === 0 ? (
+          {paginatedConferences.length === 0 ? (
             <Box gridColumn="1 / -1" textAlign="center" py="16" px="8">
               <Text fontSize="lg" color="gray.500">
                 No conferences found matching your criteria.
               </Text>
             </Box>
           ) : (
-            filteredAndSortedConferences.map(conference => (
+            paginatedConferences.map(conference => (
               <ConferenceCard
                 key={conference.id}
                 conference={conference}
@@ -116,6 +135,102 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
             ))
           )}
         </Grid>
+
+        {totalPages > 1 && (
+          <Flex
+            justify="center"
+            align="center"
+            gap="4"
+            mt="12"
+            p="6"
+            bg="white"
+            borderRadius="xl"
+            border="1px"
+            borderColor="brand.200"
+            boxShadow="0 2px 8px rgba(46, 95, 169, 0.08)"
+          >
+            <Button
+              onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+              disabled={currentPage === 1}
+              size="md"
+              px="6"
+              bg="brand.500"
+              color="white"
+              fontWeight="600"
+              borderRadius="lg"
+              transition="all 0.2s ease-in-out"
+              _hover={{
+                bg: 'brand.600',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 4px 12px rgba(46, 95, 169, 0.3)'
+              }}
+              _active={{
+                transform: 'scale(0.98)'
+              }}
+              _disabled={{
+                bg: 'gray.200',
+                color: 'gray.400',
+                cursor: 'not-allowed',
+                transform: 'none',
+                boxShadow: 'none',
+                _hover: {
+                  bg: 'gray.200',
+                  transform: 'none',
+                  boxShadow: 'none'
+                }
+              }}
+            >
+              ← Previous
+            </Button>
+
+            <Box
+              px="6"
+              py="2"
+              bg="brand.50"
+              borderRadius="lg"
+              border="1px"
+              borderColor="brand.200"
+            >
+              <Text fontSize="sm" color="brand.600" fontWeight="600">
+                Page {currentPage} of {totalPages}
+              </Text>
+            </Box>
+
+            <Button
+              onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+              disabled={currentPage === totalPages}
+              size="md"
+              px="6"
+              bg="brand.500"
+              color="white"
+              fontWeight="600"
+              borderRadius="lg"
+              transition="all 0.2s ease-in-out"
+              _hover={{
+                bg: 'brand.600',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 4px 12px rgba(46, 95, 169, 0.3)'
+              }}
+              _active={{
+                transform: 'scale(0.98)'
+              }}
+              _disabled={{
+                bg: 'gray.200',
+                color: 'gray.400',
+                cursor: 'not-allowed',
+                transform: 'none',
+                boxShadow: 'none',
+                _hover: {
+                  bg: 'gray.200',
+                  transform: 'none',
+                  boxShadow: 'none'
+                }
+              }}
+            >
+              Next →
+            </Button>
+          </Flex>
+        )}
       </Container>
 
       {selectedConference && (

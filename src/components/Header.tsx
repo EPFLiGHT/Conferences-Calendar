@@ -1,8 +1,11 @@
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+'use client';
+
+import { usePathname } from 'next/navigation';
+import NextLink from 'next/link';
 import { Box, Container, Flex, HStack, Link, Text, Image } from '@chakra-ui/react';
 
 export default function Header(): JSX.Element {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <Box
@@ -30,7 +33,7 @@ export default function Header(): JSX.Element {
               _hover={{ transform: 'scale(1.05)', transition: 'all 0.3s' }}
             >
               <Image
-                src={`${import.meta.env.BASE_URL}light-logo.svg`}
+                src={`${process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : ''}/light-logo.svg`}
                 alt="LiGHT Lab"
                 h="75px"
                 w="auto"
@@ -82,58 +85,58 @@ export default function Header(): JSX.Element {
           {/* Navigation */}
           <HStack gap="3">
             <Link
-              as={RouterLink}
-              to="/"
+              as={NextLink}
+              href="/"
               px="5"
               py="2.5"
               borderRadius="10px"
               fontWeight="600"
               fontSize="sm"
-              color={location.pathname === '/' ? 'white' : 'gray.600'}
-              bg={location.pathname === '/' ? 'brand.500' : 'transparent'}
+              color={pathname === '/' ? 'white' : 'gray.600'}
+              bg={pathname === '/' ? 'brand.500' : 'transparent'}
               border="2px solid"
-              borderColor={location.pathname === '/' ? 'brand.600' : 'transparent'}
+              borderColor={pathname === '/' ? 'brand.600' : 'transparent'}
               transition="all 0.2s ease-in-out"
               position="relative"
               zIndex="1"
               _hover={{
-                color: location.pathname === '/' ? 'white' : 'brand.500',
-                bg: location.pathname === '/' ? 'brand.600' : 'brand.50',
-                borderColor: location.pathname === '/' ? 'brand.600' : 'brand.200',
+                color: pathname === '/' ? 'white' : 'brand.500',
+                bg: pathname === '/' ? 'brand.600' : 'brand.50',
+                borderColor: pathname === '/' ? 'brand.600' : 'brand.200',
                 transform: 'translateY(-1px)',
               }}
               _active={{
                 transform: 'scale(0.98)',
               }}
-              boxShadow={location.pathname === '/' ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
+              boxShadow={pathname === '/' ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
             >
               🏠 <Text as="span" display={{ base: 'none', sm: 'inline' }} ml="2">Home</Text>
             </Link>
             <Link
-              as={RouterLink}
-              to="/calendar"
+              as={NextLink}
+              href="/calendar"
               px="5"
               py="2.5"
               borderRadius="10px"
               fontWeight="600"
               fontSize="sm"
-              color={location.pathname === '/calendar' ? 'white' : 'gray.600'}
-              bg={location.pathname === '/calendar' ? 'brand.500' : 'transparent'}
+              color={pathname === '/calendar' ? 'white' : 'gray.600'}
+              bg={pathname === '/calendar' ? 'brand.500' : 'transparent'}
               border="2px solid"
-              borderColor={location.pathname === '/calendar' ? 'brand.600' : 'transparent'}
+              borderColor={pathname === '/calendar' ? 'brand.600' : 'transparent'}
               transition="all 0.2s ease-in-out"
               position="relative"
               zIndex="1"
               _hover={{
-                color: location.pathname === '/calendar' ? 'white' : 'brand.500',
-                bg: location.pathname === '/calendar' ? 'brand.600' : 'brand.50',
-                borderColor: location.pathname === '/calendar' ? 'brand.600' : 'brand.200',
+                color: pathname === '/calendar' ? 'white' : 'brand.500',
+                bg: pathname === '/calendar' ? 'brand.600' : 'brand.50',
+                borderColor: pathname === '/calendar' ? 'brand.600' : 'brand.200',
                 transform: 'translateY(-1px)',
               }}
               _active={{
                 transform: 'scale(0.98)',
               }}
-              boxShadow={location.pathname === '/calendar' ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
+              boxShadow={pathname === '/calendar' ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
             >
               📅 <Text as="span" display={{ base: 'none', sm: 'inline' }} ml="2">Calendar</Text>
             </Link>

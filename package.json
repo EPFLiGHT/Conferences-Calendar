@@ -4,11 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "validate": "node scripts/validate.js",
-    "test": "vitest"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "validate": "node scripts/validate.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^3.0.0-next.32",
@@ -23,18 +22,15 @@
     "ics": "^3.7.0",
     "js-yaml": "^4.1.0",
     "luxon": "^3.4.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.20.0"
+    "next": "^15.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/luxon": "^3.7.1",
     "@types/react": "^18.3.25",
     "@types/react-dom": "^18.3.7",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.9.3",
-    "vite": "^5.0.8",
-    "vitest": "^1.1.0"
+    "typescript": "^5.9.3"
   }
 }

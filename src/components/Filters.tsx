@@ -20,8 +20,15 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
   }, [conferences]);
 
   const subjects = useMemo(() => {
-    const uniqueSubjects = [...new Set(conferences.map(c => c.sub))].sort();
-    return uniqueSubjects;
+    const subjectSet = new Set<string>();
+    conferences.forEach(c => {
+      if (Array.isArray(c.sub)) {
+        c.sub.forEach(s => subjectSet.add(s));
+      } else if (c.sub) {
+        subjectSet.add(c.sub);
+      }
+    });
+    return [...subjectSet].sort();
   }, [conferences]);
 
   return (

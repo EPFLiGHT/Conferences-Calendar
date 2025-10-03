@@ -1,5 +1,7 @@
-import { useState, useMemo, useRef } from 'react';
-import { useSearchParams } from 'react-router-dom';
+'use client';
+
+import { useState, useMemo, useRef, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import {
   Box,
   Button,
@@ -22,6 +24,7 @@ import Search from '../components/Search';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '../utils/ics';
 import { Conference } from '../types/conference';
 import { EventClickArg } from '@fullcalendar/core';
+import '../styles/calendar.css';
 
 interface CalendarPageProps {
   conferences: Conference[];
@@ -34,14 +37,23 @@ interface SelectedEvent {
 
 export default function CalendarPage({ conferences }: CalendarPageProps): JSX.Element {
   const calendarRef = useRef<FullCalendar>(null);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [searchQuery, setSearchQuery] = useState<string>(searchParams.get('q') || '');
+  const searchParams = useSearchParams();
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [filters, setFilters] = useState({
     sortBy: 'deadline',
-    year: searchParams.get('year') || '',
-    subject: searchParams.get('subject') || '',
+    year: '',
+    subject: '',
   });
   const [selectedEvent, setSelectedEvent] = useState<SelectedEvent | null>(null);
+
+  useEffect(() => {
+    setSearchQuery(searchParams.get('q') || '');
+    setFilters({
+      sortBy: 'deadline',
+      year: searchParams.get('year') || '',
+      subject: searchParams.get('subject') || '',
+    });
+  }, [searchParams]);
 
   const handleFilterChange = (newFilters: { sortBy?: string; year?: string; subject?: string }) => {
     const updated = { ...filters, ...newFilters };
@@ -52,18 +64,22 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
     if (searchQuery) params.set('q', searchQuery);
     if (updated.year) params.set('year', updated.year);
     if (updated.subject) params.set('subject', updated.subject);
-    setSearchParams(params);
+
+    const newUrl = params.toString() ? `?${params.toString()}` : '/calendar';
+    window.history.pushState({}, '', newUrl);
   };
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
-    const params = new URLSearchParams(searchParams);
+    const params = new URLSearchParams(searchParams.toString());
     if (query) {
       params.set('q', query);
     } else {
       params.delete('q');
     }
-    setSearchParams(params);
+
+    const newUrl = params.toString() ? `?${params.toString()}` : '/calendar';
+    window.history.pushState({}, '', newUrl);
   };
 
   const filteredConferences = useMemo(() => {
@@ -82,7 +98,12 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
     }
 
     if (filters.subject) {
-      result = result.filter(conf => conf.sub === filters.subject);
+      result = result.filter(conf => {
+        if (Array.isArray(conf.sub)) {
+          return conf.sub.includes(filters.subject);
+        }
+        return conf.sub === filters.subject;
+      });
     }
 
     return result;
@@ -263,138 +284,6 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
           borderColor="gray.200"
           p={{ base: '4', md: '6' }}
           boxShadow="0 1px 3px rgba(0, 0, 0, 0.1)"
-          css={{
-            '.fc': {
-              fontFamily: 'inherit',
-            },
-            // Toolbar buttons - same style as our buttons
-            '.fc .fc-button': {
-              background: 'var(--chakra-colors-brand-500)',
-              borderColor: 'var(--chakra-colors-brand-500)',
-              textTransform: 'capitalize',
-              fontWeight: '500',
-              padding: '0.5rem 1rem',
-              borderRadius: '8px',
-              color: 'white',
-              transition: 'all 0.2s ease-in-out',
-              outline: 'none !important',
-              boxShadow: 'none !important',
-            },
-            '.fc .fc-button:hover': {
-              background: 'var(--chakra-colors-brand-600)',
-              borderColor: 'var(--chakra-colors-brand-600)',
-              transform: 'translateY(-1px)',
-              boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4) !important',
-            },
-            '.fc .fc-button:active': {
-              transform: 'scale(0.98)',
-              boxShadow: 'none !important',
-            },
-            '.fc .fc-button:focus, .fc .fc-button:focus-visible': {
-              outline: 'none !important',
-              boxShadow: 'none !important',
-              background: 'var(--chakra-colors-brand-500)',
-              borderColor: 'var(--chakra-colors-brand-500)',
-            },
-            '.fc .fc-button-active': {
-              background: 'var(--chakra-colors-brand-600)',
-              borderColor: 'var(--chakra-colors-brand-600)',
-              boxShadow: 'none !important',
-            },
-            '.fc .fc-button-active:focus, .fc .fc-button-active:focus-visible': {
-              outline: 'none !important',
-              boxShadow: 'none !important',
-              background: 'var(--chakra-colors-brand-600)',
-              borderColor: 'var(--chakra-colors-brand-600)',
-            },
-            '.fc .fc-button:disabled': {
-              opacity: '0.4',
-              cursor: 'not-allowed',
-            },
-            // Title
-            '.fc .fc-toolbar-title': {
-              fontSize: '1.5rem',
-              fontWeight: '600',
-              color: 'var(--chakra-colors-gray-800)',
-            },
-            // Grid borders - softer
-            '.fc-theme-standard td, .fc-theme-standard th': {
-              borderColor: 'var(--chakra-colors-gray-200)',
-            },
-            '.fc-theme-standard .fc-scrollgrid': {
-              borderColor: 'var(--chakra-colors-gray-200)',
-            },
-            // Day numbers
-            '.fc .fc-daygrid-day-number': {
-              color: 'var(--chakra-colors-gray-700)',
-              padding: '0.5rem',
-              fontSize: '0.9rem',
-            },
-            '.fc .fc-day-today .fc-daygrid-day-number': {
-              background: 'var(--chakra-colors-brand-500)',
-              color: 'white',
-              borderRadius: '50%',
-              width: '1.8rem',
-              height: '1.8rem',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            },
-            // Column headers
-            '.fc .fc-col-header-cell-cushion': {
-              color: 'var(--chakra-colors-gray-600)',
-              fontWeight: '600',
-              fontSize: '0.875rem',
-              padding: '0.75rem',
-            },
-            '.fc .fc-col-header-cell': {
-              background: 'var(--chakra-colors-gray-50)',
-              borderColor: 'var(--chakra-colors-gray-200)',
-            },
-            // Today background
-            '.fc .fc-day-today': {
-              background: 'var(--chakra-colors-brand-50) !important',
-            },
-            // Events
-            '.fc .fc-event': {
-              cursor: 'pointer',
-              borderRadius: '6px',
-              padding: '2px 6px',
-              fontSize: '0.875rem',
-              border: 'none',
-              transition: 'all 0.2s ease-in-out',
-            },
-            '.fc .fc-event:hover': {
-              transform: 'translateY(-1px)',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.15)',
-            },
-            '.fc .fc-event-time': {
-              display: 'none !important',
-            },
-            '.fc-timegrid-event .fc-event-time': {
-              display: 'block !important',
-              fontWeight: '600',
-            },
-            // Mobile responsive
-            '@media (max-width: 768px)': {
-              '.fc .fc-toolbar': {
-                flexDirection: 'column',
-                gap: '0.75rem',
-                alignItems: 'stretch',
-              },
-              '.fc .fc-toolbar-chunk': {
-                display: 'flex',
-                justifyContent: 'center',
-              },
-              '.fc .fc-toolbar-title': {
-                fontSize: '1.25rem',
-              },
-              '.fc .fc-button': {
-                padding: '0.375rem 0.75rem',
-                fontSize: '0.875rem',
-              },
-            },
-          }}
         >
           <FullCalendar
             ref={calendarRef}

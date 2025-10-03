@@ -145,7 +145,7 @@
 
 - title: CVPR
   year: 2025
-  id: cvpr25
+  id: cvpr25-alt
   full_name: ''
   link: https://cvpr.thecvf.com/Conferences/2025
   deadline: '2024-11-15 06:59:59'
@@ -405,7 +405,7 @@
 
 - title: WACV
   year: 2025
-  id: wacv25
+  id: wacv25-round1
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: https://wacv2025.thecvf.com/
   deadline: '2024-07-14 23:59:59'
@@ -421,7 +421,7 @@
   sub:
   - ML
   - CV
-  note: ''
+  note: 'Round 1 submission'
 
 - title: AAAI
   year: 2025
