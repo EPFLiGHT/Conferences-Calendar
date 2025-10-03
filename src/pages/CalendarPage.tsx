@@ -270,7 +270,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
           </Button>
           <Button
             onClick={handleExportAll}
-            bg="brand.500"
+            bg="brand.400"
             color="white"
             size="md"
             px="6"
@@ -278,9 +278,9 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
             position="relative"
             zIndex="1"
             _hover={{
-              bg: 'brand.600',
+              bg: 'brand.500',
               transform: 'translateY(-2px)',
-              boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4)'
+              boxShadow: '0 4px 12px rgba(93, 159, 210, 0.4)'
             }}
             _active={{ transform: 'scale(0.98)' }}
           >
@@ -439,7 +439,7 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
               <Flex gap="3" wrap="wrap" direction={{ base: 'column', md: 'row' }}>
                 <Button
                   onClick={handleExportEvent}
-                  bg="brand.500"
+                  bg="brand.400"
                   color="white"
                   size="sm"
                   px="4"
@@ -448,9 +448,9 @@ export default function CalendarPage({ conferences }: CalendarPageProps): JSX.El
                   position="relative"
                   zIndex="1"
                   _hover={{
-                    bg: 'brand.600',
+                    bg: 'brand.500',
                     transform: 'translateY(-2px)',
-                    boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4)'
+                    boxShadow: '0 4px 12px rgba(93, 159, 210, 0.4)'
                   }}
                   _active={{ transform: 'scale(0.98)' }}
                 >
