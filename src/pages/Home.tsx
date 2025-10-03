@@ -57,8 +57,14 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
       });
     }
 
-    // Sort
+    // Sort by year (most recent first), then by deadline
     result.sort((a, b) => {
+      // First sort by year (descending)
+      if (a.year !== b.year) {
+        return b.year - a.year;
+      }
+
+      // Then by selected sort option
       if (filters.sortBy === 'deadline') {
         const aNext = getNextDeadline(a);
         const bNext = getNextDeadline(b);

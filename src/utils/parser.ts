@@ -97,8 +97,23 @@ export function parseConferences(yamlString: string): Conference[] {
 export function getDeadlineInfo(conference: Conference, userTimezone: string = 'local'): DeadlineInfo[] {
   const deadlines: DeadlineInfo[] = [];
 
+  console.log(`[getDeadlineInfo] Conference: ${conference.id}`, {
+    abstract_deadline: conference.abstract_deadline,
+    deadline: conference.deadline,
+    timezone: conference.timezone
+  });
+
   if (conference.abstract_deadline) {
-    const dt = DateTime.fromISO(conference.abstract_deadline, { zone: conference.timezone });
+    // Replace space with 'T' to make it ISO 8601 compliant
+    const isoString = conference.abstract_deadline.replace(' ', 'T');
+    const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
+    console.log(`[getDeadlineInfo] Abstract deadline parse:`, {
+      input: conference.abstract_deadline,
+      isoString,
+      zone: conference.timezone,
+      isValid: dt.isValid,
+      result: dt.isValid ? dt.toISO() : 'INVALID'
+    });
     if (dt.isValid) {
       deadlines.push({
         label: 'Abstract Deadline',
@@ -109,7 +124,16 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
   }
 
   if (conference.deadline) {
-    const dt = DateTime.fromISO(conference.deadline, { zone: conference.timezone });
+    // Replace space with 'T' to make it ISO 8601 compliant
+    const isoString = conference.deadline.replace(' ', 'T');
+    const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
+    console.log(`[getDeadlineInfo] Submission deadline parse:`, {
+      input: conference.deadline,
+      isoString,
+      zone: conference.timezone,
+      isValid: dt.isValid,
+      result: dt.isValid ? dt.toISO() : 'INVALID'
+    });
     if (dt.isValid) {
       deadlines.push({
         label: 'Submission Deadline',
@@ -119,15 +143,22 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
     }
   }
 
+  console.log(`[getDeadlineInfo] Total deadlines found: ${deadlines.length}`);
   return deadlines;
 }
 
 export function getNextDeadline(conference: Conference): DeadlineInfo | null {
   const deadlines = getDeadlineInfo(conference);
+  if (deadlines.length === 0) return null;
+
   const now = DateTime.now();
 
-  const upcoming = deadlines.filter((d) => d.datetime > now);
-  return upcoming.length > 0 ? upcoming[0] : null;
+  // First try to find upcoming deadlines
+  const upcoming = deadlines.filter((d) => d.localDatetime > now);
+  if (upcoming.length > 0) return upcoming[0];
+
+  // If no upcoming deadlines, return the most recent expired one
+  return deadlines[deadlines.length - 1];
 }
 
 export function formatDeadline(datetime: DateTime, timezone: string): string {

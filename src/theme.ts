@@ -9,8 +9,8 @@ export const system = createSystem(defaultConfig, {
           100: { value: '#e6f2ff' },
           200: { value: '#d9ebff' },
           300: { value: '#a8cef7' },
-          400: { value: '#5d9fd2' },  // LiGHT Lab light blue
-          500: { value: '#2e5fa9' },  // LiGHT Lab dark blue
+          400: { value: '#5d9fd2' },
+          500: { value: '#2e5fa9' },
           600: { value: '#234a87' },
           700: { value: '#1a3766' },
           800: { value: '#122751' },

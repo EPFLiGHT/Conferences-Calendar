@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react';
+import { DateTime } from 'luxon';
 import Countdown from './Countdown';
 import { getNextDeadline, getDeadlineInfo } from '../utils/parser';
 import { Conference } from '../types/conference';
@@ -101,7 +102,7 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
       </VStack>
 
       {/* Deadlines */}
-      {allDeadlines.length > 0 && (
+      {allDeadlines.length > 0 ? (
         <VStack
           align="stretch"
           gap="4"
@@ -112,56 +113,61 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
           borderColor="gray.200"
           mb="4"
         >
-          {allDeadlines.map((deadline, idx) => (
-            <VStack key={idx} align="stretch" gap="2">
-              <Text
-                fontSize="xs"
-                fontWeight="600"
-                color="brand.500"
-                textTransform="uppercase"
-                letterSpacing="wider"
-              >
-                {deadline.label}
-              </Text>
-              <VStack align="stretch" gap="1">
-                <Flex fontSize="sm" gap="2">
-                  <Text color="gray.600" fontWeight="500" minW="60px">
-                    Original:
+          {allDeadlines.map((deadline, idx) => {
+            const now = DateTime.now();
+            const isExpired = deadline.localDatetime <= now;
+
+            return (
+              <VStack key={idx} align="stretch" gap="3">
+                <VStack align="stretch" gap="1">
+                  <Text
+                    fontSize="xs"
+                    fontWeight="600"
+                    color="brand.500"
+                    textTransform="uppercase"
+                    letterSpacing="wider"
+                  >
+                    {deadline.label}
                   </Text>
-                  <Text color="gray.800" fontFamily="mono" fontSize="xs">
-                    {deadline.datetime.toFormat('MMM dd, yyyy HH:mm')} {conference.timezone}
-                  </Text>
-                </Flex>
-                <Flex fontSize="sm" gap="2">
-                  <Text color="gray.600" fontWeight="500" minW="60px">
-                    Local:
-                  </Text>
-                  <Text color="gray.800" fontFamily="mono" fontSize="xs">
-                    {deadline.localDatetime.toFormat('MMM dd, yyyy HH:mm')} {deadline.localDatetime.zoneName}
-                  </Text>
-                </Flex>
+                  <Flex fontSize="sm" gap="2">
+                    <Text color="gray.600" fontWeight="500" minW="60px">
+                      Original:
+                    </Text>
+                    <Text color="gray.800" fontFamily="mono" fontSize="xs">
+                      {deadline.datetime.toFormat('MMM dd, yyyy HH:mm')} {conference.timezone}
+                    </Text>
+                  </Flex>
+                  <Flex fontSize="sm" gap="2">
+                    <Text color="gray.600" fontWeight="500" minW="60px">
+                      Local:
+                    </Text>
+                    <Text color="gray.800" fontFamily="mono" fontSize="xs">
+                      {deadline.localDatetime.toFormat('MMM dd, yyyy HH:mm')} {deadline.localDatetime.zoneName}
+                    </Text>
+                  </Flex>
+                </VStack>
+
+                {/* Countdown or Expired */}
+                <Box
+                  p="3"
+                  bg={isExpired ? 'red.50' : 'blue.50'}
+                  borderRadius="md"
+                  border="1px"
+                  borderColor={isExpired ? 'red.200' : 'blue.200'}
+                >
+                  {isExpired ? (
+                    <Text fontSize="sm" color="red.600" fontWeight="600">
+                      Expired
+                    </Text>
+                  ) : (
+                    <Countdown deadline={deadline.localDatetime} label="Time remaining" />
+                  )}
+                </Box>
               </VStack>
-            </VStack>
-          ))}
+            );
+          })}
         </VStack>
-      )}
-
-      {/* Countdown */}
-      {nextDeadline && (
-        <Box
-          p="4"
-          bg="blue.50"
-          borderRadius="lg"
-          border="1px"
-          borderColor="blue.200"
-          mb="4"
-        >
-          <Countdown deadline={nextDeadline.localDatetime} label={`Next: ${nextDeadline.label}`} />
-        </Box>
-      )}
-
-      {/* No Deadlines */}
-      {!nextDeadline && allDeadlines.length === 0 && (
+      ) : (
         <Box
           p="3"
           textAlign="center"
