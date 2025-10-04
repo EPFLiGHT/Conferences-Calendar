@@ -60,7 +60,7 @@ Conference information is stored in `public/data/conferences.yaml`. Each confere
   end: 2025-05-25                # Conference end date (YYYY-MM-DD)
   paperslink: https://...        # Optional: Link to accepted papers
   pwclink: https://...           # Optional: Papers with Code link
-  hindex: 150.0                  # Optional: H-index score
+  hindex: 150.0                  # Optional: h5-index from Google Scholar Metrics
   sub: ML                        # Subject area (e.g., ML, CV, NLP, SP)
   note: Premier ML conference    # Optional: Additional notes
 ```
@@ -69,10 +69,12 @@ Conference information is stored in `public/data/conferences.yaml`. Each confere
 - `title` - Short conference name
 - `year` - Conference year
 - `id` - Unique identifier (format: `lowercasetitle` + last 2 digits of year)
-- `timezone` - Valid [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+- `timezone` - Valid [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) ([find timezones here](https://momentjs.com/timezone/))
 
 ### Optional Fields
 All other fields are optional. If omitted, they will display as "TBA" (To Be Announced).
+
+**Note:** The `hindex` field refers to the h5-index from [Google Scholar Metrics](https://scholar.google.com/citations?view_op=top_venues&vq=eng).
 
 ## Project Structure
 
