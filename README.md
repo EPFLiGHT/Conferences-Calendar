@@ -79,15 +79,21 @@ All other fields are optional. If omitted, they will display as "TBA" (To Be Ann
 ```
 Conferences-Calendar/
 ├── public/
-│   └── data/
-│       └── conferences.yaml   # Conference data
+│   ├── data/
+│   │   └── conferences.yaml   # Conference data
+│   └── *.svg, *.png           # Logo and assets
 ├── src/
-│   ├── components/            # React components
-│   ├── pages/                 # Page components
-│   ├── utils/                 # Utilities
-│   └── styles/                # CSS styles
+│   ├── app/                   # Next.js app router
+│   │   ├── calendar/          # Calendar page
+│   │   ├── layout.tsx         # Root layout
+│   │   └── page.tsx           # Home page
+│   ├── components/            # Reusable React components
+│   ├── types/                 # TypeScript type definitions
+│   ├── utils/                 # Utility functions
+│   ├── styles/                # CSS styles
+│   └── theme.ts               # Chakra UI theme
 ├── scripts/
-│   └── validate.js            # Validation script
+│   └── validate.js            # YAML validation script
 └── package.json
 ```
 
@@ -101,14 +107,50 @@ Conferences-Calendar/
 - **Package Manager:** pnpm
 - **Deployment:** GitHub Pages
 
+## Contributing
+
+We welcome contributions to improve the conference deadlines database! Here's how you can help:
+
+### Adding or Updating Conferences
+
+**Option 1: Submit an Issue (Easiest)**
+
+Not familiar with Git? No problem! Simply [open an issue](https://github.com/EPFLiGHT/Conferences-Calendar/issues/new/choose) using our conference addition template. Provide the conference details, and we'll add it for you.
+
+**Option 2: Submit a Pull Request**
+
+1. **Fork the repository** and create a new branch
+2. **Edit only the YAML file**: `public/data/conferences.yaml`
+3. Follow the conference data schema outlined above
+4. **Validate your changes** by running:
+   ```bash
+   pnpm validate
+   ```
+5. **Submit a pull request** with a clear description of the conferences added/updated
+
+### Important Guidelines
+
+- ⚠️ **Only modify** `public/data/conferences.yaml` - do not change any code files
+- ✅ Ensure all required fields (`title`, `year`, `id`, `timezone`) are included
+- ✅ Use valid [IANA timezone identifiers](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+- ✅ Follow the naming convention for `id`: lowercase title + last 2 digits of year (e.g., `neurips25`)
+- ✅ Double-check dates and deadlines for accuracy
+- ✅ Run validation before submitting your PR
+
+### Reporting Issues
+
+If you find incorrect information or bugs, please [open an issue](https://github.com/EPFLiGHT/Conferences-Calendar/issues) with details.
+
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
 
-## Maintainers
+## Maintainer
 
-This project is maintained by [LiGHT Lab](https://github.com/LiGHT-Lab).
+This project is maintained by [Omar Ziyad Azgaoui](https://github.com/AZOGOAT).
+
+For questions or suggestions, contact: [omar.azgaoui@epfl.ch](mailto:omar.azgaoui@epfl.ch)
 
 ---
 
-Made with ❤️ by LiGHT Lab
+Made with ❤️ by [LiGHT Lab](https://github.com/EPFLiGHT)

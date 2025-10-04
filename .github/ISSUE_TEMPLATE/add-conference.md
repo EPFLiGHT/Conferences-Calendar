@@ -1,6 +1,6 @@
 ---
 name: Add a Conference
-about: Submit a new conference to the calendar
+about: Request a new conference to be added to the calendar
 title: '[ADD] Conference Name Year'
 labels: 'conference-addition'
 assignees: ''
@@ -8,45 +8,48 @@ assignees: ''
 
 ## Conference Information
 
-Please provide the following information about the conference you'd like to add:
+**Thank you for helping improve our conference calendar!** Please fill in the information below. Only the first 4 fields are required - provide as much detail as you can, and we'll handle the rest.
 
-### Required Information
+---
 
-- **Conference Name (short):**
-- **Year:**
-- **Unique ID:** (lowercase name + last 2 digits of year, e.g., neurips25)
-- **Timezone:** (IANA timezone, e.g., UTC, America/New_York)
+### ✅ Required Fields
 
-### Optional Information
+- **Conference Name (short):** *(e.g., NeurIPS, CVPR, ICML)*
+- **Year:** *(e.g., 2025)*
+- **Unique ID:** *(lowercase name + last 2 digits of year, e.g., "neurips25")*
+- **Timezone:** *(Find yours [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), e.g., "America/Los_Angeles", "Europe/Paris", "UTC")*
 
-- **Full Conference Name:**
+---
+
+### 📋 Optional Fields *(Fill in what you know - anything missing will show as "TBA")*
+
+- **Full Conference Name:** *(e.g., "Conference on Neural Information Processing Systems")*
 - **Website Link:**
-- **Submission Deadline:** (YYYY-MM-DD HH:MM)
-- **Abstract Deadline:** (YYYY-MM-DD HH:MM)
-- **Location:** (City, Country)
-- **Conference Date (readable):** (e.g., "June 10-17, 2025")
-- **Conference Start Date:** (YYYY-MM-DD)
-- **Conference End Date:** (YYYY-MM-DD)
+- **Submission Deadline:** *(Format: YYYY-MM-DD HH:MM, e.g., "2025-05-21 23:59")*
+- **Abstract Deadline:** *(Format: YYYY-MM-DD HH:MM)*
+- **Location:** *(City, Country)*
+- **Conference Dates:** *(Human-readable, e.g., "June 10-17, 2025")*
+- **Conference Start Date:** *(Format: YYYY-MM-DD)*
+- **Conference End Date:** *(Format: YYYY-MM-DD)*
 - **Accepted Papers Link:**
 - **Papers with Code Link:**
-- **H-Index:**
-- **Subject Area:** (e.g., ML, CV, NLP, SP, AI)
-- **Additional Notes:**
+- **H-Index:** *(Approximate score)*
+- **Subject Area:** *(Choose one: ML, CV, NLP, SP, AI, or similar)*
+- **Notes:** *(Any additional information)*
 
 ---
 
-## Contribution Checklist
+## ✓ Checklist
 
-Before submitting, please ensure:
+Before submitting, please verify:
 
-- [ ] I have checked that this conference is not already listed
-- [ ] The conference ID is unique and follows the format (lowercase + year)
-- [ ] The timezone is a valid [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
-- [ ] All dates follow the specified formats (YYYY-MM-DD HH:MM for deadlines, YYYY-MM-DD for dates)
-- [ ] I have provided at least the required fields
+- [ ] This conference is not already listed in the [calendar](https://epflight.github.io/Conferences-Calendar/)
+- [ ] The conference ID is unique and follows the naming format
+- [ ] The timezone is a valid [IANA timezone identifier](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+- [ ] All required fields are filled in
 
 ---
 
-## Additional Context
+## 💬 Additional Information
 
-Add any other context or information about the conference here.
+*Add any other context, notes, or questions here.*
