@@ -26,7 +26,18 @@ export default function Footer(): JSX.Element {
               fontWeight="500"
               _hover={{ textDecoration: 'underline' }}
             >
-              AZO from the LiGHT Lab
+              AZO
+            </Link>
+            {' '}from the{' '}
+            <Link
+              href="https://github.com/EPFLiGHT"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="brand.500"
+              fontWeight="500"
+              _hover={{ textDecoration: 'underline' }}
+            >
+              LiGHT Lab
             </Link>
           </Text>
           <Text fontSize="sm" color="gray.600">
