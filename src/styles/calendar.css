@@ -5,13 +5,13 @@
 
 /* Toolbar buttons */
 .fc .fc-button {
-  background: var(--chakra-colors-brand-500);
-  border-color: var(--chakra-colors-brand-500);
+  background: #2e5ea8 !important;
+  border-color: #2e5ea8 !important;
   text-transform: capitalize;
   font-weight: 500;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  color: white;
+  color: white !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -19,18 +19,18 @@
 /* Remove hover effects for prev/next buttons */
 .fc .fc-prev-button:hover,
 .fc .fc-next-button:hover {
-  background: var(--chakra-colors-brand-500) !important;
-  border-color: var(--chakra-colors-brand-500) !important;
+  background: #2e5ea8 !important;
+  border-color: #2e5ea8 !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
 /* Keep hover effect for other buttons (view switcher) */
 .fc .fc-button:not(.fc-prev-button):not(.fc-next-button):hover {
-  background: var(--chakra-colors-brand-600);
-  border-color: var(--chakra-colors-brand-600);
+  background: #254b85 !important;
+  border-color: #254b85 !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(46, 95, 169, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(46, 94, 168, 0.4) !important;
 }
 
 .fc .fc-button:active {
@@ -42,13 +42,13 @@
 .fc .fc-button:focus-visible {
   outline: none !important;
   box-shadow: none !important;
-  background: var(--chakra-colors-brand-500);
-  border-color: var(--chakra-colors-brand-500);
+  background: #2e5ea8 !important;
+  border-color: #2e5ea8 !important;
 }
 
 .fc .fc-button-active {
-  background: var(--chakra-colors-brand-600);
-  border-color: var(--chakra-colors-brand-600);
+  background: #254b85 !important;
+  border-color: #254b85 !important;
   box-shadow: none !important;
 }
 
@@ -56,8 +56,8 @@
 .fc .fc-button-active:focus-visible {
   outline: none !important;
   box-shadow: none !important;
-  background: var(--chakra-colors-brand-600);
-  border-color: var(--chakra-colors-brand-600);
+  background: #254b85 !important;
+  border-color: #254b85 !important;
 }
 
 .fc .fc-button:disabled {
@@ -69,28 +69,28 @@
 .fc .fc-toolbar-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--chakra-colors-gray-800);
+  color: #1a202c;
 }
 
 /* Grid borders */
 .fc-theme-standard td,
 .fc-theme-standard th {
-  border-color: var(--chakra-colors-gray-200);
+  border-color: #e2e8f0;
 }
 
 .fc-theme-standard .fc-scrollgrid {
-  border-color: var(--chakra-colors-gray-200);
+  border-color: #e2e8f0;
 }
 
 /* Day numbers */
 .fc .fc-daygrid-day-number {
-  color: var(--chakra-colors-gray-700);
+  color: #4a5568;
   padding: 0.5rem;
   font-size: 0.9rem;
 }
 
 .fc .fc-day-today .fc-daygrid-day-number {
-  background: var(--chakra-colors-brand-500);
+  background: #2e5ea8;
   color: white;
   border-radius: 50%;
   width: 1.8rem;
@@ -102,20 +102,20 @@
 
 /* Column headers */
 .fc .fc-col-header-cell-cushion {
-  color: var(--chakra-colors-gray-600);
+  color: #718096;
   font-weight: 600;
   font-size: 0.875rem;
   padding: 0.75rem;
 }
 
 .fc .fc-col-header-cell {
-  background: var(--chakra-colors-gray-50);
-  border-color: var(--chakra-colors-gray-200);
+  background: #f7fafc;
+  border-color: #e2e8f0;
 }
 
 /* Today background */
 .fc .fc-day-today {
-  background: var(--chakra-colors-brand-50) !important;
+  background: #ebf4fa !important;
 }
 
 /* Events */
