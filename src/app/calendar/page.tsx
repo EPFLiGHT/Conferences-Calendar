@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { Suspense, useState, useEffect, useMemo, useRef } from 'react';
 import { useSearchParams } from 'next/navigation';
 import {
   Box,
@@ -35,7 +35,7 @@ interface SelectedEvent {
   el: HTMLElement;
 }
 
-export default function Calendar() {
+function CalendarContent() {
   const calendarRef = useRef<FullCalendar>(null);
   const searchParams = useSearchParams();
   const [conferences, setConferences] = useState<Conference[]>([]);
@@ -571,5 +571,21 @@ export default function Calendar() {
       </Box>
       <Footer />
     </>
+  );
+}
+
+export default function Calendar() {
+  return (
+    <Suspense
+      fallback={
+        <Center minH="100vh">
+          <Text fontSize="lg" color="gray.600">
+            Loading conferences...
+          </Text>
+        </Center>
+      }
+    >
+      <CalendarContent />
+    </Suspense>
   );
 }
