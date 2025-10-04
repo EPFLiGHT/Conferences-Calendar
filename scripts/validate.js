@@ -157,7 +157,7 @@ function validateConference(conf, index) {
     const abstract = DateTime.fromISO(conf.abstract_deadline);
     const submission = DateTime.fromISO(conf.deadline);
     if (abstract.isValid && submission.isValid && abstract > submission) {
-      warning(`${confId}: Abstract deadline is after submission deadline`);
+      warning(`${confId}: Abstract deadline is after paper submission deadline`);
     }
   }
 }

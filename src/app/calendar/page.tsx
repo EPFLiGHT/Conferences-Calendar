@@ -434,7 +434,7 @@ function CalendarContent() {
                         <Text fontSize="sm" color="gray.800">
                           {selectedEvent.event.extendedProps.type === 'abstract'
                             ? 'Abstract Deadline'
-                            : 'Submission Deadline'}
+                            : 'Paper Deadline'}
                         </Text>
                       </VStack>
                       <VStack align="start" gap="1">

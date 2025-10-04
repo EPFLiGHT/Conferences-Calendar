@@ -100,12 +100,12 @@ export function conferenceToICSEvents(conference: Conference): ICSEvent[] {
     });
   }
 
-  // Submission deadline
+  // Paper submission deadline
   if (conference.deadline) {
     const dt = DateTime.fromISO(conference.deadline, { zone: conference.timezone });
     events.push({
       uid: `deadline-${conference.id}@conference-deadlines`,
-      title: `Submission Deadline: ${conference.title} ${conference.year}`,
+      title: `Paper Deadline: ${conference.title} ${conference.year}`,
       start: dt,
       end: dt.plus({ hours: 1 }),
       isAllDay: false,
