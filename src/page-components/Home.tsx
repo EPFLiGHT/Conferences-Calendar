@@ -57,24 +57,34 @@ export default function Home({ conferences }: HomeProps): JSX.Element {
       });
     }
 
-    // Sort by year (most recent first), then by deadline
+    // Sort based on selected sort option
     result.sort((a, b) => {
-      // First sort by year (descending)
-      if (a.year !== b.year) {
-        return b.year - a.year;
-      }
-
-      // Then by selected sort option
       if (filters.sortBy === 'deadline') {
         const aNext = getNextDeadline(a);
         const bNext = getNextDeadline(b);
+        const now = DateTime.now();
 
-        // Conferences with upcoming deadlines first
-        if (!aNext && !bNext) return 0;
-        if (!aNext) return 1;
-        if (!bNext) return -1;
+        const aIsActive = aNext && aNext.localDatetime > now;
+        const bIsActive = bNext && bNext.localDatetime > now;
 
-        return aNext.datetime.toMillis() - bNext.datetime.toMillis();
+        // Active conferences (with upcoming deadlines) come first
+        if (aIsActive && !bIsActive) return -1;
+        if (!aIsActive && bIsActive) return 1;
+
+        // Both active: sort by nearest deadline first
+        if (aIsActive && bIsActive) {
+          return aNext.datetime.toMillis() - bNext.datetime.toMillis();
+        }
+
+        // Both expired: sort by most recent deadline first (reverse chronological)
+        if (!aIsActive && !bIsActive) {
+          if (!aNext && !bNext) return 0;
+          if (!aNext) return 1;
+          if (!bNext) return -1;
+          return bNext.datetime.toMillis() - aNext.datetime.toMillis();
+        }
+
+        return 0;
       } else if (filters.sortBy === 'hindex') {
         return (b.hindex || 0) - (a.hindex || 0);
       } else if (filters.sortBy === 'start') {
