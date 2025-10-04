@@ -1,14 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Box, Center, Text, Heading } from '@chakra-ui/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Home from '@/pages/Home';
+import CalendarPage from '@/page-components/CalendarPage';
 import { parseConferences } from '@/utils/parser';
 import type { Conference } from '@/types/conference';
 
-export default function Page() {
+export default function Calendar() {
   const [conferences, setConferences] = useState<Conference[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -59,7 +59,9 @@ export default function Page() {
   return (
     <>
       <Header />
-      <Home conferences={conferences} />
+      <Suspense fallback={<Center minH="100vh"><Text>Loading...</Text></Center>}>
+        <CalendarPage conferences={conferences} />
+      </Suspense>
       <Footer />
     </>
   );

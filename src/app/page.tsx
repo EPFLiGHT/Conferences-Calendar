@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { Box, Center, Text, Heading } from '@chakra-ui/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import CalendarPage from '@/pages/CalendarPage';
+import Home from '@/page-components/Home';
 import { parseConferences } from '@/utils/parser';
 import type { Conference } from '@/types/conference';
 
-export default function Calendar() {
+export default function Page() {
   const [conferences, setConferences] = useState<Conference[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -59,7 +59,7 @@ export default function Calendar() {
   return (
     <>
       <Header />
-      <CalendarPage conferences={conferences} />
+      <Home conferences={conferences} />
       <Footer />
     </>
   );
