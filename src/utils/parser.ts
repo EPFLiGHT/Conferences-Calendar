@@ -116,7 +116,7 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
     const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
     if (dt.isValid) {
       deadlines.push({
-        label: 'Paper Deadline',
+        label: 'Paper Submission',
         datetime: dt,
         localDatetime: userTimezone === 'local' ? dt.toLocal() : dt.setZone(userTimezone),
       });
