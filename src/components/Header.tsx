@@ -19,9 +19,9 @@ export default function Header(): JSX.Element {
       boxShadow="0 2px 16px rgba(46, 95, 169, 0.08)"
     >
       <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
-        <Flex align="center" justify="space-between" py="5" gap="8">
+        <Flex align="center" justify="space-between" py="5" gap={{ base: '2', md: '8' }}>
           {/* Logo and Brand */}
-          <Flex align="center" gap="6" flex="1">
+          <Flex align="center" gap={{ base: '2', md: '6' }} flex="1">
             <Link
               as="a"
               href="https://www.light-laboratory.org/"
@@ -35,8 +35,10 @@ export default function Header(): JSX.Element {
               <Image
                 src={`${process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : ''}/light-logo.svg`}
                 alt="LiGHT Lab"
-                h="60px"
+                h={{ base: '40px', md: '60px' }}
                 w="auto"
+                maxW={{ base: '100px', md: 'none' }}
+                objectFit="contain"
                 transition="all 0.3s"
                 _hover={{ filter: 'drop-shadow(0 4px 8px rgba(46, 95, 169, 0.3))' }}
               />
