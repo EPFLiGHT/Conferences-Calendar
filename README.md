@@ -72,7 +72,15 @@ Conference information is stored in `public/data/conferences.yaml`. Each confere
 - `timezone` - Valid [IANA timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) ([find timezones here](https://momentjs.com/timezone/))
 
 ### Optional Fields
-All other fields are optional. If omitted, they will display as "TBA" (To Be Announced).
+
+All other fields are optional. If omitted:
+
+- `full_name` - defaults to the `title` value
+- `place` and `date` - display as "TBA" (To Be Announced)
+- `hindex` - defaults to 0
+- `sub` - defaults to "General"
+- `note` - defaults to empty
+- `link`, `deadline`, `abstract_deadline`, `start`, `end`, `paperslink`, `pwclink` - not displayed if missing
 
 **Note:** The `hindex` field refers to the h5-index from [Google Scholar Metrics](https://scholar.google.com/citations?view_op=top_venues&vq=eng).
 
