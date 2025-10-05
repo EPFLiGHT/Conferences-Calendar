@@ -3,9 +3,41 @@
 import { usePathname } from 'next/navigation';
 import NextLink from 'next/link';
 import { Box, Container, Flex, HStack, Link, Text, Image } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
 
 export default function Header(): JSX.Element {
   const pathname = usePathname();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    let rafId: number | null = null;
+    let ticking = false;
+
+    const updateScrollProgress = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const scrollableHeight = documentHeight - windowHeight;
+      const progress = scrollableHeight > 0 ? (scrollTop / scrollableHeight) * 100 : 0;
+      setScrollProgress(progress);
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        rafId = requestAnimationFrame(updateScrollProgress);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, []);
 
   return (
     <Box
@@ -18,6 +50,43 @@ export default function Header(): JSX.Element {
       borderColor="brand.200"
       boxShadow="0 2px 16px rgba(46, 95, 169, 0.08)"
     >
+      {/* Scroll Progress Bar */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        right="0"
+        h="4px"
+        bg="rgba(46, 95, 169, 0.1)"
+        zIndex="101"
+      >
+        <Box
+          className="progress-bar"
+          h="100%"
+          w={`${scrollProgress}%`}
+          bg="linear-gradient(90deg, #2e5fa9 0%, #5d9fd2 50%, #60a5dc 100%)"
+          transition="width 0.1s linear"
+          boxShadow="0 0 16px rgba(46, 95, 169, 0.8), 0 0 8px rgba(93, 159, 210, 0.6)"
+          borderRadius="0 4px 4px 0"
+          style={{ willChange: 'width' }}
+        />
+      </Box>
+      <style jsx global>{`
+        .progress-bar::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 30px;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4));
+          animation: shimmer 2s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.8; }
+        }
+      `}</style>
       <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
         <Flex align="center" justify="space-between" py="5" gap={{ base: '2', md: '8' }}>
           {/* Logo and Brand */}
@@ -30,7 +99,8 @@ export default function Header(): JSX.Element {
               display="flex"
               alignItems="center"
               gap="4"
-              _hover={{ transform: 'scale(1.05)', transition: 'all 0.3s' }}
+              transition="all 0.3s"
+              _hover={{ transform: 'scale(1.05)' }}
             >
               <Image
                 src={`${process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : ''}/light-logo.svg`}
@@ -39,7 +109,6 @@ export default function Header(): JSX.Element {
                 w="auto"
                 maxW={{ base: '100px', md: 'none' }}
                 objectFit="contain"
-                transition="all 0.3s"
                 _hover={{ filter: 'drop-shadow(0 4px 8px rgba(46, 95, 169, 0.3))' }}
               />
               <Box display={{ base: 'none', lg: 'block' }}>
@@ -86,62 +155,45 @@ export default function Header(): JSX.Element {
 
           {/* Navigation */}
           <HStack gap="3">
-            <Link
-              as={NextLink}
-              href="/"
-              px="5"
-              py="2.5"
-              borderRadius="10px"
-              fontWeight="600"
-              fontSize="sm"
-              color={pathname === '/' ? 'white' : 'gray.600'}
-              bg={pathname === '/' ? 'brand.500' : 'transparent'}
-              border="2px solid"
-              borderColor={pathname === '/' ? 'brand.600' : 'transparent'}
-              transition="all 0.2s ease-in-out"
-              position="relative"
-              zIndex="1"
-              _hover={{
-                color: pathname === '/' ? 'white' : 'brand.500',
-                bg: pathname === '/' ? 'brand.600' : 'brand.50',
-                borderColor: pathname === '/' ? 'brand.600' : 'brand.200',
-                transform: 'translateY(-1px)',
-              }}
-              _active={{
-                transform: 'scale(0.98)',
-              }}
-              boxShadow={pathname === '/' ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
-            >
-              🏠 <Text as="span" display={{ base: 'none', sm: 'inline' }} ml="2">Home</Text>
-            </Link>
-            <Link
-              as={NextLink}
-              href="/calendar"
-              px="5"
-              py="2.5"
-              borderRadius="10px"
-              fontWeight="600"
-              fontSize="sm"
-              color={pathname === '/calendar' ? 'white' : 'gray.600'}
-              bg={pathname === '/calendar' ? 'brand.500' : 'transparent'}
-              border="2px solid"
-              borderColor={pathname === '/calendar' ? 'brand.600' : 'transparent'}
-              transition="all 0.2s ease-in-out"
-              position="relative"
-              zIndex="1"
-              _hover={{
-                color: pathname === '/calendar' ? 'white' : 'brand.500',
-                bg: pathname === '/calendar' ? 'brand.600' : 'brand.50',
-                borderColor: pathname === '/calendar' ? 'brand.600' : 'brand.200',
-                transform: 'translateY(-1px)',
-              }}
-              _active={{
-                transform: 'scale(0.98)',
-              }}
-              boxShadow={pathname === '/calendar' ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
-            >
-              📅 <Text as="span" display={{ base: 'none', sm: 'inline' }} ml="2">Calendar</Text>
-            </Link>
+            {[
+              { href: '/', label: 'Home', icon: '🏠' },
+              { href: '/calendar', label: 'Calendar', icon: '📅' },
+            ].map(({ href, label, icon }) => {
+              const isActive = pathname === href;
+              return (
+                <Link
+                  key={href}
+                  as={NextLink}
+                  href={href}
+                  px="5"
+                  py="2.5"
+                  borderRadius="10px"
+                  fontWeight="600"
+                  fontSize="sm"
+                  color={isActive ? 'white' : 'gray.600'}
+                  bg={isActive ? 'brand.500' : 'transparent'}
+                  border="2px solid"
+                  borderColor={isActive ? 'brand.600' : 'transparent'}
+                  transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
+                  boxShadow={isActive ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
+                  _hover={{
+                    color: isActive ? 'white' : 'brand.500',
+                    bg: isActive ? 'brand.600' : 'brand.50',
+                    borderColor: isActive ? 'brand.600' : 'brand.200',
+                    transform: 'translateY(-2px) scale(1.05)',
+                    boxShadow: isActive
+                      ? '0 8px 20px rgba(46, 95, 169, 0.4)'
+                      : '0 6px 16px rgba(46, 95, 169, 0.2)',
+                  }}
+                  _active={{
+                    transform: 'scale(0.95)',
+                    transition: 'all 0.1s ease',
+                  }}
+                >
+                  {icon} <Text as="span" display={{ base: 'none', sm: 'inline' }} ml="2">{label}</Text>
+                </Link>
+              );
+            })}
           </HStack>
         </Flex>
       </Container>

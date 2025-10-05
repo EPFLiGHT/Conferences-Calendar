@@ -5,7 +5,7 @@ import Countdown from './Countdown';
 import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { Conference } from '../types/conference';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 interface ConferenceCardProps {
   conference: Conference;
