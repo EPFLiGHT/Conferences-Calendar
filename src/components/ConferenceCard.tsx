@@ -10,19 +10,26 @@ const MotionBox = motion.create(Box);
 interface ConferenceCardProps {
   conference: Conference;
   onClick: () => void;
+  index?: number;
 }
 
-export default function ConferenceCard({ conference, onClick }: ConferenceCardProps): JSX.Element {
+export default function ConferenceCard({ conference, onClick, index = 0 }: ConferenceCardProps): JSX.Element {
   const allDeadlines = getDeadlineInfo(conference);
+
+  // Lighter animation for mobile (faster, less "aggressive")
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const animationDelay = isMobile ? (index % 12) * 0.05 : (index % 12) * 0.08;
+  const animationDuration = isMobile ? 0.4 : 0.6;
 
   return (
     <MotionBox
-      initial={{ opacity: 0, y: 20, scale: 0.96 }}
+      initial={{ opacity: 0, y: -30, scale: 0.95 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, margin: "-80px", amount: 0.2 }}
+      viewport={{ once: true, margin: "-30px", amount: 0.1 }}
       transition={{
-        duration: 0.5,
-        ease: [0.22, 1, 0.36, 1]
+        duration: animationDuration,
+        delay: animationDelay,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }}
       bg="white"
       borderRadius="xl"

@@ -199,11 +199,12 @@ export default function Page() {
                 </Text>
               </Box>
             ) : (
-              paginatedConferences.map((conference) => (
+              paginatedConferences.map((conference, index) => (
                 <ConferenceCard
                   key={conference.id}
                   conference={conference}
                   onClick={() => setSelectedConference(conference)}
+                  index={index}
                 />
               ))
             )}
