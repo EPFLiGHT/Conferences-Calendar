@@ -33,8 +33,8 @@ assignees: ''
 - **Conference End Date:** *(Format: YYYY-MM-DD)*
 - **Accepted Papers Link:**
 - **Papers with Code Link:**
-- **H-Index:** *(Approximate score)*
-- **Subject Area:** *(Choose one: ML, CV, NLP, SP, AI, or similar)*
+- **H-Index:** *(h5-index from [Google Scholar Metrics](https://scholar.google.com/citations?view_op=top_venues))*
+- **Subject Area:** *(Choose one: ML, CV, NLP, DM, SP, HCI, RO, SEC, PRIV, CONF, SHOP, CG, KR, AP)*
 - **Notes:** *(Any additional information)*
 
 ---

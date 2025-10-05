@@ -76,6 +76,25 @@ All other fields are optional. If omitted, they will display as "TBA" (To Be Ann
 
 **Note:** The `hindex` field refers to the h5-index from [Google Scholar Metrics](https://scholar.google.com/citations?view_op=top_venues&vq=eng).
 
+### Subject Tags
+
+The `sub` field categorizes conferences by research area. Available tags:
+
+- **ML** - Machine Learning
+- **CV** - Computer Vision
+- **NLP** - Natural Language Processing
+- **DM** - Data Mining
+- **SP** - Signal Processing
+- **HCI** - Human-Computer Interaction
+- **RO** - Robotics
+- **SEC** - Security
+- **PRIV** - Privacy
+- **CONF** - General Conference
+- **SHOP** - Workshop
+- **CG** - Computer Graphics
+- **KR** - Knowledge Representation
+- **AP** - Applications
+
 ## Project Structure
 
 ```
