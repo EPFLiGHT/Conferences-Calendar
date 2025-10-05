@@ -26,7 +26,6 @@ import { parseConferences } from '@/utils/parser';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '@/utils/ics';
 import type { Conference } from '@/types/conference';
 import { EventClickArg } from '@fullcalendar/core';
-import '@/styles/calendar.css';
 
 
 function CalendarContent() {

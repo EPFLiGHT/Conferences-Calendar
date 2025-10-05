@@ -111,8 +111,7 @@ Conferences-Calendar/
 │   ├── components/            # Reusable React components
 │   ├── types/                 # TypeScript type definitions
 │   ├── utils/                 # Utility functions
-│   ├── styles/                # CSS styles
-│   └── theme.ts               # Chakra UI theme
+│   └── theme.ts               # Chakra UI theme (includes all global styles)
 ├── scripts/
 │   └── validate.js            # YAML validation script
 └── package.json
