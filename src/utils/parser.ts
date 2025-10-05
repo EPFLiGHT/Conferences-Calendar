@@ -25,7 +25,9 @@ export function validateConference(conf: any, index: number): string[] {
   const dateFields = ['deadline', 'abstract_deadline', 'start', 'end'];
   dateFields.forEach((field) => {
     if (conf[field]) {
-      const parsed = DateTime.fromISO(conf[field]);
+      // Replace space with 'T' to make it ISO 8601 compliant
+      const isoString = String(conf[field]).replace(' ', 'T');
+      const parsed = DateTime.fromISO(isoString);
       if (!parsed.isValid) {
         errors.push(`Conference '${conf.id}': Invalid date format for '${field}': ${conf[field]}`);
       }

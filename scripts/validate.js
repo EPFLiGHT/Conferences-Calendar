@@ -58,18 +58,18 @@ function validateConference(conf, index) {
     }
   }
 
-  // Validate date formats
+  // Validate date formats (allow both HH:MM and HH:MM:SS)
   const dateTimeFields = ['deadline', 'abstract_deadline'];
   dateTimeFields.forEach(field => {
     if (conf[field]) {
       // Check if it's a string first
       if (typeof conf[field] !== 'string') {
-        error(`${confId}: Field '${field}' must be a string in format YYYY-MM-DD HH:MM`);
+        error(`${confId}: Field '${field}' must be a string in format YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM`);
         return;
       }
-      // Check format with regex
-      if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(conf[field])) {
-        error(`${confId}: Invalid datetime format for '${field}': ${conf[field]} (use YYYY-MM-DD HH:MM)`);
+      // Check format with regex (allow both with and without seconds)
+      if (!/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}(:\d{2})?$/.test(conf[field])) {
+        error(`${confId}: Invalid datetime format for '${field}': ${conf[field]} (use YYYY-MM-DD HH:MM:SS or YYYY-MM-DD HH:MM)`);
         return;
       }
       // Check if it's parseable (convert space to T for ISO parsing)
@@ -114,9 +114,9 @@ function validateConference(conf, index) {
   // Validate h-index
   if (conf.hindex !== undefined) {
     if (typeof conf.hindex !== 'number') {
-      error(`${confId}: H-index must be a number, got ${typeof conf.hindex}`);
+      error(`${confId}: H-index must be a number, got ${typeof conf.hindex}. Current value: ${JSON.stringify(conf.hindex)}`);
     } else if (conf.hindex < 0) {
-      error(`${confId}: H-index cannot be negative`);
+      error(`${confId}: H-index cannot be negative. Current value: ${conf.hindex}`);
     }
   }
 

@@ -8,12 +8,13 @@
   link: https://sp2026.ieee-security.org/
   place: San Francisco, California, USA
   date: May 18-21, 2026
-  start: '2026-05-18'
-  end: '2026-05-21'
+  start: "2026-05-18"
+  end: "2026-05-21"
   deadline: 2025-11-13 23:59
   abstract_deadline: 2025-06-05 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: CCS
   year: 2025
   id: ccs25
@@ -22,12 +23,13 @@
   link: https://www.sigsac.org/ccs/CCS2025
   place: Taipei, Taiwan
   date: October 13-17, 2025
-  start: '2025-10-13'
-  end: '2025-10-17'
+  start: "2025-10-13"
+  end: "2025-10-17"
   deadline: 2025-04-14 23:59
   abstract_deadline: 2025-01-09 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: USENIX Security
   year: 2026
   id: usenixsecurity26
@@ -36,12 +38,13 @@
   link: https://www.usenix.org/conference/usenixsecurity26
   place: Baltimore, MD, USA
   date: August 12-14, 2026
-  start: '2026-08-12'
-  end: '2026-08-14'
+  start: "2026-08-12"
+  end: "2026-08-14"
   deadline: 2026-02-05 23:59
   abstract_deadline: 2025-08-26 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: NDSS
   year: 2026
   id: ndss26
@@ -50,12 +53,13 @@
   link: https://www.ndss-symposium.org/ndss2026/submissions/call-for-papers/
   place: San Diego, CA, USA
   date: February 23-27, 2026
-  start: '2026-02-23'
-  end: '2026-02-27'
+  start: "2026-02-23"
+  end: "2026-02-27"
   deadline: 2025-08-06 23:59
   abstract_deadline: 2025-04-23 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: ESORICS
   year: 2025
   id: esorics25
@@ -64,11 +68,12 @@
   link: https://esorics2025.sciencesconf.org/
   place: Toulouse, France
   date: September 22-26, 2025
-  start: '2025-09-22'
-  end: '2025-09-26'
+  start: "2025-09-22"
+  end: "2025-09-26"
   deadline: 2025-04-29 23:59
   abstract_deadline: 2025-01-10 23:59
   sub: SEC
+
 - title: ASIACCS
   year: 2026
   id: asiaccs26
@@ -77,11 +82,12 @@
   link: https://asiaccs2026.cse.iitkgp.ac.in/call-for-papers/
   place: Bangalore, India
   date: June 1-6, 2026
-  start: '2026-06-01'
-  end: '2026-06-06'
+  start: "2026-06-01"
+  end: "2026-06-06"
   deadline: 2025-12-12 23:59
   abstract_deadline: 2025-08-25 23:59
   sub: SEC
+
 - title: CSF
   year: 2026
   id: csf26
@@ -90,11 +96,12 @@
   link: https://www.ieee-security.org/TC/CSF2026/
   place: Lisbon, Portugal
   date: July 26-29, 2026
-  start: '2026-07-26'
-  end: '2026-07-29'
+  start: "2026-07-26"
+  end: "2026-07-29"
   deadline: 2026-01-29 23:59
   abstract_deadline: 2025-07-24 23:59
   sub: SEC
+
 - title: CANS
   year: 2025
   id: cans25
@@ -103,10 +110,11 @@
   link: https://cy2sec.comm.eng.osaka-u.ac.jp/miyaji-lab/event/cans2025/index.html
   place: Osaka, Japan
   date: November 17-20, 2025
-  start: '2025-11-17'
-  end: '2025-11-20'
+  start: "2025-11-17"
+  end: "2025-11-20"
   deadline: 2025-04-17 23:59
   sub: SEC
+
 - title: WiSec
   year: 2026
   id: wisec26
@@ -115,11 +123,12 @@
   link: https://wisec26.events.cispa.de/
   place: Saarbrücken, Germany
   date: June 30-July 3, 2026
-  start: '2026-06-30'
-  end: '2026-07-03'
+  start: "2026-06-30"
+  end: "2026-07-03"
   deadline: 2026-03-03 23:59
   abstract_deadline: 2025-11-18 23:59
   sub: SEC
+
 - title: SOUPS
   year: 2025
   id: soups25
@@ -128,11 +137,12 @@
   link: https://www.usenix.org/conference/soups2025
   place: Seattle, WA, USA
   date: August 10-12, 2025
-  start: '2025-08-10'
-  end: '2025-08-12'
+  start: "2025-08-10"
+  end: "2025-08-12"
   deadline: 2025-02-13 23:59
   sub: SEC
   note: Co-located with USENIX Security. Paper registration due Feb 6 AoE
+
 - title: EuroUSEC
   year: 2025
   id: eurousec25
@@ -141,11 +151,12 @@
   link: https://eurousec2025.cis.strath.ac.uk/
   place: Manchester, UK
   date: September 10-September 11, 2025
-  start: '2025-09-10'
-  end: '2025-09-11'
+  start: "2025-09-10"
+  end: "2025-09-11"
   deadline: 2025-05-09 23:59
   sub: SEC
   note: Paper registration due May 5th AoE
+
 - title: FC
   year: 2026
   id: fc26
@@ -154,10 +165,11 @@
   link: https://fc26.ifca.ai
   place: St. Kitts
   date: March 2-6, 2026
-  start: '2026-03-02'
-  end: '2026-03-06'
+  start: "2026-03-02"
+  end: "2026-03-06"
   deadline: 2025-09-20 23:59
   sub: SEC
+
 - title: Euro S&P
   year: 2026
   id: eurosp26
@@ -166,24 +178,26 @@
   link: https://eurosp2026.ieee-security.org/
   place: Lisbon, Portugal
   date: July 6-10, 2026
-  start: '2026-07-06'
-  end: '2026-07-10'
+  start: "2026-07-06"
+  end: "2026-07-10"
   deadline: 2025-11-20 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: Sensors S&P
   year: 2025
   id: sensorssp25
   timezone: UTC
-  full_name: Second International Workshop on Security and Privacy of Sensing Systems
+  full_name: "Second\_International Workshop on Security and Privacy of Sensing Systems"
   link: https://emtechlab.github.io/sensors-security-privacy-workshop/
   place: Irvine, USA
   date: May 6, 2025
-  start: '2025-05-06'
-  end: '2025-05-06'
+  start: "2025-05-06"
+  end: "2025-05-06"
   deadline: 2025-02-08 23:59
   sub: SEC
   note: Co-located with Sensys at Cyber-Physical Systems and Internet-of-Things Week
+
 - title: ISC
   year: 2025
   id: isc25
@@ -192,23 +206,24 @@
   link: https://isc25.skku.edu/
   place: Seoul, South Korea
   date: October 20-22, 2025
-  start: '2025-10-20'
-  end: '2025-10-22'
+  start: "2025-10-20"
+  end: "2025-10-22"
   deadline: 2025-06-11 23:59
   sub: SEC
+
 - title: TrustCom
   year: 2025
   id: trustcom25
   timezone: UTC
-  full_name: International Conference on Trust, Security and Privacy in Computing
-    and Communications
+  full_name: International Conference on Trust, Security and Privacy in Computing and Communications
   link: https://ieee-aiplus-2025.org/trustcom.html
   place: Guiyang, China
   date: November 14-17, 2025
-  start: '2025-11-14'
-  end: '2025-11-17'
+  start: "2025-11-14"
+  end: "2025-11-17"
   deadline: 2025-08-01 23:59
   sub: SEC
+
 - title: FPS
   year: 2025
   id: fps25
@@ -217,10 +232,11 @@
   link: https://hub.imt-atlantique.fr/fps2025/
   place: Brest, France
   date: November 25-27, 2025
-  start: '2025-11-25'
-  end: '2025-11-27'
+  start: "2025-11-25"
+  end: "2025-11-27"
   deadline: 2025-09-15 23:59
   sub: SEC
+
 - title: SecureComm
   year: 2025
   id: securecomm25
@@ -229,21 +245,22 @@
   link: https://securecomm.eai-conferences.org/2025/
   place: Xiangtan, China
   date: July 4-6, 2025
-  start: '2025-07-04'
-  end: '2025-07-06'
+  start: "2025-07-04"
+  end: "2025-07-06"
   deadline: 2025-03-01 23:59
   sub: SEC
+
 - title: NSS-SocialSec
   year: 2024
   id: nsssocialsec24
   timezone: Asia/Dubai
-  full_name: International Conference on Network and System Security and International
-    Symposium on Security and Privacy in Social Networks and Big Data
+  full_name: International Conference on Network and System Security and International Symposium on Security and Privacy in Social Networks and Big Data
   link: http://nsclab.org/nss-socialsec2024/index.html
   place: Abu Dhabi, UAE
   date: Nov 20-22, 2024
   deadline: 2024-07-01 23:59
   sub: SEC
+
 - title: IMF
   year: 2025
   id: imf25
@@ -252,10 +269,11 @@
   link: https://www.imf-conference.org/cfp.html
   place: Albstadt, Germany
   date: September 16-17, 2025
-  start: '2025-09-16'
-  end: '2025-09-17'
+  start: "2025-09-16"
+  end: "2025-09-17"
   deadline: 2025-04-28 23:59
   sub: SEC
+
 - title: SciSec
   year: 2025
   id: scisec25
@@ -264,10 +282,11 @@
   link: https://scisec.org/index.html
   place: Wuhan, Hubei, China
   date: August 15-17, 2025
-  start: '2025-08-15'
-  end: '2025-08-17'
+  start: "2025-08-15"
+  end: "2025-08-17"
   deadline: 2025-04-30 23:59
   sub: SEC
+
 - title: EDId
   year: 2025
   id: edid25
@@ -276,10 +295,11 @@
   link: https://2025.ares-conference.eu/program/edid/
   place: Ghent, BE
   date: August 11-August 14, 2025
-  start: '2025-08-11'
-  end: '2025-08-14'
+  start: "2025-08-11"
+  end: "2025-08-14"
   deadline: 2025-05-15 23:59
   sub: SEC
+
 - title: SAFER
   year: 2025
   id: safer25
@@ -288,10 +308,11 @@
   link: https://2025.ares-conference.eu/program/safer/
   place: Ghent, BE
   date: August 11-14, 2025
-  start: '2025-08-11'
-  end: '2025-08-14'
+  start: "2025-08-11"
+  end: "2025-08-14"
   deadline: 2025-05-12 23:59
   sub: SEC
+
 - title: ICDIS
   year: 2024
   id: icdis24
@@ -300,24 +321,25 @@
   link: https://www.icdis.org/
   place: Leipzig, Germany
   date: November 25-28, 2024
-  start: '2024-11-25'
-  end: '2024-11-28'
+  start: "2024-11-25"
+  end: "2024-11-28"
   deadline: 2024-06-28 23:59
   sub: SEC
+
 - title: SAFE-ML
   year: 2025
   id: safeml25
   timezone: UTC
-  full_name: International Workshop on Secure, Accountable, and Verifiable Machine
-    Learning
+  full_name: International Workshop on Secure, Accountable, and Verifiable Machine Learning
   link: https://conf.researchr.org/home/icst-2025/safe-ml-2025
   place: Naples, Italy
   date: March 31-April 4, 2025
-  start: '2025-03-31'
-  end: '2025-04-04'
+  start: "2025-03-31"
+  end: "2025-04-04"
   deadline: 2025-01-03 23:59
   sub: SEC
   note: Co-located with ICST
+
 - title: IFIP SEC
   year: 2026
   id: ifipsec26
@@ -326,10 +348,11 @@
   link: https://ifipsec.org/cfp.html
   place: Perth, Australia
   date: June 9-11, 2026
-  start: '2026-06-09'
-  end: '2026-06-11'
+  start: "2026-06-09"
+  end: "2026-06-11"
   deadline: 2025-12-19 23:59
   sub: SEC
+
 - title: IFIP WNDSS
   year: 2025
   id: ifipwndss25
@@ -338,10 +361,11 @@
   link: https://ifiptc11.org/wg114-events/wg114-workshop
   place: Maribor, Slovenia
   date: May 23, 2025
-  start: '2025-05-23'
-  end: '2025-05-23'
+  start: "2025-05-23"
+  end: "2025-05-23"
   deadline: 2025-01-31 23:59
   sub: SEC
+
 - title: ITASEC
   year: 2025
   id: itasec25
@@ -350,10 +374,11 @@
   link: https://itasec.it/
   place: Bologna, IT
   date: February 3-8, 2025
-  start: '2025-02-03'
-  end: '2025-02-08'
+  start: "2025-02-03"
+  end: "2025-02-08"
   deadline: 2024-12-09 23:59
   sub: SEC
+
 - title: PETS
   year: 2026
   id: pets26
@@ -362,10 +387,11 @@
   link: https://www.petsymposium.org/cfp26.php
   place: Calgary, Canada
   date: July 20-25, 2026
-  start: '2026-07-20'
-  end: '2026-07-25'
+  start: "2026-07-20"
+  end: "2026-07-25"
   sub: PRIV
   note: Rolling deadline every quarter
+
 - title: PLAS
   year: 2024
   id: plas24
@@ -374,11 +400,12 @@
   link: https://plas24.github.io/
   place: Salt Lake City, USA
   date: October 14, 2024
-  start: '2024-10-14'
-  end: '2024-10-14'
+  start: "2024-10-14"
+  end: "2024-10-14"
   deadline: 2024-06-20 23:59
   sub: SEC
   note: Co-located with CCS 2024
+
 - title: PrivaCI
   year: 2026
   id: privaci26
@@ -387,10 +414,11 @@
   link: https://privaci.info/symposium/2026/cfp.html
   place: Urbana-Champaign, USA
   date: June 24-25, 2026
-  start: '2026-06-24'
-  end: '2026-06-25'
+  start: "2026-06-24"
+  end: "2026-06-25"
   deadline: 2026-02-13 23:59
   sub: PRIV
+
 - title: Inscrypt
   year: 2025
   id: inscrypt25
@@ -399,11 +427,12 @@
   link: https://inscrypt2025.xidian.edu.cn/
   place: Xi'an, China
   date: October 19-21, 2025
-  start: '2025-10-19'
-  end: '2025-10-21'
+  start: "2025-10-19"
+  end: "2025-10-21"
   deadline: 2025-06-15 23:59
   abstract_deadline: 2025-04-15 23:59
   sub: SEC
+
 - title: SAC
   year: 2025
   id: sac25
@@ -412,11 +441,12 @@
   link: https://sacworkshop.org/SAC25/
   place: Toronto, ON, Canada
   date: August 13-15, 2025
-  start: '2025-08-13'
-  end: '2025-08-15'
+  start: "2025-08-13"
+  end: "2025-08-15"
   deadline: 2025-05-07 23:59
   abstract_deadline: 2025-01-27 23:59
   sub: CONF
+
 - title: Crypto
   year: 2025
   id: crypto25
@@ -425,10 +455,11 @@
   link: https://crypto.iacr.org/2025/
   place: Santa Barbara, CA, USA
   date: August 17-21, 2025
-  start: '2025-08-17'
-  end: '2025-08-21'
+  start: "2025-08-17"
+  end: "2025-08-21"
   deadline: 2025-02-13 11:00
   sub: CONF
+
 - title: Eurocrypt
   year: 2026
   id: eurocrypt26
@@ -437,23 +468,24 @@
   link: https://eurocrypt.iacr.org/2026/
   place: Rome, Italy
   date: May 10-14, 2026
-  start: '2026-05-10'
-  end: '2026-05-14'
+  start: "2026-05-10"
+  end: "2026-05-14"
   deadline: 2025-10-02 23:59
   sub: CONF
+
 - title: Asiacrypt
   year: 2025
   id: asiacrypt25
   timezone: Etc/GMT
-  full_name: International Conference on the Theory and Application of Cryptology
-    and Information Security
+  full_name: International Conference on the Theory and Application of Cryptology and Information Security
   link: https://asiacrypt.iacr.org/2025/
   place: Melbourne, Australia
   date: December 8-12, 2025
-  start: '2025-12-08'
-  end: '2025-12-12'
+  start: "2025-12-08"
+  end: "2025-12-12"
   deadline: 2025-05-16 12:00
   sub: CONF
+
 - title: AFT
   year: 2025
   id: aft25
@@ -462,10 +494,11 @@
   link: https://aftconf.github.io/aft25/CFP.html
   place: Pittsburgh, PA, USA
   date: October 8-10, 2025
-  start: '2025-10-08'
-  end: '2025-10-10'
+  start: "2025-10-08"
+  end: "2025-10-10"
   deadline: 2025-05-28 23:59
   sub: SEC
+
 - title: TCC
   year: 2025
   id: tcc25
@@ -474,10 +507,11 @@
   link: https://tcc.iacr.org/2025/
   place: Aarhus, Denmark
   date: December 2-5, 2025
-  start: '2025-12-02'
-  end: '2025-12-05'
+  start: "2025-12-02"
+  end: "2025-12-05"
   deadline: 2025-05-27 23:59
   sub: CONF
+
 - title: PKC
   year: 2026
   id: pkc26
@@ -486,10 +520,11 @@
   link: https://pkc.iacr.org/2026/
   place: West Palm Beach, FL, USA
   date: May 25-28, 2026
-  start: '2026-05-25'
-  end: '2026-05-28'
+  start: "2026-05-25"
+  end: "2026-05-28"
   deadline: 2025-10-24 09:59
   sub: CONF
+
 - title: CT-RSA
   year: 2026
   id: ctrsa26
@@ -498,10 +533,11 @@
   link: https://conference.wsu.edu/ct-rsa-2026/
   place: San Francisco, CA, USA
   date: March 23-26, 2026
-  start: '2026-03-23'
-  end: '2026-03-26'
+  start: "2026-03-23"
+  end: "2026-03-26"
   deadline: 2025-10-24 23:59
   sub: CONF
+
 - title: SECRYPT
   year: 2026
   id: secrypt26
@@ -510,11 +546,12 @@
   link: https://secrypt.scitevents.org
   place: Porto, Portugal
   date: July 16-18, 2026
-  start: '2026-07-16'
-  end: '2026-07-18'
+  start: "2026-07-16"
+  end: "2026-07-18"
   deadline: 2026-04-16 23:59
   abstract_deadline: 2026-03-03 23:59
   sub: SEC
+
 - title: AFRICACRYPT
   year: 2025
   id: africacrypt25
@@ -523,24 +560,25 @@
   link: https://africacrypt2025.sciencesconf.org/
   place: Rabat, Morocco
   date: July 21-23, 2025
-  start: '2025-07-21'
-  end: '2025-07-23'
+  start: "2025-07-21"
+  end: "2025-07-23"
   deadline: 2025-03-01 23:59
   sub: CONF
+
 - title: LATINCRYPT
   year: 2025
   id: latincrypt25
   timezone: UTC
-  full_name: International Conference on Cryptology and Information Security in Latin
-    America
+  full_name: International Conference on Cryptology and Information Security in Latin America
   link: https://ciencias.medellin.unal.edu.co/eventos/latincrypt/
   place: Medellin, Colombia
   date: October 1-3, 2025
-  start: '2025-10-01'
-  end: '2025-10-03'
+  start: "2025-10-01"
+  end: "2025-10-03"
   deadline: 2025-05-16 23:59
   sub: CONF
   note: Extended submission deadline May 16th 23:59 AoE
+
 - title: FSE
   year: 2026
   id: fse26
@@ -549,10 +587,11 @@
   link: https://tosc.iacr.org/
   place: Singapore, Singapore
   date: March 23-27, 2026
-  start: '2026-03-23'
-  end: '2026-03-27'
+  start: "2026-03-23"
+  end: "2026-03-27"
   sub: CONF
   note: Rolling deadline every quarter
+
 - title: CHES
   year: 2026
   id: ches26
@@ -561,10 +600,11 @@
   link: https://ches.iacr.org/2026/
   place: TBD, Türkiye
   date: October 11-15, 2026
-  start: '2026-10-11'
-  end: '2026-10-15'
+  start: "2026-10-11"
+  end: "2026-10-15"
   sub: CONF
   note: Rolling deadline every quarter
+
 - title: LightSEC
   year: 2025
   id: lightsec25
@@ -573,24 +613,25 @@
   link: https://www.encrypt-on.com/activities/conferences/lightsec-2025/
   place: Istanbul, Turkiye
   date: September 1-3, 2025
-  start: '2025-09-01'
-  end: '2025-09-03'
+  start: "2025-09-01"
+  end: "2025-09-03"
   deadline: 2025-04-18 23:59
   sub: SEC
+
 - title: CASCADE
   year: 2026
   id: cascade26
   timezone: UTC
-  full_name: Constructive Approaches for Security Analysis and Design of Embedded
-    Systems
+  full_name: Constructive Approaches for Security Analysis and Design of Embedded Systems
   link: https://cascade-conference.org/index.html
   place: Regensburg, Germany
   date: March 30-April 1, 2026
-  start: '2026-03-30'
-  end: '2026-04-01'
+  start: "2026-03-30"
+  end: "2026-04-01"
   deadline: 2025-12-05 23:59
   abstract_deadline: 2025-06-27 23:59
   sub: CONF
+
 - title: ACM SAC
   year: 2026
   id: acmsac26
@@ -599,10 +640,11 @@
   link: https://www.sigapp.org/sac/sac2026/
   place: Thessaloniki, Greece
   date: March 23-27, 2026
-  start: '2026-03-23'
-  end: '2026-03-27'
+  start: "2026-03-23"
+  end: "2026-03-27"
   deadline: 2025-09-26 23:59
   sub: SEC
+
 - title: RAID
   year: 2025
   id: raid25
@@ -611,10 +653,11 @@
   link: https://raid2025.github.io
   place: Gold Coast, Australia
   date: October 19-22, 2025
-  start: '2025-10-19'
-  end: '2025-10-22'
+  start: "2025-10-19"
+  end: "2025-10-22"
   deadline: 2025-04-24 23:59
   sub: SEC
+
 - title: ACSAC
   year: 2025
   id: acsac25
@@ -625,6 +668,7 @@
   date: Dec 9-13, 2025
   deadline: 2025-05-30 23:59
   sub: SEC
+
 - title: DSN
   year: 2026
   id: dsn26
@@ -633,11 +677,12 @@
   link: https://dsn2026.github.io/
   place: Charlotte, NC, USA
   date: June 22-25, 2026
-  start: '2026-06-22'
-  end: '2026-06-25'
+  start: "2026-06-22"
+  end: "2026-06-25"
   deadline: 2025-12-04 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: ACNS
   year: 2026
   id: acns26
@@ -646,25 +691,26 @@
   link: https://acns2026.github.io/
   place: New York, NY
   date: June 22-25, 2026
-  start: '2026-06-22'
-  end: '2026-06-25'
+  start: "2026-06-22"
+  end: "2026-06-25"
   deadline: 2026-01-22 23:59
   abstract_deadline: 2025-09-25 23:59
   sub: SEC
+
 - title: DIMVA
   year: 2025
   id: dimva25
   timezone: UTC
-  full_name: The Conference on Detection of Intrusions and Malware & Vulnerability
-    Assessment
+  full_name: The Conference on Detection of Intrusions and Malware & Vulnerability Assessment
   link: https://www.dimva.org/dimva2025/
   place: Graz, Austria
   date: July 9-11, 2025
-  start: '2025-07-09'
-  end: '2025-07-11'
+  start: "2025-07-09"
+  end: "2025-07-11"
   deadline: 2025-02-19 23:59
   abstract_deadline: 2024-12-04 23:59
   sub: SEC
+
 - title: SACMAT
   year: 2025
   id: sacmat25
@@ -673,10 +719,11 @@
   link: https://www.sacmat.org/2025/
   place: Stony Brook, New York, United States
   date: July 8-10, 2025
-  start: '2025-07-08'
-  end: '2025-07-10'
+  start: "2025-07-08"
+  end: "2025-07-10"
   deadline: 2025-03-31 23:59
   sub: SEC
+
 - title: ARES
   year: 2025
   id: ares25
@@ -685,10 +732,11 @@
   link: https://2025.ares-conference.eu/
   place: Ghent, Belgium
   date: August 10-13, 2025
-  start: '2025-08-10'
-  end: '2025-08-13'
+  start: "2025-08-10"
+  end: "2025-08-13"
   deadline: 2025-03-11 23:59
   sub: SEC
+
 - title: CODASPY
   year: 2025
   id: codaspy25
@@ -697,11 +745,12 @@
   link: http://www.codaspy.org/2025/
   place: Pittsburgh, PA, USA
   date: June 4-6, 2025
-  start: '2025-06-04'
-  end: '2025-06-06'
+  start: "2025-06-04"
+  end: "2025-06-06"
   deadline: 2024-12-06 23:59
   sub: SEC
   note: Abstract deadline December 1 AoE.
+
 - title: DBSec
   year: 2025
   id: dbsec25
@@ -710,11 +759,12 @@
   link: https://www.ntnu.edu/web/dbsec2025/
   place: Gjøvik, Norway
   date: June 23-25, 2025
-  start: '2025-06-23'
-  end: '2025-06-25'
+  start: "2025-06-23"
+  end: "2025-06-25"
   deadline: 2025-03-07 23:59
   sub: SEC
   note: Recommended abstract deadline March 3rd AoE
+
 - title: The Web Conference
   year: 2026
   id: thewebconference26
@@ -723,11 +773,12 @@
   link: https://www2026.thewebconf.org
   place: Dubai, United Arab Emirates
   date: April 13-17, 2026
-  start: '2026-04-13'
-  end: '2026-04-17'
+  start: "2026-04-13"
+  end: "2026-04-17"
   deadline: 2025-10-07 23:59
   sub: SEC
   note: Abstract deadline September 30 AoE.
+
 - title: eCrime
   year: 2025
   id: ecrime25
@@ -736,10 +787,11 @@
   link: https://apwg.org/event/ecrime2025/
   place: San Diego, CA, USA
   date: November 4-7, 2025
-  start: '2025-11-04'
-  end: '2025-11-07'
+  start: "2025-11-04"
+  end: "2025-11-07"
   deadline: 2025-07-29 23:59
   sub: SEC
+
 - title: PAM
   year: 2026
   id: pam26
@@ -748,11 +800,12 @@
   link: https://pam2026.at/
   place: Virtual
   date: March 23-25, 2026
-  start: '2026-03-23'
-  end: '2026-03-25'
+  start: "2026-03-23"
+  end: "2026-03-25"
   deadline: 2025-10-08 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: NCA
   year: 2024
   id: nca24
@@ -761,10 +814,11 @@
   link: https://www.nca-ieee.org/2024/index.html
   place: Bertinoro, Italy
   date: October 24-26, 2024
-  start: '2024-10-24'
-  end: '2024-10-26'
+  start: "2024-10-24"
+  end: "2024-10-26"
   deadline: 2024-08-04 23:59
   sub: SEC
+
 - title: ACSW
   year: 2025
   id: acsw25
@@ -773,11 +827,12 @@
   link: https://acsw.unimore.it/
   place: Venice, Italy
   date: June 30, 2025
-  start: '2025-06-30'
-  end: '2025-06-30'
+  start: "2025-06-30"
+  end: "2025-06-30"
   deadline: 2025-02-19 23:59
   sub: SEC
   note: Co-Located with IEEE European Symposium on Security and Privacy
+
 - title: OSVS
   year: 2025
   id: osvs25
@@ -786,25 +841,26 @@
   link: https://osvs.pages.dev
   place: Venice, Italy
   date: July 4, 2025
-  start: '2025-07-04'
-  end: '2025-07-04'
+  start: "2025-07-04"
+  end: "2025-07-04"
   deadline: 2025-03-23 23:59
   sub: SEC
   note: Co-located with IEEE Euro S&P
+
 - title: IMPACT
   year: 2025
   id: impact25
   timezone: UTC
-  full_name: Workshop on Innovation in Metadata Privacy---Analysis and Construction
-    Techniques
+  full_name: Workshop on Innovation in Metadata Privacy---Analysis and Construction Techniques
   link: https://www.ndss-symposium.org/ndss2025/co-located-events/impact/
   place: San Diego, California, USA
   date: February 28, 2025
-  start: '2025-02-28'
-  end: '2025-02-28'
+  start: "2025-02-28"
+  end: "2025-02-28"
   deadline: 2025-01-10 23:59
   sub: PRIV
   note: Co-located with NDSS Symposium
+
 - title: CRISIS
   year: 2025
   id: crisis25
@@ -813,10 +869,11 @@
   link: https://crisis2025.uqo.ca
   place: Gatineau, Canada
   date: October 22-24, 2025
-  start: '2025-10-22'
-  end: '2025-10-24'
+  start: "2025-10-22"
+  end: "2025-10-24"
   deadline: 2025-07-15 23:59
   sub: SEC
+
 - title: ProvSec
   year: 2025
   id: provsec25
@@ -825,10 +882,11 @@
   link: https://sulab-sever.u-aizu.ac.jp/provsec2025/index.html
   place: Yokohama, Japan
   date: October 10-12, 2025
-  start: '2025-10-10'
-  end: '2025-10-12'
+  start: "2025-10-10"
+  end: "2025-10-12"
   deadline: 2025-05-31 23:59
   sub: SEC
+
 - title: Security for Space Systems
   year: 2025
   id: securityforspacesystems25
@@ -837,11 +895,12 @@
   link: https://security4space.esa.int/2025/cfp/
   place: ESTEC, Noordwijk, Netherlands
   date: November 4-6, 2025
-  start: '2025-11-04'
-  end: '2025-11-06'
+  start: "2025-11-04"
+  end: "2025-11-06"
   deadline: 2025-06-30 23:59
   abstract_deadline: 2025-04-16 23:59
   sub: SEC
+
 - title: SSR
   year: 2025
   id: ssr25
@@ -850,23 +909,24 @@
   link: https://www.uni-passau.de/ssr2025/
   place: Passau, Germany
   date: December 4-5, 2025
-  start: '2025-12-04'
-  end: '2025-12-05'
+  start: "2025-12-04"
+  end: "2025-12-05"
   deadline: 2025-10-05 23:59
   sub: SEC
+
 - title: SEED
   year: 2024
   id: seed24
   timezone: UTC
-  full_name: IEEE International Symposium on Secure and Private Execution Environment
-    Design
+  full_name: IEEE International Symposium on Secure and Private Execution Environment Design
   link: https://seed-symposium.org/2024/
   place: Orlando, FL
   date: January 29-30, 2024
-  start: '2024-01-29'
-  end: '2024-01-30'
+  start: "2024-01-29"
+  end: "2024-01-30"
   deadline: 2023-11-05 23:59
   sub: SEC
+
 - title: ICICS
   year: 2025
   id: icics25
@@ -875,11 +935,12 @@
   link: https://www.icics2025.org/index.html
   place: Nanjing, China
   date: October 29-31, 2025
-  start: '2025-10-29'
-  end: '2025-10-31'
+  start: "2025-10-29"
+  end: "2025-10-31"
   deadline: 2025-05-23 23:59
   abstract_deadline: 2025-03-09 23:59
   sub: SEC
+
 - title: SaTML
   year: 2026
   id: satml26
@@ -888,10 +949,11 @@
   link: https://satml.org/
   place: Munich, Germany
   date: March 23-25, 2026
-  start: '2026-03-23'
-  end: '2026-03-25'
+  start: "2026-03-23"
+  end: "2026-03-25"
   deadline: 2025-09-24 23:59
   sub: SEC
+
 - title: NordSec
   year: 2025
   id: nordsec25
@@ -900,10 +962,11 @@
   link: https://nordsec2025.cs.ut.ee/
   place: Tartu, Estonia
   date: November 12-13, 2025
-  start: '2025-11-12'
-  end: '2025-11-13'
+  start: "2025-11-12"
+  end: "2025-11-13"
   deadline: 2025-08-17 23:59
   sub: SEC
+
 - title: SecDev
   year: 2025
   id: secdev25
@@ -912,10 +975,11 @@
   link: https://secdev.ieee.org/2025/home/
   place: Indianapolis, IN, USA
   date: October 14-16, 2025
-  start: '2025-10-14'
-  end: '2025-10-16'
+  start: "2025-10-14"
+  end: "2025-10-16"
   deadline: 2025-05-13 23:59
   sub: SEC
+
 - title: HOST
   year: 2026
   id: host26
@@ -924,12 +988,13 @@
   link: http://www.hostsymposium.org/
   place: Washington DC, USA
   date: May 4-7, 2026
-  start: '2026-05-04'
-  end: '2026-05-07'
+  start: "2026-05-04"
+  end: "2026-05-07"
   deadline: 2025-12-08 23:59
   abstract_deadline: 2025-08-26 23:59
   sub: SEC
   note: Abstract registration required (1 week before deadline AoE).
+
 - title: AsianHOST
   year: 2024
   id: asianhost24
@@ -938,10 +1003,11 @@
   link: https://www.asianhost.org/2024/
   place: Kobe, Japan
   date: December 16-18, 2024
-  start: '2024-12-16'
-  end: '2024-12-18'
+  start: "2024-12-16"
+  end: "2024-12-18"
   deadline: 2024-08-04 23:59
   sub: SEC
+
 - title: AIHWS
   year: 2025
   id: aihws25
@@ -950,11 +1016,12 @@
   link: https://aihws2025.aisylab.com/
   place: Munich, Germany
   date: June 25, 2025
-  start: '2025-06-25'
-  end: '2025-06-25'
+  start: "2025-06-25"
+  end: "2025-06-25"
   deadline: 2025-03-07 23:59
   sub: SEC
   note: In conjunction with ACNS 2025
+
 - title: AIoTS
   year: 2025
   id: aiots25
@@ -963,25 +1030,26 @@
   link: https://aiotsweb.github.io/aiots2025/
   place: Munich, Germany
   date: June 24, 2025
-  start: '2025-06-24'
-  end: '2025-06-24'
+  start: "2025-06-24"
+  end: "2025-06-24"
   deadline: 2025-03-23 23:59
   sub: SEC
   note: In conjunction with ACNS 2025
+
 - title: CIMSS
   year: 2025
   id: cimss25
   timezone: Europe/Berlin
-  full_name: International Workshop on Critical Infrastructure and Manufacturing System
-    Security
+  full_name: International Workshop on Critical Infrastructure and Manufacturing System Security
   link: https://cimssworkshop.github.io/
   place: Munich, Germany
   date: June 24, 2025
-  start: '2025-06-24'
-  end: '2025-06-24'
+  start: "2025-06-24"
+  end: "2025-06-24"
   deadline: 2025-03-23 23:59
   sub: SEC
   note: In conjunction with ACNS 2025
+
 - title: SCI
   year: 2025
   id: sci25
@@ -990,11 +1058,12 @@
   link: https://acns-sci.github.io/
   place: Munich, Germany
   date: June 24, 2025
-  start: '2025-06-24'
-  end: '2025-06-24'
+  start: "2025-06-24"
+  end: "2025-06-24"
   deadline: 2025-03-15 23:59
   sub: SHOP
   note: In conjunction with ACNS 2025
+
 - title: SiMLA
   year: 2025
   id: simla25
@@ -1003,12 +1072,13 @@
   link: https://simla-workshop2025.github.io/
   place: Munich, Germany
   date: June 26, 2025
-  start: '2025-06-26'
-  end: '2025-06-26'
+  start: "2025-06-26"
+  end: "2025-06-26"
   deadline: 2025-03-23 23:59
   abstract_deadline: 2025-01-15 23:59
   sub: SEC
   note: In conjunction with ACNS 2025
+
 - title: CPSIoTSec
   year: 2025
   id: cpsiotsec25
@@ -1017,11 +1087,12 @@
   link: https://cpsiotsec2025.github.io/
   place: Taipei, Taiwan
   date: October 17, 2025
-  start: '2025-10-17'
-  end: '2025-10-17'
+  start: "2025-10-17"
+  end: "2025-10-17"
   deadline: 2025-06-20 23:59
   sub: SEC
   note: In conjunction with ACM CCS 2025
+
 - title: AISec
   year: 2025
   id: aisec25
@@ -1033,6 +1104,10 @@
   deadline: 2025-07-03 23:59
   sub: SEC
   note: Co-located with ACM CCS 2025
+
+# End of copy paste
+
+
 - title: EnergySP
   year: 2025
   id: energysp25
@@ -1041,11 +1116,12 @@
   link: https://energysp.github.io/
   place: Rotterdam, Netherlands
   date: June 17, 2025
-  start: '2025-06-17'
-  end: '2025-06-17'
+  start: "2025-06-17"
+  end: "2025-06-17"
   deadline: 2025-03-24 23:59
   sub: SEC
   note: In conjunction with ACM eEnergy
+
 - title: WoRMA
   year: 2025
   id: worma25
@@ -1054,11 +1130,12 @@
   link: https://worma.gitlab.io/2025/
   place: Venice, Italy
   date: June 30, 2025
-  start: '2025-06-30'
-  end: '2025-06-30'
+  start: "2025-06-30"
+  end: "2025-06-30"
   deadline: 2025-02-20 23:59
   sub: SEC
   note: Co-located with IEEE Euro S&P
+
 - title: SysTEX
   year: 2024
   id: systex24
@@ -1067,11 +1144,12 @@
   link: https://systex24.github.io/
   place: Vienna, Austria
   date: July 8, 2024
-  start: '2024-07-08'
-  end: '2024-07-08'
+  start: "2024-07-08"
+  end: "2024-07-08"
   deadline: 2024-03-26 23:59
   sub: SEC
   note: Co-located with IEEE Euro S&P 2024
+
 - title: ICSS
   year: 2024
   id: icss24
@@ -1080,11 +1158,12 @@
   link: https://www.acsac.org/2024/workshops/icss/
   place: Waikiki, Hawaii, USA
   date: December 10, 2024
-  start: '2024-12-10'
-  end: '2024-12-10'
+  start: "2024-12-10"
+  end: "2024-12-10"
   deadline: 2024-09-12 23:59
   sub: SEC
   note: In conjunction with ACSAC
+
 - title: WEB3SEC
   year: 2024
   id: web3sec24
@@ -1093,25 +1172,26 @@
   link: https://www.acsac.org/2024/workshops/web3sec/
   place: Waikiki, Hawaii, USA
   date: December 9, 2024
-  start: '2024-12-09'
-  end: '2024-12-09'
+  start: "2024-12-09"
+  end: "2024-12-09"
   deadline: 2024-10-06 23:59
   sub: SEC
   note: In conjunction with ACSAC
+
 - title: ARTMAN
   year: 2025
   id: artman25
   timezone: Asia/Taipei
-  full_name: Workshop on Recent Advances in Resilient and Trustworthy MAchine learning-driveN
-    system
+  full_name: Workshop on Recent Advances in Resilient and Trustworthy MAchine learning-driveN system
   link: https://artman-workshop.gitlab.io/
   place: Taipei, Taiwan
   date: October 17, 2025
-  start: '2025-10-17'
-  end: '2025-10-17'
+  start: "2025-10-17"
+  end: "2025-10-17"
   deadline: 2025-07-03 23:59
   sub: SEC
   note: In conjunction with CCS
+
 - title: WPES
   year: 2025
   id: wpes25
@@ -1120,11 +1200,12 @@
   link: http://jianying.space/WPES2025/
   place: Taipei, Taiwan
   date: October 13, 2025
-  start: '2025-10-13'
-  end: '2025-10-13'
+  start: "2025-10-13"
+  end: "2025-10-13"
   deadline: 2025-07-07 23:59
   sub: PRIV
   note: In conjunction with ACM CCS
+
 - title: NSPW
   year: 2025
   id: nspw25
@@ -1133,10 +1214,11 @@
   link: https://www.nspw.org/2025/cfp
   place: Aerzen, Germany
   date: August 24-27, 2025
-  start: '2025-08-24'
-  end: '2025-08-27'
+  start: "2025-08-24"
+  end: "2025-08-27"
   deadline: 2025-04-25 23:59
   sub: SEC
+
 - title: CNS
   year: 2025
   id: cns25
@@ -1145,10 +1227,11 @@
   link: https://cns2025.ieee-cns.org/authors/call-papers
   place: Avignon, France
   date: September 8-11, 2025
-  start: '2025-09-08'
-  end: '2025-09-11'
+  start: "2025-09-08"
+  end: "2025-09-11"
   deadline: 2025-05-05 23:59
   sub: SEC
+
 - title: HASP
   year: 2025
   id: hasp25
@@ -1157,11 +1240,12 @@
   link: https://haspworkshop.org/2025/index.html
   place: Seoul, Korea
   date: October 18, 2025
-  start: '2025-10-18'
-  end: '2025-10-18'
+  start: "2025-10-18"
+  end: "2025-10-18"
   deadline: 2025-07-27 23:59
   sub: SEC
   note: Co-located with MICRO 2025
+
 - title: PAVeTrust
   year: 2024
   id: pavetrust24
@@ -1170,11 +1254,12 @@
   link: https://pavetrust.github.io/
   place: Milan, Italy
   date: September 9, 2024
-  start: '2024-09-09'
-  end: '2024-09-09'
+  start: "2024-09-09"
+  end: "2024-09-09"
   deadline: 2024-07-05 23:59
   sub: SEC
   note: Collocated with FM
+
 - title: SpaceSec
   year: 2026
   id: spacesec26
@@ -1183,11 +1268,12 @@
   link: https://spacesec.info/
   place: San Diego, California, USA
   date: February 23, 2026
-  start: '2026-02-23'
-  end: '2026-02-23'
+  start: "2026-02-23"
+  end: "2026-02-23"
   deadline: 2025-11-09 23:59
   sub: SEC
   note: Co-located with NDSS Symposium
+
 - title: MADWeb
   year: 2025
   id: madweb25
@@ -1196,11 +1282,12 @@
   link: https://madweb.work/
   place: San Diego, California, USA
   date: February 28, 2025
-  start: '2025-02-28'
-  end: '2025-02-28'
+  start: "2025-02-28"
+  end: "2025-02-28"
   deadline: 2025-01-09 23:59
   sub: SEC
   note: Co-located with NDSS Symposium
+
 - title: WOOT
   year: 2025
   id: woot25
@@ -1209,11 +1296,12 @@
   link: https://www.usenix.org/conference/woot25/call-for-papers
   place: Seattle, WA, USA
   date: August 11-12, 2025
-  start: '2025-08-11'
-  end: '2025-08-12'
+  start: "2025-08-11"
+  end: "2025-08-12"
   deadline: 2025-03-11 23:59
   sub: SEC
   note: Co-located with USENIX Security; up-and-coming track deadline is Mar 4
+
 - title: SafeThings
   year: 2025
   id: safethings25
@@ -1222,11 +1310,12 @@
   link: https://safethings25.ieee-security.org/
   place: San Francisco, CA, USA
   date: May 15, 2025
-  start: '2025-05-15'
-  end: '2025-05-15'
+  start: "2025-05-15"
+  end: "2025-05-15"
   deadline: 2025-02-17 23:59
   sub: SEC
   note: Co-located with IEEE S&P 2025
+
 - title: SILM
   year: 2024
   id: silm24
@@ -1235,11 +1324,12 @@
   link: https://silm-workshop.github.io/
   place: Vienna, Austria
   date: July 12, 2024
-  start: '2024-07-12'
-  end: '2024-07-12'
+  start: "2024-07-12"
+  end: "2024-07-12"
   deadline: 2024-03-29 23:59
   sub: SEC
   note: Co-located with EURO S&P 2024
+
 - title: MALIoT
   year: 2025
   id: maliot25
@@ -1248,11 +1338,12 @@
   link: https://security.ucc.ie/mal-iot2025/
   place: Cagliari, Italy
   date: May 28, 2025
-  start: '2025-05-28'
-  end: '2025-05-28'
+  start: "2025-05-28"
+  end: "2025-05-28"
   deadline: 2025-03-10 23:59
   sub: SEC
   note: Co-located with ACM International Conference on Computing Frontiers 2025.
+
 - title: DevSecOpsRO
   year: 2025
   id: devsecopsro25
@@ -1261,10 +1352,11 @@
   link: https://spritz.math.unipd.it/events/2025/devSecOpsRO/
   place: Venice, Italy
   date: July 4, 2025
-  start: '2025-07-04'
-  end: '2025-07-04'
+  start: "2025-07-04"
+  end: "2025-07-04"
   deadline: 2025-03-02 23:59
   sub: SEC
+
 - title: FUZZING
   year: 2024
   id: fuzzing24
@@ -1273,11 +1365,12 @@
   link: https://fuzzingworkshop.github.io/index.html
   place: Vienna, Austria
   date: September 16, 2024
-  start: '2024-09-16'
-  end: '2024-09-16'
+  start: "2024-09-16"
+  end: "2024-09-16"
   deadline: 2024-06-24 23:59
   sub: SEC
   note: Co-located with ISSTA 2024
+
 - title: SECAI
   year: 2024
   id: secai24
@@ -1286,11 +1379,12 @@
   link: https://sites.google.com/view/secai2024
   place: Bydgoszcz, Poland
   date: September 16-20, 2024
-  start: '2024-09-16'
-  end: '2024-09-20'
+  start: "2024-09-16"
+  end: "2024-09-20"
   deadline: 2024-06-29 23:59
   sub: SEC
   note: Co-located with ESORICS 2024
+
 - title: ASHES
   year: 2024
   id: ashes24
@@ -1299,25 +1393,26 @@
   link: http://ashesworkshop.org/home
   place: Salt Lake City, Utah, United States
   date: October 18, 2024
-  start: '2024-10-18'
-  end: '2024-10-18'
+  start: "2024-10-18"
+  end: "2024-10-18"
   deadline: 2024-07-18 23:59
   sub: SEC
   note: Co-located with ACM CCS '24
+
 - title: SCORED
   year: 2024
   id: scored24
   timezone: UTC
-  full_name: ACM Workshop on Software Supply Chain Offensive Research and Ecosystem
-    Defenses
+  full_name: ACM Workshop on Software Supply Chain Offensive Research and Ecosystem Defenses
   link: https://scored.dev/
   place: Salt Lake City, Utah, United States
   date: October 18, 2024
-  start: '2024-10-18'
-  end: '2024-10-18'
+  start: "2024-10-18"
+  end: "2024-10-18"
   deadline: 2024-07-05 23:59
   sub: SEC
   note: Co-located with ACM CCS '24
+
 - title: DPM
   year: 2025
   id: dpm25
@@ -1326,11 +1421,12 @@
   link: https://deic.uab.cat/dpm/dpm2025/
   place: Toulouse, France
   date: September 25, 2025
-  start: '2025-09-25'
-  end: '2025-09-25'
+  start: "2025-09-25"
+  end: "2025-09-25"
   deadline: 2025-06-30 23:59
   sub: SEC
   note: Co-located with ESORICS 2025
+
 - title: CBT
   year: 2025
   id: cbt25
@@ -1339,11 +1435,12 @@
   link: http://cbtworkshop.org/
   place: Toulouse, France
   date: September 25, 2025
-  start: '2025-09-25'
-  end: '2025-09-25'
+  start: "2025-09-25"
+  end: "2025-09-25"
   deadline: 2025-06-30 23:59
   sub: SEC
   note: Co-located with ESORICS 2025
+
 - title: CyberHunt
   year: 2024
   id: cyberhunt24
@@ -1352,11 +1449,12 @@
   link: https://cyberhunt2024.cyberhunt.no/
   place: Washington DC, USA
   date: December 15-18, 2024
-  start: '2024-12-15'
-  end: '2024-12-18'
+  start: "2024-12-15"
+  end: "2024-12-18"
   deadline: 2024-10-01 23:59
   sub: SEC
   note: Co-located with IEEE BigData 2024
+
 - title: IoT-SECFOR
   year: 2024
   id: iotsecfor24
@@ -1368,6 +1466,7 @@
   deadline: 2024-04-29 23:59
   sub: SEC
   note: Co-located with ARES 2024
+
 - title: ICISS
   year: 2025
   id: iciss25
@@ -1376,10 +1475,11 @@
   link: https://iciss.isrdc.in/
   place: IIT Indore, India
   date: December 16-20, 2025
-  start: '2025-12-16'
-  end: '2025-12-20'
+  start: "2025-12-16"
+  end: "2025-12-20"
   deadline: 2025-07-25 23:59
   sub: SEC
+
 - title: CPSS
   year: 2025
   id: cpss25
@@ -1388,12 +1488,13 @@
   link: http://jianying.space/cpss/CPSS2025/
   place: Hanoi, Vietnam
   date: August 26, 2025
-  start: '2025-08-26'
-  end: '2025-08-26'
+  start: "2025-08-26"
+  end: "2025-08-26"
   deadline: 2025-03-15 23:59
   abstract_deadline: 2025-01-10 23:59
   sub: SEC
   note: Co-located with ACM AsiaCCS 2025
+
 - title: WACCO
   year: 2025
   id: wacco25
@@ -1402,10 +1503,11 @@
   link: https://wacco-workshop.org/
   place: Venezia, Italy
   date: June 30, 2025
-  start: '2025-06-30'
-  end: '2025-06-30'
+  start: "2025-06-30"
+  end: "2025-06-30"
   deadline: 2025-02-20 23:59
   sub: SEC
+
 - title: IWSEC
   year: 2025
   id: iwsec25
@@ -1414,11 +1516,12 @@
   link: https://www.iwsec.org/2025/
   place: Fukuoka, JP
   date: November 25-27, 2025
-  start: '2025-11-25'
-  end: '2025-11-27'
+  start: "2025-11-25"
+  end: "2025-11-27"
   deadline: 2025-07-17 23:59
   abstract_deadline: 2025-04-10 23:59
   sub: SEC
+
 - title: CSET
   year: 2025
   id: cset25
@@ -1427,11 +1530,12 @@
   link: https://cset25.isi.edu/
   place: Honolulu, Hawaii, USA
   date: December 8, 2025
-  start: '2025-12-08'
-  end: '2025-12-08'
+  start: "2025-12-08"
+  end: "2025-12-08"
   deadline: 2025-09-17 23:59
   sub: SEC
   note: Co-located with ACSAC
+
 - title: QSNS
   year: 2025
   id: qsns25
@@ -1440,25 +1544,26 @@
   link: https://qubip.eu/qsns2025/
   place: Bologna, Italy
   date: July 2-5, 2025
-  start: '2025-07-02'
-  end: '2025-07-05'
+  start: "2025-07-02"
+  end: "2025-07-05"
   deadline: 2025-02-10 23:59
   sub: SEC
   note: Co-located with IEEE ISCC 2025
+
 - title: CheckMATE
   year: 2025
   id: checkmate25
   timezone: Asia/Taipei
-  full_name: Research on offensive and defensive techniques in the context of Man
-    At The End (MATE) attacks
+  full_name: Research on offensive and defensive techniques in the context of Man At The End (MATE) attacks
   link: https://checkmate-workshop.github.io/
   place: Taipei, Taiwan
   date: October 17, 2025
-  start: '2025-10-17'
-  end: '2025-10-17'
+  start: "2025-10-17"
+  end: "2025-10-17"
   deadline: 2025-07-08 23:59
   sub: SEC
   note: Co-located with ACM CCS 2025
+
 - title: CSCS
   year: 2024
   id: cscs24
@@ -1467,24 +1572,25 @@
   link: https://acm-cscs.org
   place: Salt Lake City, USA
   date: October 18, 2024
-  start: '2024-10-18'
-  end: '2024-10-18'
+  start: "2024-10-18"
+  end: "2024-10-18"
   deadline: 2024-07-04 23:59
   sub: SEC
   note: Co-located with ACM CCS 2024
+
 - title: SmartSP
   year: 2025
   id: smartsp25
   timezone: UTC
-  full_name: EAI International Conference on Security and Privacy in Cyber-Physical
-    Systems and Smart Vehicles
+  full_name: EAI International Conference on Security and Privacy in Cyber-Physical Systems and Smart Vehicles
   link: https://smartsp.eai-conferences.org/2025/
   place: Salt Lake City, USA
   date: December 1-2, 2025
-  start: '2025-12-01'
-  end: '2025-12-02'
+  start: "2025-12-01"
+  end: "2025-12-02"
   deadline: 2025-07-31 23:59
   sub: SEC
+
 - title: CCSW
   year: 2025
   id: ccsw25
@@ -1493,11 +1599,12 @@
   link: https://ccsw.io/
   place: Taipei, Taiwan, China
   date: October 17, 2025
-  start: '2025-10-17'
-  end: '2025-10-17'
+  start: "2025-10-17"
+  end: "2025-10-17"
   deadline: 2025-06-24 23:59
   sub: SEC
   note: Co-located with ACM CCS 2025
+
 - title: PQCrypto
   year: 2025
   id: pqcrypto25
@@ -1506,11 +1613,12 @@
   link: https://pqcrypto2025.iis.sinica.edu.tw/
   place: Taipei, Taiwan
   date: April 8, 2025
-  start: '2025-04-08'
-  end: '2025-04-08'
+  start: "2025-04-08"
+  end: "2025-04-08"
   deadline: 2024-11-01 23:59
   sub: CONF
   note: Initial submission with abstract required Oct 25th.
+
 - title: WAITI
   year: 2025
   id: waiti25
@@ -1519,11 +1627,12 @@
   link: https://waiti-workshop.github.io/
   place: Waikiki, Hawaii, USA
   date: December 8, 2025
-  start: '2025-12-08'
-  end: '2025-12-08'
+  start: "2025-12-08"
+  end: "2025-12-08"
   deadline: 2025-10-06 23:59
   sub: SEC
   note: Co-located with ACSAC 2025
+
 - title: TAC
   year: 2024
   id: tac24
@@ -1532,11 +1641,12 @@
   link: https://aleph.fbk.eu/events/TAC2024/
   place: Rome, Italy
   date: September 27, 2024
-  start: '2024-09-27'
-  end: '2024-09-27'
+  start: "2024-09-27"
+  end: "2024-09-27"
   deadline: 2024-07-29 23:59
   sub: SEC
   note: Co-located with CIFRIS. Paper registration due Jul 25 AoE
+
 - title: FutureG
   year: 2025
   id: futureg25
@@ -1545,11 +1655,12 @@
   link: https://www.ndss-symposium.org/ndss2025/co-located-events/futureg/
   place: San Diego, California, USA
   date: February 24, 2025
-  start: '2025-02-24'
-  end: '2025-02-24'
+  start: "2025-02-24"
+  end: "2025-02-24"
   deadline: 2025-01-10 23:59
   sub: SEC
   note: Co-located with NDSS Symposium 2025
+
 - title: CloudResIOT
   year: 2025
   id: cloudresiot25
@@ -1558,11 +1669,12 @@
   link: https://www.cloudresiot.com/
   place: Tokyo, Japan
   date: August 4-7, 2025
-  start: '2025-08-04'
-  end: '2025-08-07'
+  start: "2025-08-04"
+  end: "2025-08-07"
   deadline: 2025-03-01 23:59
   sub: SEC
   note: Co-located with ICCCN 2025.
+
 - title: VehicleSec
   year: 2025
   id: vehiclesec25
@@ -1571,11 +1683,12 @@
   link: https://www.usenix.org/conference/vehiclesec25/call-for-papers
   place: Seattle, WA, USA
   date: August 11-12, 2025
-  start: '2025-08-11'
-  end: '2025-08-12'
+  start: "2025-08-11"
+  end: "2025-08-12"
   deadline: 2025-03-06 23:59
   sub: SEC
   note: Co-located with USENIX Security 2025
+
 - title: WEIS
   year: 2025
   id: weis25
@@ -1584,10 +1697,11 @@
   link: http://kmlabcw.iis.u-tokyo.ac.jp/weis/2025/
   place: Tokyo, Japan
   date: June 23-25, 2025
-  start: '2025-06-23'
-  end: '2025-06-25'
+  start: "2025-06-23"
+  end: "2025-06-25"
   deadline: 2025-01-31 23:59
   sub: SEC
+
 - title: SeRIM
   year: 2025
   id: serim25
@@ -1596,11 +1710,12 @@
   link: https://st.fbk.eu/events/SeRIM2025/
   place: Venice, Italy
   date: July 4, 2025
-  start: '2025-07-04'
-  end: '2025-07-04'
+  start: "2025-07-04"
+  end: "2025-07-04"
   deadline: 2025-03-10 23:59
   sub: SEC
   note: Co-Located with IEEE European Symposium on Security and Privacy (EuroS&P).
+
 - title: Crypto Valley Conference
   year: 2025
   id: cryptovalleyconference25
@@ -1609,10 +1724,11 @@
   link: https://cryptovalleyconference.com/call-for-papers
   place: Rotkreuz, Switzerland
   date: June 5-6, 2025
-  start: '2025-06-05'
-  end: '2025-06-06'
+  start: "2025-06-05"
+  end: "2025-06-06"
   deadline: 2025-03-13 23:59
   sub: SEC
+
 - title: ACM SaT-CPS
   year: 2025
   id: acmsatcps25
@@ -1621,12 +1737,12 @@
   link: https://sites.google.com/view/sat-cps-2025
   place: Pittsburgh, Pennsylvania, USA
   date: June 6, 2025
-  start: '2025-06-06'
-  end: '2025-06-06'
+  start: "2025-06-06"
+  end: "2025-06-06"
   deadline: 2025-03-02 23:59
   sub: SEC
-  note: Co-Located with ACM Conference on Data and Application Security and Privacy
-    (CODASPY).
+  note: Co-Located with ACM Conference on Data and Application Security and Privacy (CODASPY).
+
 - title: APKC
   year: 2025
   id: apkc25
@@ -1635,11 +1751,12 @@
   link: https://iseclab.ec.t.kanazawa-u.ac.jp/en/APKC2025.html
   place: Hanoi, Vietnam
   date: August 26, 2025
-  start: '2025-08-26'
-  end: '2025-08-26'
+  start: "2025-08-26"
+  end: "2025-08-26"
   deadline: 2025-02-17 23:59
   sub: SEC
   note: Co-located with ACM AsiaCCS 2025
+
 - title: MIST
   year: 2025
   id: mist25
@@ -1648,11 +1765,12 @@
   link: https://mist-workshop.github.io/
   place: Toulouse, France
   date: September 25-26, 2025
-  start: '2025-09-25'
-  end: '2025-09-26'
+  start: "2025-09-25"
+  end: "2025-09-26"
   deadline: 2025-06-30 23:59
   sub: SEC
   note: Co-located with ESORICS 2025
+
 - title: uASC
   year: 2026
   id: uasc26
@@ -1661,11 +1779,12 @@
   link: https://uasc.cc
   place: Leuven, Belgium
   date: February 3, 2026
-  start: '2026-02-03'
-  end: '2026-02-03'
+  start: "2026-02-03"
+  end: "2026-02-03"
   deadline: 2025-11-04 23:59
   abstract_deadline: 2025-07-15 23:59
   sub: SEC
+
 - title: HS3
   year: 2025
   id: hs325
@@ -1674,11 +1793,12 @@
   link: https://hs3-workshop.github.io/
   place: Toulouse, France
   date: September 25, 2025
-  start: '2025-09-25'
-  end: '2025-09-25'
+  start: "2025-09-25"
+  end: "2025-09-25"
   deadline: 2025-06-13 23:59
   sub: SEC
   note: Co-located with ESORICS 25.
+
 - title: CPS-Sec
   year: 2025
   id: cpssec25
@@ -1687,25 +1807,26 @@
   link: https://spritz.math.unipd.it/events/2025/CPS-Sec2025/
   place: Avignon, France
   date: September 11, 2025
-  start: '2025-09-11'
-  end: '2025-09-11'
+  start: "2025-09-11"
+  end: "2025-09-11"
   deadline: 2025-07-10 23:59
   sub: SEC
   note: In conjunction with IEEE CNS
+
 - title: OPTIMIST
   year: 2025
   id: optimist25
   timezone: UTC
-  full_name: Workshop on Open Tools, Interfaces and Metrics for Implementation Security
-    Testing
+  full_name: Workshop on Open Tools, Interfaces and Metrics for Implementation Security Testing
   link: https://optimist-ose.org/ches25
   place: Kuala Lumpur, Malaysia
   date: September 14, 2025
-  start: '2025-09-14'
-  end: '2025-09-14'
+  start: "2025-09-14"
+  end: "2025-09-14"
   deadline: 2025-07-14 23:59
   sub: SEC
   note: Co-located with CHES 25.
+
 - title: HAIPS
   year: 2025
   id: haips25
@@ -1714,11 +1835,12 @@
   link: https://haips.com
   place: Taipei, Taiwan
   date: October 17, 2025
-  start: '2025-10-17'
-  end: '2025-10-17'
+  start: "2025-10-17"
+  end: "2025-10-17"
   deadline: 2025-06-20 23:59
   sub: SEC
   note: Co-located with ACM CCS 2025
+
 - title: RICSS
   year: 2025
   id: ricss25
@@ -1727,11 +1849,12 @@
   link: https://ricssworkshop.github.io/
   place: Taipei, Taiwan
   date: October 13, 2025
-  start: '2025-10-13'
-  end: '2025-10-13'
+  start: "2025-10-13"
+  end: "2025-10-13"
   deadline: 2025-07-01 23:59
   sub: SEC
   note: Co-located with ACM CCS 2025
+
 - title: B4TI
   year: 2025
   id: b4ti25
@@ -1740,11 +1863,12 @@
   link: https://bcca-conference.org/2025/Workshops/b4ti.php
   place: Dubrovnik, Croatia
   date: October 14-17, 2025
-  start: '2025-10-14'
-  end: '2025-10-17'
+  start: "2025-10-14"
+  end: "2025-10-17"
   deadline: 2025-07-30 23:59
   sub: SEC
   note: Co-located with BCCA 2025
+
 - title: SURE
   year: 2025
   id: sure25
@@ -1753,13 +1877,14 @@
   link: https://sure-workshop.org/
   place: Taipei, Taiwan
   date: October 13, 2025
-  start: '2025-10-13'
-  end: '2025-10-13'
+  start: "2025-10-13"
+  end: "2025-10-13"
   deadline: 2025-07-07 23:59
   sub: SEC
   note: Co-located with ACM CCS 2025
 
 # End of copy paste
+
 - title: BestConf
   year: 2022
   id: bestconf22
@@ -1770,11 +1895,11 @@
   timezone: Asia/Seoul
   place: Incheon, South Korea
   date: September, 18-22, 2022
-  start: '2022-09-18'
-  end: '2022-09-22'
+  start: "2022-09-18"
+  end: "2022-09-22"
   paperslink: https://bestconf.org/papers
   pwclink: https://paperswithcode.com/conference/bestconf-2022
-  hindex: 100.0
+  hindex: 100
   sub: SP
   note: Important
 
@@ -1788,11 +1913,11 @@
   timezone: America/Los_Angeles
   place: Vancouver, Canada
   date: December 9-15, 2025
-  start: '2025-12-09'
-  end: '2025-12-15'
+  start: "2025-12-09"
+  end: "2025-12-15"
   paperslink: https://neurips.cc/Conferences/2025/AcceptedPapers
   pwclink: https://paperswithcode.com/conference/neurips-2025
-  hindex: 198.0
+  hindex: 198
   sub: ML
   note: Flagship ML conference
 
@@ -1806,11 +1931,11 @@
   timezone: UTC
   place: Vienna, Austria
   date: July 13-19, 2025
-  start: '2025-07-13'
-  end: '2025-07-19'
+  start: "2025-07-13"
+  end: "2025-07-19"
   paperslink: https://icml.cc/Conferences/2025/Schedule
   pwclink: https://paperswithcode.com/conference/icml-2025
-  hindex: 195.0
+  hindex: 195
   sub: ML
   note: Premier ML conference
 
@@ -1820,15 +1945,15 @@
   full_name: Conference on Computer Vision and Pattern Recognition
   link: https://cvpr.thecvf.com/Conferences/2025
   deadline: 2024-11-15 23:59
-  abstract_deadline: ''
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Nashville, USA
   date: June 10-17, 2025
-  start: '2025-06-10'
-  end: '2025-06-17'
+  start: "2025-06-10"
+  end: "2025-06-17"
   paperslink: https://cvpr.thecvf.com/Conferences/2025/AcceptedPapers
   pwclink: https://paperswithcode.com/conference/cvpr-2025
-  hindex: 389.0
+  hindex: 389
   sub: CV
   note: Top computer vision conference
 
@@ -1842,29 +1967,28 @@
   timezone: America/Los_Angeles
   place: Singapore
   date: April 20-24, 2026
-  start: '2026-04-20'
-  end: '2026-04-24'
-  paperslink: ''
-  pwclink: ''
-  hindex: 192.0
+  start: "2026-04-20"
+  end: "2026-04-24"
+  paperslink: ""
+  pwclink: ""
+  hindex: 192
   sub: ML
   note: Deep learning focused
 
 - title: EACL
   year: 2026
   id: eacl26
-  full_name: The 19th Conference of the European Chapter of the Association for Computational
-    Linguistics
+  full_name: The 19th Conference of the European Chapter of the Association for Computational Linguistics
   link: https://2026.eacl.org/
-  deadline: '2025-12-14 23:59:59'
-  abstract_deadline: ''
+  deadline: "2025-12-14 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Rabat, Morocco
   date: March 24-29, 2026
-  start: '2026-03-24'
-  end: '2026-03-29'
-  paperslink: ''
-  pwclink: ''
+  start: "2026-03-24"
+  end: "2026-03-29"
+  paperslink: ""
+  pwclink: ""
   hindex: 38
   sub: NLP
   note: Submission via ACL Rolling Review, commitment date 2025-12-14
@@ -1872,35 +1996,34 @@
 - title: ALTA
   year: 2025
   id: alta25
-  full_name: ''
+  full_name: ""
   link: https://alta2025.alta.asn.au/
-  deadline: '2025-10-07 23:59:59'
-  abstract_deadline: '2025-10-07 23:59:59'
+  deadline: "2025-10-07 23:59:59"
+  abstract_deadline: "2025-10-07 23:59:59"
   timezone: UTC-12
   place: Sydney, Australia
   date: November 27-28, 2025
-  start: '2025-11-27'
-  end: '2025-11-28'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2025-11-27"
+  end: "2025-11-28"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Commitment on October 7, 2025
 
 - title: AISTATS
   year: 2025
   id: aistats25
-  full_name: ''
+  full_name: ""
   link: https://aistats.org/aistats2025/index.html
-  deadline: '2024-10-10 23:59:59'
-  abstract_deadline: '2024-10-03 23:59:59'
+  deadline: "2024-10-10 23:59:59"
+  abstract_deadline: "2024-10-03 23:59:59"
   timezone: UTC-12
   place: Phuket, Thailand
   date: May 03-05, 2025
-  start: '2025-05-03'
-  end: '2025-05-05'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-05-03"
+  end: "2025-05-05"
+  paperslink: ""
+  pwclink: ""
   hindex: 100
   sub: ML
   note: Abstract deadline on October 3, 2024
@@ -1908,17 +2031,17 @@
 - title: CVPR
   year: 2025
   id: cvpr25-alt
-  full_name: ''
+  full_name: ""
   link: https://cvpr.thecvf.com/Conferences/2025
-  deadline: '2024-11-15 06:59:59'
-  abstract_deadline: '2024-11-08 06:59:59'
+  deadline: "2024-11-15 06:59:59"
+  abstract_deadline: "2024-11-08 06:59:59"
   timezone: GMT
   place: Nashville, Tennessee, USA
   date: June 10-17, 2025
-  start: '2025-06-10'
-  end: '2025-06-17'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-06-10"
+  end: "2025-06-17"
+  paperslink: ""
+  pwclink: ""
   hindex: 389
   sub: CV
   note: Mandatory paper registration deadline on November 07, 2023
@@ -1926,17 +2049,17 @@
 - title: NAACL
   year: 2025
   id: naacl25
-  full_name: ''
+  full_name: ""
   link: https://2025.naacl.org
-  deadline: '2024-10-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-10-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Albuquerque, New Mexico, USA
   date: April 29 - May 4, 2024
-  start: '2025-04-29'
-  end: '2025-05-04'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-04-29"
+  end: "2025-05-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 132
   sub: NLP
   note: All submissions must be done through ARR
@@ -1944,25 +2067,25 @@
 - title: ICLR
   year: 2025
   id: iclr25
-  full_name: ''
+  full_name: ""
   link: https://iclr.cc/Conferences/2025/CallForPapers
-  deadline: '2024-10-01 23:59:59'
-  abstract_deadline: '2024-09-27 23:59:59'
+  deadline: "2024-10-01 23:59:59"
+  abstract_deadline: "2024-09-27 23:59:59"
   timezone: UTC-12
   place: Singapore
   date: Apr 24-28, 2025
-  start: '2025-04-24'
-  end: '2025-04-28'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-04-24"
+  end: "2025-04-28"
+  paperslink: ""
+  pwclink: ""
   hindex: 304
   sub:
-  - ML
-  - AP
-  - RO
-  - CV
-  - NLP
-  - SP
+    - ML
+    - AP
+    - RO
+    - CV
+    - NLP
+    - SP
   note: Mandatory abstract deadline on September 27, 2024
 
 - title: LoG
@@ -1975,15 +2098,14 @@
   timezone: UTC-12
   place: Virtual, free to attend
   date: November 26 - November 29, 2024
-  start: '2024-11-26'
-  end: '2024-11-29'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-11-26"
+  end: "2024-11-29"
+  paperslink: ""
+  pwclink: ""
   sub:
-  - ML
-  - DM
-  - KR
+    - ML
+    - DM
+    - KR
   note: Abstract deadline on Sep 04, 2024
 
 - title: ECIR
@@ -1991,16 +2113,15 @@
   id: ecir25
   full_name: European Conference on Information Retrieval
   link: https://ecir2025.eu/
-  deadline: '2024-10-09 23:59:59'
-  abstract_deadline: '2024-10-02 23:59:59'
+  deadline: "2024-10-09 23:59:59"
+  abstract_deadline: "2024-10-02 23:59:59"
   timezone: UTC-12
   place: Lucca, Tuscany, Italy
   date: April 6 - April 10, 2025
-  start: '2025-04-06'
-  end: '2025-04-10'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2025-04-06"
+  end: "2025-04-10"
+  paperslink: ""
+  pwclink: ""
   sub: DM
   note: Abstract deadline on Oct 2, 2024
 
@@ -2009,42 +2130,40 @@
   id: wacv25
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: https://wacv2025.thecvf.com/
-  deadline: '2024-09-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-09-09 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-7
   place: Tucson, Arizona
   date: Feb 28 – Mar 4, 2025
-  start: 2025-2-28
-  end: 2025-3-4
-  paperslink: ''
-  pwclink: ''
+  start: "2025-02-28"
+  end: "2025-03-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 109
   sub:
-  - ML
-  - CV
-  note: This is the second round of submissions. Summplementary material deadline
-    on Sep 11, 2024.
+    - ML
+    - CV
+  note: This is the second round of submissions. Summplementary material deadline on Sep 11, 2024.
 
 - title: AAMAS
   year: 2025
   id: aamas25
-  full_name: ''
+  full_name: ""
   link: https://aamas2025.org/
-  deadline: '2024-10-16 23:59:59'
-  abstract_deadline: '2024-10-09 23:59:59'
+  deadline: "2024-10-16 23:59:59"
+  abstract_deadline: "2024-10-09 23:59:59"
   timezone: UTC-12
   place: Detroit, Michigan, USA
   date: May 19 - May 23, 2025
-  start: '2025-05-19'
-  end: '2025-05-23'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2025-05-19"
+  end: "2025-05-23"
+  paperslink: ""
+  pwclink: ""
   sub:
-  - KR
-  - ML
-  - RO
-  - AP
+    - KR
+    - ML
+    - RO
+    - AP
   note: Mandatory abstract deadline on Oct 09, 2024.
 
 - title: CHI
@@ -2052,15 +2171,15 @@
   id: chi25
   full_name: The ACM Conference on Human Factors in Computing Systems
   link: https://chi2025.acm.org/
-  deadline: '2024-09-12 23:59:59'
-  abstract_deadline: '2024-09-05 23:59:59'
+  deadline: "2024-09-12 23:59:59"
+  abstract_deadline: "2024-09-05 23:59:59"
   timezone: UTC-12
   place: Yokohama, Japan
   date: April 26 - May 01, 2025
-  start: '2025-04-26'
-  end: '2025-05-01'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-04-26"
+  end: "2025-05-01"
+  paperslink: ""
+  pwclink: ""
   hindex: 122
   sub: HCI
   note: Mandatory abstract deadline on Sep 05, 2024.
@@ -2070,15 +2189,15 @@
   id: coling25
   full_name: The 31st International Conference on Computational Linguistics
   link: https://coling2025.org/
-  deadline: '2024-09-16 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-09-16 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Abu Dhabi, UAE
   date: January 19-24, 2025
-  start: '2025-01-19'
-  end: '2025-01-24'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-01-19"
+  end: "2025-01-24"
+  paperslink: ""
+  pwclink: ""
   hindex: 73
   sub: NLP
   note: More info can be found here.
@@ -2088,16 +2207,15 @@
   id: wsdm25
   full_name: ACM International Conference on Web Search and Data Mining
   link: https://www.wsdm-conference.org/2025/
-  deadline: '2024-08-14 23:59:00'
-  abstract_deadline: ''
+  deadline: "2024-08-14 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Hannover, Germany
   date: March 10-14, 2025
-  start: '2025-03-10'
-  end: '2025-03-14'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2025-03-10"
+  end: "2025-03-14"
+  paperslink: ""
+  pwclink: ""
   sub: DM
   note: Abstract deadline on August 7, 2024
 
@@ -2106,185 +2224,178 @@
   id: iberamia24
   full_name: 18th Ibero-American Conference on Artificial Intelligence
   link: https://www.iberamia.org/iberamia/iberamia2024/
-  deadline: '2024-06-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-06-09 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Montevideo, Uruguay
   date: November 13-15, 2024
-  start: '2024-11-13'
-  end: '2024-11-15'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-11-13"
+  end: "2024-11-15"
+  paperslink: ""
+  pwclink: ""
   hindex: 14
   sub:
-  - ML
-  - NLP
-  - CV
-  note: ''
+    - ML
+    - NLP
+    - CV
+  note: ""
 
 - title: NeurIPS [Dataset and Benchmarks Track]
   year: 2024
   id: neuripsdatasetandbenchmarkstrack24
-  full_name: Conference on Neural Information Processing Systems - Dataset and Benchmarks
-    Track
+  full_name: Conference on Neural Information Processing Systems - Dataset and Benchmarks Track
   link: https://nips.cc/Conferences/2024/CallForDatasetsBenchmarks
-  deadline: '2024-06-05 19:59:59'
-  abstract_deadline: '2024-05-29 19:59:59'
+  deadline: "2024-06-05 19:59:59"
+  abstract_deadline: "2024-05-29 19:59:59"
   timezone: UTC
   place: Vancouver, Canada
   date: December 9 - December 15, 2024
-  start: '2024-12-09'
-  end: '2024-12-15'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-12-09"
+  end: "2024-12-15"
+  paperslink: ""
+  pwclink: ""
   hindex: 309
   sub:
-  - DM
-  - ML
-  - NLP
-  - SP
-  - CV
-  note: Mandatory abstract deadline on May 29, 2024, and supplementary material deadline
-    on June 12, 2024.
+    - DM
+    - ML
+    - NLP
+    - SP
+    - CV
+  note: Mandatory abstract deadline on May 29, 2024, and supplementary material deadline on June 12, 2024.
 
 - title: ICRA
   year: 2025
   id: icra25
-  full_name: ''
+  full_name: ""
   link: https://2025.ieee-icra.org
-  deadline: '2024-09-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-09-15 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Atlanta, USA
   date: May 19 - May 23, 2025
-  start: '2025-05-19'
-  end: '2025-05-23'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-05-19"
+  end: "2025-05-23"
+  paperslink: ""
+  pwclink: ""
   hindex: 119
   sub: RO
-  note: ''
+  note: ""
 
 - title: WACV
   year: 2025
   id: wacv25-round1
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: https://wacv2025.thecvf.com/
-  deadline: '2024-07-14 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-07-14 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Tucson, Arizona
   date: Feb 28 – Mar 4, 2025
-  start: 2025-2-28
-  end: 2025-3-4
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2025-02-28"
+  end: "2025-03-04"
+  paperslink: ""
+  pwclink: ""
   sub:
-  - ML
-  - CV
-  note: 'Round 1 submission'
+    - ML
+    - CV
+  note: Round 1 submission
 
 - title: AAAI
   year: 2025
   id: aaai25
   full_name: AAAI Conference on Artificial Intelligence
   link: https://aaai.org/conference/aaai/aaai-25/
-  deadline: '2024-08-15 23:59:59'
-  abstract_deadline: '2024-08-07 23:59:59'
+  deadline: "2024-08-15 23:59:59"
+  abstract_deadline: "2024-08-07 23:59:59"
   timezone: UTC-12
   place: Philadelphia, USA
   date: February 25 - March 04, 2025
-  start: '2025-02-25'
-  end: '2025-03-04'
-  paperslink: ''
-  pwclink: ''
+  start: "2025-02-25"
+  end: "2025-03-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 212
   sub:
-  - DM
-  - KR
-  - ML
-  - RO
-  - NLP
-  - SP
-  - CV
-  - CG
-  - HCI
-  - AP
-  note: Mandatory abstract deadline on Aug 07, 2024, and supplementary material deadline
-    on Aug 19, 2024.
+    - DM
+    - KR
+    - ML
+    - RO
+    - NLP
+    - SP
+    - CV
+    - CG
+    - HCI
+    - AP
+  note: Mandatory abstract deadline on Aug 07, 2024, and supplementary material deadline on Aug 19, 2024.
 
 - title: BMVC
   year: 2024
   id: bmvc24
   full_name: The British Machine Vision Conference
   link: https://bmvc2024.org/
-  deadline: '2024-05-10 23:59:59'
-  abstract_deadline: '2024-04-26 23:59:59'
+  deadline: "2024-05-10 23:59:59"
+  abstract_deadline: "2024-04-26 23:59:59"
   timezone: GMT
   place: Glasgow, UK
   date: November 25 - November 28, 2024
-  start: '2024-11-25'
-  end: '2024-11-28'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-11-25"
+  end: "2024-11-28"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Mandatory abstract deadline on April 26, 2024
 
 - title: ICASSP
   year: 2025
   id: icassp25
-  full_name: ''
+  full_name: ""
   link: https://2025.ieeeicassp.org/
-  deadline: '2024-09-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-09-09 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Hyderabad, India
   date: April 6-11, 2025
-  start: 2025-04-6
-  end: '2025-04-11'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2025-04-06"
+  end: "2025-04-11"
+  paperslink: ""
+  pwclink: ""
   sub: SP
-  note: ''
+  note: ""
 
 - title: KIL
   year: 2024
   id: kil24
   full_name: KDD Workshop on Knowledge-infused Learning
   link: https://kil-workshop.github.io/
-  deadline: '2024-05-25 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-05-25 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Barcelona, Spain
   date: August 25, 2024
-  start: '2024-08-20'
-  end: '2024-08-25'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-08-20"
+  end: "2024-08-25"
+  paperslink: ""
+  pwclink: ""
   sub:
-  - NLP
-  - ML
-  - DM
-  note: ''
+    - NLP
+    - ML
+    - DM
+  note: ""
 
 - title: ISMIR
   year: 2024
   id: ismir24
-  full_name: ''
+  full_name: ""
   link: https://ismir2024.ismir.net/
-  deadline: '2024-04-12 23:59:59'
-  abstract_deadline: '2024-04-05 23:59:59'
+  deadline: "2024-04-12 23:59:59"
+  abstract_deadline: "2024-04-05 23:59:59"
   timezone: UTC-12
   place: San Francisco, California, USA
   date: November 10-14, 2024
-  start: '2024-11-10'
-  end: '2024-11-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-11-10"
+  end: "2024-11-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 43
   sub: SP
   note: Mandatory abstract deadline on April 5th, 2024.
@@ -2294,56 +2405,52 @@
   id: spaice24
   full_name: 1st ESA Conference on AI in and for Space
   link: https://spaice.esa.int/
-  deadline: '2024-05-19 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-05-19 23:59:59"
+  abstract_deadline: ""
   timezone: UTC+2
   place: ECSAT, Harwell, United Kingdom
   date: September 17-19, 2024
-  start: '2024-09-17'
-  end: '2024-09-19'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-09-17"
+  end: "2024-09-19"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: Best papers will be selected for special issues on AI and space in IAA Acta
-    Astronautica and Springer Astrodynamics.
+  note: Best papers will be selected for special issues on AI and space in IAA Acta Astronautica and Springer Astrodynamics.
 
 - title: EMNLP
   year: 2024
   id: emnlp24
-  full_name: ''
+  full_name: ""
   link: https://2024.emnlp.org/
-  deadline: '2024-06-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2024-06-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Miami, Florida, USA
   date: November 12-16, 2024
-  start: '2024-11-12'
-  end: '2024-11-16'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-11-12"
+  end: "2024-11-16"
+  paperslink: ""
+  pwclink: ""
   sub: NLP
-  note: ''
+  note: ""
 
 - title: CIKM
   year: 2024
   id: cikm24
-  full_name: ''
+  full_name: ""
   link: https://cikm2024.org/
-  deadline: '2024-05-20 23:59:59'
-  abstract_deadline: '2024-05-13 23:59:59'
+  deadline: "2024-05-20 23:59:59"
+  abstract_deadline: "2024-05-13 23:59:59"
   timezone: UTC-12
   place: Boise, Idaho, USA
-  date: ''
-  start: '2024-10-21'
-  end: '2024-10-25'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  date: ""
+  start: "2024-10-21"
+  end: "2024-10-25"
+  paperslink: ""
+  pwclink: ""
   sub:
-  - DM
-  - KR
+    - DM
+    - KR
   note: Mandatory abstract deadline on May 13, 2024.
 
 - title: SIGGRAPH Asia
@@ -2352,30 +2459,29 @@
   full_name: SIGGRAPH ASIA 2024
   link: https://asia.siggraph.org/2024/
   deadline: 2024-05-19 23:59
-  abstract_deadline: ''
+  abstract_deadline: ""
   timezone: UTC-12
   place: Tokyo, Japan
   date: December, 3-6, 2024
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   sub: CG
-  note: ''
+  note: ""
 
 - title: NeurIPS
   year: 2024
   id: neurips24
   full_name: Conference on Neural Information Processing Systems
   link: https://nips.cc/Conferences/2024
-  deadline: '2024-05-22 19:59:59'
-  abstract_deadline: '2024-05-15 19:59:59'
+  deadline: "2024-05-22 19:59:59"
+  abstract_deadline: "2024-05-15 19:59:59"
   timezone: UTC
   place: Vancouver, Canada
   date: December 9 - December 15, 2024
-  start: '2024-12-09'
-  end: '2024-12-15'
+  start: "2024-12-09"
+  end: "2024-12-15"
   paperslink: https://proceedings.neurips.cc/
   pwclink: https://paperswithcode.com/conference/neurips-2024-12
   hindex: 309
@@ -2385,90 +2491,86 @@
 - title: ECML PKDD
   year: 2024
   id: ecmlpkdd24
-  full_name: ''
+  full_name: ""
   link: https://2024.ecmlpkdd.org/
-  deadline: '2024-07-22 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-07-22 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Vilnius (Lithuania)
   date: September 9-13, 2024
-  start: '2024-09-09'
-  end: '2024-09-13'
+  start: "2024-09-09"
+  end: "2024-09-13"
   paperslink: https://ecmlpkdd.org/2024/program-at-a-glance/
-  pwclink: ''
+  pwclink: ""
   hindex: 45
   sub: ML
-  note: ''
+  note: ""
 
 - title: AABI
   year: 2024
   id: aabi24
   full_name: Advances in Approximate Bayesian Inference
   link: http://approximateinference.org/
-  deadline: '2024-03-29 23:59:00'
-  abstract_deadline: ''
+  deadline: "2024-03-29 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Vienna, Austria
   date: July 21, 2024
-  start: '2024-07-21'
-  end: '2024-07-21'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-07-21"
+  end: "2024-07-21"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: Co-located with ICML 2024. Submission deadlines are March 29 (proceedings
-    and workshop track) and May 10 (fast track).
+  note: Co-located with ICML 2024. Submission deadlines are March 29 (proceedings and workshop track) and May 10 (fast track).
 
 - title: CoRL
   year: 2024
   id: corl24
-  full_name: ''
+  full_name: ""
   link: https://corl.org
-  deadline: '2024-06-06 23:59:00'
-  abstract_deadline: ''
+  deadline: "2024-06-06 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Munich, Germany
   date: November 06-09, 2024
-  start: '2024-11-06'
-  end: '2024-11-09'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-11-06"
+  end: "2024-11-09"
+  paperslink: ""
+  pwclink: ""
   sub: RO
-  note: ''
+  note: ""
 
 - title: MM
   year: 2024
   id: mm24
-  full_name: ''
+  full_name: ""
   link: https://2024.acmmm.org/
-  deadline: '2024-04-08 23:59:59'
-  abstract_deadline: '2024-04-12 23:59:59'
+  deadline: "2024-04-08 23:59:59"
+  abstract_deadline: "2024-04-12 23:59:59"
   timezone: UTC-12
   place: Melbourne, Australia
   date: October 28 - November 1, 2024
-  start: '2024-10-28'
-  end: '2024-11-01'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-10-28"
+  end: "2024-11-01"
+  paperslink: ""
+  pwclink: ""
   sub: CV
   note: Mandatory abstract deadline on April 8, 2024.
 
 - title: ACL
   year: 2024
   id: acl24
-  full_name: ''
+  full_name: ""
   link: https://2024.aclweb.org/
-  deadline: '2024-02-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2024-02-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Bangkok, Thailand
   date: August 11-16, 2024
-  start: '2024-08-11'
-  end: '2024-08-16'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-08-11"
+  end: "2024-08-16"
+  paperslink: ""
+  pwclink: ""
   hindex: 192
   sub: NLP
   note: All submissions should be done through ARR.
@@ -2476,36 +2578,36 @@
 - title: IROS
   year: 2024
   id: iros24
-  full_name: ''
+  full_name: ""
   link: https://iros2024-abudhabi.org/
-  deadline: '2024-03-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-03-01 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Abu Dhabi, UAE
   date: October 14-18, 2024
-  start: '2024-10-14'
-  end: '2024-10-18'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-10-14"
+  end: "2024-10-18"
+  paperslink: ""
+  pwclink: ""
   hindex: 80
   sub: RO
-  note: ''
+  note: ""
 
 - title: KR
   year: 2024
   id: kr24
-  full_name: ''
+  full_name: ""
   link: https://kr.org/KR2024/
-  deadline: '2024-05-01 23:59:59'
-  abstract_deadline: '2024-04-24 23:59:59'
+  deadline: "2024-05-01 23:59:59"
+  abstract_deadline: "2024-04-24 23:59:59"
   timezone: UTC-12
   place: Hanoi, Vietnam
   date: Nov 02-08, 2024
-  start: '2024-11-02'
-  end: '2024-11-08'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2024-11-02"
+  end: "2024-11-08"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: KR
   note: Mandatory abstract deadline on April 24, 2024.
 
@@ -2514,159 +2616,152 @@
   id: aaai2024springsymposiumonclinicalfoundationmodels24
   full_name: AAAI 2024 Spring Symposium on Clinical Foundation Models
   link: https://clinicalfoundationmodels.github.io/
-  deadline: '2024-01-26 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-01-26 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Stanford, USA
   date: March, 25-27, 2024
-  start: '2024-03-25'
-  end: '2024-03-27'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-03-25"
+  end: "2024-03-27"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: AAAI 2024 Spring Symposium on User-Aligned Assessment of Adaptive AI Systems
   year: 2024
   id: aaai2024springsymposiumonuseralignedassessmentofadaptiveaisystems24
-  full_name: ''
+  full_name: ""
   link: https://aair-lab.github.io/aia2024/
-  deadline: '2023-12-22 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-12-22 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Stanford, USA
   date: March 25-27, 2024
-  start: '2024-03-25'
-  end: '2024-03-27'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2024-03-25"
+  end: "2024-03-27"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: ML
-  note: ''
+  note: ""
 
 - title: SIGGRAPH
   year: 2024
   id: siggraph24
-  full_name: ''
+  full_name: ""
   link: https://s2024.siggraph.org/
-  deadline: '2024-01-24 22:00:00'
-  abstract_deadline: '2024-01-23 22:00:00'
+  deadline: "2024-01-24 22:00:00"
+  abstract_deadline: "2024-01-23 22:00:00"
   timezone: GMT
   place: Denver, USA
   date: July 28 - August 1, 2024
-  start: '2024-07-28'
-  end: '2024-08-01'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-07-28"
+  end: "2024-08-01"
+  paperslink: ""
+  pwclink: ""
   sub: CG
   note: Mandatory abstract deadline on Jan 23, 2024.
 
 - title: UAI
   year: 2024
   id: uai24
-  full_name: ''
+  full_name: ""
   link: https://www.auai.org/uai2024/
-  deadline: '2024-02-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-02-09 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Barcelona, Spain
   date: July 15-19, 2024
-  start: '2024-07-15'
-  end: '2024-07-19'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-07-15"
+  end: "2024-07-19"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: CoLLAs
   year: 2024
   id: collas24
-  full_name: ''
+  full_name: ""
   link: https://lifelong-ml.cc
-  deadline: '2024-02-15 23:59:59'
-  abstract_deadline: '2024-02-09 23:59:59'
+  deadline: "2024-02-15 23:59:59"
+  abstract_deadline: "2024-02-09 23:59:59"
   timezone: UTC-12
   place: Pisa, Italy
   date: July 29 - August 01, 2024
-  start: '2024-07-29'
-  end: '2024-08-01'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-07-29"
+  end: "2024-08-01"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: ECAI
   year: 2024
   id: ecai24
-  full_name: ''
+  full_name: ""
   link: https://www.ecai2024.eu/
-  deadline: '2024-04-25 23:59:59'
-  abstract_deadline: '2024-04-19 23:59:59'
+  deadline: "2024-04-25 23:59:59"
+  abstract_deadline: "2024-04-19 23:59:59"
   timezone: UTC-12
   place: Santiago de Compostela, Spain
   date: October 19-24, 2024
-  start: '2024-10-19'
-  end: '2024-10-24'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-10-19"
+  end: "2024-10-24"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Mandatory abstract deadline on April 19, 2024.
 
 - title: RLC
   year: 2024
   id: rlc24
-  full_name: ''
+  full_name: ""
   link: https://rl-conference.cc/
-  deadline: '2024-03-08 23:59:59'
-  abstract_deadline: '2024-03-01 23:59:59'
+  deadline: "2024-03-08 23:59:59"
+  abstract_deadline: "2024-03-01 23:59:59"
   timezone: UTC-12
   place: Amherst, Massachusetts, USA
   date: August 09-12, 2024
-  start: '2024-08-09'
-  end: '2024-08-12'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-08-09"
+  end: "2024-08-12"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: KDD
   year: 2024
   id: kdd24
-  full_name: ''
+  full_name: ""
   link: https://kdd2024.kdd.org/
-  deadline: '2024-02-08 23:59:59'
-  abstract_deadline: '2024-02-01 23:59:59'
+  deadline: "2024-02-08 23:59:59"
+  abstract_deadline: "2024-02-01 23:59:59"
   timezone: UTC-12
   place: Barcelona, Spain
   date: August 25-29, 2024
-  start: '2024-08-25'
-  end: '2024-08-29'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-08-25"
+  end: "2024-08-29"
+  paperslink: ""
+  pwclink: ""
   sub: DM
-  note: ''
+  note: ""
 
 - title: RSS
   year: 2024
   id: rss24
-  full_name: ''
+  full_name: ""
   link: https://roboticsconference.org/2024
-  deadline: '2024-02-02 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-02-02 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Delft, Netherlands
   date: July 15-19, 2024
-  start: '2024-07-15'
-  end: '2024-07-19'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-07-15"
+  end: "2024-07-19"
+  paperslink: ""
+  pwclink: ""
   hindex: 61
   sub: RO
   note: Optional supplementary material deadline on February 08, 2024.
@@ -2674,53 +2769,53 @@
 - title: ICML
   year: 2024
   id: icml24
-  full_name: ''
+  full_name: ""
   link: https://icml.cc/Conferences/2024
-  deadline: '2024-02-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-02-01 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Vienna, Austria
   date: July 21-27, 2024
-  start: '2024-07-21'
-  end: '2024-07-27'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-07-21"
+  end: "2024-07-27"
+  paperslink: ""
+  pwclink: ""
   hindex: 254
   sub: ML
-  note: ''
+  note: ""
 
 - title: MICCAI
   year: 2024
   id: miccai24
-  full_name: ''
+  full_name: ""
   link: https://conferences.miccai.org/2024/en/
-  deadline: '2024-03-07 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-03-07 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Marrakech, Morocco
   date: October 6 - October 10, 2024
-  start: '2024-10-06'
-  end: '2024-10-10'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-10-06"
+  end: "2024-10-10"
+  paperslink: ""
+  pwclink: ""
   hindex: 78
   sub: CV
-  note: ''
+  note: ""
 
 - title: SIGIR
   year: 2024
   id: sigir24
-  full_name: ''
+  full_name: ""
   link: https://sigir-2024.github.io
-  deadline: '2024-01-25 23:59:00'
-  abstract_deadline: '2024-01-18 23:59:00'
+  deadline: "2024-01-25 23:59:00"
+  abstract_deadline: "2024-01-18 23:59:00"
   timezone: UTC-12
   place: Washington D.C., USA
   date: July 14-18, 2024
-  start: '2024-07-14'
-  end: '2024-07-18'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-07-14"
+  end: "2024-07-18"
+  paperslink: ""
+  pwclink: ""
   hindex: 66
   sub: DM
   note: Mandatory abstract deadline on January 18, 2024.
@@ -2730,19 +2825,18 @@
   id: colm24
   full_name: 1st Conference on Language Modeling
   link: https://colmweb.org/
-  deadline: '2024-03-29 23:59:59'
-  abstract_deadline: '2024-03-22 23:59:59'
+  deadline: "2024-03-29 23:59:59"
+  abstract_deadline: "2024-03-22 23:59:59"
   timezone: UTC-12
   place: Philadelphia, USA
   date: October 7-9, 2024
-  start: '2024-10-07'
-  end: '2024-10-09'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-10-07"
+  end: "2024-10-09"
+  paperslink: ""
+  pwclink: ""
   sub:
-  - NLP
-  - ML
+    - NLP
+    - ML
   note: Mandatory abstract deadline on March 22, 2024.
 
 - title: IJCAI
@@ -2750,35 +2844,33 @@
   id: ijcai24
   full_name: International Joint Conference on Artificial Intelligence
   link: https://ijcai24.org/
-  deadline: '2024-01-17 23:59:59'
-  abstract_deadline: '2024-01-10 23:59:59'
+  deadline: "2024-01-17 23:59:59"
+  abstract_deadline: "2024-01-10 23:59:59"
   timezone: UTC-12
   place: Jeju, South Korea
   date: August 03-09, 2024
-  start: '2024-08-03'
-  end: '2024-08-09'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-08-03"
+  end: "2024-08-09"
+  paperslink: ""
+  pwclink: ""
   hindex: 133
   sub: ML
-  note: Mandatory abstract deadline on January 10, 2024 and optional supplementary
-    material deadline on January 24, 2024.
+  note: Mandatory abstract deadline on January 10, 2024 and optional supplementary material deadline on January 24, 2024.
 
 - title: CHIL
   year: 2024
   id: chil24
   full_name: Conference on Health, Inference, and Learning
   link: https://www.chilconference.org/index.html
-  deadline: '2024-02-16 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-02-16 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: New York, New York
   date: June, 27-28, 2024
-  start: '2024-06-27'
-  end: '2024-06-28'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-06-27"
+  end: "2024-06-28"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Please check the website for the latest updates.
 
@@ -2787,87 +2879,84 @@
   id: satml24
   full_name: IEEE Conference on Secure and Trustworthy Machine Learning
   link: https://satml.org/
-  deadline: '2023-10-11 23:59:59'
-  abstract_deadline: '2023-10-04 23:59:59'
+  deadline: "2023-10-11 23:59:59"
+  abstract_deadline: "2023-10-04 23:59:59"
   timezone: UTC-12
   place: Toronto, Canada
   date: April 2024
-  start: '2024-04-01'
-  end: '2024-04-01'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-04-01"
+  end: "2024-04-01"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Check the website for exact conference dates.
 
 - title: ECCV
   year: 2024
   id: eccv24
-  full_name: ''
+  full_name: ""
   link: https://eccv2024.ecva.net/
-  deadline: '2024-03-07 12:59:00'
-  abstract_deadline: '2024-02-29 12:59:00'
+  deadline: "2024-03-07 12:59:00"
+  abstract_deadline: "2024-02-29 12:59:00"
   timezone: UTC-8
   place: Milano, Italy
   date: September 29 - October 04, 2024
-  start: '2024-09-29'
-  end: '2024-10-04'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-09-29"
+  end: "2024-10-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 238
   sub: CV
-  note: ''
+  note: ""
 
 - title: CLeaR
   year: 2024
   id: clear24
-  full_name: ''
+  full_name: ""
   link: https://www.cclear.cc/2024
-  deadline: '2023-10-27 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-10-27 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Los Angeles, USA
   date: April 1 - April 03, 2024
-  start: '2024-04-01'
-  end: '2024-04-03'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-04-01"
+  end: "2024-04-03"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: ICPRAI
   year: 2024
   id: icprai24
   full_name: International Conference on Pattern Recognition and Artificial Intelligence
   link: http://icprai2024.org/
-  deadline: '2024-01-05 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-01-05 23:59:59"
+  abstract_deadline: ""
   timezone: Asia/Seoul
   place: Jeju Island, South Korea
   date: Jun 18-21, 2024
-  start: '2024-06-18'
-  end: '2024-06-21'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-06-18"
+  end: "2024-06-21"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Soliciting both regular papers and work-in-progress papers.
 
 - title: ICAPS
   year: 2024
   id: icaps24
-  full_name: ''
+  full_name: ""
   link: https://icaps24.icaps-conference.org/
-  deadline: '2023-12-13 23:59:59'
-  abstract_deadline: '2023-12-07 23:59:59'
+  deadline: "2023-12-13 23:59:59"
+  abstract_deadline: "2023-12-07 23:59:59"
   timezone: UTC-12
   place: Banff, Canada
   date: Jun 01-06, 2024
-  start: '2024-06-01'
-  end: '2024-06-06'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-06-01"
+  end: "2024-06-06"
+  paperslink: ""
+  pwclink: ""
   hindex: 32
   sub: AP
   note: Mandatory abstract deadline on December 07, 2023.
@@ -2875,17 +2964,17 @@
 - title: NAACL
   year: 2024
   id: naacl24
-  full_name: ''
+  full_name: ""
   link: https://2024.naacl.org
-  deadline: '2023-12-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-12-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Mexico City, Mexico
   date: June 16-21, 2024
-  start: '2024-06-16'
-  end: '2024-06-21'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-06-16"
+  end: "2024-06-21"
+  paperslink: ""
+  pwclink: ""
   hindex: 133
   sub: NLP
   note: All submissions must be done through ARR.
@@ -2893,17 +2982,17 @@
 - title: CSCW
   year: 2024
   id: cscw24
-  full_name: ''
+  full_name: ""
   link: https://cscw.acm.org/2024/
-  deadline: '2024-01-16 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-01-16 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: San José, Costa Rica
   date: November 9-13, 2024
-  start: '2024-11-09'
-  end: '2024-11-13'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-11-09"
+  end: "2024-11-13"
+  paperslink: ""
+  pwclink: ""
   hindex: 31
   sub: HCI
   note: This is the January cycle.
@@ -2911,17 +3000,17 @@
 - title: IUI
   year: 2024
   id: iui24
-  full_name: ''
+  full_name: ""
   link: https://iui.acm.org/2024/
-  deadline: '2023-10-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-10-09 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Greenville, South Carolina, USA
   date: March 18-21, 2024
-  start: '2024-03-18'
-  end: '2024-03-21'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-03-18"
+  end: "2024-03-21"
+  paperslink: ""
+  pwclink: ""
   hindex: 47
   sub: HCI
   note: Mandatory abstract deadline on Oct 2, 2023.
@@ -2929,17 +3018,17 @@
 - title: AISTATS
   year: 2024
   id: aistats24
-  full_name: ''
+  full_name: ""
   link: https://www.aistats.org/aistats2024/
-  deadline: '2023-10-16 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-10-16 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Valencia, Spain
   date: May 02-04, 2024
-  start: '2024-05-02'
-  end: '2024-05-04'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-05-02"
+  end: "2024-05-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 91
   sub: ML
   note: Mandatory abstract deadline on Oct 6, 2023.
@@ -2947,53 +3036,53 @@
 - title: ICASSP
   year: 2024
   id: icassp24
-  full_name: ''
+  full_name: ""
   link: https://2024.ieeeicassp.org/
-  deadline: '2023-09-06 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-09-06 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Seoul, Korea
   date: April 14-19, 2024
-  start: '2024-04-14'
-  end: '2024-04-19'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-04-14"
+  end: "2024-04-19"
+  paperslink: ""
+  pwclink: ""
   hindex: 123
   sub: SP
-  note: ''
+  note: ""
 
 - title: HRI
   year: 2024
   id: hri24
-  full_name: ''
+  full_name: ""
   link: https://humanrobotinteraction.org/2024/
-  deadline: '2023-09-29 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-09-29 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Boulder, Colorado, USA
   date: March 11-14, 2024
-  start: '2024-03-11'
-  end: '2024-03-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-03-11"
+  end: "2024-03-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 55
   sub: RO
-  note: ''
+  note: ""
 
 - title: WACV
   year: 2024
   id: wacv24
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: https://wacv2024.thecvf.com
-  deadline: '2023-08-30 11:59:59'
-  abstract_deadline: ''
+  deadline: "2023-08-30 11:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Waikoloa, Hawaii, USA
   date: January 3-7, 2024
-  start: '2024-01-03'
-  end: '2024-01-07'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-01-03"
+  end: "2024-01-07"
+  paperslink: ""
+  pwclink: ""
   hindex: 76
   sub: CV
   note: This is the Round 2 submission. Paper Registration is on August 23rd 2023.
@@ -3001,18 +3090,17 @@
 - title: EACL
   year: 2024
   id: eacl24
-  full_name: The 18th Conference of the European Chapter of the Association for Computational
-    Linguistics
+  full_name: The 18th Conference of the European Chapter of the Association for Computational Linguistics
   link: https://2024.eacl.org/
-  deadline: '2023-10-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-10-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: St. Julians, Malta
   date: March 17-22, 2024
-  start: '2024-03-17'
-  end: '2024-03-22'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-03-17"
+  end: "2024-03-22"
+  paperslink: ""
+  pwclink: ""
   hindex: 38
   sub: NLP
   note: Submission via ACL Rolling Review, commitment date 2023-12-20
@@ -3020,35 +3108,34 @@
 - title: 3DV
   year: 2024
   id: 3dv24
-  full_name: ''
+  full_name: ""
   link: https://3dvconf.github.io/2024/
-  deadline: '2023-08-07 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-08-07 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Davos, Switzerland
   date: March 18-21, 2024
-  start: '2024-03-18'
-  end: '2024-03-21'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-03-18"
+  end: "2024-03-21"
+  paperslink: ""
+  pwclink: ""
   sub: CV
-  note: ''
+  note: ""
 
 - title: ICLR
   year: 2024
   id: iclr24
-  full_name: ''
+  full_name: ""
   link: https://iclr.cc/Conferences/2024
-  deadline: '2023-09-28 23:59:59'
-  abstract_deadline: '2023-09-23 23:59:59'
+  deadline: "2023-09-28 23:59:59"
+  abstract_deadline: "2023-09-23 23:59:59"
   timezone: UTC-12
   place: Vienna, Austria
   date: May 07-11, 2024
-  start: '2024-05-07'
-  end: '2024-05-11'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-05-07"
+  end: "2024-05-11"
+  paperslink: ""
+  pwclink: ""
   hindex: 286
   sub: ML
   note: Mandatory abstract deadline on September 23, 2023.
@@ -3056,54 +3143,53 @@
 - title: CVPR
   year: 2024
   id: cvpr24
-  full_name: ''
+  full_name: ""
   link: https://cvpr.thecvf.com/Conferences/2024
-  deadline: '2023-11-17 23:59:59'
-  abstract_deadline: '2023-11-03 23:59:59'
+  deadline: "2023-11-17 23:59:59"
+  abstract_deadline: "2023-11-03 23:59:59"
   timezone: America/Los_Angeles
   place: Seattle, Washington, USA
   date: June 17-21, 2024
-  start: '2024-06-17'
-  end: '2024-06-21'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-06-17"
+  end: "2024-06-21"
+  paperslink: ""
+  pwclink: ""
   hindex: 389
   sub: CV
-  note: Mandatory paper registration deadline on November 03, 2023 and optional supplementary
-    material deadline on November 26, 2023.
+  note: Mandatory paper registration deadline on November 03, 2023 and optional supplementary material deadline on November 26, 2023.
 
 - title: ICRA
   year: 2024
   id: icra24
-  full_name: ''
+  full_name: ""
   link: http://2024.ieee-icra.org/
-  deadline: '2023-09-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-09-15 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Yokohama, Japan
   date: May 13 - May 17, 2024
-  start: '2024-05-13'
-  end: '2024-05-17'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-05-13"
+  end: "2024-05-17"
+  paperslink: ""
+  pwclink: ""
   hindex: 116
   sub: RO
-  note: ''
+  note: ""
 
 - title: CoNLL
   year: 2023
   id: conll23
-  full_name: ''
+  full_name: ""
   link: https://conll.org/
-  deadline: '2023-06-30 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-06-30 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Singapore
   date: December 6-7, 2023
-  start: '2023-12-06'
-  end: '2023-12-07'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-12-06"
+  end: "2023-12-07"
+  paperslink: ""
+  pwclink: ""
   hindex: 44
   sub: NLP
   note: Co-located with EMNLP 2023
@@ -3111,18 +3197,17 @@
 - title: AAMAS
   year: 2024
   id: aamas24
-  full_name: ''
+  full_name: ""
   link: https://www.aamas2024-conference.auckland.ac.nz/
-  deadline: '2023-10-09 23:59:59'
-  abstract_deadline: '2023-10-02 23:59:59'
+  deadline: "2023-10-09 23:59:59"
+  abstract_deadline: "2023-10-02 23:59:59"
   timezone: UTC-12
   place: Auckland, New Zealand
   date: May 06 - May 10, 2024
-  start: '2024-05-06'
-  end: '2024-05-10'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-05-06"
+  end: "2024-05-10"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Mandatory abstract deadline on Oct 02, 2023.
 
@@ -3131,34 +3216,33 @@
   id: aaai24
   full_name: AAAI Conference on Artificial Intelligence
   link: https://aaai.org/aaai-conference/
-  deadline: '2023-08-15 23:59:59'
-  abstract_deadline: '2023-08-08 23:59:59'
+  deadline: "2023-08-15 23:59:59"
+  abstract_deadline: "2023-08-08 23:59:59"
   timezone: UTC-12
   place: Vancouver, Canada
   date: February 20 - February 28, 2024
-  start: '2024-02-20'
-  end: '2024-02-28'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-02-20"
+  end: "2024-02-28"
+  paperslink: ""
+  pwclink: ""
   hindex: 180
   sub: ML
-  note: Mandatory abstract deadline on Aug 08, 2023, and supplementary material deadline
-    on Aug 18, 2023.
+  note: Mandatory abstract deadline on Aug 08, 2023, and supplementary material deadline on Aug 18, 2023.
 
 - title: ECIR
   year: 2024
   id: ecir24
   full_name: European Conference on Information Retrieval
   link: https://www.ecir2024.org/
-  deadline: '2023-09-27 23:59:59'
-  abstract_deadline: '2023-09-20 23:59:59'
+  deadline: "2023-09-27 23:59:59"
+  abstract_deadline: "2023-09-20 23:59:59"
   timezone: UTC-12
   place: Glasgow, Scotland
   date: March 24-28, 2024
-  start: '2024-03-24'
-  end: '2024-03-28'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-03-24"
+  end: "2024-03-28"
+  paperslink: ""
+  pwclink: ""
   hindex: 31
   sub: DM
   note: Abstract deadline on Sep 20, 2023.
@@ -3168,53 +3252,51 @@
   id: chi24
   full_name: AAAI Conference on Artificial Intelligence
   link: https://chi2024.acm.org/
-  deadline: '2023-09-14 23:59:59'
-  abstract_deadline: '2023-09-07 23:59:59'
+  deadline: "2023-09-14 23:59:59"
+  abstract_deadline: "2023-09-07 23:59:59"
   timezone: UTC-12
   place: Hawaii, EEUU
   date: May 11 - May 16, 2024
-  start: '2024-05-11'
-  end: '2024-05-16'
-  paperslink: ''
-  pwclink: ''
+  start: "2024-05-11"
+  end: "2024-05-16"
+  paperslink: ""
+  pwclink: ""
   hindex: 180
   sub: HCI
-  note: Mandatory abstract deadline on Sep 07, 2023, and paper deadline on Sep 14,
-    2023.
+  note: Mandatory abstract deadline on Sep 07, 2023, and paper deadline on Sep 14, 2023.
 
 - title: LREC-COLING
   year: 2024
   id: lreccoling24
-  full_name: The 2024 Joint International Conference on Computational Linguistics,
-    Language Resources and Evaluation
+  full_name: The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation
   link: https://lrec-coling-2024.org
-  deadline: '2023-10-20 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-10-20 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Torino, Italy
   date: May 20 - May 25, 2024
-  start: '2024-05-20'
-  end: '2024-05-25'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2024-05-20"
+  end: "2024-05-25"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: NLP
   note: Workshop / Tutorial proposals are also due on October 13th,
 
 - title: IJCNLP-AACL
   year: 2023
   id: ijcnlpaacl23
-  full_name: ''
+  full_name: ""
   link: http://www.ijcnlp-aacl2023.org/
-  deadline: '2023-05-23 23:59:00'
-  abstract_deadline: ''
+  deadline: "2023-05-23 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Bali, Indonesia
   date: November 1-4, 2023
-  start: '2023-11-01'
-  end: '2023-11-04'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-11-01"
+  end: "2023-11-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 37
   sub: NLP
   note: ARR commitment deadline is August 15, 2023.
@@ -3222,91 +3304,85 @@
 - title: RecSys
   year: 2023
   id: recsys23
-  full_name: ''
+  full_name: ""
   link: https://recsys.acm.org/recsys23/
-  deadline: '2023-04-21 23:59:59'
-  abstract_deadline: '2023-04-14 23:59:59'
+  deadline: "2023-04-21 23:59:59"
+  abstract_deadline: "2023-04-14 23:59:59"
   timezone: UTC-12
   place: Singapore
   date: September 18 - September 22, 2023
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   sub: DM
   note: Mandatory abstract deadline on April 14, 2023.
 
 - title: ACML
   year: 2023
   id: acml23
-  full_name: ''
+  full_name: ""
   link: https://www.acml-conf.org/2023
-  deadline: '2023-06-23 23:59:00'
-  abstract_deadline: ''
+  deadline: "2023-06-23 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Istanbul, Türkiye
   date: November 11-14, 2023
-  start: '2023-11-11'
-  end: '2023-11-14'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-11-11"
+  end: "2023-11-14"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: SIGIR-AP
   year: 2023
   id: sigirap23
-  full_name: 1st International ACM SIGIR Conference on Information Retrieval in the
-    Asia Pacific
+  full_name: 1st International ACM SIGIR Conference on Information Retrieval in the Asia Pacific
   link: http://www.sigir-ap.org/sigir-ap-2023/
-  deadline: '2023-07-03 23:59:00'
-  abstract_deadline: '2023-06-26 23:59:00'
+  deadline: "2023-07-03 23:59:00"
+  abstract_deadline: "2023-06-26 23:59:00"
   timezone: UTC-12
   place: Beijing, China
   date: November 26-29, 2023
-  start: '2023-11-26'
-  end: '2023-11-29'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-11-26"
+  end: "2023-11-29"
+  paperslink: ""
+  pwclink: ""
   sub: DM
   note: Mandatory abstract deadline on June 26, 2023.
 
 - title: EMNLP
   year: 2023
   id: emnlp23
-  full_name: ''
+  full_name: ""
   link: https://2023.emnlp.org/
-  deadline: '2023-06-23 23:59:00'
-  abstract_deadline: '2023-06-16 23:59:00'
+  deadline: "2023-06-23 23:59:00"
+  abstract_deadline: "2023-06-16 23:59:00"
   timezone: UTC-12
   place: Singapore
   date: December 6-10, 2023
-  start: '2023-12-06'
-  end: '2023-12-10'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-12-06"
+  end: "2023-12-10"
+  paperslink: ""
+  pwclink: ""
   sub: NLP
   note: Mandatory abstract deadline on June 16, 2023. Hybrid format with ARR and OpenReview.
 
-- title: '*SEM'
+- title: "*SEM"
   year: 2023
   id: sem23
-  full_name: '*SEM 2023'
+  full_name: "*SEM 2023"
   link: https://sites.google.com/view/starsem2023
   deadline: 2023-03-24 23:59
-  abstract_deadline: ''
+  abstract_deadline: ""
   timezone: UTC-12
   place: Toronto, Canada
   date: July, 13-14, 2023
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   sub: NLP
   note: Co-located with ACL 2023
 
@@ -3316,104 +3392,99 @@
   full_name: SIGGRAPH ASIA 2023
   link: https://asia.siggraph.org/2023/
   deadline: 2023-05-16 23:59
-  abstract_deadline: ''
+  abstract_deadline: ""
   timezone: UTC-12
   place: Sydney, Australia
   date: December, 12-15, 2023
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   sub: CG
-  note: ''
+  note: ""
 
 - title: CoRL
   year: 2023
   id: corl23
-  full_name: ''
+  full_name: ""
   link: https://corl2023.org
-  deadline: '2023-06-08 23:59:00'
-  abstract_deadline: ''
+  deadline: "2023-06-08 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Atlanta, Georgia, USA
   date: November 06-09, 2023
-  start: '2023-11-06'
-  end: '2023-11-09'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-11-06"
+  end: "2023-11-09"
+  paperslink: ""
+  pwclink: ""
   sub: RO
-  note: ''
+  note: ""
 
 - title: ECAI
   year: 2023
   id: ecai23
-  full_name: ''
+  full_name: ""
   link: https://ecai2023.eu/
-  deadline: '2023-05-08 23:59:59'
-  abstract_deadline: '2023-05-02 23:59:59'
+  deadline: "2023-05-08 23:59:59"
+  abstract_deadline: "2023-05-02 23:59:59"
   timezone: UTC-12
   place: Kraków, Poland
   date: September 30 - October 05, 2023
-  start: '2023-09-30'
-  end: '2023-10-05'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-09-30"
+  end: "2023-10-05"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: Mandatory abstract deadline on May 02, 2023.
 
 - title: MM
   year: 2023
   id: mm23
-  full_name: ''
+  full_name: ""
   link: https://www.acmmm2023.org/
-  deadline: '2023-04-30 23:59:59'
-  abstract_deadline: '2023-04-23 23:59:59'
+  deadline: "2023-04-30 23:59:59"
+  abstract_deadline: "2023-04-23 23:59:59"
   timezone: UTC-12
   place: Ottawa, Canada
   date: October 29 - November 03, 2023
-  start: '2023-10-29'
-  end: '2023-11-03'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-10-29"
+  end: "2023-11-03"
+  paperslink: ""
+  pwclink: ""
   sub: CV
   note: Mandatory abstract deadline on April 23, 2023.
 
 - title: RO-MAN
   year: 2023
   id: roman23
-  full_name: ''
+  full_name: ""
   link: http://ro-man2023.org/main
-  deadline: '2023-03-31 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-03-31 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Busan, South Korea
   date: August 28-31, 2023
-  start: '2023-08-28'
-  end: '2023-08-31'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-08-28"
+  end: "2023-08-31"
+  paperslink: ""
+  pwclink: ""
   sub: RO
-  note: ''
+  note: ""
 
 - title: NeurIPS
   year: 2023
   id: neurips23
-  full_name: ''
+  full_name: ""
   link: https://neurips.cc/Conferences/2023/
-  deadline: '2023-05-17 20:00:00'
-  abstract_deadline: '2023-05-11 20:00:00'
+  deadline: "2023-05-17 20:00:00"
+  abstract_deadline: "2023-05-11 20:00:00"
   timezone: UTC
   place: New Orleans, Louisiana, USA
   date: December 10 - December 16, 2023
-  start: '2023-12-10'
-  end: '2023-12-16'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-12-10"
+  end: "2023-12-16"
+  paperslink: ""
+  pwclink: ""
   hindex: 278
   sub: ML
   note: Mandatory abstract deadline on May 11, 2023
@@ -3421,17 +3492,17 @@
 - title: AutoML-Conf
   year: 2023
   id: automlconf23
-  full_name: ''
+  full_name: ""
   link: https://2023.automl.cc
-  deadline: '2023-03-23 23:59:59'
-  abstract_deadline: '2023-03-16 23:59:59'
+  deadline: "2023-03-23 23:59:59"
+  abstract_deadline: "2023-03-16 23:59:59"
   timezone: UTC-12
   place: Potsdam/Berlin, Germany
   date: September 12-15, 2023
-  start: '2023-09-12'
-  end: '2023-09-15'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-09-12"
+  end: "2023-09-15"
+  paperslink: ""
+  pwclink: ""
   hindex: 0
   sub: ML
   note: Mandatory abstract deadline on March 16, 2023
@@ -3439,108 +3510,105 @@
 - title: CoLLAs
   year: 2023
   id: collas23
-  full_name: ''
+  full_name: ""
   link: https://lifelong-ml.cc
-  deadline: '2023-03-13 23:59:59'
-  abstract_deadline: '2023-03-09 23:59:59'
+  deadline: "2023-03-13 23:59:59"
+  abstract_deadline: "2023-03-09 23:59:59"
   timezone: UTC-12
   place: Montreal, Canada
   date: August 22-25, 2023
-  start: '2023-08-22'
-  end: '2023-08-25'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-08-22"
+  end: "2023-08-25"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: UAI
   year: 2023
   id: uai23
-  full_name: ''
+  full_name: ""
   link: https://www.auai.org/uai2023/
-  deadline: '2023-02-17 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-02-17 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Pittsburgh, USA
   date: July 31 - August 04, 2023
-  start: '2023-07-31'
-  end: '2023-08-04'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-07-31"
+  end: "2023-08-04"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: RSS
   year: 2023
   id: rss23
-  full_name: ''
+  full_name: ""
   link: https://roboticsconference.org/2023
-  deadline: '2023-02-03 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-02-03 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Daegu, South Korea
   date: July 10-14, 2023
-  start: '2023-07-10'
-  end: '2023-07-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-07-10"
+  end: "2023-07-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 58
   sub: RO
-  note: ''
+  note: ""
 
 - title: IJCAI
   year: 2023
   id: ijcai23
-  full_name: ''
+  full_name: ""
   link: https://ijcai-23.org/
-  deadline: '2023-01-18 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-01-18 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Macao, S.A.R.
   date: August 19-25, 2023
-  start: '2023-08-19'
-  end: '2023-08-25'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-08-19"
+  end: "2023-08-25"
+  paperslink: ""
+  pwclink: ""
   hindex: 120
   sub: ML
-  note: Mandatory abstract deadline on Jan 11, 2023, and supplementary material deadline
-    on Jan 23, 2023.
+  note: Mandatory abstract deadline on Jan 11, 2023, and supplementary material deadline on Jan 23, 2023.
 
 - title: ICML
   year: 2023
   id: icml23
-  full_name: ''
+  full_name: ""
   link: https://icml.cc/Conferences/2023
-  deadline: '2023-01-26 11:59:00'
-  abstract_deadline: ''
+  deadline: "2023-01-26 11:59:00"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Hawai'i, USA
   date: July 23-29, 2023
-  start: '2023-07-23'
-  end: '2023-07-29'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-07-23"
+  end: "2023-07-29"
+  paperslink: ""
+  pwclink: ""
   hindex: 204
   sub: ML
-  note: ''
+  note: ""
 
 - title: SIGIR
   year: 2023
   id: sigir23
-  full_name: ''
+  full_name: ""
   link: https://sigir.org/sigir2023/
-  deadline: '2023-01-31 23:59:00'
-  abstract_deadline: '2023-01-24 23:59:00'
+  deadline: "2023-01-31 23:59:00"
+  abstract_deadline: "2023-01-24 23:59:00"
   timezone: UTC-12
   place: Taipei, Taiwan
   date: July 23-27, 2023
-  start: '2023-07-23'
-  end: '2023-07-27'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-07-23"
+  end: "2023-07-27"
+  paperslink: ""
+  pwclink: ""
   hindex: 66
   sub: DM
   note: Mandatory abstract deadline on January 24, 2023.
@@ -3548,53 +3616,53 @@
 - title: IROS
   year: 2023
   id: iros23
-  full_name: ''
+  full_name: ""
   link: https://ieee-iros.org/
-  deadline: '2023-03-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-03-01 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Detroit, USA
   date: October 01-05, 2023
-  start: '2023-10-01'
-  end: '2023-10-05'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-10-01"
+  end: "2023-10-05"
+  paperslink: ""
+  pwclink: ""
   hindex: 80
   sub: RO
-  note: ''
+  note: ""
 
 - title: KR
   year: 2023
   id: kr23
-  full_name: ''
+  full_name: ""
   link: https://kr.org/KR2023/
-  deadline: '2023-03-14 23:59:59'
-  abstract_deadline: '2023-03-03 23:59:59'
+  deadline: "2023-03-14 23:59:59"
+  abstract_deadline: "2023-03-03 23:59:59"
   timezone: UTC-12
   place: Rhodes, Greece
   date: Sep 02-08, 2023
-  start: '2023-09-02'
-  end: '2023-09-08'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2023-09-02"
+  end: "2023-09-08"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: KR
   note: Mandatory abstract deadline on March 03, 2023.
 
 - title: ICAPS
   year: 2023
   id: icaps23
-  full_name: ''
+  full_name: ""
   link: https://icaps23.icaps-conference.org/
-  deadline: '2022-11-30 23:59:59'
-  abstract_deadline: '2022-11-25 23:59:59'
+  deadline: "2022-11-30 23:59:59"
+  abstract_deadline: "2022-11-25 23:59:59"
   timezone: UTC-12
   place: Prague, Czech Republic
   date: Jul 08-13, 2023
-  start: '2023-07-08'
-  end: '2023-07-13'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-07-08"
+  end: "2023-07-13"
+  paperslink: ""
+  pwclink: ""
   hindex: 27
   sub: AP
   note: Mandatory abstract deadline on November 25, 2022.
@@ -3602,36 +3670,35 @@
 - title: ACL
   year: 2023
   id: acl23
-  full_name: ''
+  full_name: ""
   link: https://2023.aclweb.org/
-  deadline: '2023-01-20 23:59:00'
-  abstract_deadline: '2023-01-13 23:59:00'
+  deadline: "2023-01-20 23:59:00"
+  abstract_deadline: "2023-01-13 23:59:00"
   timezone: UTC-12
   place: Toronto, Canada
   date: July 9-14, 2023
-  start: '2023-07-09'
-  end: '2023-07-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-07-09"
+  end: "2023-07-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 169
   sub: NLP
-  note: Hybrid format with ARR and START. Above deadlines are for START while abstract
-    deadline is 13 January 2023. Submission to ARR should before…
+  note: Hybrid format with ARR and START. Above deadlines are for START while abstract deadline is 13 January 2023. Submission to ARR should before…
 
 - title: EACL
   year: 2023
   id: eacl23
-  full_name: ''
+  full_name: ""
   link: https://2023.eacl.org/
-  deadline: '2022-10-20 23:59:00'
-  abstract_deadline: '2022-10-13 23:59:00'
+  deadline: "2022-10-20 23:59:00"
+  abstract_deadline: "2022-10-13 23:59:00"
   timezone: UTC-12
   place: Hybrid (Dubrovnik, Croatia)
   date: May 02-06, 2023
-  start: '2023-05-02'
-  end: '2023-05-06'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-05-02"
+  end: "2023-05-06"
+  paperslink: ""
+  pwclink: ""
   hindex: 62
   sub: NLP
   note: Hybrid format with ARR and START. Above deadlines are for START.
@@ -3639,35 +3706,35 @@
 - title: PAKDD
   year: 2023
   id: pakdd23
-  full_name: ''
+  full_name: ""
   link: https://pakdd2023.org
-  deadline: '2022-12-07 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-12-07 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-8
   place: Osaka, Japan
   date: May 25-28, 2023
-  start: '2023-05-25'
-  end: '2023-05-28'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-05-25"
+  end: "2023-05-28"
+  paperslink: ""
+  pwclink: ""
   hindex: 29
   sub: DM
-  note: ''
+  note: ""
 
 - title: AISTATS
   year: 2023
   id: aistats23
-  full_name: ''
+  full_name: ""
   link: https://www.aistats.org/aistats2023/
-  deadline: '2022-10-13 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-10-13 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Valencia, Spain
   date: April 25-27, 2023
-  start: '2023-04-25'
-  end: '2023-04-27'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-04-25"
+  end: "2023-04-27"
+  paperslink: ""
+  pwclink: ""
   hindex: 85
   sub: ML
   note: Mandatory abstract deadline on Oct 6, 2022.
@@ -3675,17 +3742,17 @@
 - title: ICLR
   year: 2023
   id: iclr23
-  full_name: ''
+  full_name: ""
   link: https://iclr.cc/Conferences/2023
-  deadline: '2022-09-28 23:59:59'
-  abstract_deadline: '2022-09-21 23:59:59'
+  deadline: "2022-09-28 23:59:59"
+  abstract_deadline: "2022-09-21 23:59:59"
   timezone: UTC-12
   place: Kigali, Rwanda
   date: May 01-05, 2023
-  start: '2023-05-01'
-  end: '2023-05-05'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-05-01"
+  end: "2023-05-05"
+  paperslink: ""
+  pwclink: ""
   hindex: 286
   sub: ML
   note: Mandatory abstract deadline on September 21, 2022.
@@ -3693,72 +3760,71 @@
 - title: ACML
   year: 2022
   id: acml22
-  full_name: ''
+  full_name: ""
   link: https://www.acml-conf.org/2022
-  deadline: '2022-06-23 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-06-23 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Hyderabad, India
   date: December 12-14, 2022
-  start: '2022-12-12'
-  end: '2022-12-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-12-12"
+  end: "2022-12-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 20
   sub: ML
-  note: ''
+  note: ""
 
 - title: AAAI
   year: 2023
   id: aaai23
   full_name: AAAI Conference on Artificial Intelligence
   link: https://aaai.org/Conferences/AAAI-23/
-  deadline: '2022-08-15 23:59:59'
-  abstract_deadline: '2022-08-08 23:59:59'
+  deadline: "2022-08-15 23:59:59"
+  abstract_deadline: "2022-08-08 23:59:59"
   timezone: UTC-12
   place: Washington, DC, USA
   date: February 7 - February 14, 2023
-  start: '2023-02-07'
-  end: '2023-02-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-02-07"
+  end: "2023-02-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 95
   sub: ML
-  note: ''
+  note: ""
 
 - title: ICDM
   year: 2022
   id: icdm22
   full_name: IEEE International Conference on Data Mining (ICDM)
   link: https://icdm22.cse.usf.edu/
-  deadline: '2022-06-10 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-06-10 23:59:00"
+  abstract_deadline: ""
   timezone: America/New_York
   place: Orlando, Florida, USA
   date: November 30 - December 3, 2022
-  start: '2022-11-30'
-  end: '2022-12-03'
-  paperslink: ''
-  pwclink: ''
-  hindex: 124.0
+  start: "2022-11-30"
+  end: "2022-12-03"
+  paperslink: ""
+  pwclink: ""
+  hindex: 124
   sub: DM
-  note: Paper submissions limited to ten (10) pages, in the IEEE 2-column format |
-    Key Dates | Call for Papers
+  note: Paper submissions limited to ten (10) pages, in the IEEE 2-column format | Key Dates | Call for Papers
 
 - title: EMNLP
   year: 2022
   id: emnlp22
-  full_name: ''
+  full_name: ""
   link: https://2022.emnlp.org/
-  deadline: '2022-06-24 23:59:00'
-  abstract_deadline: '2022-06-17 23:59:00'
+  deadline: "2022-06-24 23:59:00"
+  abstract_deadline: "2022-06-17 23:59:00"
   timezone: UTC-12
   place: Abu Dhabi, UAE
   date: December 7-11, 2022
-  start: '2022-12-07'
-  end: '2022-12-11'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-12-07"
+  end: "2022-12-11"
+  paperslink: ""
+  pwclink: ""
   hindex: 132
   sub: NLP
   note: Hybrid format with ARR and START.
@@ -3766,35 +3832,35 @@
 - title: WSDM
   year: 2023
   id: wsdm23
-  full_name: ''
+  full_name: ""
   link: https://www.wsdm-conference.org/2023/
-  deadline: '2022-08-12 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-08-12 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Singapore
   date: Feb 27- March 03, 2023
-  start: '2023-02-27'
-  end: '2023-03-03'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-02-27"
+  end: "2023-03-03"
+  paperslink: ""
+  pwclink: ""
   hindex: 54
   sub: DM
-  note: ''
+  note: ""
 
 - title: MM
   year: 2022
   id: mm22
-  full_name: ''
+  full_name: ""
   link: https://2022.acmmm.org/
-  deadline: '2022-04-11 23:59:59'
-  abstract_deadline: '2022-03-31 23:59:59'
+  deadline: "2022-04-11 23:59:59"
+  abstract_deadline: "2022-03-31 23:59:59"
   timezone: UTC-12
   place: Lisbon, Portugal
   date: October 10-14, 2022
-  start: '2022-10-10'
-  end: '2022-10-14'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-10-10"
+  end: "2022-10-14"
+  paperslink: ""
+  pwclink: ""
   hindex: 58
   sub: CV
   note: Mandatory abstract deadline on March 31, 2022.
@@ -3802,35 +3868,35 @@
 - title: ICMI
   year: 2022
   id: icmi22
-  full_name: ''
+  full_name: ""
   link: https://icmi.acm.org/2022/
-  deadline: '2022-05-13 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-05-13 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-7
   place: Bangalore, India
   date: November 7-11, 2022
-  start: '2022-11-07'
-  end: '2022-11-11'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-11-07"
+  end: "2022-11-11"
+  paperslink: ""
+  pwclink: ""
   hindex: 34
   sub: CV
-  note: ''
+  note: ""
 
 - title: CIKM
   year: 2022
   id: cikm22
-  full_name: ''
+  full_name: ""
   link: https://www.cikm2022.org/
-  deadline: '2022-05-19 23:59:59'
-  abstract_deadline: '2022-05-12 23:59:59'
+  deadline: "2022-05-19 23:59:59"
+  abstract_deadline: "2022-05-12 23:59:59"
   timezone: UTC-12
   place: Atlanta, Georgia, USA
   date: October 17-22, 2022
-  start: '2022-10-17'
-  end: '2022-10-22'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-10-17"
+  end: "2022-10-22"
+  paperslink: ""
+  pwclink: ""
   hindex: 48
   sub: DM
   note: Mandatory abstract deadline on May 12, 2022
@@ -3838,35 +3904,35 @@
 - title: COLING
   year: 2022
   id: coling22
-  full_name: ''
+  full_name: ""
   link: https://coling2022.org/
-  deadline: '2022-05-17 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-05-17 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Gyeongju, Republic of Korea
   date: October 12-17, 2022
-  start: '2022-10-12'
-  end: '2022-10-17'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-10-12"
+  end: "2022-10-17"
+  paperslink: ""
+  pwclink: ""
   hindex: 64
   sub: NLP
-  note: ''
+  note: ""
 
 - title: NeurIPS
   year: 2022
   id: neurips22
-  full_name: ''
+  full_name: ""
   link: https://neurips.cc/Conferences/2022/
-  deadline: '2022-05-19 13:00:00'
-  abstract_deadline: '2022-05-16 13:00:00'
+  deadline: "2022-05-19 13:00:00"
+  abstract_deadline: "2022-05-16 13:00:00"
   timezone: America/Los_Angeles
   place: New Orleans, Louisiana, USA; and virtual
   date: November 28 - December 9, 2022
-  start: '2022-11-28'
-  end: '2022-12-09'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-11-28"
+  end: "2022-12-09"
+  paperslink: ""
+  pwclink: ""
   hindex: 245
   sub: ML
   note: Mandatory abstract deadline on May 16, 2022
@@ -3874,17 +3940,17 @@
 - title: ISMIR
   year: 2022
   id: ismir22
-  full_name: ''
+  full_name: ""
   link: https://ismir2022.ismir.net/
-  deadline: '2022-05-20 23:59:59'
-  abstract_deadline: '2022-5-13 23:59:59'
+  deadline: "2022-05-20 23:59:59"
+  abstract_deadline: "2022-05-13 23:59:59"
   timezone: UTC-12
   place: Bangaluru, India
   date: December 4-8, 2022
-  start: '2022-12-04'
-  end: '2022-12-08'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-12-04"
+  end: "2022-12-08"
+  paperslink: ""
+  pwclink: ""
   hindex: 32
   sub: SP
   note: Mandatory abstract deadline on May 13, 2022.
@@ -3892,143 +3958,142 @@
 - title: AACL-IJCNLP
   year: 2022
   id: aaclijcnlp22
-  full_name: ''
+  full_name: ""
   link: https://www.aacl2022.org/
-  deadline: '2022-07-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-07-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Taipei, Taiwan
   date: November 21-24, 2022
-  start: '2022-11-21'
-  end: '2022-11-24'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2022-11-21"
+  end: "2022-11-24"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: NLP
-  note: ''
+  note: ""
 
 - title: CoRL
   year: 2022
   id: corl22
-  full_name: ''
+  full_name: ""
   link: https://corl2022.org
-  deadline: '2022-06-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-06-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Auckland, New Zealand, and virtual
   date: December 14-18, 2022
-  start: '2022-12-14'
-  end: '2022-12-18'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-12-14"
+  end: "2022-12-18"
+  paperslink: ""
+  pwclink: ""
   sub: RO
-  note: ''
+  note: ""
 
 - title: ALT
   year: 2020
   id: alt20
-  full_name: ''
+  full_name: ""
   link: http://alt2020.algorithmiclearningtheory.org/
-  deadline: '2019-09-20 16:59:59'
-  abstract_deadline: ''
+  deadline: "2019-09-20 16:59:59"
+  abstract_deadline: ""
   timezone: America/New_York
   place: San Diego, CA, United States
   date: February 8-10, 2020
-  start: '2020-02-08'
-  end: '2020-02-10'
+  start: "2020-02-08"
+  end: "2020-02-10"
   paperslink: http://algorithmiclearningtheory.org/alt2020/accepted-papers/
-  pwclink: ''
+  pwclink: ""
   hindex: 15
   sub: ML
-  note: ''
+  note: ""
 
 - title: HRI
   year: 2020
   id: hri20
-  full_name: ''
+  full_name: ""
   link: https://humanrobotinteraction.org/2020/
-  deadline: '2019-10-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2019-10-01 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Cambridge, UK
   date: March 23-26, 2020
-  start: '2020-03-23'
-  end: '2020-03-26'
+  start: "2020-03-23"
+  end: "2020-03-26"
   paperslink: https://dl.acm.org/doi/proceedings/10.1145/3319502
-  pwclink: ''
+  pwclink: ""
   hindex: 40
   sub: RO
-  note: ''
+  note: ""
 
 - title: ICMR
   year: 2020
   id: icmr20
-  full_name: ''
+  full_name: ""
   link: http://icmr2020.org/
-  deadline: '2020-01-11 23:59:59'
-  abstract_deadline: ''
+  deadline: "2020-01-11 23:59:59"
+  abstract_deadline: ""
   timezone: Europe/London
   place: Dublin, Ireland
   date: June 8-11, 2020
-  start: '2020-06-08'
-  end: '2020-06-11'
+  start: "2020-06-08"
+  end: "2020-06-11"
   paperslink: http://icmr2020.org/ICMR2020-detailed-schedule-FINAL.pdf
-  pwclink: ''
+  pwclink: ""
   hindex: 33
   sub: CV
-  note: ''
+  note: ""
 
 - title: COLT
   year: 2020
   id: colt20
-  full_name: ''
+  full_name: ""
   link: http://www.learningtheory.org/colt2020/
-  deadline: '2020-01-31 16:00:00'
-  abstract_deadline: ''
+  deadline: "2020-01-31 16:00:00"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Graz, Austria
   date: June 8-12, 2020
-  start: '2020-06-08'
-  end: '2020-06-12'
+  start: "2020-06-08"
+  end: "2020-06-12"
   paperslink: http://proceedings.mlr.press/v125/
-  pwclink: ''
+  pwclink: ""
   hindex: 48
   sub: ML
-  note: ''
+  note: ""
 
 - title: ICCC
   year: 2020
   id: iccc20
-  full_name: ''
+  full_name: ""
   link: http://computationalcreativity.net/iccc20/
-  deadline: '2020-03-08 23:59:59'
-  abstract_deadline: ''
+  deadline: "2020-03-08 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Coimbra, Portugal
   date: June 29 - July 3, 2020
-  start: '2020-06-29'
-  end: '2020-07-03'
+  start: "2020-06-29"
+  end: "2020-07-03"
   paperslink: http://computationalcreativity.net/iccc20/papers/ICCC20_Proceedings.pdf
-  pwclink: ''
+  pwclink: ""
   hindex: 22
   sub: ML
-  note: ''
+  note: ""
 
 - title: ISMIR
   year: 2020
   id: ismir20
-  full_name: ''
+  full_name: ""
   link: https://ismir.github.io/ISMIR2020/
-  deadline: '2020-04-17 23:59:59'
-  abstract_deadline: '2020-04-10 23:59:59'
+  deadline: "2020-04-17 23:59:59"
+  abstract_deadline: "2020-04-10 23:59:59"
   timezone: UTC-12
   place: Montreal, Canada
   date: October 12-15, 2020
-  start: '2020-10-12'
-  end: '2020-10-15'
+  start: "2020-10-12"
+  end: "2020-10-15"
   paperslink: https://program.ismir2020.net/papers.html?filter=keywords
-  pwclink: ''
+  pwclink: ""
   hindex: 32
   sub: SP
   note: Mandatory abstract deadline on Apr 10, 2020.
@@ -4036,143 +4101,143 @@
 - title: AACL-IJCNLP
   year: 2020
   id: aaclijcnlp20
-  full_name: ''
+  full_name: ""
   link: http://aacl2020.org
-  deadline: '2020-06-26 23:59:00'
-  abstract_deadline: ''
+  deadline: "2020-06-26 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Suzhou, China
   date: December 4-7, 2020
-  start: '2020-12-04'
-  end: '2020-12-07'
+  start: "2020-12-04"
+  end: "2020-12-07"
   paperslink: https://aclanthology.org/events/aacl-2020/
   pwclink: https://paperswithcode.com/conference/asian-chapter-of-the-association-for
-  hindex: -1
+  hindex: 0
   sub: NLP
-  note: ''
+  note: ""
 
 - title: ACCV
   year: 2020
   id: accv20
-  full_name: ''
+  full_name: ""
   link: http://accv2020.kyoto/
-  deadline: '2020-07-08 23:59:00'
-  abstract_deadline: ''
+  deadline: "2020-07-08 23:59:00"
+  abstract_deadline: ""
   timezone: UTC
   place: Online
   date: November 30 - December 4, 2020
-  start: '2020-11-30'
-  end: '2020-12-04'
+  start: "2020-11-30"
+  end: "2020-12-04"
   paperslink: https://accv2020.github.io/programs/papers/index.html
-  pwclink: ''
+  pwclink: ""
   hindex: 38
   sub: CV
-  note: ''
+  note: ""
 
 - title: ICPR
   year: 2020
   id: icpr20
-  full_name: ''
+  full_name: ""
   link: https://www.micc.unifi.it/icpr2020/
-  deadline: '2020-07-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2020-07-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC+1
   place: Milan, Italy
   date: January 10-15, 2021
-  start: '2021-01-10'
-  end: '2021-01-15'
+  start: "2021-01-10"
+  end: "2021-01-15"
   paperslink: https://www.micc.unifi.it/icpr2020/index.php/papers-and-authors/
-  pwclink: ''
+  pwclink: ""
   hindex: 38
   sub: ML
-  note: ''
+  note: ""
 
 - title: CoNLL
   year: 2020
   id: conll20
-  full_name: ''
+  full_name: ""
   link: http://www.conll.org/2020
-  deadline: '2020-07-17 23:59:59'
-  abstract_deadline: ''
+  deadline: "2020-07-17 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Online
   date: November 19-20, 2020
-  start: '2020-11-19'
-  end: '2020-11-20'
+  start: "2020-11-19"
+  end: "2020-11-20"
   paperslink: https://aclanthology.org/events/conll-2020/
-  pwclink: ''
+  pwclink: ""
   hindex: 34
   sub: NLP
-  note: ''
+  note: ""
 
 - title: 3DV
   year: 2020
   id: 3dv20
-  full_name: ''
+  full_name: ""
   link: http://3dv2020.dgcv.nii.ac.jp/index.html
-  deadline: '2020-07-31 23:59:59'
-  abstract_deadline: ''
+  deadline: "2020-07-31 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Fukuoka, Japan
   date: November 25-28, 2020
-  start: '2020-11-25'
-  end: '2020-11-28'
+  start: "2020-11-25"
+  end: "2020-11-28"
   paperslink: http://3dv2020.dgcv.nii.ac.jp/conferenceprogram.html
-  pwclink: ''
+  pwclink: ""
   hindex: 29
   sub: CV
-  note: ''
+  note: ""
 
 - title: WMT
   year: 2020
   id: wmt20
-  full_name: ''
+  full_name: ""
   link: http://www.statmt.org/wmt20/
-  deadline: '2020-08-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2020-08-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Online
   date: November 19-20, 2020
-  start: '2020-11-19'
-  end: '2020-11-20'
+  start: "2020-11-19"
+  end: "2020-11-20"
   paperslink: http://www.statmt.org/wmt20/papers.html
-  pwclink: ''
+  pwclink: ""
   hindex: 27
   sub: NLP
-  note: ''
+  note: ""
 
 - title: EACL
   year: 2021
   id: eacl21
-  full_name: ''
+  full_name: ""
   link: https://2021.eacl.org/
-  deadline: '2020-10-07 23:59:00'
-  abstract_deadline: ''
+  deadline: "2020-10-07 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Online (Kyiv, Ukraine)
   date: April 21-23, 2021
-  start: '2021-04-21'
-  end: '2021-04-23'
+  start: "2021-04-21"
+  end: "2021-04-23"
   paperslink: https://aclanthology.org/events/eacl-2021/#2021-eacl-main
   pwclink: https://paperswithcode.com/conference/eacl-2021-2
   hindex: 36
   sub: NLP
-  note: ''
+  note: ""
 
 - title: AAMAS
   year: 2023
   id: aamas23
-  full_name: ''
+  full_name: ""
   link: https://aamas2023.soton.ac.uk/
-  deadline: '2022-10-28 23:59:59'
-  abstract_deadline: '2022-10-21 23:59:59'
+  deadline: "2022-10-28 23:59:59"
+  abstract_deadline: "2022-10-21 23:59:59"
   timezone: UTC-12
   place: London, UK
   date: May 29 - June 2, 2023
-  start: '2023-05-29'
-  end: '2023-06-02'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-05-29"
+  end: "2023-06-02"
+  paperslink: ""
+  pwclink: ""
   hindex: 25
   sub: ML
   note: Mandatory abstract deadline on Oct 21, 2022.
@@ -4180,35 +4245,35 @@
 - title: SDM
   year: 2021
   id: sdm21
-  full_name: ''
+  full_name: ""
   link: https://www.siam.org/conferences/cm/conference/sdm21
-  deadline: '2020-10-12 23:59:00'
-  abstract_deadline: ''
+  deadline: "2020-10-12 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-5
   place: Online
   date: April 29 - May 1, 2021
-  start: '2021-04-29'
-  end: '2021-05-01'
+  start: "2021-04-29"
+  end: "2021-05-01"
   paperslink: https://epubs.siam.org/doi/book/10.1137/1.9781611976700
-  pwclink: ''
+  pwclink: ""
   hindex: 33
   sub: DM
-  note: ''
+  note: ""
 
 - title: AISTATS
   year: 2021
   id: aistats21
-  full_name: ''
+  full_name: ""
   link: https://www.aistats.org/aistats2021/
-  deadline: '2020-10-15 08:00:00'
-  abstract_deadline: ''
+  deadline: "2020-10-15 08:00:00"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: San Diego, California, USA
   date: April 13-15, 2021
-  start: '2021-04-13'
-  end: '2021-04-15'
+  start: "2021-04-13"
+  end: "2021-04-15"
   paperslink: http://proceedings.mlr.press/v130/
-  pwclink: ''
+  pwclink: ""
   hindex: 52
   sub: ML
   note: Mandatory abstract deadline on Oct 8, 2020.
@@ -4216,143 +4281,143 @@
 - title: ICME
   year: 2021
   id: icme21
-  full_name: ''
+  full_name: ""
   link: https://2021.ieeeicme.org/
-  deadline: '2020-11-29 23:59:59'
-  abstract_deadline: ''
+  deadline: "2020-11-29 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Shenzhen, China
   date: July 5-9, 2021
-  start: '2021-07-05'
-  end: '2021-07-09'
+  start: "2021-07-05"
+  end: "2021-07-09"
   paperslink: https://2021.ieeeicme.org/conf_oral
-  pwclink: ''
+  pwclink: ""
   hindex: 30
   sub: CV
-  note: ''
+  note: ""
 
 - title: ICIP
   year: 2023
   id: icip23
-  full_name: ''
+  full_name: ""
   link: https://2023.ieeeicip.org/
-  deadline: '2023-02-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-02-15 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Kuala Lumpur, Malaysia
   date: September, 19-22, 2023
-  start: '2023-10-08'
-  end: '2023-10-11'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-10-08"
+  end: "2023-10-11"
+  paperslink: ""
+  pwclink: ""
   hindex: 60
   sub: CV
-  note: ''
+  note: ""
 
 - title: MIDL
   year: 2021
   id: midl21
-  full_name: ''
+  full_name: ""
   link: https://2021.midl.io/
-  deadline: '2021-02-17 23:59:59'
-  abstract_deadline: '2021-02-10 23:59:59'
+  deadline: "2021-02-17 23:59:59"
+  abstract_deadline: "2021-02-10 23:59:59"
   timezone: UTC-12
   place: Luebeck, Germany
   date: July 7-9, 2021
-  start: '2021-07-07'
-  end: '2021-07-09'
+  start: "2021-07-07"
+  end: "2021-07-09"
   paperslink: https://2021.midl.io/program.html
-  pwclink: ''
-  hindex: -1
+  pwclink: ""
+  hindex: 0
   sub: CV
   note: Abstract deadline on Feb 10, 2021.
 
 - title: UAI
   year: 2021
   id: uai21
-  full_name: ''
+  full_name: ""
   link: http://auai.org/uai2021/
-  deadline: '2021-02-19 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-02-19 23:59:59"
+  abstract_deadline: ""
   timezone: UTC
   place: TBD
   date: July 26-30, 2021
-  start: '2021-07-26'
-  end: '2021-07-30'
+  start: "2021-07-26"
+  end: "2021-07-30"
   paperslink: https://www.auai.org/uai2021/accepted_papers
-  pwclink: ''
+  pwclink: ""
   hindex: 33
   sub: ML
-  note: ''
+  note: ""
 
 - title: IROS
   year: 2021
   id: iros21
-  full_name: ''
+  full_name: ""
   link: https://www.iros2021.org/important-dates
-  deadline: '2021-03-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-03-01 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Prague, Czech Republic
   date: September 27 - October 1, 2021
-  start: '2021-09-27'
-  end: '2021-10-01'
-  paperslink: ''
-  pwclink: ''
+  start: "2021-09-27"
+  end: "2021-10-01"
+  paperslink: ""
+  pwclink: ""
   hindex: 58
   sub: RO
-  note: ''
+  note: ""
 
 - title: RSS
   year: 2021
   id: rss21
-  full_name: ''
+  full_name: ""
   link: https://roboticsconference.org/2021
-  deadline: '2021-03-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-03-01 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Online
   date: July 12-16, 2021
-  start: '2021-07-12'
-  end: '2021-07-16'
+  start: "2021-07-12"
+  end: "2021-07-16"
   paperslink: https://roboticsconference.org/program/papers/
-  pwclink: ''
+  pwclink: ""
   hindex: 47
   sub: RO
-  note: ''
+  note: ""
 
 - title: MICCAI
   year: 2023
   id: miccai23
-  full_name: ''
+  full_name: ""
   link: https://conferences.miccai.org/2023/en/
-  deadline: '2023-03-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-03-09 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Vancouver, Canada
   date: October 8 - October 12, 2023
-  start: '2023-10-08'
-  end: '2023-10-12'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-10-08"
+  end: "2023-10-12"
+  paperslink: ""
+  pwclink: ""
   hindex: 78
   sub: CV
-  note: ''
+  note: ""
 
 - title: ICCV
   year: 2023
   id: iccv23
-  full_name: ''
+  full_name: ""
   link: http://iccv2023.thecvf.com/
-  deadline: '2023-03-08 23:59:00'
-  abstract_deadline: ''
+  deadline: "2023-03-08 23:59:00"
+  abstract_deadline: ""
   timezone: UTC
   place: Paris, France
   date: October 2 - October 6, 2023
-  start: '2023-10-02'
-  end: '2023-10-06'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-10-02"
+  end: "2023-10-06"
+  paperslink: ""
+  pwclink: ""
   hindex: 239
   sub: CV
   note: Supplementary deadline on Mar 15, 2023.
@@ -4360,17 +4425,17 @@
 - title: ECML-PKDD
   year: 2021
   id: ecmlpkdd21
-  full_name: ''
+  full_name: ""
   link: https://2021.ecmlpkdd.org/
-  deadline: '2021-04-02 23:59:59'
-  abstract_deadline: '2021-03-26 23:59:59'
+  deadline: "2021-04-02 23:59:59"
+  abstract_deadline: "2021-03-26 23:59:59"
   timezone: UTC-12
   place: Bilbao, Basque Country (Spain)
   date: September 13-17, 2021
-  start: '2021-09-13'
-  end: '2021-09-17'
+  start: "2021-09-13"
+  end: "2021-09-17"
   paperslink: https://2021.ecmlpkdd.org/?page_id=1811
-  pwclink: ''
+  pwclink: ""
   hindex: 30
   sub: ML
   note: Mandatory abstract deadline on Mar 26, 2021.
@@ -4378,105 +4443,105 @@
 - title: InterSpeech
   year: 2023
   id: interspeech23
-  full_name: ''
+  full_name: ""
   link: http://www.interspeech2023.org/
-  deadline: '2023-03-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-03-01 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Dublin, Ireland
   date: August 20 - August 24, 2023
-  start: '2023-08-30'
-  end: '2023-09-03'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-08-30"
+  end: "2023-09-03"
+  paperslink: ""
+  pwclink: ""
   hindex: 100
   sub: SP
-  note: ''
+  note: ""
 
 - title: FG
   year: 2021
   id: fg21
-  full_name: ''
+  full_name: ""
   link: http://iab-rubric.org/fg2021/
-  deadline: '2021-04-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2021-04-15 23:59:00"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Jodhpur, India
   date: December 15-18, 2021
-  start: '2021-12-15'
-  end: '2021-12-18'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2021-12-15"
+  end: "2021-12-18"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: CV
   note: the 2nd round submission deadline is July 15, 2021.
 
 - title: RecSys
   year: 2022
   id: recsys22
-  full_name: ''
+  full_name: ""
   link: https://recsys.acm.org/recsys22/
-  deadline: '2022-05-03 23:59:59'
-  abstract_deadline: '2022-04-26 23:59:59'
+  deadline: "2022-05-03 23:59:59"
+  abstract_deadline: "2022-04-26 23:59:59"
   timezone: UTC-12
   place: Seattle, Washington, USA
   date: September 18 - September 23, 2022
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   hindex: 45
   sub: DM
-  note: 'NOTE: Mandatory abstract deadline on April 26, 2022.'
+  note: "NOTE: Mandatory abstract deadline on April 26, 2022."
 
 - title: EMNLP
   year: 2021
   id: emnlp21
-  full_name: ''
+  full_name: ""
   link: https://2021.emnlp.org/
-  deadline: '2021-05-17 23:59:00'
-  abstract_deadline: '2021-05-10 23:59:00'
+  deadline: "2021-05-17 23:59:00"
+  abstract_deadline: "2021-05-10 23:59:00"
   timezone: UTC-12
   place: Punta Cana, Dominican Republic
   date: November 7-11, 2021
-  start: '2021-11-07'
-  end: '2021-11-11'
-  paperslink: ''
-  pwclink: ''
+  start: "2021-11-07"
+  end: "2021-11-11"
+  paperslink: ""
+  pwclink: ""
   hindex: 112
   sub: NLP
-  note: ''
+  note: ""
 
 - title: CIKM
   year: 2021
   id: cikm21
-  full_name: ''
+  full_name: ""
   link: https://cikm2021.org/
-  deadline: '2021-05-26 23:59:59'
-  abstract_deadline: '2021-05-19 23:59:59'
+  deadline: "2021-05-26 23:59:59"
+  abstract_deadline: "2021-05-19 23:59:59"
   timezone: UTC-12
   place: Gold Coast, Queensland, Australia
   date: November 1-5, 2021
-  start: '2021-11-01'
-  end: '2021-11-05'
-  paperslink: ''
-  pwclink: ''
+  start: "2021-11-01"
+  end: "2021-11-05"
+  paperslink: ""
+  pwclink: ""
   hindex: 48
   sub: DM
-  note: ''
+  note: ""
 
 - title: NeurIPS
   year: 2021
   id: neurips21
-  full_name: ''
+  full_name: ""
   link: https://neurips.cc/Conferences/2021/
-  deadline: '2021-05-28 13:00:00'
-  abstract_deadline: '2021-05-21 13:00:00'
+  deadline: "2021-05-28 13:00:00"
+  abstract_deadline: "2021-05-21 13:00:00"
   timezone: America/Los_Angeles
   place: Online
   date: December 5-14, 2021
-  start: '2021-12-05'
-  end: '2021-12-14'
+  start: "2021-12-05"
+  end: "2021-12-14"
   paperslink: https://proceedings.neurips.cc/paper/2021
   pwclink: https://paperswithcode.com/conference/neurips-2021-12
   hindex: 198
@@ -4486,17 +4551,17 @@
 - title: WACV
   year: 2023
   id: wacv23
-  full_name: ''
+  full_name: ""
   link: http://wacv2023.thecvf.com/
-  deadline: '2022-07-13 11:59:59'
-  abstract_deadline: ''
+  deadline: "2022-07-13 11:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Waikoloa, Hawaii, USA
   date: January 3-7, 2023
-  start: '2023-01-03'
-  end: '2023-01-07'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-01-03"
+  end: "2023-01-07"
+  paperslink: ""
+  pwclink: ""
   hindex: 54
   sub: CV
   note: Second round submission deadline on Aug. 29th 2022
@@ -4504,71 +4569,69 @@
 - title: ICDM
   year: 2021
   id: icdm21
-  full_name: ''
+  full_name: ""
   link: https://icdm2021.auckland.ac.nz
-  deadline: '2021-06-11 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-06-11 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Auckland, New Zealand
   date: December 7-10, 2021
-  start: '2021-12-07'
-  end: '2021-12-10'
-  paperslink: ''
-  pwclink: ''
-  hindex: -1
+  start: "2021-12-07"
+  end: "2021-12-10"
+  paperslink: ""
+  pwclink: ""
+  hindex: 0
   sub: DM
-  note: ''
+  note: ""
 
 - title: CoRL
   year: 2021
   id: corl21
-  full_name: ''
+  full_name: ""
   link: http://www.robot-learning.org
-  deadline: '2021-06-18 23:59:00'
-  abstract_deadline: ''
+  deadline: "2021-06-18 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-7
   place: London, UK, and virtual
   date: November 8-11, 2021
-  start: '2021-11-08'
-  end: '2021-11-11'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2021-11-08"
+  end: "2021-11-11"
+  paperslink: ""
+  pwclink: ""
   sub: RO
-  note: ''
+  note: ""
 
 - title: AKBC
   year: 2021
   id: akbc21
-  full_name: ''
+  full_name: ""
   link: https://www.akbc.ws/2021/
-  deadline: '2021-06-21 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-06-21 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Irvine, United States
   date: October 4-7, 2021
-  start: '2021-10-04'
-  end: '2021-10-07'
+  start: "2021-10-04"
+  end: "2021-10-07"
   paperslink: https://openreview.net/group?id=AKBC.ws/2021/Conference#all-submissions
-  pwclink: ''
-  hindex: null
+  pwclink: ""
   sub: NLP
-  note: ''
+  note: ""
 
 - title: BMVC
   year: 2023
   id: bmvc23
-  full_name: ''
+  full_name: ""
   link: https://www.bmvc2023.org
-  deadline: '2023-05-12 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-05-12 23:59:59"
+  abstract_deadline: ""
   timezone: UTC
   place: Aberdeen, UK
   date: November 20-24, 2023
-  start: '2023-11-20'
-  end: '2023-11-24'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-11-20"
+  end: "2023-11-24"
+  paperslink: ""
+  pwclink: ""
   hindex: 75
   sub: CV
   note: Workshop Submission Deadline on May 5th, 2023
@@ -4576,53 +4639,53 @@
 - title: ACML
   year: 2021
   id: acml21
-  full_name: ''
+  full_name: ""
   link: http://www.acml-conf.org/2021
-  deadline: '2021-06-25 23:59:00'
-  abstract_deadline: ''
+  deadline: "2021-06-25 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-7
   place: Online
   date: November 17-19, 2021
-  start: '2021-11-17'
-  end: '2021-11-19'
-  paperslink: ''
-  pwclink: ''
+  start: "2021-11-17"
+  end: "2021-11-19"
+  paperslink: ""
+  pwclink: ""
   hindex: 17
   sub: ML
-  note: ''
+  note: ""
 
 - title: WSDM
   year: 2022
   id: wsdm22
-  full_name: ''
+  full_name: ""
   link: https://www.wsdm-conference.org/2022/
-  deadline: '2021-08-09 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-08-09 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Phoenix, Arizona, USA
   date: February 21-25, 2022
-  start: '2022-02-21'
-  end: '2022-02-25'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-02-21"
+  end: "2022-02-25"
+  paperslink: ""
+  pwclink: ""
   hindex: 54
   sub: DM
-  note: ''
+  note: ""
 
 - title: AAAI
   year: 2022
   id: aaai22
-  full_name: ''
+  full_name: ""
   link: https://aaai.org/Conferences/AAAI-22/
-  deadline: '2021-09-08 23:59:59'
-  abstract_deadline: '2021-08-30 23:59:59'
+  deadline: "2021-09-08 23:59:59"
+  abstract_deadline: "2021-08-30 23:59:59"
   timezone: UTC-12
   place: Vancouver, Canada
   date: February 22 - March 1, 2022
-  start: '2022-02-22'
-  end: '2022-03-01'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-02-22"
+  end: "2022-03-01"
+  paperslink: ""
+  pwclink: ""
   hindex: 95
   sub: ML
   note: Mandatory abstract deadline on August 30, 2021
@@ -4630,35 +4693,35 @@
 - title: ICRA
   year: 2023
   id: icra23
-  full_name: ''
+  full_name: ""
   link: https://www.icra2023.org/
-  deadline: '2022-09-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-09-15 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: ExCeL London, UK
   date: May 29- June 2, 2023
-  start: '2023-05-29'
-  end: '2023-06-02'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-05-29"
+  end: "2023-06-02"
+  paperslink: ""
+  pwclink: ""
   hindex: 94
   sub: RO
-  note: ''
+  note: ""
 
 - title: ICLR
   year: 2022
   id: iclr22
-  full_name: ''
+  full_name: ""
   link: https://iclr.cc/Conferences/2022
-  deadline: '2021-10-05 17:00:00'
-  abstract_deadline: '2021-09-28 17:00:00'
+  deadline: "2021-10-05 17:00:00"
+  abstract_deadline: "2021-09-28 17:00:00"
   timezone: UTC-7
   place: Online
   date: April 25-29, 2022
-  start: '2022-04-25'
-  end: '2022-04-29'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-04-25"
+  end: "2022-04-29"
+  paperslink: ""
+  pwclink: ""
   hindex: 203
   sub: ML
   note: Mandatory abstract deadline on September 28, 2021.
@@ -4666,35 +4729,35 @@
 - title: ICASSP
   year: 2023
   id: icassp23
-  full_name: ''
+  full_name: ""
   link: https://2023.ieeeicassp.org/
-  deadline: '2022-10-26 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-10-26 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Rhodes Island, Greece
   date: June 4-9, 2023
-  start: '2023-06-04'
-  end: '2023-06-09'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-06-04"
+  end: "2023-06-09"
+  paperslink: ""
+  pwclink: ""
   hindex: 110
   sub: SP
-  note: ''
+  note: ""
 
 - title: AISTATS
   year: 2022
   id: aistats22
-  full_name: ''
+  full_name: ""
   link: https://www.aistats.org/aistats2022/
-  deadline: '2021-10-15 11:59:00'
-  abstract_deadline: ''
+  deadline: "2021-10-15 11:59:00"
+  abstract_deadline: ""
   timezone: UTC
   place: Valencia, Spain
   date: March 30 - April 1, 2022
-  start: '2022-03-30'
-  end: '2022-04-01'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-03-30"
+  end: "2022-04-01"
+  paperslink: ""
+  pwclink: ""
   hindex: 57
   sub: ML
   note: Mandatory abstract deadline on Oct 8, 2021.
@@ -4702,17 +4765,17 @@
 - title: WWW
   year: 2023
   id: www23
-  full_name: ''
+  full_name: ""
   link: https://www2023.thewebconf.org/
-  deadline: '2022-10-13 23:59:59'
-  abstract_deadline: '2022-10-06 23:59:59'
+  deadline: "2022-10-13 23:59:59"
+  abstract_deadline: "2022-10-06 23:59:59"
   timezone: UTC-12
   place: Texas, USA
   date: April 30 - May 4, 2022
-  start: '2022-04-30'
-  end: '2022-05-04'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-04-30"
+  end: "2022-05-04"
+  paperslink: ""
+  pwclink: ""
   hindex: 70
   sub: DM
   note: Mandatory abstract deadline on October 6, 2022
@@ -4720,71 +4783,70 @@
 - title: ACL
   year: 2022
   id: acl22
-  full_name: ''
+  full_name: ""
   link: https://2022.aclweb.org/
-  deadline: '2021-11-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2021-11-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Dublin, Ireland
   date: May 22-27, 2022
-  start: '2022-05-22'
-  end: '2022-05-27'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-05-22"
+  end: "2022-05-27"
+  paperslink: ""
+  pwclink: ""
   hindex: 157
   sub: NLP
-  note: ''
+  note: ""
 
 - title: CVPR
   year: 2023
   id: cvpr23
-  full_name: ''
+  full_name: ""
   link: http://cvpr2023.thecvf.com/
-  deadline: '2022-11-11 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-11-11 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Vancouver, Canada
   date: June 17-23, 2023
-  start: '2022-06-17'
-  end: '2022-06-23'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-06-17"
+  end: "2022-06-23"
+  paperslink: ""
+  pwclink: ""
   hindex: 389
   sub: CV
-  note: ''
+  note: ""
 
 - title: L4DC
   year: 2022
   id: l4dc22
-  full_name: ''
+  full_name: ""
   link: https://l4dc.stanford.edu/
-  deadline: '2021-12-07 17:00:00'
-  abstract_deadline: ''
+  deadline: "2021-12-07 17:00:00"
+  abstract_deadline: ""
   timezone: UTC-5
   place: Stanford University, CA, USA
   date: June 23-24, 2022
-  start: '2022-06-23'
-  end: '2022-06-24'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-06-23"
+  end: "2022-06-24"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: ICAPS
   year: 2022
   id: icaps22
-  full_name: ''
+  full_name: ""
   link: http://icaps22.icaps-conference.org/
-  deadline: '2021-12-15 23:59:59'
-  abstract_deadline: '2021-12-10 23:59:59'
+  deadline: "2021-12-15 23:59:59"
+  abstract_deadline: "2021-12-10 23:59:59"
   timezone: UTC-12
   place: Singapore Management University, Singapore
   date: June 19-24, 2022
-  start: '2022-06-19'
-  end: '2022-06-24'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-06-19"
+  end: "2022-06-24"
+  paperslink: ""
+  pwclink: ""
   hindex: 27
   sub: ML
   note: Mandatory abstract deadline on Dec 10, 2021.
@@ -4792,54 +4854,53 @@
 - title: LREC
   year: 2022
   id: lrec22
-  full_name: ''
+  full_name: ""
   link: http://elra.info/en/lrec/lrec-2022/
-  deadline: '2022-01-10 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-01-10 23:59:59"
+  abstract_deadline: ""
   timezone: Europe/Paris
   place: Marseille, France
   date: June 20-25, 2022
-  start: '2022-06-20'
-  end: '2022-06-25'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-06-20"
+  end: "2022-06-25"
+  paperslink: ""
+  pwclink: ""
   hindex: 38
   sub: NLP
-  note: ''
+  note: ""
 
 - title: IJCAI-ECAI
   year: 2022
   id: ijcaiecai22
-  full_name: International Joint Conference on Artificial Intelligence and European
-    Conference on Artificial Intelligence
+  full_name: International Joint Conference on Artificial Intelligence and European Conference on Artificial Intelligence
   link: https://ijcai-22.org/
-  deadline: '2022-01-14 23:59:59'
-  abstract_deadline: '2022-01-07 23:59:59'
+  deadline: "2022-01-14 23:59:59"
+  abstract_deadline: "2022-01-07 23:59:59"
   timezone: UTC+1
   place: Vienna, Austria
   date: July 23-29, 2022
-  start: '2022-07-23'
-  end: '2022-07-29'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-07-23"
+  end: "2022-07-29"
+  paperslink: ""
+  pwclink: ""
   hindex: 105
   sub: ML
-  note: ''
+  note: ""
 
 - title: FAccT
   year: 2022
   id: facct22
-  full_name: ''
+  full_name: ""
   link: https://facctconference.org/2022/
-  deadline: '2022-01-14 23:59:00'
-  abstract_deadline: '2021-12-15 23:59:00'
+  deadline: "2022-01-14 23:59:00"
+  abstract_deadline: "2021-12-15 23:59:00"
   timezone: UTC-12
   place: Seoul, South Korea
   date: June 21-24, 2022
-  start: '2022-06-21'
-  end: '2022-06-24'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-06-21"
+  end: "2022-06-24"
+  paperslink: ""
+  pwclink: ""
   hindex: 44
   sub: ML
   note: Mandatory abstract deadline on Dec 14, 2021.
@@ -4847,71 +4908,70 @@
 - title: CHIL
   year: 2023
   id: chil23
-  full_name: ''
+  full_name: ""
   link: https://www.chilconference.org/
-  deadline: '2023-02-03 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-02-03 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Cambridge, Massachusetts, USA
   date: June 22-24, 2023
-  start: '2023-06-22'
-  end: '2023-06-24'
+  start: "2023-06-22"
+  end: "2023-06-24"
   paperslink: https://proceedings.mlr.press/v174/
-  pwclink: ''
-  hindex: -1
+  pwclink: ""
+  hindex: 0
   sub: ML
-  note: ''
+  note: ""
 
 - title: NAACL
   year: 2022
   id: naacl22
-  full_name: ''
+  full_name: ""
   link: https://2022.naacl.org/
-  deadline: '2022-01-15 23:59:00'
-  abstract_deadline: ''
+  deadline: "2022-01-15 23:59:00"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Seattle, Washington, USA
   date: July 10-15, 2022
-  start: '2022-07-10'
-  end: '2022-07-15'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-07-10"
+  end: "2022-07-15"
+  paperslink: ""
+  pwclink: ""
   hindex: 105
   sub: NLP
-  note: ''
+  note: ""
 
 - title: ICWSM
   year: 2022
   id: icwsm22
-  full_name: ''
+  full_name: ""
   link: https://www.icwsm.org/2022/index.html/
-  deadline: '2022-01-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-01-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Atlanta, Georgia AND Online
   date: June 6-9, 2022
-  start: '2022-06-06'
-  end: '2022-06-09'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-06-06"
+  end: "2022-06-09"
+  paperslink: ""
+  pwclink: ""
   sub: DM
-  note: ''
+  note: ""
 
 - title: ICML
   year: 2022
   id: icml22
-  full_name: ''
+  full_name: ""
   link: https://icml.cc/Conferences/2022
-  deadline: '2022-01-27 23:59:00'
-  abstract_deadline: '2022-01-20 23:59:00'
+  deadline: "2022-01-27 23:59:00"
+  abstract_deadline: "2022-01-20 23:59:00"
   timezone: UTC-12
   place: Baltimore, Maryland USA
   date: July 17-23, 2022
-  start: '2022-07-17'
-  end: '2022-07-23'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-07-17"
+  end: "2022-07-23"
+  paperslink: ""
+  pwclink: ""
   hindex: 204
   sub: ML
   note: Mandatory abstract deadline on Jan 20, 2022.
@@ -4919,17 +4979,17 @@
 - title: SIGIR
   year: 2022
   id: sigir22
-  full_name: ''
+  full_name: ""
   link: https://sigir.org/sigir2022/
-  deadline: '2022-01-28 23:59:00'
-  abstract_deadline: '2022-01-21 23:59:00'
+  deadline: "2022-01-28 23:59:00"
+  abstract_deadline: "2022-01-21 23:59:00"
   timezone: UTC-12
   place: Madrid, Spain
   date: July 11-15, 2022
-  start: '2022-07-11'
-  end: '2022-07-15'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-07-11"
+  end: "2022-07-15"
+  paperslink: ""
+  pwclink: ""
   hindex: 66
   sub: DM
   note: Mandatory abstract deadline on January 21, 2022.
@@ -4937,162 +4997,158 @@
 - title: RSS
   year: 2022
   id: rss22
-  full_name: ''
+  full_name: ""
   link: https://roboticsconference.org/2022
-  deadline: '2022-01-28 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-01-28 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: New York City, USA
   date: June 27 - July 1, 2022
-  start: '2022-06-27'
-  end: '2022-07-01'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-06-27"
+  end: "2022-07-01"
+  paperslink: ""
+  pwclink: ""
   hindex: 50
   sub: RO
-  note: ''
+  note: ""
 
 - title: KDD
   year: 2023
   id: kdd23
-  full_name: ''
+  full_name: ""
   link: https://kdd.org/kdd2023/
-  deadline: '2023-02-02 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-02-02 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Long Beach, California, USA
   date: August 6-10, 2023
-  start: '2023-08-06'
-  end: '2023-08-10'
-  paperslink: ''
-  pwclink: ''
+  start: "2023-08-06"
+  end: "2023-08-10"
+  paperslink: ""
+  pwclink: ""
   hindex: 114
   sub: DM
-  note: ''
+  note: ""
 
 - title: ICIP
   year: 2022
   id: icip22
-  full_name: ''
+  full_name: ""
   link: https://2022.ieeeicip.org
-  deadline: '2022-02-25 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-02-25 23:59:59"
+  abstract_deadline: ""
   timezone: UTC
   place: Bordeaux, France
   date: October, 16-19, 2022
-  start: '2022-10-16'
-  end: '2022-10-19'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-10-16"
+  end: "2022-10-19"
+  paperslink: ""
+  pwclink: ""
   sub: CV
-  note: ''
+  note: ""
 
 - title: UAI
   year: 2022
   id: uai22
-  full_name: ''
+  full_name: ""
   link: https://www.auai.org/uai2022/
-  deadline: '2022-02-25 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-02-25 23:59:59"
+  abstract_deadline: ""
   timezone: UTC
   place: Eindhoven, The Netherlands
   date: August 1-5, 2022
-  start: '2022-08-01'
-  end: '2022-08-05'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-08-01"
+  end: "2022-08-05"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: IROS
   year: 2022
   id: iros22
-  full_name: ''
+  full_name: ""
   link: https://iros2022.org/
-  deadline: '2022-03-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-03-01 23:59:59"
+  abstract_deadline: ""
   timezone: America/Los_Angeles
   place: Kyoto, Japan
   date: October 23-27, 2022
-  start: '2022-10-23'
-  end: '2022-10-27'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-10-23"
+  end: "2022-10-27"
+  paperslink: ""
+  pwclink: ""
   hindex: 73
   sub: RO
-  note: ''
+  note: ""
 
 - title: AutoML-Conf
   year: 2022
   id: automlconf22
-  full_name: ''
+  full_name: ""
   link: https://automl.cc/
-  deadline: '2022-03-03 23:59:00'
-  abstract_deadline: '2022-02-24 23:59:00'
+  deadline: "2022-03-03 23:59:00"
+  abstract_deadline: "2022-02-24 23:59:00"
   timezone: UTC-12
   place: Baltimore, US
   date: July 25-27, 2022
-  start: '2022-07-25'
-  end: '2022-07-27'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-07-25"
+  end: "2022-07-27"
+  paperslink: ""
+  pwclink: ""
   hindex: 0
   sub: ML
-  note: Conference replacing the AutoML workshops @ ICML as they were extremely successful.
-    First edition.
+  note: Conference replacing the AutoML workshops @ ICML as they were extremely successful. First edition.
 
 - title: CoLLAs
   year: 2022
   id: collas22
-  full_name: ''
+  full_name: ""
   link: https://lifelong-ml.cc
-  deadline: '2022-03-04 23:59:59'
-  abstract_deadline: '2022-03-01 23:59:59'
+  deadline: "2022-03-04 23:59:59"
+  abstract_deadline: "2022-03-01 23:59:59"
   timezone: UTC-12
   place: Online
   date: August 29-31, 2022
-  start: '2022-08-29'
-  end: '2022-08-31'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-08-29"
+  end: "2022-08-31"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: ''
+  note: ""
 
 - title: ECCV
   year: 2022
   id: eccv22
-  full_name: ''
+  full_name: ""
   link: https://eccv2022.ecva.net/
-  deadline: '2022-03-07 21:59:00'
-  abstract_deadline: ''
+  deadline: "2022-03-07 21:59:00"
+  abstract_deadline: ""
   timezone: CET
   place: Tel Aviv, Israel
   date: October 24-28, 2022
-  start: '2022-10-24'
-  end: '2022-10-28'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-10-24"
+  end: "2022-10-28"
+  paperslink: ""
+  pwclink: ""
   hindex: 197
   sub: CV
-  note: ''
+  note: ""
 
 - title: RO-MAN
   year: 2022
   id: roman22
-  full_name: ''
+  full_name: ""
   link: http://www.ro-man2022.org/
-  deadline: '2022-03-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-03-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC+1
   place: Naples, Italy
   date: August 29 - September 2, 2022
-  start: '2022-08-29'
-  end: '2022-09-02'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-08-29"
+  end: "2022-09-02"
+  paperslink: ""
+  pwclink: ""
   hindex: 29
   sub: RO
   note: Workshop and Tutorial deadline on February 7, 2022
@@ -5100,57 +5156,55 @@
 - title: InterSpeech
   year: 2022
   id: interspeech22
-  full_name: ''
+  full_name: ""
   link: http://www.interspeech2022.org/
-  deadline: '2022-03-21 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-03-21 23:59:59"
+  abstract_deadline: ""
   timezone: Asia/Seoul
   place: Incheon, South Korea
   date: September, 18-22, 2022
-  start: '2022-09-18'
-  end: '2022-09-22'
-  paperslink: ''
-  pwclink: ''
+  start: "2022-09-18"
+  end: "2022-09-22"
+  paperslink: ""
+  pwclink: ""
   hindex: 100
   sub: SP
-  note: ''
+  note: ""
 
 - title: ECML/PKDD
   year: 2022
   id: ecmlpkdd22
-  full_name: European Conference on Machine Learning and Principles and Practice of
-    Knowledge Discovery in Databases
+  full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
   link: https://2022.ecmlpkdd.org/
-  deadline: '2022-04-06 23:59:59'
-  abstract_deadline: '2022-03-30 23:59:59'
+  deadline: "2022-04-06 23:59:59"
+  abstract_deadline: "2022-03-30 23:59:59"
   timezone: UTC-12
   place: Grenoble, France
   date: September, 19-23, 2022
-  start: '2022-09-19'
-  end: '2022-09-23'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-09-19"
+  end: "2022-09-23"
+  paperslink: ""
+  pwclink: ""
   sub: SP
   note: Check the conference website for workshop and demo deadlines
 
 - title: ISMIS
   year: 2022
   id: ismis22
-  full_name: ''
+  full_name: ""
   link: https://ismis2022.icar.cnr.it/
-  deadline: '2022-06-16 23:59:59'
-  abstract_deadline: ''
+  deadline: "2022-06-16 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-12
   place: Cosenza, Italy
   date: October, 03-05, 2022
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   hindex: 9
   sub: DM
-  note: 'NOTE: Industry Session Deadline: 16 June 2022'
+  note: "NOTE: Industry Session Deadline: 16 June 2022"
 
 - title: SIGGRAPH Asia
   year: 2022
@@ -5162,29 +5216,27 @@
   timezone: UTC-12
   place: Daegu, South Korea
   date: December, 6-9, 2022
-  start: ''
-  end: ''
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: ""
+  end: ""
+  paperslink: ""
+  pwclink: ""
   sub: CG
-  note: ''
+  note: ""
 
 - title: evoMUSART
   year: 2023
   id: evomusart23
-  full_name: 12th International Conference on Artificial Intelligence in Music, Sound,
-    Art and Design
+  full_name: 12th International Conference on Artificial Intelligence in Music, Sound, Art and Design
   link: https://www.evostar.org/2023/evomusart/
   deadline: 2022-11-01 23:59
   abstract_deadline: 2022-11-01 23:59
   timezone: UTC-12
   place: Brno, Czech Republic
   date: April, 12-14, 2023
-  start: '2023-04-12'
-  end: '2023-04-14'
+  start: "2023-04-12"
+  end: "2023-04-14"
   paperslink: https://evomusart-index.dei.uc.pt/
-  pwclink: ''
+  pwclink: ""
   hindex: 12
   sub: CG
   note: part of evostar 2023
@@ -5199,11 +5251,10 @@
   timezone: UTC-12
   place: Online
   date: December, 09-12, 2022
-  start: '2022-12-09'
-  end: '2022-12-12'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-12-09"
+  end: "2022-12-12"
+  paperslink: ""
+  pwclink: ""
   sub: ML
   note: This is the inaugural event of a conference dedicated to Graph Machine Learning
 
@@ -5217,67 +5268,61 @@
   timezone: GMT
   place: Rabat, Morocco
   date: December, 12-16, 2022
-  start: '2022-12-12'
-  end: '2022-12-16'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2022-12-12"
+  end: "2022-12-16"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: The workshop is a collaboration between NASSMA organisation, Deepmind and
-    UM6P. NASSMA is an NGO working toward the promotion of STEM and A…
+  note: The workshop is a collaboration between NASSMA organisation, Deepmind and UM6P. NASSMA is an NGO working toward the promotion of STEM and A…
 
 - title: SIGGRAPH
   year: 2023
   id: siggraph23
-  full_name: ''
+  full_name: ""
   link: https://s2023.siggraph.org/
-  deadline: '2023-01-24 22:00:00'
-  abstract_deadline: '2022-01-25 22:00:00'
+  deadline: "2023-01-24 22:00:00"
+  abstract_deadline: "2022-01-25 22:00:00"
   timezone: GMT
   place: Los Angeles, USA
   date: August 6-10, 2022
-  start: '2023-08-06'
-  end: '2023-08-10'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-08-06"
+  end: "2023-08-10"
+  paperslink: ""
+  pwclink: ""
   sub: CG
   note: Mandatory abstract deadline on Jan 24, 2022.
 
 - title: ICDM
   year: 2023
   id: icdm23
-  full_name: ''
+  full_name: ""
   link: https://www.cloud-conf.net/icdm2023/
-  deadline: '2023-07-01 23:59:00'
-  abstract_deadline: '2023-07-01 23:59:00'
+  deadline: "2023-07-01 23:59:00"
+  abstract_deadline: "2023-07-01 23:59:00"
   timezone: Asia/Shanghai
   place: Shanghai, China
   date: December 1-4, 2023
-  start: '2023-12-01'
-  end: '2023-12-04'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-12-01"
+  end: "2023-12-04"
+  paperslink: ""
+  pwclink: ""
   sub: DM
-  note: ''
+  note: ""
 
 - title: ECML/PKDD
   year: 2023
   id: ecmlpkdd23
-  full_name: European Conference on Machine Learning and Principles and Practice of
-    Knowledge Discovery in Databases
+  full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
   link: https://2023.ecmlpkdd.org/
-  deadline: '2023-04-02 23:59:59'
-  abstract_deadline: '2023-03-26 23:59:59'
+  deadline: "2023-04-02 23:59:59"
+  abstract_deadline: "2023-03-26 23:59:59"
   timezone: UTC-12
   place: Torino, Italy
   date: September, 18-22, 2023
-  start: '2023-09-18'
-  end: '2023-09-22'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-09-18"
+  end: "2023-09-22"
+  paperslink: ""
+  pwclink: ""
   sub: SP
   note: Check the conference website for workshop and demo deadlines
 
@@ -5286,16 +5331,15 @@
   id: iswc23
   full_name: International Semantic Web Conference
   link: https://iswc2023.semanticweb.org/
-  deadline: '2023-05-09 23:59:59'
-  abstract_deadline: '2023-05-02 23:59:59'
+  deadline: "2023-05-09 23:59:59"
+  abstract_deadline: "2023-05-02 23:59:59"
   timezone: UTC-12
   place: Athens, Greece
   date: November, 06-10, 2023
-  start: '2023-11-06'
-  end: '2023-11-10'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-11-06"
+  end: "2023-11-10"
+  paperslink: ""
+  pwclink: ""
   sub: KR
   note: Check the conference website for workshop and demo deadlines
 
@@ -5304,16 +5348,15 @@
   id: cikm23
   full_name: International Conference on Information and Knowledge Managements
   link: https://cikm2023.github.io/
-  deadline: '2023-06-02 23:59:59'
-  abstract_deadline: '2023-05-26 23:59:59'
+  deadline: "2023-06-02 23:59:59"
+  abstract_deadline: "2023-05-26 23:59:59"
   timezone: UTC-12
   place: Birmingham, UK
   date: October, 23-25, 2023
-  start: '2023-10-23'
-  end: '2023-10-25'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-10-23"
+  end: "2023-10-25"
+  paperslink: ""
+  pwclink: ""
   sub: KR
   note: Check the conference website for workshop and demo deadlines
 
@@ -5322,35 +5365,32 @@
   id: aiworldbarcelona23
   full_name: AI World Barcelona - Generative AI Conference
   link: https://ai-world-barcelona.com
-  deadline: '2023-06-07 23:59:59'
-  abstract_deadline: ''
+  deadline: "2023-06-07 23:59:59"
+  abstract_deadline: ""
   timezone: Europe/Madrid
   place: Barcelona, Spain
   date: September, 7-8, 2023
-  start: '2023-09-07'
-  end: '2023-09-08'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2023-09-07"
+  end: "2023-09-08"
+  paperslink: ""
+  pwclink: ""
   sub: NLP
-  note: Explore cutting-edge AI topics like ChatGPT, AutoGPT, DALL-E, Midjourney and
-    more at AI World Barcelona — the world's largest generative AI…
+  note: Explore cutting-edge AI topics like ChatGPT, AutoGPT, DALL-E, Midjourney and more at AI World Barcelona — the world's largest generative AI…
 
 - title: SPECOM
   year: 2024
   id: specom24
   full_name: International Conference on Speech and Computer
   link: https://specom2024.ftn.uns.ac.rs
-  deadline: '2024-07-01 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-07-01 23:59:59"
+  abstract_deadline: ""
   timezone: Europe/Belgrade
   place: Belgrade, Serbia
   date: November, 25-28, 2024
-  start: '2024-11-25'
-  end: '2024-11-28'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-11-25"
+  end: "2024-11-28"
+  paperslink: ""
+  pwclink: ""
   sub: SP
   note: Check the conference website for workshop and demo deadlines.
 
@@ -5359,54 +5399,48 @@
   id: mipr24
   full_name: International Conference on Multimedia Information Processing and Retrieval
   link: https://sites.google.com/view/mipr2024
-  deadline: '2024-04-15 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-04-15 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-7
   place: San Jose, USA
   date: August, 07-09, 2024
-  start: '2024-08-07'
-  end: '2024-08-09'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-08-07"
+  end: "2024-08-09"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: Check the conference website for paper review available and notification of
-    acceptance date.
+  note: Check the conference website for paper review available and notification of acceptance date.
 
 - title: AIware
   year: 2024
   id: aiware24
   full_name: ACM International Conference on AIware
   link: https://2024.aiwareconf.org/#
-  deadline: '2024-03-29 23:59:59'
-  abstract_deadline: ''
+  deadline: "2024-03-29 23:59:59"
+  abstract_deadline: ""
   timezone: UTC-3
   place: Porto de Galinhas, Brazil
   date: July, 15-16, 2024
-  start: '2024-07-15'
-  end: '2024-07-16'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-07-15"
+  end: "2024-07-16"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: Check the conference website for details the Challenge Track, Industry Statements
-    and Demo Track, and Late Breaking Arxiv Track.
+  note: Check the conference website for details the Challenge Track, Industry Statements and Demo Track, and Late Breaking Arxiv Track.
 
 - title: AutoML
   year: 2024
   id: automl24
   full_name: International Conference on Automated Machine Learning
   link: https://2024.automl.cc/
-  deadline: '2024-02-29 23:59:59'
-  abstract_deadline: '2024-02-26 23:59:59'
+  deadline: "2024-02-29 23:59:59"
+  abstract_deadline: "2024-02-26 23:59:59"
   timezone: UTC-12
   place: Paris, France
   date: September, 09-12, 2024
-  start: '2024-09-09'
-  end: '2024-09-12'
-  paperslink: ''
-  pwclink: ''
-  hindex: null
+  start: "2024-09-09"
+  end: "2024-09-12"
+  paperslink: ""
+  pwclink: ""
   sub: ML
-  note: Check the conference website for tutorials, contributions to the journal track
-    and workshop deadlines
+  note: Check the conference website for tutorials, contributions to the journal track and workshop deadlines
