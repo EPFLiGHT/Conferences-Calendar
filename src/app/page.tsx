@@ -47,6 +47,12 @@ export default function Page() {
       });
   }, []);
 
+  const scrollToTop = () => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 0);
+  };
+
   const handleFilterChange = (newFilters: { sortBy?: string; year?: string; subject?: string }) => {
     setFilters(prev => ({ ...prev, ...newFilters }));
     setCurrentPage(1);
@@ -193,7 +199,7 @@ export default function Page() {
                 </Text>
               </Box>
             ) : (
-              paginatedConferences.map(conference => (
+              paginatedConferences.map((conference) => (
                 <ConferenceCard
                   key={conference.id}
                   conference={conference}
@@ -217,7 +223,10 @@ export default function Page() {
               boxShadow="0 2px 8px rgba(46, 95, 169, 0.08)"
             >
               <Button
-                onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
+                onClick={() => {
+                  setCurrentPage(prev => Math.max(1, prev - 1));
+                  scrollToTop();
+                }}
                 disabled={currentPage === 1}
                 size="md"
                 px="6"
@@ -264,7 +273,10 @@ export default function Page() {
               </Box>
 
               <Button
-                onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
+                onClick={() => {
+                  setCurrentPage(prev => Math.min(totalPages, prev + 1));
+                  scrollToTop();
+                }}
                 disabled={currentPage === totalPages}
                 size="md"
                 px="6"

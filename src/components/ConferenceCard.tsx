@@ -1,8 +1,11 @@
 import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { DateTime } from 'luxon';
 import Countdown from './Countdown';
 import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
 import { Conference } from '../types/conference';
+
+const MotionBox = motion(Box);
 
 interface ConferenceCardProps {
   conference: Conference;
@@ -13,7 +16,14 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
   const allDeadlines = getDeadlineInfo(conference);
 
   return (
-    <Box
+    <MotionBox
+      initial={{ opacity: 0, y: 20, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, margin: "-80px", amount: 0.2 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.22, 1, 0.36, 1]
+      }}
       bg="white"
       borderRadius="xl"
       border="1px"
@@ -21,14 +31,16 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
       boxShadow="0 1px 3px rgba(46, 95, 169, 0.08)"
       p="6"
       cursor="pointer"
-      transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
-      _hover={{
-        boxShadow: '0 4px 12px rgba(46, 95, 169, 0.15)',
-        transform: 'translateY(-2px)',
-        borderColor: 'brand.300',
+      whileHover={{
+        boxShadow: '0 8px 24px rgba(46, 95, 169, 0.2)',
+        y: -4,
+        scale: 1.02,
+        borderColor: 'var(--chakra-colors-brand-400)',
+        transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
       }}
-      _active={{
-        transform: 'translateY(0px)',
+      whileTap={{
+        scale: 0.98,
+        transition: { duration: 0.1 }
       }}
       onClick={onClick}
     >
@@ -262,6 +274,6 @@ export default function ConferenceCard({ conference, onClick }: ConferenceCardPr
           </Link>
         )}
       </Flex>
-    </Box>
+    </MotionBox>
   );
 }
