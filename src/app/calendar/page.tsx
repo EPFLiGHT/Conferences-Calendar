@@ -9,9 +9,6 @@ import {
   Flex,
   Heading,
   Text,
-  Badge,
-  VStack,
-  Link,
   Center,
 } from '@chakra-ui/react';
 import FullCalendar from '@fullcalendar/react';
@@ -24,16 +21,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Filters from '@/components/Filters';
 import Search from '@/components/Search';
-import { parseConferences, getSubjectsArray, getSubjectColor } from '@/utils/parser';
+import ConferenceModal from '@/components/ConferenceModal';
+import { parseConferences } from '@/utils/parser';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '@/utils/ics';
 import type { Conference } from '@/types/conference';
 import { EventClickArg } from '@fullcalendar/core';
 import '@/styles/calendar.css';
 
-interface SelectedEvent {
-  event: any;
-  el: HTMLElement;
-}
 
 function CalendarContent() {
   const calendarRef = useRef<FullCalendar>(null);
@@ -47,7 +41,7 @@ function CalendarContent() {
     year: '',
     subject: '',
   });
-  const [selectedEvent, setSelectedEvent] = useState<SelectedEvent | null>(null);
+  const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
 
   useEffect(() => {
     const basePath = process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : '';
@@ -193,10 +187,8 @@ function CalendarContent() {
   }, [filteredConferences]);
 
   const handleEventClick = (info: EventClickArg) => {
-    setSelectedEvent({
-      event: info.event,
-      el: info.el,
-    });
+    const conference = info.event.extendedProps.conference;
+    setSelectedConference(conference);
   };
 
   const handleExportAll = () => {
@@ -205,27 +197,6 @@ function CalendarContent() {
     downloadICS(content, 'conference-calendar.ics');
   };
 
-  const handleExportEvent = () => {
-    if (!selectedEvent) return;
-
-    const conf = selectedEvent.event.extendedProps.conference;
-    const events = conferenceToICSEvents(conf);
-    const content = createICSContent(events);
-    downloadICS(content, `${conf.id}.ics`);
-  };
-
-  const handleCopyLink = () => {
-    if (!selectedEvent) return;
-
-    const conf = selectedEvent.event.extendedProps.conference;
-    const params = new URLSearchParams();
-    params.set('conf', conf.id);
-    const url = `${window.location.origin}${window.location.pathname}?${params}`;
-
-    navigator.clipboard.writeText(url).then(() => {
-      alert('Link copied to clipboard!');
-    });
-  };
 
   const handleToday = () => {
     const calendarApi = calendarRef.current?.getApi();
@@ -361,211 +332,11 @@ function CalendarContent() {
             />
           </Box>
 
-          {selectedEvent && (
-            <Box
-              position="fixed"
-              top="0"
-              left="0"
-              right="0"
-              bottom="0"
-              bg="rgba(0, 0, 0, 0.5)"
-              display="flex"
-              alignItems="center"
-              justifyContent="center"
-              zIndex="1000"
-              p="4"
-              onClick={() => setSelectedEvent(null)}
-            >
-              <Box
-                bg="white"
-                borderRadius="xl"
-                p="8"
-                maxW="500px"
-                w="full"
-                boxShadow="0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                position="relative"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <Button
-                  position="absolute"
-                  top="4"
-                  right="4"
-                  variant="ghost"
-                  size="sm"
-                  fontSize="xl"
-                  color="gray.600"
-                  _hover={{ bg: 'gray.100', color: 'gray.800' }}
-                  onClick={() => setSelectedEvent(null)}
-                  aria-label="Close"
-                >
-                  ✕
-                </Button>
-
-                <Heading as="h3" size="lg" mb="6" pr="8" color="gray.800">
-                  {selectedEvent.event.title}
-                </Heading>
-
-                <VStack align="stretch" gap="4" mb="6">
-                  {selectedEvent.event.extendedProps.type === 'conference' ? (
-                    <>
-                      <VStack align="start" gap="1">
-                        <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                          Location:
-                        </Text>
-                        <Text fontSize="sm" color="gray.800">
-                          {selectedEvent.event.extendedProps.conference.place}
-                        </Text>
-                      </VStack>
-                      <VStack align="start" gap="1">
-                        <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                          Date:
-                        </Text>
-                        <Text fontSize="sm" color="gray.800">
-                          {selectedEvent.event.extendedProps.conference.date}
-                        </Text>
-                      </VStack>
-                    </>
-                  ) : (
-                    <>
-                      <VStack align="start" gap="1">
-                        <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                          Type:
-                        </Text>
-                        <Text fontSize="sm" color="gray.800">
-                          {selectedEvent.event.extendedProps.type === 'abstract'
-                            ? 'Abstract Deadline'
-                            : 'Paper Submission'}
-                        </Text>
-                      </VStack>
-                      <VStack align="start" gap="1">
-                        <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                          Original Time:
-                        </Text>
-                        <Text fontSize="sm" color="gray.800" fontFamily="mono">
-                          {selectedEvent.event.extendedProps.deadline.toFormat('MMM dd, yyyy HH:mm')}{' '}
-                          {selectedEvent.event.extendedProps.conference.timezone}
-                        </Text>
-                      </VStack>
-                      <VStack align="start" gap="1">
-                        <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                          Local Time:
-                        </Text>
-                        <Text fontSize="sm" color="gray.800" fontFamily="mono">
-                          {selectedEvent.event.extendedProps.deadline
-                            .toLocal()
-                            .toFormat('MMM dd, yyyy HH:mm')}{' '}
-                          {DateTime.local().zoneName}
-                        </Text>
-                      </VStack>
-                    </>
-                  )}
-
-                  <VStack align="start" gap="1">
-                    <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                      Subject{getSubjectsArray(selectedEvent.event.extendedProps.conference.sub).length > 1 ? 's' : ''}:
-                    </Text>
-                    <Flex gap="2" wrap="wrap">
-                      {getSubjectsArray(selectedEvent.event.extendedProps.conference.sub).map((subject, idx) => {
-                        const colors = getSubjectColor(subject);
-                        return (
-                          <Badge
-                            key={idx}
-                            px="3"
-                            py="1"
-                            borderRadius="full"
-                            fontSize="xs"
-                            fontWeight="600"
-                            bg={colors.bg}
-                            color={colors.color}
-                            border="1px"
-                            borderColor={colors.border}
-                          >
-                            {subject}
-                          </Badge>
-                        );
-                      })}
-                    </Flex>
-                  </VStack>
-                </VStack>
-
-                <Flex gap="3" wrap="wrap" direction={{ base: 'column', md: 'row' }}>
-                  <Button
-                    onClick={handleExportEvent}
-                    bg="brand.400"
-                    color="white"
-                    size="sm"
-                    px="4"
-                    flex={{ base: '1', md: 'auto' }}
-                    transition="all 0.2s ease-in-out"
-                    position="relative"
-                    zIndex="1"
-                    _hover={{
-                      bg: 'brand.500',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 4px 12px rgba(93, 159, 210, 0.4)'
-                    }}
-                    _active={{ transform: 'scale(0.98)' }}
-                  >
-                    📅 Export
-                  </Button>
-                  <Button
-                    onClick={handleCopyLink}
-                    bg="gray.100"
-                    color="gray.700"
-                    border="1px"
-                    borderColor="gray.300"
-                    size="sm"
-                    px="4"
-                    flex={{ base: '1', md: 'auto' }}
-                    transition="all 0.2s ease-in-out"
-                    position="relative"
-                    zIndex="1"
-                    _hover={{
-                      bg: 'white',
-                      borderColor: 'brand.400',
-                      color: 'brand.600',
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
-                    }}
-                    _active={{ transform: 'scale(0.98)' }}
-                  >
-                    🔗 Copy Link
-                  </Button>
-                  {selectedEvent.event.extendedProps.conference.link && (
-                    <Link
-                      href={selectedEvent.event.extendedProps.conference.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      textDecoration="none"
-                      flex={{ base: '1', md: 'auto' }}
-                    >
-                      <Button
-                        bg="gray.100"
-                        color="gray.700"
-                        border="1px"
-                        borderColor="gray.300"
-                        size="sm"
-                        px="4"
-                        w="full"
-                        transition="all 0.2s ease-in-out"
-                        position="relative"
-                        zIndex="1"
-                        _hover={{
-                          bg: 'white',
-                          borderColor: 'brand.400',
-                          color: 'brand.600',
-                          transform: 'translateY(-2px)',
-                          boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
-                        }}
-                        _active={{ transform: 'scale(0.98)' }}
-                      >
-                        🌐 Website
-                      </Button>
-                    </Link>
-                  )}
-                </Flex>
-              </Box>
-            </Box>
+          {selectedConference && (
+            <ConferenceModal
+              conference={selectedConference}
+              onClose={() => setSelectedConference(null)}
+            />
           )}
         </Container>
       </Box>
