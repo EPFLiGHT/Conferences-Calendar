@@ -147,7 +147,7 @@ export function formatDeadline(datetime: DateTime, timezone: string): string {
   return datetime.toFormat('MMM dd, yyyy HH:mm') + ` ${timezone}`;
 }
 
-// Subject color mapping with hex values
+// Subject color mapping
 const SUBJECT_COLORS: Record<string, { bg: string; color: string; border: string }> = {
   ML: { bg: '#eff6ff', color: '#2563eb', border: '#bfdbfe' },
   CV: { bg: '#faf5ff', color: '#9333ea', border: '#e9d5ff' },
