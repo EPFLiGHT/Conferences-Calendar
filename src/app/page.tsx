@@ -28,7 +28,7 @@ export default function Page() {
   });
 
   useEffect(() => {
-    const basePath = process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : '';
+    const basePath = '';
     fetch(`${basePath}/data/conferences.yaml`)
       .then((response) => {
         if (!response.ok) {

@@ -43,7 +43,7 @@ function CalendarContent() {
   const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
 
   useEffect(() => {
-    const basePath = process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : '';
+    const basePath = '';
     fetch(`${basePath}/data/conferences.yaml`)
       .then((response) => {
         if (!response.ok) {
