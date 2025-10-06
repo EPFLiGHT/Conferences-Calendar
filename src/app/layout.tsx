@@ -8,7 +8,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const basePath = process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : '';
+  const basePath = '';
 
   return (
     <html lang="en">

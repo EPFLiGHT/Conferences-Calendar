@@ -165,7 +165,7 @@ export default function Footer(): JSX.Element {
                 cursor="pointer"
               >
                 <Image
-                  src={`${process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : ''}/light-banner.png`}
+                  src="/light-banner.png"
                   alt="LiGHT Laboratory"
                   w="100%"
                   h="auto"

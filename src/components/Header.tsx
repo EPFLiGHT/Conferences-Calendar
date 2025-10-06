@@ -103,7 +103,7 @@ export default function Header(): JSX.Element {
               _hover={{ transform: 'scale(1.05)' }}
             >
               <Image
-                src={`${process.env.NODE_ENV === 'production' ? '/Conferences-Calendar' : ''}/light-logo.svg`}
+                src="/light-logo.svg"
                 alt="LiGHT Lab"
                 h={{ base: '40px', md: '60px' }}
                 w="auto"
