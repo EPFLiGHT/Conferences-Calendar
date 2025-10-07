@@ -174,3 +174,18 @@ export function getSubjectsArray(sub: string | string[]): string[] {
   if (Array.isArray(sub)) return sub.filter(Boolean);
   return [sub].filter(Boolean);
 }
+
+// Generate event color based on subject tag(s)
+export function getEventColorFromSubjects(subjects: string | string[]): {
+  backgroundColor: string;
+  borderColor: string;
+} {
+  const subjectsArray = getSubjectsArray(subjects);
+
+  // Use the first subject's color in case of multiple tags
+  const subjectColor = getSubjectColor(subjectsArray[0]);
+  return {
+    backgroundColor: subjectColor.color,
+    borderColor: subjectColor.color,
+  };
+}

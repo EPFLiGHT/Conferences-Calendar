@@ -22,7 +22,7 @@ import Footer from '@/components/Footer';
 import Filters from '@/components/Filters';
 import Search from '@/components/Search';
 import ConferenceModal from '@/components/ConferenceModal';
-import { parseConferences } from '@/utils/parser';
+import { parseConferences, getEventColorFromSubjects } from '@/utils/parser';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '@/utils/ics';
 import type { Conference } from '@/types/conference';
 import { EventClickArg } from '@fullcalendar/core';
@@ -129,6 +129,8 @@ function CalendarContent() {
     const events: any[] = [];
 
     filteredConferences.forEach(conf => {
+      const eventColors = getEventColorFromSubjects(conf.sub);
+
       if (conf.start && conf.end) {
         events.push({
           id: `conf-${conf.id}`,
@@ -136,8 +138,8 @@ function CalendarContent() {
           start: conf.start,
           end: DateTime.fromISO(conf.end).plus({ days: 1 }).toISODate(),
           allDay: true,
-          backgroundColor: '#2563eb',
-          borderColor: '#2563eb',
+          backgroundColor: eventColors.backgroundColor,
+          borderColor: eventColors.borderColor,
           extendedProps: {
             type: 'conference',
             conference: conf,
@@ -153,8 +155,8 @@ function CalendarContent() {
           start: dt.toISO(),
           end: dt.plus({ hours: 1 }).toISO(),
           allDay: false,
-          backgroundColor: '#06b6d4',
-          borderColor: '#06b6d4',
+          backgroundColor: eventColors.backgroundColor,
+          borderColor: eventColors.borderColor,
           extendedProps: {
             type: 'abstract',
             conference: conf,
@@ -171,8 +173,8 @@ function CalendarContent() {
           start: dt.toISO(),
           end: dt.plus({ hours: 1 }).toISO(),
           allDay: false,
-          backgroundColor: '#dc2626',
-          borderColor: '#dc2626',
+          backgroundColor: eventColors.backgroundColor,
+          borderColor: eventColors.borderColor,
           extendedProps: {
             type: 'submission',
             conference: conf,
