@@ -18,8 +18,8 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
 
   // Lighter animation for mobile (faster, less "aggressive")
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const animationDelay = isMobile ? (index % 12) * 0.05 : (index % 12) * 0.08;
-  const animationDuration = isMobile ? 0.4 : 0.6;
+  const animationDelay = isMobile ? (index % 12) * 0.03 : (index % 12) * 0.02;
+  const animationDuration = isMobile ? 0.3 : 0.25;
 
   return (
     <MotionBox
@@ -29,7 +29,8 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
       transition={{
         duration: animationDuration,
         delay: animationDelay,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: [0.25, 0.46, 0.45, 0.94],
+        layout: { duration: 0.15, ease: 'easeOut' }
       }}
       bg="white"
       borderRadius="xl"
@@ -43,7 +44,7 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
         y: -4,
         scale: 1.02,
         borderColor: 'var(--chakra-colors-brand-400)',
-        transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
+        transition: { duration: 0.15, ease: [0.25, 0.1, 0.25, 1] }
       }}
       whileTap={{
         scale: 0.98,
