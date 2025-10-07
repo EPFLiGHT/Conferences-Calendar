@@ -2,7 +2,8 @@ import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react'
 import { motion } from 'framer-motion';
 import { DateTime } from 'luxon';
 import Countdown from './Countdown';
-import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
+import SubjectBadge from './SubjectBadge';
+import { getDeadlineInfo, getSubjectsArray } from '../utils/parser';
 import { Conference } from '../types/conference';
 
 const MotionBox = motion.create(Box);
@@ -59,26 +60,9 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
             {conference.title} {conference.year}
           </Heading>
           <Flex gap="2" wrap="wrap" justify="flex-end" align="center">
-            {getSubjectsArray(conference.sub).map((subject, idx) => {
-              const colors = getSubjectColor(subject);
-              return (
-                <Badge
-                  key={idx}
-                  px="3"
-                  py="1"
-                  borderRadius="full"
-                  fontSize="xs"
-                  fontWeight="600"
-                  bg={colors.bg}
-                  color={colors.color}
-                  border="1px"
-                  borderColor={colors.border}
-                  whiteSpace="nowrap"
-                >
-                  {subject}
-                </Badge>
-              );
-            })}
+            {getSubjectsArray(conference.sub).map((subject, idx) => (
+              <SubjectBadge key={idx} subject={subject} />
+            ))}
           </Flex>
         </Flex>
         {conference.note && (

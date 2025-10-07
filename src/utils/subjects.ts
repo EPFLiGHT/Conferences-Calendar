@@ -1,0 +1,16 @@
+export const SUBJECT_LABELS: Record<string, string> = {
+  'ML': 'Machine Learning',
+  'CV': 'Computer Vision',
+  'NLP': 'Natural Language Processing',
+  'DM': 'Data Mining',
+  'SP': 'Signal Processing',
+  'HCI': 'Human-Computer Interaction',
+  'RO': 'Robotics',
+  'SEC': 'Security',
+  'PRIV': 'Privacy',
+  'CONF': 'General Conference',
+  'SHOP': 'Workshop',
+  'CG': 'Computer Graphics',
+  'KR': 'Knowledge Representation',
+  'AP': 'Applications',
+};

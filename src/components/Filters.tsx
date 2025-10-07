@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
 import { Box, Flex, Grid, Text, Button } from '@chakra-ui/react';
 import { NativeSelectRoot, NativeSelectField } from '@chakra-ui/react';
+import { Tooltip } from '@chakra-ui/react/tooltip';
 import { Conference } from '../types/conference';
 import { getSubjectColor } from '../utils/parser';
+import { SUBJECT_LABELS } from '../utils/subjects';
 
 interface FiltersProps {
   conferences: Conference[];
@@ -129,31 +131,50 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
               const colors = getSubjectColor(subject);
               const isSelected = filters.subject === subject;
               return (
-                <Button
-                  key={subject}
-                  size="sm"
-                  px="4"
-                  borderRadius="full"
-                  fontWeight="500"
-                  bg={isSelected ? colors.color : colors.bg}
-                  color={isSelected ? 'white' : colors.color}
-                  border="1px"
-                  borderColor={isSelected ? colors.color : colors.border}
-                  onClick={() => onFilterChange({ subject })}
-                  transition="all 0.2s ease-in-out"
-                  position="relative"
-                  zIndex="1"
-                  _hover={{
-                    bg: isSelected ? colors.color : colors.bg,
-                    transform: 'translateY(-1px)',
-                    opacity: 0.9,
-                  }}
-                  _active={{
-                    transform: 'scale(0.97)',
-                  }}
-                >
-                  {subject}
-                </Button>
+                <Tooltip.Root key={subject}>
+                  <Tooltip.Trigger asChild>
+                    <Button
+                      size="sm"
+                      px="4"
+                      borderRadius="full"
+                      fontWeight="500"
+                      bg={isSelected ? colors.color : colors.bg}
+                      color={isSelected ? 'white' : colors.color}
+                      border="1px"
+                      borderColor={isSelected ? colors.color : colors.border}
+                      onClick={() => onFilterChange({ subject })}
+                      transition="all 0.2s ease-in-out"
+                      position="relative"
+                      zIndex="1"
+                      cursor="help"
+                      _hover={{
+                        bg: isSelected ? colors.color : colors.bg,
+                        transform: 'translateY(-1px)',
+                        opacity: 0.9,
+                      }}
+                      _active={{
+                        transform: 'scale(0.97)',
+                      }}
+                    >
+                      {subject}
+                    </Button>
+                  </Tooltip.Trigger>
+                  <Tooltip.Positioner>
+                    <Tooltip.Content
+                      fontSize="sm"
+                      borderRadius="md"
+                      bg="gray.800"
+                      color="white"
+                      px="3"
+                      py="2"
+                    >
+                      <Tooltip.Arrow>
+                        <Tooltip.ArrowTip />
+                      </Tooltip.Arrow>
+                      {SUBJECT_LABELS[subject] || subject}
+                    </Tooltip.Content>
+                  </Tooltip.Positioner>
+                </Tooltip.Root>
               );
             })}
           </Flex>

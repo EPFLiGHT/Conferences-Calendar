@@ -11,7 +11,8 @@ import {
   VStack,
   Portal,
 } from '@chakra-ui/react';
-import { getDeadlineInfo, getSubjectsArray, getSubjectColor } from '../utils/parser';
+import SubjectBadge from './SubjectBadge';
+import { getDeadlineInfo, getSubjectsArray } from '../utils/parser';
 import { exportConference } from '../utils/ics';
 import { Conference } from '../types/conference';
 
@@ -147,25 +148,9 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                     Subject{getSubjectsArray(conference.sub).length > 1 ? 's' : ''}
                   </Text>
                   <Flex gap="2" wrap="wrap">
-                    {getSubjectsArray(conference.sub).map((subject, idx) => {
-                      const colors = getSubjectColor(subject);
-                      return (
-                        <Badge
-                          key={idx}
-                          px="3"
-                          py="1"
-                          borderRadius="full"
-                          fontSize="xs"
-                          fontWeight="600"
-                          bg={colors.bg}
-                          color={colors.color}
-                          border="1px"
-                          borderColor={colors.border}
-                        >
-                          {subject}
-                        </Badge>
-                      );
-                    })}
+                    {getSubjectsArray(conference.sub).map((subject, idx) => (
+                      <SubjectBadge key={idx} subject={subject} />
+                    ))}
                   </Flex>
                 </VStack>
                 {(conference.hindex ?? 0) > 0 && (
