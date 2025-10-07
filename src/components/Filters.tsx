@@ -2,18 +2,15 @@ import { useMemo } from 'react';
 import { Box, Flex, Grid, Text, Button } from '@chakra-ui/react';
 import { NativeSelectRoot, NativeSelectField } from '@chakra-ui/react';
 import { Tooltip } from '@chakra-ui/react/tooltip';
-import { Conference } from '../types/conference';
-import { getSubjectColor } from '../utils/parser';
-import { SUBJECT_LABELS } from '../utils/subjects';
+import { Conference } from '@/types/conference';
+import { getSubjectColor, getSubjectsArray } from '@/utils/parser';
+import { SUBJECT_LABELS } from '@/utils/subjects';
+import type { ConferenceFiltersState } from '@/hooks/useConferenceFilters';
 
 interface FiltersProps {
   conferences: Conference[];
-  filters: {
-    sortBy: string;
-    year: string;
-    subject: string;
-  };
-  onFilterChange: (newFilters: { sortBy?: string; year?: string; subject?: string }) => void;
+  filters: ConferenceFiltersState;
+  onFilterChange: (newFilters: Partial<ConferenceFiltersState>) => void;
 }
 
 export default function Filters({ conferences, filters, onFilterChange }: FiltersProps): JSX.Element {
@@ -24,12 +21,8 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
 
   const subjects = useMemo(() => {
     const subjectSet = new Set<string>();
-    conferences.forEach(c => {
-      if (Array.isArray(c.sub)) {
-        c.sub.forEach(s => subjectSet.add(s));
-      } else if (c.sub) {
-        subjectSet.add(c.sub);
-      }
+    conferences.forEach(conference => {
+      getSubjectsArray(conference.sub).forEach(subject => subjectSet.add(subject));
     });
     return [...subjectSet].sort();
   }, [conferences]);

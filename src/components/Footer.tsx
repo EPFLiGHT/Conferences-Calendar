@@ -2,6 +2,7 @@
 
 import { Box, Container, Flex, Text, Link, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { GRADIENTS, brandAlpha } from '@/theme';
 
 export default function Footer(): JSX.Element {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -72,7 +73,7 @@ export default function Footer(): JSX.Element {
         py={{ base: '12', md: '16' }}
         position="relative"
         overflow="hidden"
-        bg="linear-gradient(180deg, #ffffff 0%, #f5f9fd 50%, #edf5fc 100%)"
+        bg={GRADIENTS.footerBackground}
       >
         {/* Background wave effects that pulse and move */}
         <Box
@@ -81,7 +82,7 @@ export default function Footer(): JSX.Element {
           left={`${-20 + waveOffset * 0.2}%`}
           w="65%"
           h="65%"
-          bg="radial-gradient(circle, rgba(93, 159, 210, 0.18) 0%, transparent 70%)"
+          bg={`radial-gradient(circle, ${brandAlpha(400, 0.18)} 0%, transparent 70%)`}
           borderRadius="50%"
           transition="left 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
           css={{
@@ -94,7 +95,7 @@ export default function Footer(): JSX.Element {
           right={`${-15 - waveOffset * 0.15}%`}
           w="75%"
           h="75%"
-          bg="radial-gradient(circle, rgba(46, 94, 168, 0.15) 0%, transparent 70%)"
+          bg={`radial-gradient(circle, ${brandAlpha(500, 0.15)} 0%, transparent 70%)`}
           borderRadius="50%"
           transition="right 0.2s cubic-bezier(0.4, 0, 0.2, 1)"
           css={{
@@ -111,7 +112,7 @@ export default function Footer(): JSX.Element {
             left={`${8 + i * 18}%`}
             w={i % 2 === 0 ? '5px' : '3px'}
             h={i % 2 === 0 ? '5px' : '3px'}
-            bg={i % 2 === 0 ? '#5d9fd2' : '#2e5ea8'}
+            bg={i % 2 === 0 ? 'brand.400' : 'brand.500'}
             borderRadius="50%"
             opacity={isVisible ? 0.35 : 0}
             transition="opacity 1s cubic-bezier(0.4, 0, 0.2, 1)"
@@ -145,7 +146,7 @@ export default function Footer(): JSX.Element {
                 borderRadius="20px"
                 opacity={isVisible ? 0.25 : 0}
                 transition="opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)"
-                background="linear-gradient(90deg, transparent, rgba(93, 159, 210, 0.35), transparent)"
+                background={`linear-gradient(90deg, transparent, ${brandAlpha(400, 0.35)}, transparent)`}
                 backgroundSize="1200px 100%"
                 css={{
                   animation: isVisible ? 'smoothShimmer 4s linear infinite' : 'none',
@@ -173,10 +174,10 @@ export default function Footer(): JSX.Element {
                   opacity={isVisible ? 1 : 0.75}
                   transition="all 1s cubic-bezier(0.4, 0, 0.2, 1)"
                   borderRadius="16px"
-                  boxShadow={isVisible ? '0 20px 60px rgba(46, 94, 168, 0.25)' : '0 10px 30px rgba(46, 94, 168, 0.12)'}
+                  boxShadow={isVisible ? `0 20px 60px ${brandAlpha(500, 0.25)}` : `0 10px 30px ${brandAlpha(500, 0.12)}`}
                   _hover={{
                     transform: 'scale(1.03)',
-                    boxShadow: '0 25px 80px rgba(46, 94, 168, 0.35)',
+                    boxShadow: `0 25px 80px ${brandAlpha(500, 0.35)}`,
                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   }}
                 />
@@ -190,7 +191,7 @@ export default function Footer(): JSX.Element {
                 w="35px"
                 h="35px"
                 border="3px solid"
-                borderColor="#2e5ea8"
+                borderColor="brand.500"
                 borderRadius="50%"
                 opacity={isVisible ? 0.8 : 0}
                 css={{
@@ -204,7 +205,7 @@ export default function Footer(): JSX.Element {
                 w="45px"
                 h="45px"
                 border="3px solid"
-                borderColor="#5d9fd2"
+                borderColor="brand.400"
                 borderRadius="50%"
                 opacity={isVisible ? 0.7 : 0}
                 css={{
@@ -230,7 +231,7 @@ export default function Footer(): JSX.Element {
                 <Text
                   fontSize="lg"
                   fontWeight="700"
-                  bgGradient="linear-gradient(135deg, #5d9fd2 0%, #2e5ea8 100%)"
+                  bgGradient={GRADIENTS.footerSurface}
                   bgClip="text"
                   mb="2"
                 >
@@ -242,12 +243,12 @@ export default function Footer(): JSX.Element {
                     href="https://github.com/AZOGOAT"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="#2e5ea8"
+                    color="brand.500"
                     fontWeight="600"
                     position="relative"
                     transition="color 0.3s ease"
                     _hover={{
-                      color: '#5d9fd2',
+                      color: 'brand.400',
                       _after: {
                         width: '100%',
                       }
@@ -259,7 +260,7 @@ export default function Footer(): JSX.Element {
                       left: 0,
                       width: 0,
                       height: '2px',
-                      bg: '#5d9fd2',
+                      bg: 'brand.400',
                       transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     }}
                   >
@@ -270,12 +271,12 @@ export default function Footer(): JSX.Element {
                     href="https://github.com/EPFLiGHT"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="#2e5ea8"
+                    color="brand.500"
                     fontWeight="600"
                     position="relative"
                     transition="color 0.3s ease"
                     _hover={{
-                      color: '#5d9fd2',
+                      color: 'brand.400',
                       _after: {
                         width: '100%',
                       }
@@ -287,7 +288,7 @@ export default function Footer(): JSX.Element {
                       left: 0,
                       width: 0,
                       height: '2px',
-                      bg: '#5d9fd2',
+                      bg: 'brand.400',
                       transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     }}
                   >
@@ -307,12 +308,12 @@ export default function Footer(): JSX.Element {
                     href="https://github.com/EPFLiGHT/Conferences-Calendar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    color="#2e5ea8"
+                    color="brand.500"
                     fontWeight="600"
                     position="relative"
                     transition="color 0.3s ease"
                     _hover={{
-                      color: '#5d9fd2',
+                      color: 'brand.400',
                       _after: {
                         width: '100%',
                       }
@@ -324,7 +325,7 @@ export default function Footer(): JSX.Element {
                       left: 0,
                       width: 0,
                       height: '2px',
-                      bg: '#5d9fd2',
+                      bg: 'brand.400',
                       transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     }}
                   >
@@ -337,7 +338,7 @@ export default function Footer(): JSX.Element {
               <Box
                 w={isVisible ? '140px' : '0px'}
                 h="3px"
-                bg="linear-gradient(90deg, #5d9fd2, #2e5ea8)"
+                bgGradient={GRADIENTS.footerAccent}
                 borderRadius="full"
                 transition="width 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s"
               />
@@ -352,7 +353,7 @@ export default function Footer(): JSX.Element {
           left="0"
           right="0"
           h="2px"
-          bg="linear-gradient(90deg, transparent, #5d9fd2, #2e5ea8, #5d9fd2, transparent)"
+          bg={`linear-gradient(90deg, transparent, ${brandAlpha(400, 0.9)}, ${brandAlpha(500, 0.9)}, ${brandAlpha(400, 0.9)}, transparent)`}
           opacity={isVisible ? 1 : 0}
           transition="opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)"
         />

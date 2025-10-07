@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import NextLink from 'next/link';
 import { Box, Container, Flex, HStack, Link, Text, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { GRADIENTS, brandAlpha } from '@/theme';
 
 export default function Header(): JSX.Element {
   const pathname = usePathname();
@@ -48,7 +49,7 @@ export default function Header(): JSX.Element {
       backdropFilter="blur(10px)"
       borderBottom="1px"
       borderColor="brand.200"
-      boxShadow="0 2px 16px rgba(46, 95, 169, 0.08)"
+      boxShadow={`0 2px 16px ${brandAlpha(500, 0.08)}`}
     >
       {/* Scroll Progress Bar */}
       <Box
@@ -57,16 +58,16 @@ export default function Header(): JSX.Element {
         left="0"
         right="0"
         h="4px"
-        bg="rgba(46, 95, 169, 0.1)"
+        bg={brandAlpha(500, 0.1)}
         zIndex="101"
       >
         <Box
           className="progress-bar"
           h="100%"
           w={`${scrollProgress}%`}
-          bg="linear-gradient(90deg, #2e5fa9 0%, #5d9fd2 50%, #60a5dc 100%)"
+          bg={GRADIENTS.headerProgress}
           transition="width 0.1s linear"
-          boxShadow="0 0 16px rgba(46, 95, 169, 0.8), 0 0 8px rgba(93, 159, 210, 0.6)"
+          boxShadow={`0 0 16px ${brandAlpha(500, 0.8)}, 0 0 8px ${brandAlpha(400, 0.6)}`}
           borderRadius="0 4px 4px 0"
           style={{ willChange: 'width' }}
         />
@@ -109,7 +110,7 @@ export default function Header(): JSX.Element {
                 w="auto"
                 maxW={{ base: '100px', md: 'none' }}
                 objectFit="contain"
-                _hover={{ filter: 'drop-shadow(0 4px 8px rgba(46, 95, 169, 0.3))' }}
+                _hover={{ filter: `drop-shadow(0 4px 8px ${brandAlpha(500, 0.3)})` }}
               />
               <Box display={{ base: 'none', lg: 'block' }}>
                 <Text fontSize="sm" fontWeight="600" color="brand.500" lineHeight="1.3">
@@ -175,15 +176,15 @@ export default function Header(): JSX.Element {
                   border="2px solid"
                   borderColor={isActive ? 'brand.600' : 'transparent'}
                   transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
-                  boxShadow={isActive ? '0 4px 12px rgba(46, 95, 169, 0.3)' : 'none'}
+                  boxShadow={isActive ? `0 4px 12px ${brandAlpha(500, 0.3)}` : 'none'}
                   _hover={{
                     color: isActive ? 'white' : 'brand.500',
                     bg: isActive ? 'brand.600' : 'brand.50',
                     borderColor: isActive ? 'brand.600' : 'brand.200',
                     transform: 'translateY(-2px) scale(1.05)',
                     boxShadow: isActive
-                      ? '0 8px 20px rgba(46, 95, 169, 0.4)'
-                      : '0 6px 16px rgba(46, 95, 169, 0.2)',
+                      ? `0 8px 20px ${brandAlpha(500, 0.4)}`
+                      : `0 6px 16px ${brandAlpha(500, 0.2)}`,
                   }}
                   _active={{
                     transform: 'scale(0.95)',

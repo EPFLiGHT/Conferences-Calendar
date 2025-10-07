@@ -1,10 +1,12 @@
-import { Box, Flex, Heading, Text, Badge, Link, VStack } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { DateTime } from 'luxon';
-import Countdown from './Countdown';
-import SubjectBadge from './SubjectBadge';
-import { getDeadlineInfo, getSubjectsArray } from '../utils/parser';
-import { Conference } from '../types/conference';
+import DeadlineCard from './DeadlineCard';
+import ExternalLinkButton from './ExternalLinkButton';
+import SubjectBadgeGroup from './SubjectBadgeGroup';
+import NoteBadge from './NoteBadge';
+import ConferenceDetails from './ConferenceDetails';
+import { getDeadlineInfo } from '@/utils/parser';
+import { Conference } from '@/types/conference';
 
 const MotionBox = motion.create(Box);
 
@@ -59,29 +61,14 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
           <Heading as="h3" size="lg" color="gray.800" flex="1" minW="200px">
             {conference.title} {conference.year}
           </Heading>
-          <Flex gap="2" wrap="wrap" justify="flex-end" align="center">
-            {getSubjectsArray(conference.sub).map((subject, idx) => (
-              <SubjectBadge key={idx} subject={subject} />
-            ))}
-          </Flex>
+          <SubjectBadgeGroup
+            subjects={conference.sub}
+            justify="flex-end"
+            align="center"
+          />
         </Flex>
         {conference.note && (
-          <Badge
-            px="2"
-            py="1"
-            borderRadius="md"
-            fontSize="xs"
-            fontWeight="600"
-            textTransform="uppercase"
-            bg="blue.100"
-            color="blue.800"
-            wordBreak="break-word"
-            whiteSpace="normal"
-            alignSelf="flex-start"
-            maxW="fit-content"
-          >
-            {conference.note}
-          </Badge>
+          <NoteBadge note={conference.note} />
         )}
       </VStack>
 
@@ -91,28 +78,9 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
       </Text>
 
       {/* Info Section */}
-      <VStack align="stretch" gap="2" mb="4">
-        <Flex fontSize="sm">
-          <Text color="gray.600" fontWeight="500" minW="100px">
-            📍 Location:
-          </Text>
-          <Text color="gray.800">{conference.place}</Text>
-        </Flex>
-        <Flex fontSize="sm">
-          <Text color="gray.600" fontWeight="500" minW="100px">
-            📅 Date:
-          </Text>
-          <Text color="gray.800">{conference.date}</Text>
-        </Flex>
-        {(conference.hindex ?? 0) > 0 && (
-          <Flex fontSize="sm">
-            <Text color="gray.600" fontWeight="500" minW="100px">
-              📊 H-Index:
-            </Text>
-            <Text color="gray.800">{conference.hindex}</Text>
-          </Flex>
-        )}
-      </VStack>
+      <Box mb="4">
+        <ConferenceDetails conference={conference} />
+      </Box>
 
       {/* Deadlines */}
       {allDeadlines.length > 0 ? (
@@ -126,59 +94,14 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
           borderColor="gray.200"
           mb="4"
         >
-          {allDeadlines.map((deadline, idx) => {
-            const now = DateTime.now();
-            const isExpired = deadline.localDatetime <= now;
-
-            return (
-              <VStack key={idx} align="stretch" gap="3">
-                <VStack align="stretch" gap="1">
-                  <Text
-                    fontSize="xs"
-                    fontWeight="600"
-                    color="brand.500"
-                    textTransform="uppercase"
-                    letterSpacing="wider"
-                  >
-                    {deadline.label}
-                  </Text>
-                  <Flex fontSize="sm" gap="2">
-                    <Text color="gray.600" fontWeight="500" minW="60px">
-                      Original:
-                    </Text>
-                    <Text color="gray.800" fontFamily="mono" fontSize="xs">
-                      {deadline.datetime.toFormat('MMM dd, yyyy HH:mm')} {conference.timezone}
-                    </Text>
-                  </Flex>
-                  <Flex fontSize="sm" gap="2">
-                    <Text color="gray.600" fontWeight="500" minW="60px">
-                      Local:
-                    </Text>
-                    <Text color="gray.800" fontFamily="mono" fontSize="xs">
-                      {deadline.localDatetime.toFormat('MMM dd, yyyy HH:mm')} {deadline.localDatetime.zoneName}
-                    </Text>
-                  </Flex>
-                </VStack>
-
-                {/* Countdown or Expired */}
-                <Box
-                  p="3"
-                  bg={isExpired ? 'red.50' : 'blue.50'}
-                  borderRadius="md"
-                  border="1px"
-                  borderColor={isExpired ? 'red.200' : 'blue.200'}
-                >
-                  {isExpired ? (
-                    <Text fontSize="sm" color="red.600" fontWeight="600">
-                      Expired
-                    </Text>
-                  ) : (
-                    <Countdown deadline={deadline.localDatetime} label="Time remaining" />
-                  )}
-                </Box>
-              </VStack>
-            );
-          })}
+          {allDeadlines.map((deadline, idx) => (
+            <DeadlineCard
+              key={idx}
+              deadline={deadline}
+              timezone={conference.timezone}
+              variant="compact"
+            />
+          ))}
         </VStack>
       ) : (
         <Box
@@ -200,70 +123,31 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
       {/* Links */}
       <Flex gap="3" wrap="wrap" pt="4" borderTop="1px" borderColor="gray.200">
         {conference.link && (
-          <Link
+          <ExternalLinkButton
             href={conference.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            px="4"
-            py="2"
-            bg="brand.500"
-            color="white"
-            borderRadius="md"
-            fontSize="sm"
-            fontWeight="500"
-            transition="all 0.2s"
-            _hover={{
-              bg: 'brand.600',
-              transform: 'translateY(-1px)',
-            }}
+            variant="primary"
             onClick={(e) => e.stopPropagation()}
           >
             Website
-          </Link>
+          </ExternalLinkButton>
         )}
         {conference.paperslink && (
-          <Link
+          <ExternalLinkButton
             href={conference.paperslink}
-            target="_blank"
-            rel="noopener noreferrer"
-            px="4"
-            py="2"
-            bg="brand.500"
-            color="white"
-            borderRadius="md"
-            fontSize="sm"
-            fontWeight="500"
-            transition="all 0.2s"
-            _hover={{
-              bg: 'brand.600',
-              transform: 'translateY(-1px)',
-            }}
+            variant="primary"
             onClick={(e) => e.stopPropagation()}
           >
             Papers
-          </Link>
+          </ExternalLinkButton>
         )}
         {conference.pwclink && (
-          <Link
+          <ExternalLinkButton
             href={conference.pwclink}
-            target="_blank"
-            rel="noopener noreferrer"
-            px="4"
-            py="2"
-            bg="brand.500"
-            color="white"
-            borderRadius="md"
-            fontSize="sm"
-            fontWeight="500"
-            transition="all 0.2s"
-            _hover={{
-              bg: 'brand.600',
-              transform: 'translateY(-1px)',
-            }}
+            variant="primary"
             onClick={(e) => e.stopPropagation()}
           >
             Papers w/ Code
-          </Link>
+          </ExternalLinkButton>
         )}
       </Flex>
     </MotionBox>

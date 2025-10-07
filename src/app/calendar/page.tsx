@@ -1,15 +1,11 @@
 'use client';
 
-import { Suspense, useState, useEffect, useMemo, useRef } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { Suspense, useState, useMemo, useRef } from 'react';
 import {
   Box,
   Button,
   Container,
   Flex,
-  Heading,
-  Text,
-  Center,
 } from '@chakra-ui/react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -19,111 +15,47 @@ import luxonPlugin from '@fullcalendar/luxon3';
 import { DateTime } from 'luxon';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Filters from '@/components/Filters';
-import Search from '@/components/Search';
+import ConferenceFiltersPanel from '@/components/ConferenceFiltersPanel';
 import ConferenceModal from '@/components/ConferenceModal';
-import { parseConferences, getEventColorFromSubjects } from '@/utils/parser';
+import LoadingState from '@/components/LoadingState';
+import ErrorState from '@/components/ErrorState';
+import { useConferences } from '@/hooks/useConferences';
+import { useConferenceFilters, type ConferenceFiltersState } from '@/hooks/useConferenceFilters';
+import { useURLSync, useInitialURLParams } from '@/hooks/useURLSync';
+import { getEventColorFromSubjects } from '@/utils/parser';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '@/utils/ics';
+import { secondaryButtonStyle, brandButtonStyle } from '@/styles/buttonStyles';
 import type { Conference } from '@/types/conference';
 import { EventClickArg } from '@fullcalendar/core';
 
 
 function CalendarContent() {
   const calendarRef = useRef<FullCalendar>(null);
-  const searchParams = useSearchParams();
-  const [conferences, setConferences] = useState<Conference[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState<string>('');
-  const [filters, setFilters] = useState({
+  const { conferences, loading, error } = useConferences();
+  const initialParams = useInitialURLParams();
+  const { syncFiltersToURL, syncSearchToURL } = useURLSync('/calendar');
+
+  const [searchQuery, setSearchQuery] = useState<string>(initialParams.searchQuery);
+  const [filters, setFilters] = useState<ConferenceFiltersState>({
     sortBy: 'deadline',
-    year: '',
-    subject: '',
+    year: initialParams.year,
+    subject: initialParams.subject,
   });
   const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
 
-  useEffect(() => {
-    const basePath = '';
-    fetch(`${basePath}/data/conferences.yaml`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch conferences data');
-        }
-        return response.text();
-      })
-      .then((yamlText) => {
-        const parsed = parseConferences(yamlText);
-        setConferences(parsed);
-        setLoading(false);
-      })
-      .catch((err: Error) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    if (!searchParams) return;
-    setSearchQuery(searchParams.get('q') || '');
-    setFilters({
-      sortBy: 'deadline',
-      year: searchParams.get('year') || '',
-      subject: searchParams.get('subject') || '',
-    });
-  }, [searchParams]);
-
-  const handleFilterChange = (newFilters: { sortBy?: string; year?: string; subject?: string }) => {
+  const handleFilterChange = (newFilters: Partial<ConferenceFiltersState>) => {
     const updated = { ...filters, ...newFilters };
     setFilters(updated);
-
-    const params = new URLSearchParams();
-    if (searchQuery) params.set('q', searchQuery);
-    if (updated.year) params.set('year', updated.year);
-    if (updated.subject) params.set('subject', updated.subject);
-
-    const newUrl = params.toString() ? `?${params.toString()}` : '/calendar';
-    window.history.pushState({}, '', newUrl);
+    syncFiltersToURL(searchQuery, updated);
   };
 
   const handleSearchChange = (query: string) => {
     setSearchQuery(query);
-    const params = new URLSearchParams(searchParams?.toString() || '');
-    if (query) {
-      params.set('q', query);
-    } else {
-      params.delete('q');
-    }
-
-    const newUrl = params.toString() ? `?${params.toString()}` : '/calendar';
-    window.history.pushState({}, '', newUrl);
+    syncSearchToURL(query, filters);
   };
 
-  const filteredConferences = useMemo(() => {
-    let result = [...conferences];
-
-    if (searchQuery) {
-      const query = searchQuery.toLowerCase().replace(/\s+/g, '');
-      result = result.filter(conf => {
-        const searchableText = `${conf.title}${conf.year}${conf.full_name}`.toLowerCase().replace(/\s+/g, '');
-        return searchableText.includes(query);
-      });
-    }
-
-    if (filters.year) {
-      result = result.filter(conf => conf.year === parseInt(filters.year));
-    }
-
-    if (filters.subject) {
-      result = result.filter(conf => {
-        if (Array.isArray(conf.sub)) {
-          return conf.sub.includes(filters.subject);
-        }
-        return conf.sub === filters.subject;
-      });
-    }
-
-    return result;
-  }, [conferences, searchQuery, filters]);
+  // Use the centralized filtering hook instead of duplicating logic
+  const filteredConferences = useConferenceFilters(conferences, searchQuery, filters);
 
   const calendarEvents = useMemo(() => {
     const events: any[] = [];
@@ -206,99 +138,38 @@ function CalendarContent() {
     }
   };
 
-  if (loading) {
-    return (
-      <Center minH="100vh">
-        <Text fontSize="lg" color="gray.600">
-          Loading conferences...
-        </Text>
-      </Center>
-    );
-  }
-
-  if (error) {
-    return (
-      <Center minH="100vh" p="8">
-        <Box textAlign="center">
-          <Heading as="h2" size="lg" mb="4" color="gray.800">
-            Error Loading Data
-          </Heading>
-          <Text color="gray.600">{error}</Text>
-        </Box>
-      </Center>
-    );
-  }
+  if (loading) return <LoadingState />;
+  if (error) return <ErrorState error={error} />;
 
   return (
     <>
       <Header />
       <Box py={{ base: '6', md: '8' }} pb={{ base: '12', md: '16' }} minH="calc(100vh - 200px)">
         <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
-          <Box
-            bg="white"
-            borderRadius="xl"
-            border="1px"
-            borderColor="brand.200"
-            p={{ base: '6', md: '8' }}
-            mb="8"
-            boxShadow="0 2px 8px rgba(46, 95, 169, 0.08)"
-          >
-            <Box mb="8" textAlign="center">
-              <Heading as="h2" size="2xl" mb="2" color="gray.800">
-                Conference Calendar
-              </Heading>
-              <Text fontSize="md" color="gray.600">
-                View all conferences and deadlines in a calendar format
-              </Text>
-            </Box>
-
-            <Search value={searchQuery} onChange={handleSearchChange} />
-
-            <Filters
-              conferences={conferences}
-              filters={filters}
-              onFilterChange={handleFilterChange}
-            />
-          </Box>
+          <ConferenceFiltersPanel
+            title="Conference Calendar"
+            description="View all conferences and deadlines in a calendar format"
+            searchValue={searchQuery}
+            onSearchChange={handleSearchChange}
+            conferences={conferences}
+            filters={filters}
+            onFilterChange={handleFilterChange}
+          />
 
           <Flex gap="4" justify="center" mb="8" direction={{ base: 'column', md: 'row' }}>
             <Button
               onClick={handleToday}
-              bg="gray.100"
-              color="gray.700"
-              border="1px"
-              borderColor="gray.300"
               size="md"
               px="6"
-              transition="all 0.2s ease-in-out"
-              position="relative"
-              zIndex="1"
-              _hover={{
-                bg: 'white',
-                borderColor: 'brand.400',
-                color: 'brand.600',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
-              }}
-              _active={{ transform: 'scale(0.98)' }}
+              {...secondaryButtonStyle}
             >
               📍 Today
             </Button>
             <Button
               onClick={handleExportAll}
-              bg="brand.400"
-              color="white"
               size="md"
               px="6"
-              transition="all 0.2s ease-in-out"
-              position="relative"
-              zIndex="1"
-              _hover={{
-                bg: 'brand.500',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 4px 12px rgba(93, 159, 210, 0.4)'
-              }}
-              _active={{ transform: 'scale(0.98)' }}
+              {...brandButtonStyle}
             >
               📥 Export All ({filteredConferences.length} conferences)
             </Button>
@@ -364,15 +235,7 @@ function CalendarContent() {
 
 export default function Calendar() {
   return (
-    <Suspense
-      fallback={
-        <Center minH="100vh">
-          <Text fontSize="lg" color="gray.600">
-            Loading conferences...
-          </Text>
-        </Center>
-      }
-    >
+    <Suspense fallback={<LoadingState />}>
       <CalendarContent />
     </Suspense>
   );

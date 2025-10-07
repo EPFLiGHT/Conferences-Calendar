@@ -3,18 +3,18 @@ import {
   Box,
   Button,
   Flex,
-  Grid,
   Heading,
   Text,
-  Badge,
-  Link,
   VStack,
   Portal,
 } from '@chakra-ui/react';
-import SubjectBadge from './SubjectBadge';
-import { getDeadlineInfo, getSubjectsArray } from '../utils/parser';
-import { exportConference } from '../utils/ics';
-import { Conference } from '../types/conference';
+import DeadlineCard from './DeadlineCard';
+import ExternalLinkButton from './ExternalLinkButton';
+import ConferenceDetails from './ConferenceDetails';
+import { getDeadlineInfo } from '@/utils/parser';
+import { exportConference } from '@/utils/ics';
+import { secondaryButtonStyle } from '@/styles/buttonStyles';
+import { Conference } from '@/types/conference';
 
 interface ConferenceModalProps {
   conference: Conference;
@@ -130,60 +130,7 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
               <Heading as="h3" size="md" mb="4">
                 Conference Details
               </Heading>
-              <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap="6">
-                <VStack align="start" gap="2">
-                  <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                    Location
-                  </Text>
-                  <Text fontSize="md" color="gray.800">{conference.place}</Text>
-                </VStack>
-                <VStack align="start" gap="2">
-                  <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                    Date
-                  </Text>
-                  <Text fontSize="md" color="gray.800">{conference.date}</Text>
-                </VStack>
-                <VStack align="start" gap="2">
-                  <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                    Subject{getSubjectsArray(conference.sub).length > 1 ? 's' : ''}
-                  </Text>
-                  <Flex gap="2" wrap="wrap">
-                    {getSubjectsArray(conference.sub).map((subject, idx) => (
-                      <SubjectBadge key={idx} subject={subject} />
-                    ))}
-                  </Flex>
-                </VStack>
-                {(conference.hindex ?? 0) > 0 && (
-                  <VStack align="start" gap="2">
-                    <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                      H-Index
-                    </Text>
-                    <Text fontSize="md" color="gray.800">{conference.hindex}</Text>
-                  </VStack>
-                )}
-                {conference.note && (
-                  <VStack align="start" gap="2">
-                    <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                      Note
-                    </Text>
-                    <Badge
-                      px="2"
-                      py="0.5"
-                      borderRadius="md"
-                      fontSize="xs"
-                      fontWeight="600"
-                      textTransform="uppercase"
-                      bg="blue.100"
-                      color="blue.800"
-                      wordBreak="break-word"
-                      whiteSpace="normal"
-                      maxW="100%"
-                    >
-                      {conference.note}
-                    </Badge>
-                  </VStack>
-                )}
-              </Grid>
+              <ConferenceDetails conference={conference} variant="modal" />
             </Box>
 
             {/* Deadlines */}
@@ -194,53 +141,12 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                 </Heading>
                 <VStack align="stretch" gap="4">
                   {deadlines.map((deadline, idx) => (
-                    <Box
+                    <DeadlineCard
                       key={idx}
-                      bg="gray.50"
-                      border="1px"
-                      borderColor="gray.200"
-                      borderRadius="lg"
-                      overflow="hidden"
-                    >
-                      <Box
-                        p="3"
-                        bg="blue.50"
-                        borderBottom="1px"
-                        borderColor="blue.200"
-                      >
-                        <Text
-                          fontSize="sm"
-                          fontWeight="600"
-                          color="brand.500"
-                          textTransform="uppercase"
-                          letterSpacing="wider"
-                        >
-                          {deadline.label}
-                        </Text>
-                      </Box>
-                      <VStack align="stretch" gap="4" p="4">
-                        <VStack align="start" gap="1">
-                          <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                            Original Time:
-                          </Text>
-                          <Text fontSize="sm" color="gray.800" fontFamily="mono" lineHeight="1.6">
-                            {deadline.datetime.toFormat('EEEE, MMMM dd, yyyy')}
-                            <br />
-                            {deadline.datetime.toFormat('HH:mm')} {conference.timezone}
-                          </Text>
-                        </VStack>
-                        <VStack align="start" gap="1">
-                          <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
-                            Your Local Time:
-                          </Text>
-                          <Text fontSize="sm" color="gray.800" fontFamily="mono" lineHeight="1.6">
-                            {deadline.localDatetime.toFormat('EEEE, MMMM dd, yyyy')}
-                            <br />
-                            {deadline.localDatetime.toFormat('HH:mm')} {deadline.localDatetime.zoneName}
-                          </Text>
-                        </VStack>
-                      </VStack>
-                    </Box>
+                      deadline={deadline}
+                      timezone={conference.timezone}
+                      variant="detailed"
+                    />
                   ))}
                 </VStack>
               </Box>
@@ -253,110 +159,25 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
               </Heading>
               <Flex gap="3" wrap="wrap">
                 {conference.link && (
-                  <Link
-                    href={conference.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    textDecoration="none"
-                  >
-                    <Button
-                      bg="brand.500"
-                      color="white"
-                      size="md"
-                      px="6"
-                      transition="all 0.2s ease-in-out"
-                      position="relative"
-                      zIndex="1"
-                      _hover={{
-                        bg: 'brand.600',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 4px 12px rgba(46, 95, 169, 0.4)'
-                      }}
-                      _active={{ transform: 'scale(0.98)' }}
-                    >
-                      🌐 Conference Website
-                    </Button>
-                  </Link>
+                  <ExternalLinkButton href={conference.link} variant="primary" size="md" px="6">
+                    🌐 Conference Website
+                  </ExternalLinkButton>
                 )}
                 {conference.paperslink && (
-                  <Link
-                    href={conference.paperslink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    textDecoration="none"
-                  >
-                    <Button
-                      bg="gray.100"
-                      color="gray.700"
-                      border="1px"
-                      borderColor="gray.300"
-                      size="md"
-                      px="6"
-                      transition="all 0.2s ease-in-out"
-                      position="relative"
-                      zIndex="1"
-                      _hover={{
-                        bg: 'white',
-                        borderColor: 'brand.400',
-                        color: 'brand.600',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
-                      }}
-                      _active={{ transform: 'scale(0.98)' }}
-                    >
-                      📄 Accepted Papers
-                    </Button>
-                  </Link>
+                  <ExternalLinkButton href={conference.paperslink} variant="secondary" size="md" px="6">
+                    📄 Accepted Papers
+                  </ExternalLinkButton>
                 )}
                 {conference.pwclink && (
-                  <Link
-                    href={conference.pwclink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    textDecoration="none"
-                  >
-                    <Button
-                      bg="gray.100"
-                      color="gray.700"
-                      border="1px"
-                      borderColor="gray.300"
-                      size="md"
-                      px="6"
-                      transition="all 0.2s ease-in-out"
-                      position="relative"
-                      zIndex="1"
-                      _hover={{
-                        bg: 'white',
-                        borderColor: 'brand.400',
-                        color: 'brand.600',
-                        transform: 'translateY(-2px)',
-                        boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
-                      }}
-                      _active={{ transform: 'scale(0.98)' }}
-                    >
-                      💻 Papers with Code
-                    </Button>
-                  </Link>
+                  <ExternalLinkButton href={conference.pwclink} variant="secondary" size="md" px="6">
+                    💻 Papers with Code
+                  </ExternalLinkButton>
                 )}
                 <Button
                   onClick={handleExport}
-                  bg="gray.100"
-                  color="gray.700"
-                  border="1px"
-                  borderColor="gray.300"
                   size="md"
                   px="6"
-                  transition="all 0.2s ease-in-out"
-                  position="relative"
-                  zIndex="1"
-                  _hover={{
-                    bg: 'white',
-                    borderColor: 'brand.400',
-                    color: 'brand.600',
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 2px 8px rgba(46, 95, 169, 0.15)'
-                  }}
-                  _active={{ transform: 'scale(0.98)' }}
+                  {...secondaryButtonStyle}
                 >
                   📅 Export to Calendar
                 </Button>

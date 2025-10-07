@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon';
-import { Conference } from '../types/conference';
+import { Conference } from '@/types/conference';
 
 interface ICSEvent {
   uid: string;

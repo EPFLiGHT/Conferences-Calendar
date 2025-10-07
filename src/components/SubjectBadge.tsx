@@ -1,7 +1,7 @@
 import { Badge } from '@chakra-ui/react';
 import { Tooltip } from '@chakra-ui/react/tooltip';
-import { getSubjectColor } from '../utils/parser';
-import { SUBJECT_LABELS } from '../utils/subjects';
+import { getSubjectColor } from '@/utils/parser';
+import { SUBJECT_LABELS } from '@/utils/subjects';
 
 interface SubjectBadgeProps {
   subject: string;

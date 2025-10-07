@@ -206,3 +206,95 @@ export const system = createSystem(defaultConfig, defineConfig({
     } as any,
   },
 }))
+
+// ============================================
+// CONSTANTS
+// ============================================
+
+/**
+ * Centralized theme constants for colors, shadows, borders, and transitions.
+ * Use these instead of inline values for consistency across the application.
+ */
+
+// Colors (as plain values for inline usage)
+export const COLORS = {
+  brand: {
+    50: '#f0f7ff',
+    100: '#e6f2ff',
+    200: '#d9ebff',
+    300: '#a8cef7',
+    400: '#5d9fd2',
+    500: '#2e5fa9',
+    600: '#234a87',
+    700: '#1a3766',
+    800: '#122751',
+  },
+  gray: {
+    50: '#f9fafb',
+    100: '#f3f4f6',
+    200: '#e5e7eb',
+    300: '#d1d5db',
+    400: '#9ca3af',
+    500: '#6b7280',
+    600: '#4b5563',
+    700: '#374151',
+    800: '#1f2937',
+  },
+} as const;
+
+// Shadows
+export const SHADOWS = {
+  sm: '0 1px 3px rgba(46, 95, 169, 0.08)',
+  md: '0 2px 8px rgba(46, 95, 169, 0.08)',
+  lg: '0 4px 12px rgba(46, 95, 169, 0.3)',
+  xl: '0 8px 24px rgba(46, 95, 169, 0.2)',
+  hover: {
+    secondary: '0 2px 8px rgba(46, 95, 169, 0.15)',
+    primary: '0 4px 12px rgba(46, 95, 169, 0.4)',
+    brand: '0 4px 12px rgba(93, 159, 210, 0.4)',
+  },
+} as const;
+
+// Transitions
+export const TRANSITIONS = {
+  fast: 'all 0.15s ease-in-out',
+  normal: 'all 0.2s ease-in-out',
+  slow: 'all 0.3s ease-in-out',
+} as const;
+
+// RGB values for brand palette (useful for semi-transparent colors)
+export const BRAND_RGB = {
+  300: '96, 165, 220',
+  400: '93, 159, 210',
+  500: '46, 95, 169',
+  600: '35, 74, 135',
+} as const;
+
+export const brandAlpha = (shade: keyof typeof BRAND_RGB, alpha: number) =>
+  `rgba(${BRAND_RGB[shade]}, ${alpha})`;
+
+// Gradient tokens
+export const GRADIENTS = {
+  headerProgress: `linear-gradient(90deg, ${COLORS.brand[600]} 0%, ${COLORS.brand[400]} 50%, ${COLORS.brand[300]} 100%)`,
+  footerBackground: `linear-gradient(180deg, #ffffff 0%, ${COLORS.gray[50]} 50%, ${COLORS.gray[100]} 100%)`,
+  footerAccent: `linear-gradient(90deg, ${COLORS.brand[400]}, ${COLORS.brand[500]})`,
+  footerSurface: `linear-gradient(135deg, ${COLORS.brand[400]} 0%, ${COLORS.brand[500]} 100%)`,
+} as const;
+
+// Subject/Tag Colors (for conference categories)
+export const SUBJECT_COLORS: Record<string, { bg: string; color: string; border: string }> = {
+  ML: { bg: '#eff6ff', color: '#2563eb', border: '#bfdbfe' },
+  CV: { bg: '#faf5ff', color: '#9333ea', border: '#e9d5ff' },
+  NLP: { bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
+  DM: { bg: '#fff7ed', color: '#ea580c', border: '#fed7aa' },
+  SP: { bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
+  HCI: { bg: '#fdf2f8', color: '#db2777', border: '#fbcfe8' },
+  RO: { bg: '#ecfeff', color: '#0891b2', border: '#a5f3fc' },
+  SEC: { bg: '#f0fdfa', color: '#0d9488', border: '#99f6e4' },
+  PRIV: { bg: '#eef2ff', color: '#4f46e5', border: '#c7d2fe' },
+  CONF: { bg: '#fefce8', color: '#a16207', border: '#fef08a' },
+  SHOP: { bg: '#f7fee7', color: '#65a30d', border: '#d9f99d' },
+  CG: { bg: '#f5f3ff', color: '#7c3aed', border: '#ddd6fe' },
+  KR: { bg: '#fdf4ff', color: '#c026d3', border: '#f5d0fe' },
+  AP: { bg: '#fff1f2', color: '#e11d48', border: '#fecdd3' },
+} as const;
