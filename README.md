@@ -109,19 +109,25 @@ The `sub` field categorizes conferences by research area. Available tags:
 Conferences-Calendar/
 ├── public/
 │   ├── data/
-│   │   └── conferences.yaml   # Conference data
-│   └── *.svg, *.png           # Logo and assets
+│   │   └── conferences.yaml   # Conference data source
+│   ├── light-logo.svg         # Lab logo
+│   ├── light-banner.png       # Social sharing banner
+│   └── CNAME                  # GitHub Pages custom domain
 ├── src/
 │   ├── app/                   # Next.js app router
-│   │   ├── calendar/          # Calendar page
+│   │   ├── calendar/          # Calendar route
+│   │   │   └── page.tsx
 │   │   ├── layout.tsx         # Root layout
-│   │   └── page.tsx           # Home page
-│   ├── components/            # Reusable React components
+│   │   └── page.tsx           # Landing page
+│   ├── components/            # Shared UI building blocks
+│   ├── hooks/                 # Reusable state & routing hooks
+│   ├── styles/                # Component-level style configs
 │   ├── types/                 # TypeScript type definitions
-│   ├── utils/                 # Utility functions
-│   └── theme.ts               # Chakra UI theme (includes all global styles)
+│   ├── utils/                 # Data parsing & ICS helpers
+│   └── theme.ts               # Chakra UI theme setup
 ├── scripts/
 │   └── validate.js            # YAML validation script
+├── next.config.mjs            # Next.js configuration
 └── package.json
 ```
 
