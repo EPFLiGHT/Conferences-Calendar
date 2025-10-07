@@ -312,6 +312,17 @@ function CalendarContent() {
             p={{ base: '4', md: '6' }}
             boxShadow="0 1px 3px rgba(0, 0, 0, 0.1)"
           >
+            <style>{`
+              .fc-event {
+                margin-bottom: 4px !important;
+              }
+              .fc-daygrid-event {
+                margin-bottom: 4px !important;
+              }
+              .fc-timegrid-event {
+                margin-bottom: 6px !important;
+              }
+            `}</style>
             <FullCalendar
               ref={calendarRef}
               plugins={[dayGridPlugin, timeGridPlugin, listPlugin, luxonPlugin]}
@@ -330,6 +341,11 @@ function CalendarContent() {
                 minute: '2-digit',
                 hour12: false,
               }}
+              eventDisplay="block"
+              displayEventTime={true}
+              displayEventEnd={true}
+              dayMaxEvents={false}
+              eventMaxStack={10}
             />
           </Box>
 
