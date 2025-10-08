@@ -103,7 +103,7 @@ export default function Footer(): JSX.Element {
           }}
         />
 
-        {/* Little floating dots for extra flair */}
+        {/* Little floating dots */}
         {[...Array(6)].map((_, i) => (
           <Box
             key={i}
@@ -124,18 +124,23 @@ export default function Footer(): JSX.Element {
 
         <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto" position="relative" zIndex="1">
           <Flex
-            direction={{ base: 'column', md: 'row' }}
-            align="center"
-            justify="space-between"
-            gap={{ base: '8', md: '12' }}
+            direction="column"
+            gap={{ base: '12', md: '16' }}
           >
-            {/* LiGHT Lab banner with animations */}
-            <Box
-              flex={{ base: '0 0 auto', md: '0 0 400px' }}
-              w={{ base: '100%', sm: '400px' }}
-              maxW="100%"
-              position="relative"
+            {/* Top section: Banner and Contact Info */}
+            <Flex
+              direction={{ base: 'column', md: 'row' }}
+              align="center"
+              justify="space-between"
+              gap={{ base: '8', md: '12' }}
             >
+              {/* LiGHT Lab banner with animations */}
+              <Box
+                flex={{ base: '0 0 auto', md: '0 0 400px' }}
+                w={{ base: '100%', sm: '400px' }}
+                maxW="100%"
+                position="relative"
+              >
               {/* Shimmer effect around the banner */}
               <Box
                 position="absolute"
@@ -214,14 +219,109 @@ export default function Footer(): JSX.Element {
               />
             </Box>
 
-            {/* Credits and links */}
+            {/* Contact Information */}
             <Flex
               direction="column"
-              align={{ base: 'center', md: 'flex-end' }}
-              gap="4"
-              textAlign={{ base: 'center', md: 'right' }}
+              align={{ base: 'center', md: 'flex-start' }}
+              gap="5"
+              textAlign={{ base: 'center', md: 'left' }}
               opacity={textOpacity}
               transition="opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)"
+              css={{
+                animation: isVisible ? 'fadeSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both' : 'none',
+              }}
+            >
+              <Box>
+                <Text fontSize="md" fontWeight="700" color="brand.500" mb="2">
+                  Location
+                </Text>
+                <Text fontSize="sm" color="gray.600" fontWeight="500">
+                  EPFL, Lausanne, Switzerland
+                </Text>
+                <Text fontSize="sm" color="gray.600" fontWeight="500">
+                  Harvard, Ariadne Labs, Boston, USA
+                </Text>
+              </Box>
+
+              <Box>
+                <Text fontSize="md" fontWeight="700" color="brand.500" mb="2">
+                  Email
+                </Text>
+                <Link
+                  href="mailto:mary-anne.hartley@epfl.ch"
+                  fontSize="sm"
+                  color="gray.600"
+                  fontWeight="600"
+                  position="relative"
+                  transition="color 0.3s ease"
+                  _hover={{
+                    color: 'brand.400',
+                    _after: {
+                      width: '100%',
+                    }
+                  }}
+                  _after={{
+                    content: '""',
+                    position: 'absolute',
+                    bottom: '-2px',
+                    left: 0,
+                    width: 0,
+                    height: '2px',
+                    bg: 'brand.400',
+                    transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  }}
+                >
+                  mary-anne.hartley@epfl.ch
+                </Link>
+              </Box>
+
+              <Box>
+                <Text fontSize="md" fontWeight="700" color="brand.500" mb="2">
+                  LinkedIn
+                </Text>
+                <Link
+                  href="https://www.linkedin.com/company/light-laboratory/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  fontSize="sm"
+                  color="gray.600"
+                  fontWeight="600"
+                  position="relative"
+                  transition="color 0.3s ease"
+                  _hover={{
+                    color: 'brand.400',
+                    _after: {
+                      width: '100%',
+                    }
+                  }}
+                  _after={{
+                    content: '""',
+                    position: 'absolute',
+                    bottom: '-2px',
+                    left: 0,
+                    width: 0,
+                    height: '2px',
+                    bg: 'brand.400',
+                    transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  }}
+                >
+                  LiGHT Laboratory
+                </Link>
+              </Box>
+            </Flex>
+            </Flex>
+
+            {/* Bottom section: Credits */}
+            <Flex
+              direction="column"
+              align="center"
+              gap="3"
+              textAlign="center"
+              opacity={textOpacity}
+              transition="opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)"
+              borderTop="1px solid"
+              borderColor="gray.200"
+              pt="8"
             >
               <Box
                 css={{
