@@ -16,6 +16,7 @@ export default function LoadingState({
       title={title}
       message={message}
       icon={<Spinner size="xl" color="brand.500" />}
+      minH="100vh"
     />
   );
 }

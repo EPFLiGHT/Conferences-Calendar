@@ -99,7 +99,8 @@ export default function Page() {
               <Flex
                 justify="center"
                 align="center"
-                gap="4"
+                gap={{ base: '2', md: '4' }}
+                flexWrap="wrap"
               >
                 <Button
                   onClick={() => {
@@ -107,22 +108,23 @@ export default function Page() {
                     scrollToTop();
                   }}
                   disabled={currentPage === 1}
-                  size="md"
-                  px="6"
+                  size={{ base: 'sm', md: 'md' }}
+                  px={{ base: '4', md: '6' }}
                   {...primaryButtonStyle}
                 >
-                  ← Previous
+                  <Text display={{ base: 'none', sm: 'inline' }}>← Previous</Text>
+                  <Text display={{ base: 'inline', sm: 'none' }}>←</Text>
                 </Button>
 
                 <Box
-                  px="6"
+                  px={{ base: '4', md: '6' }}
                   py="2"
                   bg="brand.50"
                   borderRadius="lg"
                   border="1px"
                   borderColor="brand.200"
                 >
-                  <Text fontSize="sm" color="brand.600" fontWeight="600">
+                  <Text fontSize={{ base: 'xs', md: 'sm' }} color="brand.600" fontWeight="600">
                     Page {currentPage} of {totalPages}
                   </Text>
                 </Box>
@@ -133,11 +135,12 @@ export default function Page() {
                     scrollToTop();
                   }}
                   disabled={currentPage === totalPages}
-                  size="md"
-                  px="6"
+                  size={{ base: 'sm', md: 'md' }}
+                  px={{ base: '4', md: '6' }}
                   {...primaryButtonStyle}
                 >
-                  Next →
+                  <Text display={{ base: 'none', sm: 'inline' }}>Next →</Text>
+                  <Text display={{ base: 'inline', sm: 'none' }}>→</Text>
                 </Button>
               </Flex>
             </Box>
