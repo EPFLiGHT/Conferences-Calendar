@@ -21,7 +21,7 @@ import LoadingState from '@/components/LoadingState';
 import ErrorState from '@/components/ErrorState';
 import { useConferences } from '@/hooks/useConferences';
 import { useConferenceFilters, type ConferenceFiltersState } from '@/hooks/useConferenceFilters';
-import { useURLSync, useInitialURLParams } from '@/hooks/useURLSync';
+import { useURLSync, useInitialURLParams } from '@/utils/urlSync';
 import { getEventColorFromSubjects, toISOFormat } from '@/utils/parser';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '@/utils/ics';
 import { secondaryButtonStyle, brandButtonStyle } from '@/styles/buttonStyles';

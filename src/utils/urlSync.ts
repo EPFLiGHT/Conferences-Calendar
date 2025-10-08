@@ -1,11 +1,8 @@
 /**
- * useURLSync Hook
+ * URL Sync Utilities
  *
- * Synchronizes search query and filters with URL parameters.
+ * Utilities for synchronizing search query and filters with URL parameters.
  * Manages browser history for shareable URLs and back/forward navigation.
- *
- * @param basePath - Base path for the route (e.g., '/calendar')
- * @returns Helper functions to sync URL with app state
  */
 
 import { useSearchParams } from 'next/navigation';
