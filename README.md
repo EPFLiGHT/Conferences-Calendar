@@ -12,9 +12,7 @@ A project by [LiGHT Lab](https://github.com/EPFLiGHT)
 - 🔍 **Advanced Search & Filtering** - Find conferences by name, year, or subject area
 - 📊 **Multi-Sort Options** - Sort by upcoming deadline, H-index, or start date
 - 📥 **ICS Export** - Export individual or all filtered events to your calendar app
-- 🔗 **URL Sharing** - Share filtered views with URL parameters (search, year, subject)
 - 📄 **Pagination** - Navigate through conferences with clean pagination (12 per page)
-- 🎨 **Subject Color Coding** - Visual color coding by research area across the platform
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - 🎯 **Modal Details** - Click any conference for detailed information in a modal
 - 🚀 **Fast Performance** - Optimized with React hooks and memoization
