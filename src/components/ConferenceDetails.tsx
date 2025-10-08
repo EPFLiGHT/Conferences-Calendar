@@ -1,5 +1,5 @@
 import { Flex, Grid, Text, VStack } from '@chakra-ui/react';
-import SubjectBadgeGroup from './SubjectBadgeGroup';
+import SubjectBadge from './SubjectBadge';
 import NoteBadge from './NoteBadge';
 import type { Conference } from '@/types/conference';
 import { getSubjectsArray } from '@/utils/parser';
@@ -90,7 +90,7 @@ export default function ConferenceDetails({
             <Text fontSize="xs" fontWeight="600" color="gray.600" textTransform="uppercase" letterSpacing="wider">
               Subject{subjects.length > 1 ? 's' : ''}
             </Text>
-            <SubjectBadgeGroup subjects={subjects} />
+            <SubjectBadge subjects={subjects} />
           </VStack>
         )}
 

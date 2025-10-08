@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon';
 import { Conference } from '@/types/conference';
+import { toISOFormat } from './parser';
 
 interface ICSEvent {
   uid: string;
@@ -74,44 +75,52 @@ export function conferenceToICSEvents(conference: Conference): ICSEvent[] {
 
   // Conference event (all-day)
   if (conference.start && conference.end) {
-    events.push({
-      uid: `conf-${conference.id}@conference-deadlines`,
-      title: `${conference.title} ${conference.year}`,
-      start: DateTime.fromISO(conference.start),
-      end: DateTime.fromISO(conference.end),
-      isAllDay: true,
-      location: conference.place,
-      description: conference.full_name,
-      url: conference.link,
-    });
+    const start = DateTime.fromISO(toISOFormat(conference.start));
+    const end = DateTime.fromISO(toISOFormat(conference.end));
+    if (start.isValid && end.isValid) {
+      events.push({
+        uid: `conf-${conference.id}@conference-deadlines`,
+        title: `${conference.title} ${conference.year}`,
+        start,
+        end,
+        isAllDay: true,
+        location: conference.place,
+        description: conference.full_name,
+        url: conference.link,
+      });
+    }
   }
 
   // Abstract deadline
   if (conference.abstract_deadline) {
-    const dt = DateTime.fromISO(conference.abstract_deadline, { zone: conference.timezone });
-    events.push({
-      uid: `abstract-${conference.id}@conference-deadlines`,
-      title: `Abstract Deadline: ${conference.title} ${conference.year}`,
-      start: dt,
-      end: dt.plus({ hours: 1 }),
-      isAllDay: false,
-      description: `Abstract submission deadline for ${conference.full_name}`,
-      url: conference.link,
-    });
+    const dt = DateTime.fromISO(toISOFormat(conference.abstract_deadline), { zone: conference.timezone });
+    if (dt.isValid) {
+      events.push({
+        uid: `abstract-${conference.id}@conference-deadlines`,
+        title: `Abstract Deadline: ${conference.title} ${conference.year}`,
+        start: dt,
+        end: dt.plus({ hours: 1 }),
+        isAllDay: false,
+        description: `Abstract submission deadline for ${conference.full_name}`,
+        url: conference.link,
+      });
+    }
   }
 
   // Paper submission deadline
   if (conference.deadline) {
-    const dt = DateTime.fromISO(conference.deadline, { zone: conference.timezone });
-    events.push({
-      uid: `deadline-${conference.id}@conference-deadlines`,
-      title: `Paper Deadline: ${conference.title} ${conference.year}`,
-      start: dt,
-      end: dt.plus({ hours: 1 }),
-      isAllDay: false,
-      description: `Paper submission deadline for ${conference.full_name}`,
-      url: conference.link,
-    });
+    const dt = DateTime.fromISO(toISOFormat(conference.deadline), { zone: conference.timezone });
+    if (dt.isValid) {
+      events.push({
+        uid: `deadline-${conference.id}@conference-deadlines`,
+        title: `Paper Deadline: ${conference.title} ${conference.year}`,
+        start: dt,
+        end: dt.plus({ hours: 1 }),
+        isAllDay: false,
+        description: `Paper submission deadline for ${conference.full_name}`,
+        url: conference.link,
+      });
+    }
   }
 
   return events;

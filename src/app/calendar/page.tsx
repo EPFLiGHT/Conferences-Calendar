@@ -22,7 +22,7 @@ import ErrorState from '@/components/ErrorState';
 import { useConferences } from '@/hooks/useConferences';
 import { useConferenceFilters, type ConferenceFiltersState } from '@/hooks/useConferenceFilters';
 import { useURLSync, useInitialURLParams } from '@/hooks/useURLSync';
-import { getEventColorFromSubjects } from '@/utils/parser';
+import { getEventColorFromSubjects, toISOFormat } from '@/utils/parser';
 import { conferenceToICSEvents, createICSContent, downloadICS } from '@/utils/ics';
 import { secondaryButtonStyle, brandButtonStyle } from '@/styles/buttonStyles';
 import type { Conference } from '@/types/conference';
@@ -80,39 +80,43 @@ function CalendarContent() {
       }
 
       if (conf.abstract_deadline) {
-        const dt = DateTime.fromISO(conf.abstract_deadline, { zone: conf.timezone });
-        events.push({
-          id: `abstract-${conf.id}`,
-          title: `Abstract: ${conf.title} ${conf.year}`,
-          start: dt.toISO(),
-          end: dt.plus({ hours: 1 }).toISO(),
-          allDay: false,
-          backgroundColor: eventColors.backgroundColor,
-          borderColor: eventColors.borderColor,
-          extendedProps: {
-            type: 'abstract',
-            conference: conf,
-            deadline: dt,
-          },
-        });
+        const dt = DateTime.fromISO(toISOFormat(conf.abstract_deadline), { zone: conf.timezone });
+        if (dt.isValid) {
+          events.push({
+            id: `abstract-${conf.id}`,
+            title: `Abstract: ${conf.title} ${conf.year}`,
+            start: dt.toISO(),
+            end: dt.plus({ hours: 1 }).toISO(),
+            allDay: false,
+            backgroundColor: eventColors.backgroundColor,
+            borderColor: eventColors.borderColor,
+            extendedProps: {
+              type: 'abstract',
+              conference: conf,
+              deadline: dt,
+            },
+          });
+        }
       }
 
       if (conf.deadline) {
-        const dt = DateTime.fromISO(conf.deadline, { zone: conf.timezone });
-        events.push({
-          id: `deadline-${conf.id}`,
-          title: `Submission: ${conf.title} ${conf.year}`,
-          start: dt.toISO(),
-          end: dt.plus({ hours: 1 }).toISO(),
-          allDay: false,
-          backgroundColor: eventColors.backgroundColor,
-          borderColor: eventColors.borderColor,
-          extendedProps: {
-            type: 'submission',
-            conference: conf,
-            deadline: dt,
-          },
-        });
+        const dt = DateTime.fromISO(toISOFormat(conf.deadline), { zone: conf.timezone });
+        if (dt.isValid) {
+          events.push({
+            id: `deadline-${conf.id}`,
+            title: `Submission: ${conf.title} ${conf.year}`,
+            start: dt.toISO(),
+            end: dt.plus({ hours: 1 }).toISO(),
+            allDay: false,
+            backgroundColor: eventColors.backgroundColor,
+            borderColor: eventColors.borderColor,
+            extendedProps: {
+              type: 'submission',
+              conference: conf,
+              deadline: dt,
+            },
+          });
+        }
       }
     });
 

@@ -5,6 +5,13 @@ import type { Conference, DeadlineInfo } from '@/types/conference';
 
 const REQUIRED_FIELDS = ['title', 'year', 'id', 'timezone'] as const;
 
+/**
+ * Converts a date string to ISO 8601 format by replacing space with 'T'
+ */
+export function toISOFormat(dateString: string): string {
+  return dateString.replace(' ', 'T');
+}
+
 export function validateConference(conf: any, index: number): string[] {
   const errors: string[] = [];
 
@@ -27,9 +34,7 @@ export function validateConference(conf: any, index: number): string[] {
   const dateFields = ['deadline', 'abstract_deadline', 'start', 'end'];
   dateFields.forEach((field) => {
     if (conf[field]) {
-      // Replace space with 'T' to make it ISO 8601 compliant
-      const isoString = String(conf[field]).replace(' ', 'T');
-      const parsed = DateTime.fromISO(isoString);
+      const parsed = DateTime.fromISO(toISOFormat(String(conf[field])));
       if (!parsed.isValid) {
         errors.push(`Conference '${conf.id}': Invalid date format for '${field}': ${conf[field]}`);
       }
@@ -102,9 +107,7 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
   const deadlines: DeadlineInfo[] = [];
 
   if (conference.abstract_deadline) {
-    // Replace space with 'T' to make it ISO 8601 compliant
-    const isoString = conference.abstract_deadline.replace(' ', 'T');
-    const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
+    const dt = DateTime.fromISO(toISOFormat(conference.abstract_deadline), { zone: conference.timezone });
     if (dt.isValid) {
       deadlines.push({
         label: 'Abstract Deadline',
@@ -115,9 +118,7 @@ export function getDeadlineInfo(conference: Conference, userTimezone: string = '
   }
 
   if (conference.deadline) {
-    // Replace space with 'T' to make it ISO 8601 compliant
-    const isoString = conference.deadline.replace(' ', 'T');
-    const dt = DateTime.fromISO(isoString, { zone: conference.timezone });
+    const dt = DateTime.fromISO(toISOFormat(conference.deadline), { zone: conference.timezone });
     if (dt.isValid) {
       deadlines.push({
         label: 'Paper Submission',
@@ -142,10 +143,6 @@ export function getNextDeadline(conference: Conference): DeadlineInfo | null {
 
   // If no upcoming deadlines, return the most recent expired one
   return deadlines[deadlines.length - 1];
-}
-
-export function formatDeadline(datetime: DateTime, timezone: string): string {
-  return datetime.toFormat('MMM dd, yyyy HH:mm') + ` ${timezone}`;
 }
 
 export function getSubjectColor(subject: string) {

@@ -2,7 +2,7 @@ import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import DeadlineCard from './DeadlineCard';
 import ExternalLinkButton from './ExternalLinkButton';
-import SubjectBadgeGroup from './SubjectBadgeGroup';
+import SubjectBadge from './SubjectBadge';
 import NoteBadge from './NoteBadge';
 import ConferenceDetails from './ConferenceDetails';
 import { getDeadlineInfo } from '@/utils/parser';
@@ -61,7 +61,7 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
           <Heading as="h3" size="lg" color="gray.800" flex="1" minW="200px">
             {conference.title} {conference.year}
           </Heading>
-          <SubjectBadgeGroup
+          <SubjectBadge
             subjects={conference.sub}
             justify="flex-end"
             align="center"

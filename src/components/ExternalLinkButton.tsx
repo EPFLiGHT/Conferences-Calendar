@@ -7,6 +7,7 @@
  */
 
 import { Button, Link, ButtonProps } from '@chakra-ui/react';
+import { primaryButtonStyle, secondaryButtonStyle } from '@/styles/buttonStyles';
 
 interface ExternalLinkButtonProps {
   href: string;
@@ -25,7 +26,7 @@ export default function ExternalLinkButton({
   size = 'sm',
   px = '4'
 }: ExternalLinkButtonProps): JSX.Element {
-  const isPrimary = variant === 'primary';
+  const buttonStyle = variant === 'primary' ? primaryButtonStyle : secondaryButtonStyle;
 
   return (
     <Link
@@ -37,29 +38,8 @@ export default function ExternalLinkButton({
       <Button
         size={size}
         px={px}
-        py="2"
-        bg={isPrimary ? 'brand.500' : 'gray.100'}
-        color={isPrimary ? 'white' : 'gray.700'}
-        borderRadius="md"
         fontSize="sm"
-        fontWeight="500"
-        border={isPrimary ? 'none' : '1px'}
-        borderColor={isPrimary ? 'transparent' : 'gray.300'}
-        transition="all 0.2s"
-        position="relative"
-        zIndex={1}
-        _hover={{
-          bg: isPrimary ? 'brand.600' : 'white',
-          borderColor: isPrimary ? 'brand.600' : 'brand.400',
-          color: isPrimary ? 'white' : 'brand.600',
-          transform: 'translateY(-1px)',
-          boxShadow: isPrimary
-            ? '0 4px 12px rgba(46, 95, 169, 0.4)'
-            : '0 2px 8px rgba(46, 95, 169, 0.15)',
-        }}
-        _active={{
-          transform: 'scale(0.98)',
-        }}
+        {...buttonStyle}
         onClick={onClick}
       >
         {children}

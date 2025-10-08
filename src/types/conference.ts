@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon';
+
 export interface Conference {
   id: string;
   title: string;
@@ -20,6 +22,6 @@ export interface Conference {
 
 export interface DeadlineInfo {
   label: string;
-  datetime: any; // Luxon DateTime
-  localDatetime: any; // Luxon DateTime
+  datetime: DateTime;
+  localDatetime: DateTime;
 }
