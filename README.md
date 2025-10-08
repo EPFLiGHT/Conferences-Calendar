@@ -6,13 +6,18 @@ A project by [LiGHT Lab](https://github.com/EPFLiGHT)
 
 ## Features
 
-- 📅 **Calendar View** - Visualize all conferences and deadlines in a calendar
-- ⏱️ **Live Countdowns** - Real-time countdown to upcoming deadlines
-- 🌍 **Timezone Support** - Automatic conversion to your local timezone
-- 🔍 **Search & Filter** - Find conferences by name, year, or subject
-- 📊 **Sorting** - Sort by deadline, H-index, or conference date
-- 📥 **ICS Export** - Export events to your calendar app
-- 📱 **Responsive Design** - Works great on desktop and mobile
+- 📅 **Interactive Calendar View** - Full-featured calendar with month, week, and list views
+- ⏱️ **Live Countdowns** - Real-time countdown to upcoming deadlines with timezone awareness
+- 🌍 **Timezone Support** - Automatic conversion to your local timezone for all deadlines
+- 🔍 **Advanced Search & Filtering** - Find conferences by name, year, or subject area
+- 📊 **Multi-Sort Options** - Sort by upcoming deadline, H-index, or start date
+- 📥 **ICS Export** - Export individual or all filtered events to your calendar app
+- 🔗 **URL Sharing** - Share filtered views with URL parameters (search, year, subject)
+- 📄 **Pagination** - Navigate through conferences with clean pagination (12 per page)
+- 🎨 **Subject Color Coding** - Visual color coding by research area across the platform
+- 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
+- 🎯 **Modal Details** - Click any conference for detailed information in a modal
+- 🚀 **Fast Performance** - Optimized with React hooks and memoization
 
 ## Quick Start
 
