@@ -13,6 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <title>Conferences | LiGHT Laboratory</title>
         <link rel="icon" type="image/svg+xml" href={`${basePath}/icons/icon.svg`} />
         <link
           href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap"
