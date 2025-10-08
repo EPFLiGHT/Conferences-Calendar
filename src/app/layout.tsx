@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" type="image/svg+xml" href={`${basePath}/light-logo.svg`} />
+        <link rel="icon" type="image/svg+xml" href={`${basePath}/icons/icon.svg`} />
         <link
           href="https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap"
           rel="stylesheet"
