@@ -6,6 +6,9 @@ import { successResponse, errorResponse } from '@/slack-bot/lib/responses';
 import { parseConferences } from '@/utils/parser';
 import type { Conference } from '@/types/conference';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 /**
  * This endpoint should be called by a cron job (e.g., Vercel Cron)
  * It checks for upcoming deadlines and sends notifications to subscribed users

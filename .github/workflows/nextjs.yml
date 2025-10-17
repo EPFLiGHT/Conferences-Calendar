@@ -60,8 +60,20 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock', '**/pnpm-lock.yaml') }}-
       - name: Install dependencies
         run: pnpm install
+      - name: Temporarily disable API routes for static export
+        run: |
+          # Move API directory outside app folder to exclude it from the build
+          if [ -d "src/app/api" ]; then
+            mv src/app/api /tmp/api-backup
+          fi
       - name: Build with Next.js
         run: pnpm next build
+      - name: Restore API routes
+        run: |
+          # Restore API directory after build
+          if [ -d "/tmp/api-backup" ]; then
+            mv /tmp/api-backup src/app/api
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

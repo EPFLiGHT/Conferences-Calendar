@@ -3,6 +3,9 @@ import { withSlackMiddleware, SlackRequestType } from '@/slack-bot/lib/middlewar
 import { acknowledgeResponse } from '@/slack-bot/lib/responses';
 import type { SlackInteractionPayload } from '@/types/slack-payloads';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 /**
  * Handle block actions (button clicks, select menus, etc.)
  */

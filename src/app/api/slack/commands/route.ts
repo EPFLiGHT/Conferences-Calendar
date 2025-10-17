@@ -11,6 +11,9 @@ import { handleSettings } from '@/slack-bot/commands/user/settings';
 import { handleSubject } from '@/slack-bot/commands/user/subject';
 import { handleInfo } from '@/slack-bot/commands/user/info';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 /**
  * Command router - maps slash commands to their handlers
  */
