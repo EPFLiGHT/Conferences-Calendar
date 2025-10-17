@@ -1,12 +1,4 @@
 {
-  "buildCommand": "cp -f next.config.vercel.mjs next.config.mjs && cat next.config.mjs && pnpm build",
-  "installCommand": "pnpm install",
-  "framework": "nextjs",
-  "functions": {
-    "src/app/api/**/*.ts": {
-      "maxDuration": 10
-    }
-  },
   "crons": [
     {
       "path": "/api/slack/cron/daily-check",

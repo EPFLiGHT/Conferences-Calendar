@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   basePath: '',
-  output: 'export',
+  // Note: For GitHub Pages, the workflow temporarily excludes the API directory
+  // For Vercel, API routes are included and deployed as serverless functions
   images: {
     unoptimized: true,
   },
