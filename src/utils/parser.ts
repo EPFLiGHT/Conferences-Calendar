@@ -1,6 +1,6 @@
 import yaml from 'js-yaml';
 import { DateTime } from 'luxon';
-import { SUBJECT_COLORS } from '@/theme';
+import { SUBJECT_COLORS } from '@/constants/subjects';
 import type { Conference, DeadlineInfo } from '@/types/conference';
 
 const REQUIRED_FIELDS = ['title', 'year', 'id', 'timezone'] as const;

@@ -1,7 +1,7 @@
 import { Badge, Flex, FlexProps } from '@chakra-ui/react';
 import InfoTooltip from './InfoTooltip';
 import { getSubjectColor, getSubjectsArray } from '@/utils/parser';
-import { SUBJECT_LABELS } from '@/utils/subjects';
+import { SUBJECT_LABELS } from '@/constants/subjects';
 
 interface SubjectBadgeProps extends Omit<FlexProps, 'children'> {
   subjects: string | string[];

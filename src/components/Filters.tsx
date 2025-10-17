@@ -4,7 +4,7 @@ import { NativeSelectRoot, NativeSelectField } from '@chakra-ui/react';
 import InfoTooltip from './InfoTooltip';
 import { Conference } from '@/types/conference';
 import { getSubjectColor, getSubjectsArray } from '@/utils/parser';
-import { SUBJECT_LABELS } from '@/utils/subjects';
+import { SUBJECT_LABELS } from '@/constants/subjects';
 import type { ConferenceFiltersState } from '@/hooks/useConferenceFilters';
 
 interface FiltersProps {

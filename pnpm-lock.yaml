@@ -35,6 +35,9 @@ importers:
       '@fullcalendar/timegrid':
         specifier: ^6.1.10
         version: 6.1.19(@fullcalendar/core@6.1.19)
+      '@vercel/kv':
+        specifier: ^3.0.0
+        version: 3.0.0
       framer-motion:
         specifier: ^12.23.22
         version: 12.23.22(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -460,6 +463,13 @@ packages:
 
   '@types/react@18.3.25':
     resolution: {integrity: sha512-oSVZmGtDPmRZtVDqvdKUi/qgCsWp5IDY29wp8na8Bj4B3cc99hfNzvNhlMkVVxctkAOGUA3Km7MMpBHAnWfcIA==}
+
+  '@upstash/redis@1.35.6':
+    resolution: {integrity: sha512-aSEIGJgJ7XUfTYvhQcQbq835re7e/BXjs8Janq6Pvr6LlmTZnyqwT97RziZLO/8AVUL037RLXqqiQC6kCt+5pA==}
+
+  '@vercel/kv@3.0.0':
+    resolution: {integrity: sha512-pKT8fRnfyYk2MgvyB6fn6ipJPCdfZwiKDdw7vB+HL50rjboEBHDVBEcnwfkEpVSp2AjNtoaOUH7zG+bVC/rvSg==}
+    engines: {node: '>=14.6'}
 
   '@zag-js/accordion@1.24.2':
     resolution: {integrity: sha512-sGNhbWR85oAiMyQLk+dliRhNQGP59T56M1gAkQ7bwJJZ7l++hFEQpYcr/FbAHJshXWpvUKm0wV18wHR/56Y30w==}
@@ -945,6 +955,9 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  uncrypto@0.1.3:
+    resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
+
   undici-types@7.13.0:
     resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
 
@@ -1390,6 +1403,14 @@ snapshots:
     dependencies:
       '@types/prop-types': 15.7.15
       csstype: 3.1.3
+
+  '@upstash/redis@1.35.6':
+    dependencies:
+      uncrypto: 0.1.3
+
+  '@vercel/kv@3.0.0':
+    dependencies:
+      '@upstash/redis': 1.35.6
 
   '@zag-js/accordion@1.24.2':
     dependencies:
@@ -2142,6 +2163,8 @@ snapshots:
   type-fest@2.19.0: {}
 
   typescript@5.9.3: {}
+
+  uncrypto@0.1.3: {}
 
   undici-types@7.13.0: {}
 

@@ -282,19 +282,5 @@ export const GRADIENTS = {
 } as const;
 
 // Subject/Tag Colors (for conference categories)
-export const SUBJECT_COLORS: Record<string, { bg: string; color: string; border: string }> = {
-  ML: { bg: '#eff6ff', color: '#2563eb', border: '#bfdbfe' },
-  CV: { bg: '#faf5ff', color: '#9333ea', border: '#e9d5ff' },
-  NLP: { bg: '#f0fdf4', color: '#16a34a', border: '#bbf7d0' },
-  DM: { bg: '#fff7ed', color: '#ea580c', border: '#fed7aa' },
-  SP: { bg: '#fef2f2', color: '#dc2626', border: '#fecaca' },
-  HCI: { bg: '#fdf2f8', color: '#db2777', border: '#fbcfe8' },
-  RO: { bg: '#ecfeff', color: '#0891b2', border: '#a5f3fc' },
-  SEC: { bg: '#f0fdfa', color: '#0d9488', border: '#99f6e4' },
-  PRIV: { bg: '#eef2ff', color: '#4f46e5', border: '#c7d2fe' },
-  CONF: { bg: '#fefce8', color: '#a16207', border: '#fef08a' },
-  SHOP: { bg: '#f7fee7', color: '#65a30d', border: '#d9f99d' },
-  CG: { bg: '#f5f3ff', color: '#7c3aed', border: '#ddd6fe' },
-  KR: { bg: '#fdf4ff', color: '#c026d3', border: '#f5d0fe' },
-  AP: { bg: '#fff1f2', color: '#e11d48', border: '#fecdd3' },
-} as const;
+// Re-export SUBJECT_COLORS from unified constants
+export { SUBJECT_COLORS } from '@/constants/subjects';
