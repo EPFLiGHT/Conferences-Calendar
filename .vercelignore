@@ -1,31 +1,12 @@
-# Ignore frontend build artifacts and source files
-
-# Vercel will only deploy API routes, not the static site
+# Vercel will deploy both API routes and static pages
+# The API routes are deployed as serverless functions
+# The static pages are used for the 404/error pages
 
 .github/
 .git/
-out/
-.next/
-
-# Ignore frontend source (not needed for API routes)
-
-src/app/
-src/components/
-src/hooks/
-src/styles/
-
-# Keep these (needed for API routes)
-
-# src/utils/
-
-# src/types/
-
-# src/slack-bot/
 
 ## Documentation
 
 README.md
 LICENSE
 *.md
-
-# Keep package.json, tsconfig.json, and configs (needed for build)
