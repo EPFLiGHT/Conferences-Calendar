@@ -39,7 +39,7 @@ async function handleBlockActions(
 
       // Send error via response_url if available
       if (responseUrl) {
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -74,7 +74,7 @@ async function handleBlockActions(
       // Use response_url for delayed response (more reliable for ephemeral messages)
       if (responseUrl) {
         console.log('[Details] Using response_url:', responseUrl);
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(responsePayload),
@@ -91,7 +91,7 @@ async function handleBlockActions(
       const errorMsg = buildErrorMessage('Failed to fetch conference details. Please try again.');
 
       if (responseUrl) {
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -123,7 +123,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(responsePayload),
@@ -142,7 +142,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(responsePayload),
@@ -166,7 +166,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(responsePayload),
@@ -185,7 +185,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        fetch(responseUrl, {
+        await fetch(responseUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(responsePayload),
@@ -220,7 +220,7 @@ async function handleBlockActions(
     // Use response_url for delayed response (more reliable for ephemeral messages)
     if (responseUrl) {
       console.log('[Calendar] Using response_url for conference:', conferenceId);
-      fetch(responseUrl, {
+      await fetch(responseUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(responsePayload),
@@ -249,7 +249,7 @@ async function handleBlockActions(
     };
 
     if (responseUrl) {
-      fetch(responseUrl, {
+      await fetch(responseUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(responsePayload),
