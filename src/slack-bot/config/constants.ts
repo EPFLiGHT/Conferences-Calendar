@@ -22,7 +22,6 @@ export const COMMAND_DESCRIPTIONS = {
   subscribe: 'Enable deadline notifications',
   unsubscribe: 'Disable deadline notifications',
   settings: 'View and update your notification preferences',
-  clear: 'Clear the conversation with the bot',
   test: 'Send a test notification to yourself',
   help: 'Show all available commands',
 } as const;
