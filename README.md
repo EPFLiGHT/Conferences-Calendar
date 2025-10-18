@@ -16,6 +16,7 @@ A project by [LiGHT Lab](https://github.com/EPFLiGHT)
 - 📱 **Fully Responsive** - Optimized for desktop, tablet, and mobile devices
 - 🎯 **Modal Details** - Click any conference for detailed information in a modal
 - 🚀 **Fast Performance** - Optimized with React hooks and memoization
+- 🤖 **Slack Bot Integration** - Get deadline notifications and search conferences directly in Slack
 
 ## Quick Start
 
@@ -120,10 +121,42 @@ Conferences-Calendar/
 │   └── CNAME                  # GitHub Pages custom domain
 ├── src/
 │   ├── app/                   # Next.js app router
+│   │   ├── api/               # API routes
+│   │   │   ├── slack/         # Slack bot endpoints
+│   │   │   │   ├── commands/route.ts       # Slash command handler
+│   │   │   │   ├── interactions/route.ts   # Button/menu handler
+│   │   │   │   ├── events/route.ts         # Event handler
+│   │   │   │   └── cron/
+│   │   │   │       └── daily-check/route.ts  # Daily notifications
+│   │   │   └── calendar/
+│   │   │       └── [conferenceId]/route.ts  # ICS export API
 │   │   ├── calendar/          # Calendar route
 │   │   │   └── page.tsx
 │   │   ├── layout.tsx         # Root layout
 │   │   └── page.tsx           # Landing page
+│   ├── slack-bot/             # Slack bot logic
+│   │   ├── commands/user/     # User command implementations
+│   │   │   ├── upcoming.ts
+│   │   │   ├── search.ts
+│   │   │   ├── subject.ts
+│   │   │   ├── info.ts
+│   │   │   ├── subscribe.ts
+│   │   │   ├── unsubscribe.ts
+│   │   │   ├── settings.ts
+│   │   │   └── help.ts
+│   │   ├── lib/               # Core bot utilities
+│   │   │   ├── middleware.ts         # Request handling
+│   │   │   ├── commandWrapper.ts     # Command wrapper
+│   │   │   ├── responses.ts          # Response builders
+│   │   │   ├── messageBuilder.ts     # Block Kit formatter
+│   │   │   ├── userPreferences.ts    # KV database wrapper
+│   │   │   ├── slackVerify.ts        # Request verification
+│   │   │   └── conferenceHelpers.ts  # Conference utilities
+│   │   ├── utils/
+│   │   │   ├── logger.ts            # Structured logging
+│   │   │   └── conferenceCache.ts   # Conference caching
+│   │   └── config/
+│   │       └── constants.ts         # Configuration
 │   ├── components/            # Shared UI building blocks
 │   ├── hooks/                 # Reusable state & routing hooks
 │   ├── styles/                # Component-level style configs
@@ -132,7 +165,9 @@ Conferences-Calendar/
 │   └── theme.ts               # Chakra UI theme setup
 ├── scripts/
 │   └── validate.js            # YAML validation script
+├── .env.example               # Environment variables template
 ├── next.config.mjs            # Next.js configuration
+├── vercel.json                # Vercel deployment config
 └── package.json
 ```
 
@@ -144,7 +179,13 @@ Conferences-Calendar/
 - **Timezone:** Luxon
 - **YAML Parsing:** js-yaml
 - **Package Manager:** pnpm
-- **Deployment:** GitHub Pages
+- **Deployment:** GitHub Pages (frontend), Vercel (API + Slack bot)
+- **Database:** Vercel KV (Redis) for Slack bot user preferences
+- **Integrations:** Slack API for bot functionality
+
+## Slack Bot
+
+Want to get conference deadline notifications directly in Slack? Check out the [Slack Bot Setup Guide](SLACK_BOT_README.md) for detailed instructions on setting up the bot for your workspace.
 
 ## Contributing
 

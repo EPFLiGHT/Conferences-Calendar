@@ -86,9 +86,15 @@ Go to **Event Subscriptions**:
    ```
    SLACK_BOT_TOKEN=xoxb-your-token-here
    SLACK_SIGNING_SECRET=your-secret-here
-   CONFERENCE_DATA_URL=https://conferences.light-laboratory.org
+   CONFERENCES_DATA_URL=https://conferences.light-laboratory.org
+   APP_URL=https://your-project.vercel.app
    CRON_SECRET=your-random-secret (optional but recommended)
    ```
+
+   **Important Notes:**
+   - `CONFERENCES_DATA_URL` - Base URL where your YAML file is hosted (code appends `/data/conferences.yaml`)
+   - `APP_URL` - Your public Vercel deployment URL (used for generating calendar download links)
+   - `CRON_SECRET` - Random string for authenticating cron jobs
 
 3. **Create Vercel KV Database**
 
@@ -169,15 +175,25 @@ Users can customize via `/conf settings`:
 ### Local Development
 
 1. **Install dependencies:**
+
    ```bash
    pnpm install
    ```
 
 2. **Create `.env.local`:**
+
    ```bash
    cp .env.example .env.local
-   # Fill in your Slack credentials
+   # Fill in your Slack credentials and configuration
    ```
+
+   Required variables for local development:
+   - `SLACK_BOT_TOKEN` - Your bot token from Slack
+   - `SLACK_SIGNING_SECRET` - Your signing secret from Slack
+   - `CONFERENCES_DATA_URL` - URL to fetch conference data (can use `http://localhost:3000` for local testing)
+   - `APP_URL` - Your app URL (use `http://localhost:3000` for local, change to Vercel URL for production)
+   - `CRON_SECRET` - Random string for cron authentication
+   - Vercel KV credentials (get from Vercel dashboard or Upstash)
 
 3. **Run development server:**
    ```bash
@@ -298,9 +314,14 @@ User → Slack → Vercel API Route → Command Handler
 - Ensure users have subscribed: `/conf subscribe`
 
 **4. "Failed to fetch conferences" error**
-- Verify `CONFERENCE_DATA_URL` is set correctly
+- Verify `CONFERENCES_DATA_URL` is set correctly
 - Check YAML file is accessible at the URL
 - Test URL: `curl https://your-domain.com/data/conferences.yaml`
+
+**5. Calendar links not working**
+- Verify `APP_URL` is set to your public Vercel URL (not localhost)
+- Ensure it doesn't have a trailing slash
+- Example: `https://your-project.vercel.app`
 
 ### Viewing Logs
 
