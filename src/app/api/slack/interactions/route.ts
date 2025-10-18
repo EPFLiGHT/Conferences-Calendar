@@ -116,19 +116,41 @@ async function handleBlockActions(
     try {
       const prefs = await enableNotifications(userId);
       const message = buildSettingsPanel(prefs);
-      return NextResponse.json({
+      const responsePayload = {
         ...message,
         response_type: 'ephemeral',
         replace_original: true,
-      });
+      };
+
+      if (responseUrl) {
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(responsePayload),
+        }).catch(err => console.error('[EnableNotifications] Failed to send via response_url:', err));
+        return new NextResponse('', { status: 200 });
+      }
+
+      return NextResponse.json(responsePayload);
     } catch (error) {
       console.error('Error enabling notifications:', error);
       const errorMsg = buildErrorMessage('Failed to enable notifications. Please try again.');
-      return NextResponse.json({
+      const responsePayload = {
         ...errorMsg,
         response_type: 'ephemeral',
         replace_original: false,
-      });
+      };
+
+      if (responseUrl) {
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(responsePayload),
+        }).catch(err => console.error('[EnableNotifications] Failed to send error via response_url:', err));
+        return new NextResponse('', { status: 200 });
+      }
+
+      return NextResponse.json(responsePayload);
     }
   }
 
@@ -137,19 +159,41 @@ async function handleBlockActions(
     try {
       const prefs = await disableNotifications(userId);
       const message = buildSettingsPanel(prefs);
-      return NextResponse.json({
+      const responsePayload = {
         ...message,
         response_type: 'ephemeral',
         replace_original: true,
-      });
+      };
+
+      if (responseUrl) {
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(responsePayload),
+        }).catch(err => console.error('[DisableNotifications] Failed to send via response_url:', err));
+        return new NextResponse('', { status: 200 });
+      }
+
+      return NextResponse.json(responsePayload);
     } catch (error) {
       console.error('Error disabling notifications:', error);
       const errorMsg = buildErrorMessage('Failed to disable notifications. Please try again.');
-      return NextResponse.json({
+      const responsePayload = {
         ...errorMsg,
         response_type: 'ephemeral',
         replace_original: false,
-      });
+      };
+
+      if (responseUrl) {
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(responsePayload),
+        }).catch(err => console.error('[DisableNotifications] Failed to send error via response_url:', err));
+        return new NextResponse('', { status: 200 });
+      }
+
+      return NextResponse.json(responsePayload);
     }
   }
 
@@ -162,11 +206,28 @@ async function handleBlockActions(
     const message = buildSuccessMessage(
       `To add this conference to your calendar, visit:\n${calendarUrl}\n\nThis will download an ICS file that you can import into your calendar app.`
     );
-    return NextResponse.json({
+
+    const responsePayload = {
       ...message,
       response_type: 'ephemeral',
       replace_original: false,
-    });
+    };
+
+    // Use response_url for delayed response (more reliable for ephemeral messages)
+    if (responseUrl) {
+      console.log('[Calendar] Using response_url for conference:', conferenceId);
+      fetch(responseUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(responsePayload),
+      }).catch(err => console.error('[Calendar] Failed to send via response_url:', err));
+
+      // Acknowledge the interaction immediately
+      return new NextResponse('', { status: 200 });
+    }
+
+    // Fallback to direct response
+    return NextResponse.json(responsePayload);
   }
 
   // Handle edit subjects button
@@ -177,11 +238,22 @@ async function handleBlockActions(
     const message = buildErrorMessage(
       'Subject editing is coming soon! For now, use the web interface to manage your subject preferences.'
     );
-    return NextResponse.json({
+    const responsePayload = {
       ...message,
       response_type: 'ephemeral',
       replace_original: false,
-    });
+    };
+
+    if (responseUrl) {
+      fetch(responseUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(responsePayload),
+      }).catch(err => console.error('[EditSubjects] Failed to send via response_url:', err));
+      return new NextResponse('', { status: 200 });
+    }
+
+    return NextResponse.json(responsePayload);
   }
 
   return acknowledgeResponse();
