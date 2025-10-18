@@ -200,11 +200,11 @@ async function handleBlockActions(
   // Handle calendar button click
   if (actionId?.startsWith('calendar_')) {
     const conferenceId = actionValue;
-    // Use VERCEL_URL for production or localhost for development
-    // CONFERENCES_DATA_URL is only for fetching YAML data, not for API routes
-    const baseUrl = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
-      : (process.env.APP_URL || 'http://localhost:3000');
+    // Use public production URL for calendar links
+    // Priority: APP_URL (custom domain) > VERCEL_PROJECT_PRODUCTION_URL (vercel.app domain) > localhost
+    const baseUrl = process.env.APP_URL
+      || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : null)
+      || 'http://localhost:3000';
     const calendarUrl = `${baseUrl}/api/calendar/${conferenceId}`;
 
     const message = buildSuccessMessage(
