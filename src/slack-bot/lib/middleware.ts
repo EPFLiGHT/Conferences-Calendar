@@ -44,12 +44,12 @@ async function parseRequestBody(
       const params = new URLSearchParams(body);
       const payload = params.get('payload');
 
-      // If there's a payload field, it's an interaction (JSON-encoded)
+      // interactions come as JSON in payload field
       if (payload) {
         return JSON.parse(payload);
       }
 
-      // Otherwise, it's a slash command (form fields)
+      // slash commands are form fields
       return Object.fromEntries(params.entries());
     }
 
@@ -57,7 +57,7 @@ async function parseRequestBody(
       return JSON.parse(body);
 
     case SlackRequestType.CRON:
-      return {}; // Cron jobs don't have a body to parse
+      return {}; // cron jobs don't have a body
 
     default:
       throw new Error(`Unsupported request type: ${requestType}`);
@@ -96,7 +96,7 @@ export function withSlackMiddleware<T>(
     try {
       const body = await request.text();
 
-      // Handle cron authentication separately
+      // cron jobs need auth check
       if (options.requestType === SlackRequestType.CRON) {
         const isAuthorized = verifyCronAuth(request.headers, options.authConfig);
         if (!isAuthorized) {
@@ -109,7 +109,7 @@ export function withSlackMiddleware<T>(
         return await options.handler({} as T, request);
       }
 
-      // Verify Slack request signature for non-cron requests
+      // verify slack signature
       const isValid = await verifySlackRequest(request.headers, body);
       if (!isValid) {
         return NextResponse.json(
@@ -118,15 +118,11 @@ export function withSlackMiddleware<T>(
         );
       }
 
-      // Parse the request body
       const parsedBody = await parseRequestBody(body, options.requestType);
-
-      // Call the handler with parsed body
       return await options.handler(parsedBody as T, request);
     } catch (error) {
       console.error('Error in Slack middleware:', error);
 
-      // Differentiate between parsing errors and handler errors
       if (error instanceof SyntaxError) {
         return NextResponse.json(
           { error: 'Invalid request format' },

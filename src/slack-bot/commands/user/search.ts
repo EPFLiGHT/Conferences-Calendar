@@ -10,7 +10,6 @@ import { buildDeadlineList, buildErrorMessage } from '../../lib/messageBuilder';
 import { withCommandHandler } from '../../lib/commandWrapper';
 
 export async function handleSearch(userId: string, query: string): Promise<BlockKitMessage> {
-  // Validate input before wrapping
   if (!query || query.trim() === '') {
     return buildErrorMessage('Please provide a search query. Example: `/conf search CVPR`');
   }
@@ -19,10 +18,7 @@ export async function handleSearch(userId: string, query: string): Promise<Block
     'search',
     userId,
     async () => {
-      // Fetch conferences
       const conferences = await getConferences();
-
-      // Search conferences
       const results = searchConferences(conferences, query);
 
       if (results.length === 0) {
@@ -41,10 +37,7 @@ export async function handleSearch(userId: string, query: string): Promise<Block
         };
       }
 
-      // Get upcoming deadlines from search results
       const upcoming = getUpcomingDeadlines(results, 10);
-
-      // Build response
       const message = buildDeadlineList(upcoming);
 
       return {
@@ -58,7 +51,7 @@ export async function handleSearch(userId: string, query: string): Promise<Block
             },
           },
           { type: 'divider' },
-          ...message.blocks.slice(1), // Remove default header
+          ...message.blocks.slice(1), // skip the default header
         ],
         response_type: 'ephemeral',
       };

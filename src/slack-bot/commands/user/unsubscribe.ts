@@ -13,7 +13,6 @@ export async function handleUnsubscribe(userId: string): Promise<BlockKitMessage
     'unsubscribe',
     userId,
     async () => {
-      // Disable notifications
       await disableNotifications(userId);
 
       return buildSuccessMessage(

@@ -15,11 +15,7 @@ async function handleBlockActions(
   const actionId = payload.actions?.[0]?.action_id;
   console.log('Block action:', actionId);
 
-  // TODO: Add handlers for specific actions
-  // Example:
-  // if (actionId === 'subscribe_button') {
-  //   await handleSubscribeAction(payload);
-  // }
+  // TODO: add button click handlers here
 
   return acknowledgeResponse();
 }
@@ -33,11 +29,7 @@ async function handleViewSubmission(
   const callbackId = payload.view?.callback_id;
   console.log('View submission:', callbackId);
 
-  // TODO: Add handlers for specific modal submissions
-  // Example:
-  // if (callbackId === 'settings_modal') {
-  //   await handleSettingsSubmission(payload);
-  // }
+  // TODO: add modal submission handlers here
 
   return acknowledgeResponse();
 }
@@ -58,7 +50,6 @@ async function handleViewClosed(
 async function handleInteraction(
   payload: SlackInteractionPayload
 ): Promise<NextResponse> {
-  // Route to appropriate handler based on interaction type
   switch (payload.type) {
     case 'block_actions':
       return handleBlockActions(payload);

@@ -14,11 +14,10 @@ export async function handleSettings(userId: string): Promise<BlockKitMessage> {
     'settings',
     userId,
     async () => {
-      // Get or create user preferences
       let prefs = await getUserPreferences(userId);
 
       if (!prefs) {
-        // Create default preferences if user doesn't exist
+        // user doesn't exist yet, create default prefs
         prefs = await updateUserPreferences(userId, {
           notificationsEnabled: false,
           timezone: NOTIFICATION_CONFIG.DEFAULT_TIMEZONE,

@@ -11,7 +11,6 @@ import { SUBJECT_LABELS } from '@/constants/subjects';
 import { withCommandHandler } from '../../lib/commandWrapper';
 
 export async function handleSubject(userId: string, subjectCode: string): Promise<BlockKitMessage> {
-  // Validate input before wrapping
   if (!subjectCode || subjectCode.trim() === '') {
     const availableSubjects = Object.entries(SUBJECT_LABELS)
       .map(([code, label]) => `• \`${code}\` - ${label}`)
@@ -38,10 +37,7 @@ export async function handleSubject(userId: string, subjectCode: string): Promis
     'subject',
     userId,
     async () => {
-      // Fetch conferences
       const conferences = await getConferences();
-
-      // Filter by subject
       const filtered = filterBySubject(conferences, subject);
 
       if (filtered.length === 0) {
@@ -60,12 +56,8 @@ export async function handleSubject(userId: string, subjectCode: string): Promis
         };
       }
 
-      // Get upcoming deadlines from filtered results
       const upcoming = getUpcomingDeadlines(filtered, 10);
-
       const subjectLabel = SUBJECT_LABELS[subject] || subject;
-
-      // Build response
       const message = buildDeadlineList(upcoming);
 
       return {

@@ -8,7 +8,7 @@ import { logger } from '../utils/logger';
 import { buildErrorMessage } from './messageBuilder';
 
 /**
- * Wraps a command handler with standardized error handling and logging
+ * Wraps command handlers with error handling and logging
  */
 export async function withCommandHandler<T>(
   commandName: string,

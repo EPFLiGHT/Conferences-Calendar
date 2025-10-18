@@ -10,6 +10,7 @@ import { handleUnsubscribe } from '@/slack-bot/commands/user/unsubscribe';
 import { handleSettings } from '@/slack-bot/commands/user/settings';
 import { handleSubject } from '@/slack-bot/commands/user/subject';
 import { handleInfo } from '@/slack-bot/commands/user/info';
+import { handleClear } from '@/slack-bot/commands/user/clear';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -29,6 +30,7 @@ const commandHandlers: Record<
   '/conf-settings': (userId) => handleSettings(userId),
   '/conf-subject': (userId, text) => handleSubject(userId, text),
   '/conf-info': (userId, text) => handleInfo(userId, text),
+  '/conf-clear': (userId) => handleClear(userId),
 };
 
 /**
@@ -39,12 +41,10 @@ async function handleSlashCommand(
 ): Promise<NextResponse> {
   const { command, text = '', user_id: userId } = payload;
 
-  // Validate required fields
   if (!userId) {
     return badRequestResponse('Missing user information');
   }
 
-  // Find and execute the command handler
   const handler = commandHandlers[command];
 
   if (!handler) {

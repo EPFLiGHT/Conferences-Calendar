@@ -12,27 +12,19 @@ export const runtime = 'nodejs';
 async function handleSlackEvent(
   payload: SlackEventPayload
 ): Promise<NextResponse> {
-  // Handle URL verification challenge
+  // Slack sends this when setting up the Events API
   if (payload.type === 'url_verification') {
     return NextResponse.json({ challenge: payload.challenge });
   }
 
-  // Handle event callbacks
   if (payload.type === 'event_callback' && payload.event) {
-    // Process events asynchronously to respond quickly
-    // You can add event handlers here (e.g., app mentions, messages)
     console.log('Received event:', payload.event.type);
 
-    // TODO: Add event handlers for:
-    // - app_mention: when the bot is mentioned
-    // - message: when messages are sent in channels the bot is in
-    // - Add more event types as needed
+    // TODO: handle events like app_mention, message, etc.
 
-    // Return 200 immediately to acknowledge receipt
     return acknowledgeResponse();
   }
 
-  // Acknowledge any other event types
   return acknowledgeResponse();
 }
 

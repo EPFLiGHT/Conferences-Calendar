@@ -13,7 +13,6 @@ export async function handleSubscribe(userId: string): Promise<BlockKitMessage> 
     'subscribe',
     userId,
     async () => {
-      // Enable notifications
       const prefs = await enableNotifications(userId);
 
       return buildSuccessMessage(

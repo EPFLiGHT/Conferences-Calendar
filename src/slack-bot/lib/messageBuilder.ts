@@ -72,7 +72,6 @@ export function buildConferenceCard(
     },
   ];
 
-  // Add note if present
   if (conference.note) {
     blocks.push({
       type: 'context',
@@ -85,7 +84,6 @@ export function buildConferenceCard(
     });
   }
 
-  // Add action buttons
   const actionElements: any[] = [];
 
   if (conference.link) {
@@ -223,7 +221,6 @@ export function buildHelpMessage(): BlockKitMessage {
     { type: 'divider' },
   ];
 
-  // User commands
   blocks.push({
     type: 'section',
     text: {

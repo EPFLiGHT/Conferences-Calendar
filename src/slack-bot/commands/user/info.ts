@@ -9,11 +9,10 @@ import { getNextDeadline } from '@/utils/parser';
 import { buildConferenceCard, buildErrorMessage } from '../../lib/messageBuilder';
 import { withCommandHandler } from '../../lib/commandWrapper';
 
-export async function handleInfo(userId: string, conferenceId: string): Promise<BlockKitMessage> {
-  // Validate input before wrapping
-  if (!conferenceId || conferenceId.trim() === '') {
+export async function handleInfo(userId: string, conferenceQuery: string): Promise<BlockKitMessage> {
+  if (!conferenceQuery || conferenceQuery.trim() === '') {
     return buildErrorMessage(
-      'Please provide a conference ID. Example: `/conf info cvpr25`\n\nYou can find conference IDs in the deadline lists.'
+      'Please provide a conference ID or name. Example: `/conf info cvpr25` or `/conf info CVPR`\n\nYou can find conference IDs in the deadline lists.'
     );
   }
 
@@ -21,19 +20,28 @@ export async function handleInfo(userId: string, conferenceId: string): Promise<
     'info',
     userId,
     async () => {
-      // Fetch conferences
       const conferences = await getConferences();
+      const normalizedQuery = conferenceQuery.toLowerCase().trim();
 
-      // Find conference by ID
-      const conference = conferences.find((c) => c.id === conferenceId.toLowerCase());
+      // try exact ID match first
+      let conference = conferences.find((c) => c.id === normalizedQuery);
+
+      // fallback to fuzzy search by title or full name
+      if (!conference) {
+        const queryNoSpaces = normalizedQuery.replace(/\s+/g, '');
+        conference = conferences.find((c) => {
+          const titleMatch = c.title.toLowerCase().replace(/\s+/g, '');
+          const fullNameMatch = c.full_name.toLowerCase().replace(/\s+/g, '');
+          return titleMatch === queryNoSpaces || fullNameMatch.includes(queryNoSpaces);
+        });
+      }
 
       if (!conference) {
         return buildErrorMessage(
-          `Conference "${conferenceId}" not found.\n\nUse \`/conf search ${conferenceId}\` to find similar conferences.`
+          `Conference "${conferenceQuery}" not found.\n\nUse \`/conf search ${conferenceQuery}\` to find similar conferences.`
         );
       }
 
-      // Get deadline info
       const deadline = getNextDeadline(conference);
 
       if (!deadline) {
@@ -52,10 +60,9 @@ export async function handleInfo(userId: string, conferenceId: string): Promise<
         };
       }
 
-      // Build detailed conference card
       return buildConferenceCard(conference, deadline);
     },
     'Failed to fetch conference information. Please try again later.',
-    { conferenceId }
+    { conferenceQuery }
   );
 }
