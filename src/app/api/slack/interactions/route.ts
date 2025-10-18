@@ -200,7 +200,11 @@ async function handleBlockActions(
   // Handle calendar button click
   if (actionId?.startsWith('calendar_')) {
     const conferenceId = actionValue;
-    const baseUrl = process.env.CONFERENCES_DATA_URL || process.env.VERCEL_URL;
+    // Use VERCEL_URL for production or localhost for development
+    // CONFERENCES_DATA_URL is only for fetching YAML data, not for API routes
+    const baseUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : (process.env.APP_URL || 'http://localhost:3000');
     const calendarUrl = `${baseUrl}/api/calendar/${conferenceId}`;
 
     const message = buildSuccessMessage(
