@@ -4,10 +4,9 @@
  */
 
 import type { BlockKitMessage } from '@/types/slack';
-import { getConferences } from '../../utils/conferenceCache';
-import { getNextDeadline } from '@/utils/parser';
-import { buildConferenceCard, buildErrorMessage } from '../../lib/messageBuilder';
+import { buildErrorMessage } from '../../lib/messageBuilder';
 import { withCommandHandler } from '../../lib/commandWrapper';
+import { findConferenceByQuery, buildConferenceDetailsCard } from '../../lib/conferenceHelpers';
 
 export async function handleInfo(userId: string, conferenceQuery: string): Promise<BlockKitMessage> {
   if (!conferenceQuery || conferenceQuery.trim() === '') {
@@ -20,21 +19,7 @@ export async function handleInfo(userId: string, conferenceQuery: string): Promi
     'info',
     userId,
     async () => {
-      const conferences = await getConferences();
-      const normalizedQuery = conferenceQuery.toLowerCase().trim();
-
-      // try exact ID match first
-      let conference = conferences.find((c) => c.id === normalizedQuery);
-
-      // fallback to fuzzy search by title or full name
-      if (!conference) {
-        const queryNoSpaces = normalizedQuery.replace(/\s+/g, '');
-        conference = conferences.find((c) => {
-          const titleMatch = c.title.toLowerCase().replace(/\s+/g, '');
-          const fullNameMatch = c.full_name.toLowerCase().replace(/\s+/g, '');
-          return titleMatch === queryNoSpaces || fullNameMatch.includes(queryNoSpaces);
-        });
-      }
+      const conference = await findConferenceByQuery(conferenceQuery);
 
       if (!conference) {
         return buildErrorMessage(
@@ -42,25 +27,7 @@ export async function handleInfo(userId: string, conferenceQuery: string): Promi
         );
       }
 
-      const deadline = getNextDeadline(conference);
-
-      if (!deadline) {
-        return {
-          blocks: [
-            {
-              type: 'section',
-              text: {
-                type: 'mrkdwn',
-                text: `📅 *${conference.title} ${conference.year}*\n\n${conference.full_name}\n\n❌ No upcoming deadlines available for this conference.`,
-              },
-            },
-          ],
-          text: `${conference.title} ${conference.year} - No deadlines`,
-          response_type: 'ephemeral',
-        };
-      }
-
-      return buildConferenceCard(conference, deadline);
+      return buildConferenceDetailsCard(conference);
     },
     'Failed to fetch conference information. Please try again later.',
     { conferenceQuery }

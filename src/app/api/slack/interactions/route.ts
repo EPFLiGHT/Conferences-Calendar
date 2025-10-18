@@ -2,6 +2,16 @@ import { NextResponse } from 'next/server';
 import { withSlackMiddleware, SlackRequestType } from '@/slack-bot/lib/middleware';
 import { acknowledgeResponse } from '@/slack-bot/lib/responses';
 import type { SlackInteractionPayload } from '@/types/slack-payloads';
+import { getConferenceDetailsById } from '@/slack-bot/lib/conferenceHelpers';
+import {
+  buildErrorMessage,
+  buildSuccessMessage,
+  buildSettingsPanel,
+} from '@/slack-bot/lib/messageBuilder';
+import {
+  enableNotifications,
+  disableNotifications,
+} from '@/slack-bot/lib/userPreferences';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -13,9 +23,113 @@ async function handleBlockActions(
   payload: SlackInteractionPayload
 ): Promise<NextResponse> {
   const actionId = payload.actions?.[0]?.action_id;
-  console.log('Block action:', actionId);
+  const actionValue = payload.actions?.[0]?.value;
+  const userId = payload.user.id;
+  console.log('Block action:', actionId, 'value:', actionValue, 'userId:', userId);
 
-  // TODO: add button click handlers here
+  // Handle details button click
+  if (actionId?.startsWith('details_')) {
+    const conferenceId = actionValue;
+
+    if (!conferenceId) {
+      const errorMsg = buildErrorMessage('Invalid conference ID');
+      return NextResponse.json({
+        ...errorMsg,
+        response_type: 'ephemeral',
+        replace_original: false,
+      });
+    }
+
+    try {
+      const message = await getConferenceDetailsById(conferenceId);
+      return NextResponse.json({
+        ...message,
+        response_type: 'ephemeral',
+        replace_original: false,
+      });
+    } catch (error) {
+      console.error('Error fetching conference details:', error);
+      const errorMsg = buildErrorMessage('Failed to fetch conference details. Please try again.');
+      return NextResponse.json({
+        ...errorMsg,
+        response_type: 'ephemeral',
+        replace_original: false,
+      });
+    }
+  }
+
+  // Handle enable notifications button
+  if (actionId === 'enable_notifications') {
+    try {
+      const prefs = await enableNotifications(userId);
+      const message = buildSettingsPanel(prefs);
+      return NextResponse.json({
+        ...message,
+        response_type: 'ephemeral',
+        replace_original: true,
+      });
+    } catch (error) {
+      console.error('Error enabling notifications:', error);
+      const errorMsg = buildErrorMessage('Failed to enable notifications. Please try again.');
+      return NextResponse.json({
+        ...errorMsg,
+        response_type: 'ephemeral',
+        replace_original: false,
+      });
+    }
+  }
+
+  // Handle disable notifications button
+  if (actionId === 'disable_notifications') {
+    try {
+      const prefs = await disableNotifications(userId);
+      const message = buildSettingsPanel(prefs);
+      return NextResponse.json({
+        ...message,
+        response_type: 'ephemeral',
+        replace_original: true,
+      });
+    } catch (error) {
+      console.error('Error disabling notifications:', error);
+      const errorMsg = buildErrorMessage('Failed to disable notifications. Please try again.');
+      return NextResponse.json({
+        ...errorMsg,
+        response_type: 'ephemeral',
+        replace_original: false,
+      });
+    }
+  }
+
+  // Handle calendar button click
+  if (actionId?.startsWith('calendar_')) {
+    const conferenceId = actionValue;
+    const baseUrl = process.env.CONFERENCES_DATA_URL || process.env.VERCEL_URL;
+    const calendarUrl = `${baseUrl}/api/calendar/${conferenceId}`;
+
+    const message = buildSuccessMessage(
+      `To add this conference to your calendar, visit:\n${calendarUrl}\n\nThis will download an ICS file that you can import into your calendar app.`
+    );
+    return NextResponse.json({
+      ...message,
+      response_type: 'ephemeral',
+      replace_original: false,
+    });
+  }
+
+  // Handle edit subjects button
+  // TODO: Implement modal for editing subjects
+  // This requires opening a Slack modal (views.open API call) with checkboxes for each subject
+  // The modal submission would be handled in handleViewSubmission below
+  if (actionId === 'edit_subjects') {
+    const message = buildErrorMessage(
+      'Subject editing is coming soon! For now, use the web interface to manage your subject preferences.'
+    );
+    return NextResponse.json({
+      ...message,
+      response_type: 'ephemeral',
+      replace_original: false,
+    });
+  }
 
   return acknowledgeResponse();
 }
@@ -29,7 +143,18 @@ async function handleViewSubmission(
   const callbackId = payload.view?.callback_id;
   console.log('View submission:', callbackId);
 
-  // TODO: add modal submission handlers here
+  // Future feature: Handle modal submissions
+  // Potential modals to implement:
+  // - 'edit_subjects_modal': Allow users to select/deselect subject preferences
+  //   via checkboxes in a Slack modal (triggered by edit_subjects button)
+  // - 'edit_reminder_days_modal': Customize reminder day preferences
+  // - 'edit_timezone_modal': Select timezone from a dropdown
+  //
+  // Implementation requires:
+  // 1. Creating modal views using Slack Block Kit
+  // 2. Opening modals via Slack Web API (views.open) in handleBlockActions
+  // 3. Parsing modal state values here and updating user preferences
+  // 4. Requires SLACK_BOT_TOKEN to be configured for API calls
 
   return acknowledgeResponse();
 }
