@@ -44,9 +44,7 @@ export async function getConferences(): Promise<Conference[]> {
  */
 async function fetchAndParseYAML(): Promise<Conference[]> {
   try {
-    // In production, fetch from your GitHub Pages or raw GitHub URL
-    // For development, can use localhost
-    const baseUrl = process.env.CONFERENCE_DATA_URL || 'https://your-domain.com';
+    const baseUrl = process.env.CONFERENCES_DATA_URL;
     const yamlUrl = `${baseUrl}/data/conferences.yaml`;
 
     logger.info('Fetching conference data', { url: yamlUrl });
