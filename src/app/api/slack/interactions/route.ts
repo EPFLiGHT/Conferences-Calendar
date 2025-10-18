@@ -25,14 +25,32 @@ async function handleBlockActions(
   const actionId = payload.actions?.[0]?.action_id;
   const actionValue = payload.actions?.[0]?.value;
   const userId = payload.user.id;
+  const responseUrl = payload.response_url;
   console.log('Block action:', actionId, 'value:', actionValue, 'userId:', userId);
 
   // Handle details button click
   if (actionId?.startsWith('details_')) {
     const conferenceId = actionValue;
+    console.log('[Details] Conference ID:', conferenceId);
 
     if (!conferenceId) {
+      console.error('[Details] Missing conference ID');
       const errorMsg = buildErrorMessage('Invalid conference ID');
+
+      // Send error via response_url if available
+      if (responseUrl) {
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...errorMsg,
+            response_type: 'ephemeral',
+            replace_original: false,
+          }),
+        }).catch(err => console.error('[Details] Failed to send error via response_url:', err));
+        return new NextResponse('', { status: 200 });
+      }
+
       return NextResponse.json({
         ...errorMsg,
         response_type: 'ephemeral',
@@ -41,15 +59,50 @@ async function handleBlockActions(
     }
 
     try {
+      console.log('[Details] Fetching details for:', conferenceId);
       const message = await getConferenceDetailsById(conferenceId);
-      return NextResponse.json({
+      console.log('[Details] Message generated:', JSON.stringify(message).substring(0, 200));
+
+      const responsePayload = {
         ...message,
         response_type: 'ephemeral',
         replace_original: false,
-      });
+      };
+
+      console.log('[Details] Sending response with', responsePayload.blocks?.length || 0, 'blocks');
+
+      // Use response_url for delayed response (more reliable for ephemeral messages)
+      if (responseUrl) {
+        console.log('[Details] Using response_url:', responseUrl);
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(responsePayload),
+        }).catch(err => console.error('[Details] Failed to send via response_url:', err));
+
+        // Acknowledge the interaction immediately
+        return new NextResponse('', { status: 200 });
+      }
+
+      // Fallback to direct response
+      return NextResponse.json(responsePayload);
     } catch (error) {
-      console.error('Error fetching conference details:', error);
+      console.error('[Details] Error fetching conference details:', error);
       const errorMsg = buildErrorMessage('Failed to fetch conference details. Please try again.');
+
+      if (responseUrl) {
+        fetch(responseUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            ...errorMsg,
+            response_type: 'ephemeral',
+            replace_original: false,
+          }),
+        }).catch(err => console.error('[Details] Failed to send error via response_url:', err));
+        return new NextResponse('', { status: 200 });
+      }
+
       return NextResponse.json({
         ...errorMsg,
         response_type: 'ephemeral',
