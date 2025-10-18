@@ -11,10 +11,10 @@ export const runtime = 'nodejs';
  */
 export async function GET(
   _request: NextRequest,
-  { params }: { params: { conferenceId: string } }
+  { params }: { params: Promise<{ conferenceId: string }> }
 ): Promise<NextResponse> {
   try {
-    const { conferenceId } = params;
+    const { conferenceId } = await params;
 
     // Fetch and parse conference data
     const baseUrl = process.env.CONFERENCES_DATA_URL;
