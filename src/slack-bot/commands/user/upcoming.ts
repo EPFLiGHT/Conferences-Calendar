@@ -4,9 +4,7 @@
  */
 
 import type { BlockKitMessage } from '@/types/slack';
-import { getConferences } from '../../utils/conferenceCache';
-import { getUpcomingDeadlines } from '@/utils/conferenceQueries';
-import { buildDeadlineList } from '../../lib/messageBuilder';
+import { getUpcomingConferencesMessage } from '../../lib/conferenceHelpers';
 import { withCommandHandler } from '../../lib/commandWrapper';
 
 export async function handleUpcoming(userId: string): Promise<BlockKitMessage> {
@@ -14,14 +12,7 @@ export async function handleUpcoming(userId: string): Promise<BlockKitMessage> {
     'upcoming',
     userId,
     async () => {
-      const conferences = await getConferences();
-      const upcoming = getUpcomingDeadlines(conferences, 5);
-      const message = buildDeadlineList(upcoming);
-
-      return {
-        ...message,
-        response_type: 'in_channel',
-      };
+      return getUpcomingConferencesMessage(5);
     },
     'Failed to fetch upcoming deadlines. Please try again later.'
   );

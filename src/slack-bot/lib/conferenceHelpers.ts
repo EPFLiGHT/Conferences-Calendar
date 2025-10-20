@@ -6,8 +6,9 @@
 import type { Conference } from '@/types/conference';
 import type { BlockKitMessage } from '@/types/slack';
 import { getConferences } from '../utils/conferenceCache';
+import { getUpcomingDeadlines } from '@/utils/conferenceQueries';
 import { getNextDeadline } from '@/utils/parser';
-import { buildConferenceCard, buildErrorMessage } from './messageBuilder';
+import { buildConferenceCard, buildErrorMessage, buildDeadlineList } from './messageBuilder';
 
 /**
  * Get conference details by ID and build a card message
@@ -75,4 +76,21 @@ export function buildConferenceDetailsCard(
   }
 
   return buildConferenceCard(conference, deadline);
+}
+
+/**
+ * Get upcoming conference deadlines
+ * Shared function used by both /conf-upcoming command and channel reminders cron
+ */
+export async function getUpcomingConferencesMessage(
+  count: number = 5
+): Promise<BlockKitMessage> {
+  const conferences = await getConferences();
+  const upcoming = getUpcomingDeadlines(conferences, count);
+  const message = buildDeadlineList(upcoming);
+
+  return {
+    ...message,
+    response_type: 'in_channel',
+  };
 }
