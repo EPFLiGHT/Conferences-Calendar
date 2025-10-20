@@ -39,7 +39,7 @@ export function errorResponse(
  */
 export function textResponse(
   text: string,
-  responseType: 'ephemeral' | 'in_channel' = 'ephemeral'
+  responseType: 'ephemeral' | 'in_channel' = 'in_channel'
 ): NextResponse {
   return NextResponse.json({
     text,

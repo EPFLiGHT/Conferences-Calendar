@@ -71,7 +71,7 @@ async function handleBlockActions(
       if (responseUrl) {
         await sendToResponseUrl(responseUrl, {
           ...errorMsg,
-          response_type: 'ephemeral',
+          response_type: 'in_channel',
           replace_original: false,
         }).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
@@ -79,7 +79,7 @@ async function handleBlockActions(
 
       return NextResponse.json({
         ...errorMsg,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: false,
       });
     }
@@ -91,7 +91,7 @@ async function handleBlockActions(
 
       const responsePayload = {
         ...message,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: false,
       };
 
@@ -115,7 +115,7 @@ async function handleBlockActions(
       if (responseUrl) {
         await sendToResponseUrl(responseUrl, {
           ...errorMsg,
-          response_type: 'ephemeral',
+          response_type: 'in_channel',
           replace_original: false,
         }).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
@@ -123,7 +123,7 @@ async function handleBlockActions(
 
       return NextResponse.json({
         ...errorMsg,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: false,
       });
     }
@@ -136,7 +136,7 @@ async function handleBlockActions(
       const message = buildSettingsPanel(prefs);
       const responsePayload = {
         ...message,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: true,
       };
 
@@ -151,7 +151,7 @@ async function handleBlockActions(
       const errorMsg = buildErrorMessage('Failed to enable notifications. Please try again.');
       const responsePayload = {
         ...errorMsg,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: false,
       };
 
@@ -171,7 +171,7 @@ async function handleBlockActions(
       const message = buildSettingsPanel(prefs);
       const responsePayload = {
         ...message,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: true,
       };
 
@@ -186,7 +186,7 @@ async function handleBlockActions(
       const errorMsg = buildErrorMessage('Failed to disable notifications. Please try again.');
       const responsePayload = {
         ...errorMsg,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
         replace_original: false,
       };
 
@@ -215,7 +215,7 @@ async function handleBlockActions(
 
     const responsePayload = {
       ...message,
-      response_type: 'ephemeral',
+      response_type: 'in_channel',
       replace_original: false,
     };
 
@@ -242,7 +242,7 @@ async function handleBlockActions(
     );
     const responsePayload = {
       ...message,
-      response_type: 'ephemeral',
+      response_type: 'in_channel',
       replace_original: false,
     };
 

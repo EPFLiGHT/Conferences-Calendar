@@ -20,7 +20,7 @@ export async function handleUpcoming(userId: string): Promise<BlockKitMessage> {
 
       return {
         ...message,
-        response_type: 'ephemeral',
+        response_type: 'in_channel',
       };
     },
     'Failed to fetch upcoming deadlines. Please try again later.'
