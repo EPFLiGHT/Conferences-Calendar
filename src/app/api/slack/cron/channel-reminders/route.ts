@@ -6,6 +6,7 @@
  */
 
 import { NextResponse } from 'next/server';
+import { withSlackMiddleware, SlackRequestType } from '@/slack-bot/lib/middleware';
 import { getUpcomingConferencesMessage } from '@/slack-bot/lib/conferenceHelpers';
 import { postToChannel } from '@/slack-bot/lib/slackClient';
 import { logger } from '@/slack-bot/utils/logger';
@@ -17,19 +18,8 @@ export const runtime = 'nodejs';
  * GET handler for the cron job
  * Protected by Vercel Cron secret or authorization header
  */
-export async function GET(request: Request) {
+async function handleChannelReminders(): Promise<NextResponse> {
   try {
-    const authHeader = request.headers.get('authorization');
-    const cronSecret = process.env.CRON_SECRET;
-
-    if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
-      logger.error('Unauthorized cron request');
-      return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
-      );
-    }
-
     const channelId = process.env.SLACK_REMINDERS_CHANNEL_ID;
 
     if (!channelId) {
@@ -117,3 +107,11 @@ export async function GET(request: Request) {
     );
   }
 }
+
+export const GET = withSlackMiddleware({
+  requestType: SlackRequestType.CRON,
+  handler: handleChannelReminders,
+  authConfig: {
+    requireAuth: true,
+  },
+});

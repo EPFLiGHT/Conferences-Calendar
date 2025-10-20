@@ -8,7 +8,7 @@ export const BOT_CONFIG = {
   VERSION: '1.0.0',
 } as const;
 export const NOTIFICATION_CONFIG = {
-  DEFAULT_REMINDER_DAYS: [1, 3, 7],
+  DEFAULT_REMINDER_DAYS: [30, 7, 3],
   DEFAULT_TIMEZONE: 'UTC',
   MAX_CONFERENCES_PER_MESSAGE: 10,
   CACHE_TTL_SECONDS: 300, // 5 minutes
@@ -27,9 +27,9 @@ export const COMMAND_DESCRIPTIONS = {
 } as const;
 
 export const URGENCY_CONFIG = {
-  CRITICAL_DAYS: 1,
-  URGENT_DAYS: 3,
-  UPCOMING_DAYS: 7,
+  CRITICAL_DAYS: 3,
+  URGENT_DAYS: 7,
+  UPCOMING_DAYS: 30,
 } as const;
 
 export const URGENCY_EMOJIS = {

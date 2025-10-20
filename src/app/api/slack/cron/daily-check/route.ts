@@ -1,10 +1,12 @@
 import { NextResponse } from 'next/server';
-import { kv } from '@vercel/kv';
-import { DateTime } from 'luxon';
 import { withSlackMiddleware, SlackRequestType } from '@/slack-bot/lib/middleware';
 import { successResponse, errorResponse } from '@/slack-bot/lib/responses';
-import { parseConferences } from '@/utils/parser';
-import type { Conference } from '@/types/conference';
+import { getConferences } from '@/slack-bot/utils/conferenceCache';
+import { getAllUsersWithNotifications } from '@/slack-bot/lib/userPreferences';
+import { sendDM } from '@/slack-bot/lib/slackClient';
+import { buildUserDeadlineNotification } from '@/slack-bot/lib/messageBuilder';
+import { getDeadlinesWithinDays, filterBySubject } from '@/utils/conferenceQueries';
+import { logger } from '@/slack-bot/utils/logger';
 
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
@@ -15,71 +17,103 @@ export const runtime = 'nodejs';
  */
 async function handleDailyCheck(): Promise<NextResponse> {
   try {
+    // Get all conferences
+    const allConferences = await getConferences();
 
-    // Fetch conference data
-    const conferencesResponse = await fetch(
-      process.env.CONFERENCES_DATA_URL || 'http://localhost:3000/data/conferences.yaml'
-    );
+    // Get all users with notifications enabled
+    const users = await getAllUsersWithNotifications();
 
-    if (!conferencesResponse.ok) {
-      throw new Error('Failed to fetch conferences data');
-    }
+    logger.info('Running daily notification check', {
+      totalUsers: users.length,
+      totalConferences: allConferences.length
+    });
 
-    const yamlText = await conferencesResponse.text();
-    const conferences = parseConferences(yamlText);
+    let notificationsSent = 0;
+    const errors: Array<{ userId: string; error: string }> = [];
 
-    // Get all user subscriptions from KV
-    const keys = await kv.keys('user:*:subscriptions');
-    const notifications: Array<{ userId: string; teamId: string; conferences: Conference[] }> = [];
+    // Process each user
+    for (const user of users) {
+      // Validate user has slackUserId early
+      if (!user.slackUserId) {
+        logger.warn('User missing slackUserId', { user });
+        continue;
+      }
 
-    for (const key of keys) {
-      const match = key.match(/user:(.+):(.+):subscriptions/);
-      if (!match) continue;
+      const userId = user.slackUserId; // Type narrowing, available in both try and catch
 
-      const [, teamId, userId] = match;
-      const subscriptions = await kv.smembers(key);
+      try {
+        // Filter conferences by user's subject preferences (if any)
+        let userConferences = allConferences;
+        if (user.subjects && user.subjects.length > 0) {
+          userConferences = user.subjects.flatMap(subject =>
+            filterBySubject(allConferences, subject)
+          );
+          // Remove duplicates
+          userConferences = Array.from(new Map(
+            userConferences.map(c => [c.id, c])
+          ).values());
+        }
 
-      if (!subscriptions || subscriptions.length === 0) continue;
+        // Find the maximum reminder day threshold for this user
+        const maxReminderDays = Math.max(...user.reminderDays);
 
-      // Get user preferences
-      const prefsKey = `user:${teamId}:${userId}:prefs`;
-      const prefs = await kv.hgetall(prefsKey) as Record<string, string> | null;
-      const reminderDays = parseInt(prefs?.reminder_days || '7', 10);
+        // Get deadlines within the user's reminder window
+        const upcomingDeadlines = getDeadlinesWithinDays(
+          userConferences,
+          maxReminderDays
+        );
 
-      // Filter conferences for this user's subscriptions and upcoming deadlines
-      const now = DateTime.now();
-      const upcomingConferences = conferences.filter((conf: Conference) => {
-        if (!subscriptions.includes(conf.id)) return false;
-        if (!conf.deadline) return false;
+        // Filter to only include deadlines matching user's specific reminder days
+        const relevantDeadlines = upcomingDeadlines.filter(item =>
+          user.reminderDays.some(reminderDay => {
+            // Notify if deadline is exactly N days away (within a margin)
+            // or if it's the last reminder before the deadline
+            const isReminderDay = Math.abs(item.daysLeft - reminderDay) <= 1;
+            return isReminderDay || item.daysLeft <= Math.min(...user.reminderDays);
+          })
+        );
 
-        const deadline = DateTime.fromISO(conf.deadline);
-        const daysUntil = deadline.diff(now, 'days').days;
+        if (relevantDeadlines.length === 0) {
+          logger.debug('No relevant deadlines for user', { userId });
+          continue;
+        }
 
-        // Notify if deadline is within reminder window
-        return daysUntil >= 0 && daysUntil <= reminderDays;
-      });
+        // Build and send notification
+        const message = buildUserDeadlineNotification(relevantDeadlines);
+        await sendDM(userId, message.blocks, message.text);
 
-      if (upcomingConferences.length > 0) {
-        notifications.push({
+        notificationsSent++;
+        logger.info('Sent notification to user', {
           userId,
-          teamId,
-          conferences: upcomingConferences
+          deadlineCount: relevantDeadlines.length
+        });
+
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+        logger.error('Failed to send notification to user', error, {
+          userId
+        });
+        errors.push({
+          userId,
+          error: errorMessage
         });
       }
     }
 
-    // Send notifications via Slack API
-    // This would require the Slack Bot Token and Web API
-    // For now, just log what would be sent
-    console.log(`Would send ${notifications.length} notifications`);
+    logger.info('Daily notification check completed', {
+      totalUsers: users.length,
+      notificationsSent,
+      errors: errors.length
+    });
 
     return successResponse({
       success: true,
-      checked: keys.length,
-      notifications: notifications.length,
+      totalUsers: users.length,
+      notificationsSent,
+      errors: errors.length > 0 ? errors : undefined,
     });
   } catch (error) {
-    console.error('Error in daily check cron:', error);
+    logger.error('Error in daily check cron', error);
     return errorResponse('Internal server error', 500);
   }
 }

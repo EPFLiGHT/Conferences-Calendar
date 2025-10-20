@@ -78,7 +78,7 @@ export interface UserPreferences {
   slackUserId: string;
   notificationsEnabled: boolean;
   timezone: string; // IANA timezone (from Slack profile or manually set)
-  reminderDays: number[]; // Days before deadline to notify (e.g., [1, 3, 7])
+  reminderDays: number[]; // Days before deadline to notify (e.g., [30, 7, 3])
   subjects: string[]; // Subscribed subjects (e.g., ['ML', 'CV', 'SEC'])
   lastNotified: string; // ISO timestamp of last notification sent
   createdAt: string; // ISO timestamp when preferences created

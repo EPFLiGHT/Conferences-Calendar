@@ -374,6 +374,110 @@ function getUrgencyEmoji(daysLeft: number): string {
 }
 
 /**
+ * Build user deadline notification message
+ * Personalized notification sent to users about upcoming deadlines
+ */
+export function buildUserDeadlineNotification(
+  deadlines: Array<{ conference: Conference; deadline: DeadlineInfo }>
+): BlockKitMessage {
+  const blocks: any[] = [
+    {
+      type: 'header',
+      text: {
+        type: 'plain_text',
+        text: '🔔 Deadline Reminder',
+        emoji: true,
+      },
+    },
+    {
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: `You have *${deadlines.length}* upcoming conference ${
+          deadlines.length === 1 ? 'deadline' : 'deadlines'
+        }:`,
+      },
+    },
+    { type: 'divider' },
+  ];
+
+  deadlines.forEach(({ conference, deadline }, index) => {
+    const daysLeft = getDaysUntilDeadline(deadline);
+    const urgencyEmoji = getUrgencyEmoji(daysLeft);
+    const subjects = Array.isArray(conference.sub) ? conference.sub : [conference.sub];
+    const subjectEmojis = subjects.map((s) => SUBJECT_EMOJIS[s] || '📌').join(' ');
+
+    blocks.push({
+      type: 'section',
+      text: {
+        type: 'mrkdwn',
+        text: `${urgencyEmoji} *${conference.title} ${conference.year}* ${subjectEmojis}\n` +
+              `${deadline.label}: ${deadline.localDatetime.toFormat('MMM dd, HH:mm')} (${deadline.datetime.zoneName})\n` +
+              `⏰ ${formatTimeRemaining(daysLeft)} remaining`,
+      },
+    });
+
+    // Add action buttons for each conference
+    const actionElements: any[] = [];
+
+    if (conference.link) {
+      actionElements.push({
+        type: 'button',
+        text: {
+          type: 'plain_text',
+          text: 'View Website',
+          emoji: true,
+        },
+        url: conference.link,
+      });
+    }
+
+    actionElements.push({
+      type: 'button',
+      text: {
+        type: 'plain_text',
+        text: 'Add to Calendar',
+        emoji: true,
+      },
+      action_id: `calendar_${conference.id}`,
+      value: conference.id,
+    });
+
+    if (actionElements.length > 0) {
+      blocks.push({
+        type: 'actions',
+        elements: actionElements,
+      });
+    }
+
+    if (index < deadlines.length - 1) {
+      blocks.push({ type: 'divider' });
+    }
+  });
+
+  // Add footer with helpful info
+  blocks.push(
+    { type: 'divider' },
+    {
+      type: 'context',
+      elements: [
+        {
+          type: 'mrkdwn',
+          text: `💡 Use \`/conf settings\` to manage your notification preferences or \`/conf unsubscribe\` to stop receiving these reminders.`,
+        },
+      ],
+    }
+  );
+
+  return {
+    blocks,
+    text: `Deadline Reminder: ${deadlines.length} upcoming ${
+      deadlines.length === 1 ? 'deadline' : 'deadlines'
+    }`,
+  };
+}
+
+/**
  * Format time remaining in human-readable format
  */
 function formatTimeRemaining(days: number): string {

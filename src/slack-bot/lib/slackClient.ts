@@ -42,3 +42,20 @@ export async function postToChannel(
     text, // Fallback text for notifications
   });
 }
+
+/**
+ * Send a direct message to a Slack user
+ */
+export async function sendDM(
+  userId: string,
+  blocks: any[],
+  text?: string
+): Promise<void> {
+  const client = getSlackClient();
+
+  await client.chat.postMessage({
+    channel: userId, // For DMs, the channel is the user ID
+    blocks,
+    text: text || 'Conference deadline notification', // Fallback text for notifications
+  });
+}

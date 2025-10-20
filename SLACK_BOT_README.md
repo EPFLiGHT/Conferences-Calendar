@@ -8,7 +8,7 @@ A Slack bot that tracks academic conference deadlines and sends timely notificat
 ## Features
 
 - **Slash Commands**: Search conferences, view deadlines, subscribe to notifications
-- **Smart Notifications**: Customizable reminders (1, 3, 7 days before deadlines)
+- **Smart Notifications**: Customizable reminders (30, 7, 3 days before deadlines)
 - **Subject Filtering**: Subscribe to specific research areas (ML, CV, NLP, SEC, etc.)
 - **Interactive Messages**: Rich cards with conference details and action buttons
 - **Timezone-Aware**: Deadlines displayed in user's local timezone
@@ -159,7 +159,7 @@ After deployment, update these URLs in your Slack app config:
 1. Users run `/conf subscribe` to enable notifications
 2. Bot sends DMs at 9 AM daily (configurable in `vercel.json`)
 3. Notifications sent based on user preferences:
-   - Default: 1, 3, 7 days before deadlines
+   - Default: 30, 7, 3 days before deadlines
    - Filtered by subscribed subjects (if configured)
    - Timezone-aware (uses Slack user timezone)
 
@@ -167,7 +167,7 @@ After deployment, update these URLs in your Slack app config:
 
 Users can customize via `/conf settings`:
 - Enable/disable notifications
-- Choose reminder days (1, 3, 7, 14, etc.)
+- Choose reminder days (3, 7, 14, 30, etc.)
 - Subscribe to specific subjects only
 
 ## Development
