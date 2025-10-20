@@ -40,16 +40,28 @@ export async function getConferences(): Promise<Conference[]> {
 }
 
 /**
- * Fetch YAML from URL and parse
+ * Fetch YAML from URL and parse with timeout
  */
 async function fetchAndParseYAML(): Promise<Conference[]> {
+  const baseUrl = process.env.CONFERENCES_DATA_URL;
+  const yamlUrl = `${baseUrl}/data/conferences.yaml`;
+  const TIMEOUT_MS = 2000; // 2 second timeout (Slack has 3s limit)
+
+  logger.info('Fetching conference data', { url: yamlUrl });
+
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
   try {
-    const baseUrl = process.env.CONFERENCES_DATA_URL;
-    const yamlUrl = `${baseUrl}/data/conferences.yaml`;
+    const response = await fetch(yamlUrl, {
+      signal: controller.signal,
+      headers: {
+        'Cache-Control': 'max-age=300',
+      },
+    });
 
-    logger.info('Fetching conference data', { url: yamlUrl });
+    clearTimeout(timeoutId);
 
-    const response = await fetch(yamlUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch YAML: ${response.status} ${response.statusText}`);
     }
@@ -60,8 +72,15 @@ async function fetchAndParseYAML(): Promise<Conference[]> {
     logger.info('Conferences parsed successfully', { count: conferences.length });
     return conferences;
   } catch (error) {
-    logger.error('Failed to fetch and parse YAML', error);
-    throw error;
+    clearTimeout(timeoutId);
+
+    const isTimeout = error instanceof Error && error.name === 'AbortError';
+    const errorMessage = isTimeout
+      ? 'Request timeout'
+      : error instanceof Error ? error.message : String(error);
+
+    logger.error('Failed to fetch and parse YAML', { url: yamlUrl, error: errorMessage });
+    throw new Error(`Failed to fetch conference data: ${errorMessage}`);
   }
 }
 

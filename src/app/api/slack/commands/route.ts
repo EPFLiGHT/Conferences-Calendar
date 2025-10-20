@@ -56,7 +56,21 @@ async function handleSlashCommand(
     return NextResponse.json(result);
   } catch (error) {
     console.error(`Error handling command ${command}:`, error);
-    return textResponse('An error occurred processing your command');
+
+    // Provide more helpful error message
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    const isTimeout = errorMessage.includes('timeout') || errorMessage.includes('Request timeout');
+
+    if (isTimeout) {
+      return textResponse(
+        '⏱️ The request timed out while fetching conference data. This usually happens when the data source is slow to respond. Please try again in a moment.'
+      );
+    }
+
+    return textResponse(
+      '❌ An error occurred processing your command. Please try again or contact support if the issue persists.\n\n' +
+      `_Error: ${errorMessage}_`
+    );
   }
 }
 

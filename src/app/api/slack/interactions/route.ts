@@ -17,6 +17,36 @@ export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs';
 
 /**
+ * Helper function to send response to Slack with timeout
+ */
+async function sendToResponseUrl(
+  responseUrl: string,
+  payload: unknown
+): Promise<void> {
+  const TIMEOUT_MS = 3000; // 3 second timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+  try {
+    await fetch(responseUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
+  } catch (err) {
+    clearTimeout(timeoutId);
+    const isTimeout = err instanceof Error && err.name === 'AbortError';
+    console.error(
+      '[Slack] Failed to send via response_url:',
+      isTimeout ? 'Request timeout' : err
+    );
+    throw err;
+  }
+}
+
+/**
  * Handle block actions (button clicks, select menus, etc.)
  */
 async function handleBlockActions(
@@ -39,15 +69,11 @@ async function handleBlockActions(
 
       // Send error via response_url if available
       if (responseUrl) {
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            ...errorMsg,
-            response_type: 'ephemeral',
-            replace_original: false,
-          }),
-        }).catch(err => console.error('[Details] Failed to send error via response_url:', err));
+        await sendToResponseUrl(responseUrl, {
+          ...errorMsg,
+          response_type: 'ephemeral',
+          replace_original: false,
+        }).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
       }
 
@@ -74,11 +100,7 @@ async function handleBlockActions(
       // Use response_url for delayed response (more reliable for ephemeral messages)
       if (responseUrl) {
         console.log('[Details] Using response_url:', responseUrl);
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(responsePayload),
-        }).catch(err => console.error('[Details] Failed to send via response_url:', err));
+        await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
 
         // Acknowledge the interaction immediately
         return new NextResponse('', { status: 200 });
@@ -91,15 +113,11 @@ async function handleBlockActions(
       const errorMsg = buildErrorMessage('Failed to fetch conference details. Please try again.');
 
       if (responseUrl) {
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            ...errorMsg,
-            response_type: 'ephemeral',
-            replace_original: false,
-          }),
-        }).catch(err => console.error('[Details] Failed to send error via response_url:', err));
+        await sendToResponseUrl(responseUrl, {
+          ...errorMsg,
+          response_type: 'ephemeral',
+          replace_original: false,
+        }).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
       }
 
@@ -123,11 +141,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(responsePayload),
-        }).catch(err => console.error('[EnableNotifications] Failed to send via response_url:', err));
+        await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
       }
 
@@ -142,11 +156,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(responsePayload),
-        }).catch(err => console.error('[EnableNotifications] Failed to send error via response_url:', err));
+        await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
       }
 
@@ -166,11 +176,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(responsePayload),
-        }).catch(err => console.error('[DisableNotifications] Failed to send via response_url:', err));
+        await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
       }
 
@@ -185,11 +191,7 @@ async function handleBlockActions(
       };
 
       if (responseUrl) {
-        await fetch(responseUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(responsePayload),
-        }).catch(err => console.error('[DisableNotifications] Failed to send error via response_url:', err));
+        await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
         return new NextResponse('', { status: 200 });
       }
 
@@ -220,11 +222,7 @@ async function handleBlockActions(
     // Use response_url for delayed response (more reliable for ephemeral messages)
     if (responseUrl) {
       console.log('[Calendar] Using response_url for conference:', conferenceId);
-      await fetch(responseUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(responsePayload),
-      }).catch(err => console.error('[Calendar] Failed to send via response_url:', err));
+      await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
 
       // Acknowledge the interaction immediately
       return new NextResponse('', { status: 200 });
@@ -249,11 +247,7 @@ async function handleBlockActions(
     };
 
     if (responseUrl) {
-      await fetch(responseUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(responsePayload),
-      }).catch(err => console.error('[EditSubjects] Failed to send via response_url:', err));
+      await sendToResponseUrl(responseUrl, responsePayload).catch(() => {/* Error already logged */});
       return new NextResponse('', { status: 200 });
     }
 
