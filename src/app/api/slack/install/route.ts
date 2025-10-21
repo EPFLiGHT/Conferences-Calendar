@@ -16,15 +16,7 @@ export async function GET(request: Request) {
 
   if (!clientId) {
     return NextResponse.json(
-      {
-        error: 'Slack client ID not configured',
-        debug: {
-          hasClientId: !!process.env.SLACK_CLIENT_ID,
-          hasClientSecret: !!process.env.SLACK_CLIENT_SECRET,
-          hasAppUrl: !!process.env.APP_URL,
-          appUrl: appUrl
-        }
-      },
+      { error: 'Slack client ID not configured' },
       { status: 500 }
     );
   }
