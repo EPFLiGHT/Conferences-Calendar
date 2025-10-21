@@ -4,9 +4,10 @@
  */
 
 export default function SlackInstallPage() {
-  const appUrl = process.env.APP_URL || process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : 'http://localhost:3000';
+  // Get the base URL - prioritize APP_URL, then VERCEL_URL, then fallback
+  const appUrl = process.env.APP_URL ||
+    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null) ||
+    (process.env.NEXT_PUBLIC_APP_URL || 'https://conferences.light-laboratory.org');
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-600 to-indigo-800">
