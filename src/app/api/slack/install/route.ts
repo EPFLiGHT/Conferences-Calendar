@@ -8,11 +8,20 @@ import { NextResponse } from 'next/server';
  */
 export async function GET(request: Request) {
   const clientId = process.env.SLACK_CLIENT_ID;
-  const redirectUri = process.env.SLACK_REDIRECT_URI || `${process.env.APP_URL}/api/slack/oauth/callback`;
+  const appUrl = process.env.APP_URL || 'https://conferences.light-laboratory.org';
+  const redirectUri = process.env.SLACK_REDIRECT_URI || `${appUrl}/api/slack/oauth/callback`;
 
   if (!clientId) {
     return NextResponse.json(
-      { error: 'Slack client ID not configured' },
+      {
+        error: 'Slack client ID not configured',
+        debug: {
+          hasClientId: !!process.env.SLACK_CLIENT_ID,
+          hasClientSecret: !!process.env.SLACK_CLIENT_SECRET,
+          hasAppUrl: !!process.env.APP_URL,
+          appUrl: appUrl
+        }
+      },
       { status: 500 }
     );
   }
