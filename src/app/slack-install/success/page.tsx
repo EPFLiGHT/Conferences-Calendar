@@ -1,17 +1,17 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Box, Container, Flex, Text, Heading, Grid, Link as ChakraLink } from '@chakra-ui/react';
+import { Box, Container, Flex, Text, Heading, Grid, Link as ChakraLink, Spinner } from '@chakra-ui/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { COLORS, SHADOWS, brandAlpha } from '@/theme';
 
 /**
- * OAuth Success Page
- * Displayed after successful Slack bot installation
+ * Inner component that uses useSearchParams
+ * Must be wrapped in Suspense boundary
  */
-export default function SlackInstallSuccessPage() {
+function SuccessContent() {
   const searchParams = useSearchParams();
   const [teamName, setTeamName] = useState<string>('');
 
@@ -203,5 +203,23 @@ export default function SlackInstallSuccessPage() {
       </Box>
       <Footer />
     </>
+  );
+}
+
+/**
+ * OAuth Success Page
+ * Displayed after successful Slack bot installation
+ */
+export default function SlackInstallSuccessPage() {
+  return (
+    <Suspense
+      fallback={
+        <Box minH="100vh" display="flex" alignItems="center" justifyContent="center">
+          <Spinner size="xl" color="brand.500" />
+        </Box>
+      }
+    >
+      <SuccessContent />
+    </Suspense>
   );
 }
