@@ -79,8 +79,10 @@ async function handleDailyCheck(): Promise<NextResponse> {
         }
 
         // Build and send notification
+        // Note: In multi-workspace mode, user.teamId should be stored with preferences
+        // For now, this will use the token fallback mechanism
         const message = buildUserDeadlineNotification(relevantDeadlines);
-        await sendDM(userId, message.blocks, message.text);
+        await sendDM(userId, message.blocks, message.text, user.teamId);
 
         notificationsSent++;
         logger.info('Sent notification to user', {

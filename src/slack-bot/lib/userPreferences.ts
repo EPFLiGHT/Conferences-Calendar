@@ -84,13 +84,21 @@ export async function updateUserPreferences(
  * Enable notifications for user
  * Resets reminderDays to defaults if user is enabling for the first time or re-enabling
  */
-export async function enableNotifications(userId: string): Promise<UserPreferences> {
+export async function enableNotifications(
+  userId: string,
+  teamId?: string
+): Promise<UserPreferences> {
   const existing = await getUserPreferences(userId);
 
   // If user is enabling notifications (not already enabled), reset reminderDays to defaults
   const updates: Partial<Omit<UserPreferences, 'slackUserId' | 'createdAt'>> = {
     notificationsEnabled: true
   };
+
+  // Store teamId for multi-workspace support
+  if (teamId) {
+    updates.teamId = teamId;
+  }
 
   // Reset reminderDays to defaults if user was previously disabled or is new
   if (!existing || !existing.notificationsEnabled) {

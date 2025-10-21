@@ -6,7 +6,8 @@ import { verifySlackRequest } from './slackVerify';
  */
 export type SlackRequestHandler<T = unknown> = (
   parsedBody: T,
-  request: NextRequest
+  request: NextRequest,
+  teamId?: string
 ) => Promise<NextResponse> | NextResponse;
 
 export type SlackAuthConfig = {
@@ -65,6 +66,29 @@ async function parseRequestBody(
 }
 
 /**
+ * Extract team_id from Slack request
+ * Different request types have team_id in different locations
+ */
+function extractTeamId(parsedBody: any): string | undefined {
+  // Slash commands and interactions
+  if (parsedBody.team_id) {
+    return parsedBody.team_id;
+  }
+
+  // Event API requests (nested in team object)
+  if (parsedBody.team?.id) {
+    return parsedBody.team.id;
+  }
+
+  // Some interactions have team object
+  if (parsedBody.team) {
+    return parsedBody.team;
+  }
+
+  return undefined;
+}
+
+/**
  * Verify cron request authentication
  */
 function verifyCronAuth(
@@ -119,7 +143,11 @@ export function withSlackMiddleware<T>(
       }
 
       const parsedBody = await parseRequestBody(body, options.requestType);
-      return await options.handler(parsedBody as T, request);
+
+      // Extract team_id for multi-workspace support
+      const teamId = extractTeamId(parsedBody);
+
+      return await options.handler(parsedBody as T, request, teamId);
     } catch (error) {
       console.error('Error in Slack middleware:', error);
 

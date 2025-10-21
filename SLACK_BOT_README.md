@@ -12,8 +12,34 @@ A Slack bot that tracks academic conference deadlines and sends timely notificat
 - **Subject Filtering**: Subscribe to specific research areas (ML, CV, NLP, SEC, etc.)
 - **Interactive Messages**: Rich cards with conference details and action buttons
 - **Timezone-Aware**: Deadlines displayed in user's local timezone
+- **Multi-Workspace**: Install to any Slack workspace via OAuth (NEW!)
 
-## Quick Start
+## Installation Options
+
+You have two options for installing this bot:
+
+### Option 1: OAuth Installation (Recommended for Multiple Workspaces)
+
+**Use this if you want:**
+- Anyone to install your bot to their workspace
+- Support for multiple Slack workspaces
+- Easy distribution via "Add to Slack" button
+
+👉 **See [OAUTH_SETUP.md](./OAUTH_SETUP.md) for complete OAuth setup instructions**
+
+**Quick Link:** Visit `https://your-app.vercel.app/slack-install` for the installation page
+
+### Option 2: Manual Installation (Single Workspace)
+
+**Use this if you want:**
+- A quick setup for one workspace only
+- Simple configuration without OAuth complexity
+
+👉 **Follow the "Quick Start" section below**
+
+---
+
+## Quick Start (Manual Installation)
 
 ### 1. Create Slack App
 

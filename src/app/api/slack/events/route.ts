@@ -10,7 +10,9 @@ export const runtime = 'nodejs';
  * Handle Slack Event API callbacks
  */
 async function handleSlackEvent(
-  payload: SlackEventPayload
+  payload: SlackEventPayload,
+  _request: unknown,
+  teamId?: string
 ): Promise<NextResponse> {
   // Slack sends this when setting up the Events API
   if (payload.type === 'url_verification') {
@@ -19,6 +21,11 @@ async function handleSlackEvent(
 
   if (payload.type === 'event_callback' && payload.event) {
     console.log('Received event:', payload.event.type);
+
+    // Log team context for debugging
+    if (teamId) {
+      console.log(`[Events] Request from team: ${teamId}`);
+    }
 
     // Future feature: Handle Slack events
     // Potential events to implement:

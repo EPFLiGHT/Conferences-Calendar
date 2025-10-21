@@ -296,8 +296,13 @@ async function handleViewClosed(
  * Main interaction handler - routes to specific handlers based on type
  */
 async function handleInteraction(
-  payload: SlackInteractionPayload
+  payload: SlackInteractionPayload,
+  _request: unknown,
+  teamId?: string
 ): Promise<NextResponse> {
+  if (teamId) {
+    console.log(`[Interactions] Request from team: ${teamId}`);
+  }
   switch (payload.type) {
     case 'block_actions':
       return handleBlockActions(payload);

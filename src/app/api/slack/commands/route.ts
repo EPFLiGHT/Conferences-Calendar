@@ -35,9 +35,16 @@ const commandHandlers: Record<
  * POST handler for Slack slash commands
  */
 async function handleSlashCommand(
-  payload: SlackCommandPayload
+  payload: SlackCommandPayload,
+  _request: unknown,
+  teamId?: string
 ): Promise<NextResponse> {
   const { command, text = '', user_id: userId } = payload;
+
+  // Log team context for debugging
+  if (teamId) {
+    console.log(`[Commands] Request from team: ${teamId}`);
+  }
 
   if (!userId) {
     return badRequestResponse('Missing user information');
@@ -52,6 +59,12 @@ async function handleSlashCommand(
   }
 
   try {
+    // For subscribe/unsubscribe, we need to pass teamId to store it with preferences
+    if (command === '/conf-subscribe' && teamId) {
+      const result = await handleSubscribe(userId, teamId);
+      return NextResponse.json(result);
+    }
+
     const result = await handler(userId, text);
     return NextResponse.json(result);
   } catch (error) {

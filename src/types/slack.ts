@@ -76,6 +76,7 @@ export interface SlackInteraction {
  */
 export interface UserPreferences {
   slackUserId: string;
+  teamId?: string; // Slack workspace/team ID (for multi-workspace support)
   notificationsEnabled: boolean;
   timezone: string; // IANA timezone (from Slack profile or manually set)
   reminderDays: number[]; // Days before deadline to notify (e.g., [30, 7, 3])

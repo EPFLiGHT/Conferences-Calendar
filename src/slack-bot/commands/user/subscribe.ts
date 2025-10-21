@@ -8,12 +8,15 @@ import { enableNotifications } from '../../lib/userPreferences';
 import { buildSuccessMessage } from '../../lib/messageBuilder';
 import { withCommandHandler } from '../../lib/commandWrapper';
 
-export async function handleSubscribe(userId: string): Promise<BlockKitMessage> {
+export async function handleSubscribe(
+  userId: string,
+  teamId?: string
+): Promise<BlockKitMessage> {
   return withCommandHandler(
     'subscribe',
     userId,
     async () => {
-      const prefs = await enableNotifications(userId);
+      const prefs = await enableNotifications(userId, teamId);
 
       return buildSuccessMessage(
         `🔔 *Notifications Enabled!*\n\n` +
