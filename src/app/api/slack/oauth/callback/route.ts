@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { storeTeamToken, storeTeamMetadata } from '@/slack-bot/lib/teamStorage';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
 /**
  * OAuth Callback Endpoint
  *
