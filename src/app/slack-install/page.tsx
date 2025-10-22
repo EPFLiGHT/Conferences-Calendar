@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { Box, Container, Flex, Text, Heading, Grid, Image, Link as ChakraLink } from '@chakra-ui/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,18 +11,6 @@ import { COMMAND_DESCRIPTIONS } from '@/slack-bot/config/constants';
  * Displays an "Add to Slack" button for OAuth installation
  */
 export default function SlackInstallPage() {
-  // Get the base URL from environment or client-side location
-  const [appUrl, setAppUrl] = useState(
-    process.env.NEXT_PUBLIC_APP_URL || 'https://conferences-calendar.vercel.app'
-  );
-
-  useEffect(() => {
-    // Update with client-side origin if no env var is set
-    if (!process.env.NEXT_PUBLIC_APP_URL && typeof window !== 'undefined') {
-      setAppUrl(window.location.origin);
-    }
-  }, []);
-
   return (
     <>
       <Header />
@@ -92,7 +79,7 @@ export default function SlackInstallPage() {
             {/* Add to Slack Button */}
             <Flex justify="center" mb="4">
               <ChakraLink
-                href={`${appUrl}/api/slack/install`}
+                href="https://conferences-calendar.vercel.app/api/slack/install"
                 display="inline-block"
                 transition="all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)"
                 _hover={{
