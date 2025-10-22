@@ -48,6 +48,31 @@ export interface SlackEvent {
 }
 
 /**
+ * Member joined channel event
+ * Fired when the bot is added to a channel
+ */
+export interface MemberJoinedChannelEvent extends SlackEvent {
+  type: 'member_joined_channel';
+  user: string; // Bot user ID
+  channel: string; // Channel ID
+  channel_type: string; // e.g., 'C' for public channel
+  team: string; // Team ID
+  inviter?: string; // User who invited the bot
+}
+
+/**
+ * Member left channel event
+ * Fired when the bot is removed from a channel
+ */
+export interface MemberLeftChannelEvent extends SlackEvent {
+  type: 'member_left_channel';
+  user: string; // Bot user ID
+  channel: string; // Channel ID
+  channel_type: string;
+  team: string; // Team ID
+}
+
+/**
  * Interactive components payload
  */
 export interface SlackInteractionPayload {

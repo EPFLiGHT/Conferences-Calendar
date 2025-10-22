@@ -79,8 +79,8 @@ CRON_SECRET=your_cron_secret
 APP_URL=https://your-app-domain.vercel.app
 CONFERENCES_DATA_URL=https://your-app-domain.vercel.app
 
-# Channel reminders (optional - for legacy single-workspace mode)
-SLACK_REMINDERS_CHANNEL_ID=C09MFHL6ETU
+# Channel reminders configuration
+# Channels are automatically tracked when the bot is added to them
 CHANNEL_REMINDER_DAYS=30,7,3
 
 # Vercel KV (Required for multi-workspace token storage)

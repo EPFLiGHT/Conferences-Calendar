@@ -1,6 +1,7 @@
 /**
  * Channel Reminders Cron Job
- * Posts upcoming conference deadlines to a configured Slack channel
+ * Posts upcoming conference deadlines to all subscribed Slack channels
+ * across all workspaces.
  *
  * Uses smart filtering to only post when deadlines are within specific reminder days
  * (e.g., 30, 7, 3 days before deadline), similar to DM notifications.
@@ -13,6 +14,7 @@ import { getConferences } from '@/slack-bot/utils/conferenceCache';
 import { getDeadlinesWithinDays } from '@/utils/conferenceQueries';
 import { postToChannel } from '@/slack-bot/lib/slackClient';
 import { buildUserDeadlineNotification } from '@/slack-bot/lib/messageBuilder';
+import { getAllActiveChannels, updateChannelLastPosted } from '@/slack-bot/lib/channelSubscriptions';
 import { logger } from '@/slack-bot/utils/logger';
 
 export const dynamic = 'force-dynamic';
@@ -30,26 +32,31 @@ const DEFAULT_CHANNEL_REMINDER_DAYS = [30, 7, 3];
  */
 async function handleChannelReminders(): Promise<NextResponse> {
   try {
-    const channelId = process.env.SLACK_REMINDERS_CHANNEL_ID;
+    const subscribedChannels = await getAllActiveChannels();
 
-    if (!channelId) {
-      logger.error('SLACK_REMINDERS_CHANNEL_ID not configured');
-      return NextResponse.json(
-        { error: 'Channel ID not configured' },
-        { status: 500 }
-      );
+    if (subscribedChannels.length === 0) {
+      logger.info('No subscribed channels found');
+      return NextResponse.json({
+        success: true,
+        message: 'No subscribed channels',
+        count: 0,
+      });
     }
+
+    logger.info('Starting channel reminders', {
+      channelCount: subscribedChannels.length,
+      channels: subscribedChannels.map(c => ({
+        id: c.channelId,
+        name: c.channelName,
+        teamId: c.teamId,
+      })),
+    });
 
     // Parse reminder days from environment or use defaults
     const reminderDaysStr = process.env.CHANNEL_REMINDER_DAYS || '';
     const reminderDays = reminderDaysStr
       ? reminderDaysStr.split(',').map(d => parseInt(d.trim(), 10)).filter(d => !isNaN(d))
       : DEFAULT_CHANNEL_REMINDER_DAYS;
-
-    logger.info('Running channel reminders check', {
-      channelId,
-      reminderDays,
-    });
 
     const allConferences = await getConferences();
 
@@ -129,27 +136,56 @@ async function handleChannelReminders(): Promise<NextResponse> {
       },
     ];
 
-    // Post to the channel
-    await postToChannel(
-      channelId,
-      blocks,
-      `Conference Deadline Reminder: ${relevantDeadlines.length} upcoming ${
-        relevantDeadlines.length === 1 ? 'deadline' : 'deadlines'
-      }`
-    );
+    const fallbackText = `Conference Deadline Reminder: ${relevantDeadlines.length} upcoming ${
+      relevantDeadlines.length === 1 ? 'deadline' : 'deadlines'
+    }`;
 
-    logger.info('Posted deadline reminders to channel', {
-      channelId,
-      count: relevantDeadlines.length,
-      reminderDays,
-    });
+    // Post to all subscribed channels
+    let successCount = 0;
+    let failureCount = 0;
+    const errors: string[] = [];
+
+    for (const channel of subscribedChannels) {
+      try {
+        await postToChannel(
+          channel.channelId,
+          blocks,
+          fallbackText,
+          channel.teamId
+        );
+
+        await updateChannelLastPosted(channel.channelId);
+
+        logger.info('Posted deadline reminders to channel', {
+          channelId: channel.channelId,
+          channelName: channel.channelName,
+          teamId: channel.teamId,
+          count: relevantDeadlines.length,
+        });
+
+        successCount++;
+      } catch (error) {
+        failureCount++;
+        const errorMsg = error instanceof Error ? error.message : 'Unknown error';
+        errors.push(`${channel.channelName} (${channel.channelId}): ${errorMsg}`);
+
+        logger.error('Failed to post to channel', error, {
+          channelId: channel.channelId,
+          channelName: channel.channelName,
+          teamId: channel.teamId,
+        });
+      }
+    }
 
     return NextResponse.json({
-      success: true,
-      message: 'Reminders posted successfully',
-      count: relevantDeadlines.length,
-      channelId,
+      success: successCount > 0,
+      message: `Reminders posted to ${successCount}/${subscribedChannels.length} channels`,
+      deadlineCount: relevantDeadlines.length,
+      channelCount: subscribedChannels.length,
+      successCount,
+      failureCount,
       reminderDays,
+      errors: errors.length > 0 ? errors : undefined,
     });
   } catch (error) {
     logger.error('Error in channel reminders cron', error);

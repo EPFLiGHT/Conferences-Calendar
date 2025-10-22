@@ -87,6 +87,20 @@ export interface UserPreferences {
 }
 
 /**
+ * Channel subscription stored in Vercel KV
+ * Tracks which channels should receive automated deadline reminders
+ */
+export interface ChannelSubscription {
+  channelId: string; // Slack channel ID
+  channelName: string; // Channel name (for display/debugging)
+  teamId: string; // Slack workspace/team ID
+  isActive: boolean; // Whether the subscription is active
+  addedBy?: string; // User ID who added the bot (optional)
+  subscribedAt: string; // ISO timestamp when bot was added to channel
+  lastPostedAt: string | null; // ISO timestamp of last reminder posted
+}
+
+/**
  * Slack Block Kit message structure
  */
 export interface BlockKitMessage {
