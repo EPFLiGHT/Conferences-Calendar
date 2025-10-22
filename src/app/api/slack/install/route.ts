@@ -11,8 +11,8 @@ export const runtime = 'nodejs';
  */
 export async function GET(request: Request) {
   const clientId = process.env.SLACK_CLIENT_ID;
-  const appUrl = process.env.APP_URL || 'https://conferences.light-laboratory.org';
-  const redirectUri = process.env.SLACK_REDIRECT_URI || `${appUrl}/api/slack/oauth/callback`;
+  const appUrl = process.env.APP_URL || 'https://conferences-calendar.vercel.app';
+  const redirectUri = `${appUrl}/api/slack/oauth/callback`;
 
   if (!clientId) {
     return NextResponse.json(

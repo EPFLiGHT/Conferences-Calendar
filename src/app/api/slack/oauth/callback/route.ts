@@ -32,7 +32,8 @@ export async function GET(request: Request) {
 
   const clientId = process.env.SLACK_CLIENT_ID;
   const clientSecret = process.env.SLACK_CLIENT_SECRET;
-  const redirectUri = process.env.SLACK_REDIRECT_URI || `${process.env.APP_URL}/api/slack/oauth/callback`;
+  const appUrl = process.env.APP_URL || 'https://conferences-calendar.vercel.app';
+  const redirectUri = `${appUrl}/api/slack/oauth/callback`;
 
   if (!clientId || !clientSecret) {
     return NextResponse.json(
@@ -86,9 +87,8 @@ export async function GET(request: Request) {
 
     console.log(`✅ Bot installed successfully for team: ${teamName} (${teamId})`);
 
-    // Redirect to success page with team name
-    const appUrl = process.env.APP_URL || 'https://conferences.light-laboratory.org';
-    const successUrl = new URL('/slack-install/success', appUrl);
+    // Redirect to success page on main user-facing domain
+    const successUrl = new URL('/slack-install/success', 'https://conferences.light-laboratory.org');
     successUrl.searchParams.set('team', teamName);
 
     return NextResponse.redirect(successUrl.toString());
