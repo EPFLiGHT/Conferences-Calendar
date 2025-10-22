@@ -115,7 +115,7 @@ Conferences-Calendar/
 │   ├── data/
 │   │   └── conferences.yaml   # Conference data source
 │   ├── icons/
-│   │   └── icon.svg           # Favicon
+│   │   └── favicon.svg        # Favicon
 │   ├── light-logo.svg         # Lab logo
 │   ├── light-banner.png       # Social sharing banner
 │   └── CNAME                  # GitHub Pages custom domain

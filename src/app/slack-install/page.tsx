@@ -1,18 +1,28 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { Box, Container, Flex, Text, Heading, Grid, Image, Link as ChakraLink } from '@chakra-ui/react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { COLORS, SHADOWS, brandAlpha } from '@/theme';
+import { COMMAND_DESCRIPTIONS } from '@/slack-bot/config/constants';
 
 /**
  * Slack Bot Installation Landing Page
  * Displays an "Add to Slack" button for OAuth installation
  */
 export default function SlackInstallPage() {
-  // Get the base URL from environment
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL ||
-    (typeof window !== 'undefined' ? window.location.origin : 'https://conferences-calendar.vercel.app');
+  // Get the base URL from environment or client-side location
+  const [appUrl, setAppUrl] = useState(
+    process.env.NEXT_PUBLIC_APP_URL || 'https://conferences-calendar.vercel.app'
+  );
+
+  useEffect(() => {
+    // Update with client-side origin if no env var is set
+    if (!process.env.NEXT_PUBLIC_APP_URL && typeof window !== 'undefined') {
+      setAppUrl(window.location.origin);
+    }
+  }, []);
 
   return (
     <>
@@ -21,15 +31,24 @@ export default function SlackInstallPage() {
         <Container maxW="1200px" px={{ base: '4', md: '6' }} mx="auto">
           {/* Hero Section */}
           <Box textAlign="center" mb="16">
-            {/* Animated Icon */}
+            {/* Slack Bot Logo */}
             <Flex justify="center" mb="8">
               <Box
-                fontSize="8xl"
-                lineHeight="1"
-                transition="transform 0.3s ease"
-                _hover={{ transform: 'scale(1.1) rotate(5deg)' }}
+                p="4"
+                bg={`linear-gradient(135deg, ${brandAlpha(500, 0.05)} 0%, ${brandAlpha(400, 0.08)} 100%)`}
+                borderRadius="32px"
+                border="2px solid"
+                borderColor="brand.200"
+                boxShadow={`0 4px 16px ${brandAlpha(500, 0.1)}`}
+                display="inline-block"
               >
-                📅
+                <Image
+                  src="/slack-bot-logo.png"
+                  alt="Conferences Calendar Slack Bot"
+                  h={{ base: '100px', md: '120px' }}
+                  w="auto"
+                  borderRadius="24px"
+                />
               </Box>
             </Flex>
 
@@ -181,14 +200,9 @@ export default function SlackInstallPage() {
               templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
               gap="4"
             >
-              {[
-                { cmd: '/conf-upcoming', desc: 'Show next deadlines', color: 'brand.500' },
-                { cmd: '/conf-search', desc: 'Search conferences', color: 'brand.400' },
-                { cmd: '/conf-subscribe', desc: 'Enable notifications', color: 'brand.600' },
-                { cmd: '/conf-help', desc: 'See all commands', color: 'brand.500' },
-              ].map((command, index) => (
+              {Object.entries(COMMAND_DESCRIPTIONS).map(([cmd, desc]) => (
                 <Flex
-                  key={index}
+                  key={cmd}
                   align="center"
                   gap="4"
                   p="4"
@@ -212,28 +226,18 @@ export default function SlackInstallPage() {
                     fontFamily="mono"
                     fontSize="sm"
                     fontWeight="600"
-                    color={command.color}
+                    color="brand.500"
                     boxShadow="sm"
                     whiteSpace="nowrap"
                   >
-                    {command.cmd}
+                    /conf {cmd}
                   </Box>
                   <Text fontSize="sm" color="gray.600" flex="1">
-                    {command.desc}
+                    {desc}
                   </Text>
                 </Flex>
               ))}
             </Grid>
-          </Box>
-
-          {/* Footer Section */}
-          <Box mt="16" pt="8" borderTop="2px solid" borderColor="brand.100" textAlign="center">
-            <Text fontSize="md" color="gray.600" mb="2">
-              Built with ❤️ for academic researchers and conference attendees
-            </Text>
-            <Text fontSize="sm" color="gray.500">
-              LiGHT Laboratory • EPFL
-            </Text>
           </Box>
         </Container>
       </Box>

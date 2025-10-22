@@ -87,7 +87,8 @@ export async function GET(request: Request) {
     console.log(`✅ Bot installed successfully for team: ${teamName} (${teamId})`);
 
     // Redirect to success page with team name
-    const successUrl = new URL('/slack-install/success', request.url);
+    const appUrl = process.env.APP_URL || 'https://conferences.light-laboratory.org';
+    const successUrl = new URL('/slack-install/success', appUrl);
     successUrl.searchParams.set('team', teamName);
 
     return NextResponse.redirect(successUrl.toString());

@@ -188,16 +188,6 @@ function SuccessContent() {
             >
               Open Slack →
             </ChakraLink>
-
-            {/* Footer */}
-            <Box mt="10" pt="6" borderTop="2px solid" borderColor="brand.100">
-              <Text fontSize="sm" color="gray.600" mb="1">
-                Built with ❤️ for academic researchers and conference attendees
-              </Text>
-              <Text fontSize="xs" color="gray.500">
-                LiGHT Laboratory • EPFL
-              </Text>
-            </Box>
           </Box>
         </Container>
       </Box>
