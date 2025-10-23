@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { COLORS, SHADOWS, brandAlpha } from '@/theme';
 import { COMMAND_DESCRIPTIONS } from '@/slack-bot/config/constants';
+import Link from 'next/link';
 
 /**
  * Slack Bot Installation Landing Page
@@ -102,6 +103,20 @@ export default function SlackInstallPage() {
 
             <Text fontSize="sm" color="gray.500">
               Free for all Slack workspaces
+            </Text>
+
+            {/* Privacy Policy Link */}
+            <Text fontSize="sm" color="gray.500" mt="2">
+              By installing, you agree to our{' '}
+              <ChakraLink
+                as={Link}
+                href="/slack-install/privacy"
+                color="brand.600"
+                fontWeight="600"
+                _hover={{ textDecoration: 'underline' }}
+              >
+                Privacy Policy
+              </ChakraLink>
             </Text>
           </Box>
 
@@ -225,6 +240,23 @@ export default function SlackInstallPage() {
                 </Flex>
               ))}
             </Grid>
+          </Box>
+
+          {/* Footer Links */}
+          <Box textAlign="center" mt="12" pt="8" borderTop="1px solid" borderColor="gray.200">
+            <Text fontSize="sm" color="gray.600">
+              <ChakraLink
+                as={Link}
+                href="/slack-install/privacy"
+                color="brand.600"
+                fontWeight="500"
+                _hover={{ textDecoration: 'underline' }}
+              >
+                Privacy Policy
+              </ChakraLink>
+              {' • '}
+              © {new Date().getFullYear()} LiGHT Laboratory
+            </Text>
           </Box>
         </Container>
       </Box>
