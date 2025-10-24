@@ -425,7 +425,7 @@ export function buildUserDeadlineNotification(
         type: 'button',
         text: {
           type: 'plain_text',
-          text: 'View Website',
+          text: '🌐 View Website',
           emoji: true,
         },
         url: conference.link,
@@ -436,7 +436,7 @@ export function buildUserDeadlineNotification(
       type: 'button',
       text: {
         type: 'plain_text',
-        text: 'Add to Calendar',
+        text: '📅 Add to Calendar',
         emoji: true,
       },
       action_id: `calendar_${conference.id}`,
