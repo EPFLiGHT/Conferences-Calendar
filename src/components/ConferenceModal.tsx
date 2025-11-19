@@ -8,6 +8,7 @@ import {
   VStack,
   Portal,
 } from '@chakra-ui/react';
+import { X, Globe, FileText, Code, Calendar } from 'lucide-react';
 import DeadlineCard from './DeadlineCard';
 import ExternalLinkButton from './ExternalLinkButton';
 import ConferenceDetails from './ConferenceDetails';
@@ -102,7 +103,6 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
               right="4"
               variant="ghost"
               size="sm"
-              fontSize="xl"
               color="gray.600"
               transition="all 0.2s ease-in-out"
               _hover={{ bg: 'gray.100', color: 'gray.800' }}
@@ -110,7 +110,7 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
               onClick={handleClose}
               aria-label="Close"
             >
-              ✕
+              <X size={20} />
             </Button>
             <VStack align="start" gap="2" pr="12">
               <Heading as="h2" size="xl" color="gray.800">
@@ -160,17 +160,26 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
               <Flex gap="3" wrap="wrap">
                 {conference.link && (
                   <ExternalLinkButton href={conference.link} variant="primary" size="md" px="6">
-                    🌐 Conference Website
+                    <Flex align="center" gap="2">
+                      <Globe size={16} />
+                      <span>Conference Website</span>
+                    </Flex>
                   </ExternalLinkButton>
                 )}
                 {conference.paperslink && (
                   <ExternalLinkButton href={conference.paperslink} variant="secondary" size="md" px="6">
-                    📄 Accepted Papers
+                    <Flex align="center" gap="2">
+                      <FileText size={16} />
+                      <span>Accepted Papers</span>
+                    </Flex>
                   </ExternalLinkButton>
                 )}
                 {conference.pwclink && (
                   <ExternalLinkButton href={conference.pwclink} variant="secondary" size="md" px="6">
-                    💻 Papers with Code
+                    <Flex align="center" gap="2">
+                      <Code size={16} />
+                      <span>Papers with Code</span>
+                    </Flex>
                   </ExternalLinkButton>
                 )}
                 <Button
@@ -179,7 +188,10 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                   px="6"
                   {...secondaryButtonStyle}
                 >
-                  📅 Export to Calendar
+                  <Flex align="center" gap="2">
+                    <Calendar size={16} />
+                    <span>Export to Calendar</span>
+                  </Flex>
                 </Button>
               </Flex>
             </Box>

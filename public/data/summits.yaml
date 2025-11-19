@@ -1,0 +1,143 @@
+- title: AI4Good
+  year: 2025
+  id: ai4good25
+  full_name: AI for Good Global Summit
+  link: "https://aiforgood.itu.int/"
+  timezone: America/New_York
+  place: "the world. Message on behalf of His Holiness Pope Leo XIV We all now have I think a much greater level of awareness around AI and we all need to shift into that as fast as possible because this technology is moving so fast. Marc Benioff Chair and CEO, Salesforce Latest from blog Bringing AI into human rights"
+  date: "July 7-10, 2026"
+  start: "2026-07-07"
+  end: "2026-07-10"
+  paperslink: "#"
+  sub: AI
+  type: summit
+- title: Latsis Symposium
+  year: 2025
+  id: latsissymposium25
+  full_name: Latsis Symposium (ETH Zurich)
+  link: "https://latsis2025.ethz.ch/"
+  timezone: UTC
+  place: 
+  sub: AI
+  type: summit
+  note: Scrape failed
+- title: Global AI Summit on Africa
+  year: 2025
+  id: globalaisummitonafrica25
+  full_name: Global AI Summit on Africa
+  link: "https://c4ir.rw/global-ai-summit-on-africa"
+  timezone: Africa/Kigali
+  place: "collaboration with the World Economic Forum, hosted the inaugural Global AI Summit on Africa in Kigali"
+  date: "April 3, 2025"
+  start: "2025-04-03"
+  end: "2025-04-03"
+  sub: AI
+  type: summit
+- title: GDHF
+  year: 2025
+  id: gdhf25
+  full_name: Global Digital Health Forum
+  link: "https://www.gdhf.digital/"
+  timezone: UTC
+  place: "Africa PATH Peek Vision Limited Physicians for Human Rights, Kenya Population Council - GIRL Center Population Services International"
+  sub: Global Health
+  type: summit
+- title: GDHN
+  year: 2025
+  id: gdhn25
+  full_name: Global Digital Health Network
+  link: "https://www.globaldigitalhealthnetwork.org/"
+  timezone: UTC
+  place: 
+  sub: Global Health
+  type: summit
+  note: Scrape failed
+- title: WHS
+  year: 2025
+  id: whs25
+  full_name: World Health Summit
+  link: "https://www.worldhealthsummit.org/events/annual-whs"
+  timezone: UTC
+  place: "a new venue for the first time, WHS"
+  sub: Global Health
+  type: summit
+- title: Swiss TB Symposium
+  year: 2025
+  id: swisstbsymposium25
+  full_name: Swiss TB Symposium
+  link: "https://www.swisstph.ch/en/about/events/tb-symposium-2023"
+  timezone: Europe/Paris
+  place: "the Response, Matteo Zignol"
+  date: "March 21-22, 2023"
+  start: "2023-03-21"
+  end: "2023-03-22"
+  sub: Global Health
+  type: summit
+- title: WMA
+  year: 2025
+  id: wma25
+  full_name: World Medical Assembly
+  link: "https://www.wma.net/what-we-do/events/"
+  timezone: UTC
+  place: "the spring and again in autumn immediately preceding the annual WMA General Assembly. The General Assembly is the supreme decision-making body of the WMA and its meetings are open to delegations from all WMA constituent members, as well as observers and other invited guests. In addition to its Council and General Assembly meetings"
+  date: "November 24, 2025"
+  start: "2025-11-24"
+  end: "2025-11-24"
+  sub: Global Health
+  type: summit
+- title: WEF
+  year: 2025
+  id: wef25
+  full_name: World Economic Forum
+  link: "https://www.weforum.org/"
+  timezone: UTC
+  place: 
+  sub: Global Health
+  type: summit
+  note: Scrape failed
+- title: EDCTP Forum
+  year: 2025
+  id: edctpforum25
+  full_name: "European & Developing Countries Clinical Trials Partnership Forum"
+  link: "https://edctpforum.eu/"
+  timezone: UTC
+  place: "the Twelfth EDCTP Forum, a unique platform for policymakers"
+  date: "June 15-20, 2025"
+  start: "2025-06-15"
+  end: "2025-06-20"
+  sub: Global Health
+  type: summit
+- title: World Health Assembly
+  year: 2025
+  id: worldhealthassembly25
+  full_name: World Health Assembly
+  link: "https://www.who.int/about/governance/world-health-assembly"
+  timezone: UTC
+  place: "Geneva, Switzerland. World Health Assembly"
+  date: "May 19-27, 2025"
+  start: "2025-05-19"
+  end: "2025-05-27"
+  sub: Global Health
+  type: summit
+- title: UNGA
+  year: 2025
+  id: unga25
+  full_name: United Nations General Assembly
+  link: "https://sdg.iisd.org/events/80th-session-of-the-un-general-assembly-unga-80/"
+  timezone: UTC
+  place: 
+  sub: Global Health
+  type: summit
+  note: Scrape failed
+- title: THS
+  year: 2025
+  id: ths25
+  full_name: Tanzania health summit
+  link: "https://ths.or.tz/"
+  timezone: UTC
+  place: "the country, mostly living in resource poor setting. In addition"
+  date: "OCTOBER 1-3, 2025"
+  start: "2025-10-01"
+  end: "2025-10-03"
+  sub: Global Health
+  type: summit

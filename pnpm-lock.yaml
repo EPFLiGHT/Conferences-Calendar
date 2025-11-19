@@ -50,6 +50,9 @@ importers:
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
+      lucide-react:
+        specifier: ^0.553.0
+        version: 0.553.0(react@19.2.0)
       luxon:
         specifier: ^3.4.4
         version: 3.7.2
@@ -898,6 +901,11 @@ packages:
 
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
+
+  lucide-react@0.553.0:
+    resolution: {integrity: sha512-BRgX5zrWmNy/lkVAe0dXBgd7XQdZ3HTf+Hwe3c9WK6dqgnj9h+hxV+MDncM88xDWlCq27+TKvHGE70ViODNILw==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   luxon@3.7.2:
     resolution: {integrity: sha512-vtEhXh/gNjI9Yg1u4jX/0YVPMvxzHuGgCm6tC5kZyb08yjGWGnqAjGJvcXbqQR2P3MyMEFnRbpcdFS6PBcLqew==}
@@ -2264,6 +2272,10 @@ snapshots:
   json-parse-even-better-errors@2.3.1: {}
 
   lines-and-columns@1.2.4: {}
+
+  lucide-react@0.553.0(react@19.2.0):
+    dependencies:
+      react: 19.2.0
 
   luxon@3.7.2: {}
 

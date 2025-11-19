@@ -1,4 +1,5 @@
 import { Flex, Grid, Text, VStack } from '@chakra-ui/react';
+import { MapPin, Calendar as CalendarIcon, BarChart3, type LucideIcon } from 'lucide-react';
 import SubjectBadge from './SubjectBadge';
 import NoteBadge from './NoteBadge';
 import type { Conference } from '@/types/conference';
@@ -13,25 +14,25 @@ interface ConferenceDetailsProps {
 
 const CARD_FIELDS: Array<{
   key: string;
-  icon: string;
+  Icon: LucideIcon;
   label: string;
   getValue: (conference: Conference) => string | number;
 }> = [
   {
     key: 'location',
-    icon: '📍',
+    Icon: MapPin,
     label: 'Location:',
     getValue: (conf) => conf.place || 'TBA',
   },
   {
     key: 'date',
-    icon: '📅',
+    Icon: CalendarIcon,
     label: 'Date:',
     getValue: (conf) => conf.date || 'TBA',
   },
   {
     key: 'hindex',
-    icon: '📊',
+    Icon: BarChart3,
     label: 'H-Index:',
     getValue: (conf) => conf.hindex ?? 0,
   },
@@ -114,10 +115,11 @@ export default function ConferenceDetails({
         }
 
         return (
-          <Flex key={field.key} fontSize="sm">
-            <Text color="gray.600" fontWeight="500" minW="100px">
-              {field.icon} {field.label}
-            </Text>
+          <Flex key={field.key} fontSize="sm" align="center">
+            <Flex align="center" gap="1.5" color="gray.600" fontWeight="500" minW="100px">
+              <field.Icon size={14} />
+              <Text>{field.label}</Text>
+            </Flex>
             <Text color="gray.800">{field.getValue(conference)}</Text>
           </Flex>
         );

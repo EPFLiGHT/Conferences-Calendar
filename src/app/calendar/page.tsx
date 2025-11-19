@@ -7,6 +7,7 @@ import {
   Container,
   Flex,
 } from '@chakra-ui/react';
+import { MapPin, Download } from 'lucide-react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -167,7 +168,10 @@ function CalendarContent() {
               px="6"
               {...secondaryButtonStyle}
             >
-              📍 Today
+              <Flex align="center" gap="2">
+                <MapPin size={16} />
+                <span>Today</span>
+              </Flex>
             </Button>
             <Button
               onClick={handleExportAll}
@@ -175,7 +179,10 @@ function CalendarContent() {
               px="6"
               {...brandButtonStyle}
             >
-              📥 Export All ({filteredConferences.length} conferences)
+              <Flex align="center" gap="2">
+                <Download size={16} />
+                <span>Export All ({filteredConferences.length} conferences)</span>
+              </Flex>
             </Button>
           </Flex>
 

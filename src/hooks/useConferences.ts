@@ -24,7 +24,7 @@ export function useConferences(): UseConferencesReturn {
 
   useEffect(() => {
     const basePath = '';
-    fetch(`${basePath}/data/conferences.yaml`)
+    fetch(`${basePath}/data/all-data.yaml`)
       .then((response) => {
         if (!response.ok) {
           throw new Error('Failed to fetch conferences data');

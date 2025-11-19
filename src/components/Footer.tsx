@@ -3,6 +3,7 @@
 import { Box, Container, Flex, Text, Link, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { GRADIENTS, brandAlpha } from '@/theme';
+import { MapPin, Mail, Linkedin, Github, Activity } from 'lucide-react';
 
 export default function Footer(): JSX.Element {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -232,9 +233,12 @@ export default function Footer(): JSX.Element {
               }}
             >
               <Box>
-                <Text fontSize="md" fontWeight="700" color="brand.500" mb="2">
-                  Location
-                </Text>
+                <Flex align="center" gap="2" mb="2">
+                  <MapPin size={18} color="var(--chakra-colors-brand-500)" />
+                  <Text fontSize="md" fontWeight="700" color="brand.500">
+                    Location
+                  </Text>
+                </Flex>
                 <Text fontSize="sm" color="gray.600" fontWeight="500">
                   EPFL, Lausanne, Switzerland
                 </Text>
@@ -244,9 +248,12 @@ export default function Footer(): JSX.Element {
               </Box>
 
               <Box>
-                <Text fontSize="md" fontWeight="700" color="brand.500" mb="2">
-                  Email
-                </Text>
+                <Flex align="center" gap="2" mb="2">
+                  <Mail size={18} color="var(--chakra-colors-brand-500)" />
+                  <Text fontSize="md" fontWeight="700" color="brand.500">
+                    Email
+                  </Text>
+                </Flex>
                 <Link
                   href="mailto:mary-anne.hartley@epfl.ch"
                   fontSize="sm"
@@ -276,9 +283,12 @@ export default function Footer(): JSX.Element {
               </Box>
 
               <Box>
-                <Text fontSize="md" fontWeight="700" color="brand.500" mb="2">
-                  LinkedIn
-                </Text>
+                <Flex align="center" gap="2" mb="2">
+                  <Linkedin size={18} color="var(--chakra-colors-brand-500)" />
+                  <Text fontSize="md" fontWeight="700" color="brand.500">
+                    LinkedIn
+                  </Text>
+                </Flex>
                 <Link
                   href="https://www.linkedin.com/company/light-laboratory/"
                   target="_blank"
@@ -311,6 +321,49 @@ export default function Footer(): JSX.Element {
             </Flex>
             </Flex>
 
+            {/* Activity icon separator with line */}
+            <Box
+              position="relative"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              w="100%"
+              my="6"
+              opacity={isVisible ? 1 : 0}
+              transition="opacity 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s"
+            >
+              {/* Left line */}
+              <Box
+                flex="1"
+                h="1px"
+                bg="gray.200"
+              />
+
+              {/* Activity icon in the middle */}
+              <Box
+                bg="white"
+                borderRadius="50%"
+                p="2"
+                mx="4"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                boxShadow={`0 4px 12px ${brandAlpha(500, 0.2)}`}
+                css={{
+                  animation: isVisible ? 'fadeSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s both' : 'none',
+                }}
+              >
+                <Activity size={20} color="var(--chakra-colors-brand-500)" strokeWidth={2.5} />
+              </Box>
+
+              {/* Right line */}
+              <Box
+                flex="1"
+                h="1px"
+                bg="gray.200"
+              />
+            </Box>
+
             {/* Bottom section: Credits */}
             <Flex
               direction="column"
@@ -319,9 +372,6 @@ export default function Footer(): JSX.Element {
               textAlign="center"
               opacity={textOpacity}
               transition="opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1)"
-              borderTop="1px solid"
-              borderColor="gray.200"
-              pt="8"
             >
               <Box
                 css={{
@@ -402,8 +452,10 @@ export default function Footer(): JSX.Element {
                   animation: isVisible ? 'fadeSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both' : 'none',
                 }}
               >
-                <Text fontSize="sm" color="gray.600">
-                  Contribute on{' '}
+                <Flex align="center" justify="center" gap="1.5">
+                  <Text fontSize="sm" color="gray.600">
+                    Contribute on{' '}
+                  </Text>
                   <Link
                     href="https://github.com/EPFLiGHT/Conferences-Calendar"
                     target="_blank"
@@ -412,6 +464,9 @@ export default function Footer(): JSX.Element {
                     fontWeight="600"
                     position="relative"
                     transition="color 0.3s ease"
+                    display="inline-flex"
+                    alignItems="center"
+                    gap="1.5"
                     _hover={{
                       color: 'brand.400',
                       _after: {
@@ -429,9 +484,10 @@ export default function Footer(): JSX.Element {
                       transition: 'width 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     }}
                   >
+                    <Github size={16} />
                     GitHub
                   </Link>
-                </Text>
+                </Flex>
               </Box>
 
               {/* Nice gradient divider line */}

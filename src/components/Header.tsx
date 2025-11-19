@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import NextLink from 'next/link';
 import { Box, Container, Flex, HStack, Link, Text, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { Home, Calendar } from 'lucide-react';
 import { GRADIENTS, brandAlpha } from '@/theme';
 
 export default function Header(): JSX.Element {
@@ -157,9 +158,9 @@ export default function Header(): JSX.Element {
           {/* Navigation */}
           <HStack gap="3">
             {[
-              { href: '/', label: 'Home', icon: '🏠' },
-              { href: '/calendar', label: 'Calendar', icon: '📅' },
-            ].map(({ href, label, icon }) => {
+              { href: '/', label: 'Home', Icon: Home },
+              { href: '/calendar', label: 'Calendar', Icon: Calendar },
+            ].map(({ href, label, Icon }) => {
               const isActive = pathname === href;
               return (
                 <Link
@@ -191,7 +192,10 @@ export default function Header(): JSX.Element {
                     transition: 'all 0.1s ease',
                   }}
                 >
-                  {icon} <Text as="span" display={{ base: 'none', sm: 'inline' }} ml="2">{label}</Text>
+                  <Flex align="center" gap="2">
+                    <Icon size={18} />
+                    <Text as="span" display={{ base: 'none', sm: 'inline' }}>{label}</Text>
+                  </Flex>
                 </Link>
               );
             })}
