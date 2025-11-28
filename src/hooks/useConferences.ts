@@ -1,10 +1,10 @@
 /**
  * useConferences Hook
  *
- * Custom hook that fetches conference data from the YAML file.
- * Centralizes the data fetching logic used across multiple pages.
+ * Custom hook that fetches and manages conference data from multiple YAML sources.
+ * Consolidates conferences, summits, and workshops into a unified list.
  *
- * @returns {object} { conferences, loading, error }
+ * @returns Object with conferences array, loading state, and error message
  */
 
 import { useState, useEffect } from 'react';
@@ -23,23 +23,38 @@ export function useConferences(): UseConferencesReturn {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const basePath = '';
-    fetch(`${basePath}/data/all-data.yaml`)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to fetch conferences data');
+    const fetchAllData = async () => {
+      try {
+        const [conferencesRes, summitsRes, workshopsRes] = await Promise.all([
+          fetch('/data/conferences.yaml'),
+          fetch('/data/summits.yaml'),
+          fetch('/data/workshops.yaml'),
+        ]);
+
+        if (!conferencesRes.ok || !summitsRes.ok || !workshopsRes.ok) {
+          throw new Error('Failed to fetch data files');
         }
-        return response.text();
-      })
-      .then((yamlText) => {
-        const parsed = parseConferences(yamlText);
-        setConferences(parsed);
+
+        const [conferencesText, summitsText, workshopsText] = await Promise.all([
+          conferencesRes.text(),
+          summitsRes.text(),
+          workshopsRes.text(),
+        ]);
+
+        const conferencesData = parseConferences(conferencesText);
+        const summitsData = parseConferences(summitsText);
+        const workshopsData = parseConferences(workshopsText);
+
+        const allData = [...conferencesData, ...summitsData, ...workshopsData];
+        setConferences(allData);
         setLoading(false);
-      })
-      .catch((err: Error) => {
-        setError(err.message);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
         setLoading(false);
-      });
+      }
+    };
+
+    fetchAllData();
   }, []);
 
   return { conferences, loading, error };

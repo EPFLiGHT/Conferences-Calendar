@@ -123,6 +123,24 @@ export const SUBJECTS: Record<string, SubjectConfig> = {
     emoji: '⚙️',
     colors: SUBJECT_COLOR_PALETTES.rose,
   },
+  AI: {
+    code: 'AI',
+    label: 'Artificial Intelligence',
+    emoji: '🧠',
+    colors: SUBJECT_COLOR_PALETTES.indigo,
+  },
+  'Global Health': {
+    code: 'Global Health',
+    label: 'Global Health',
+    emoji: '🏥',
+    colors: SUBJECT_COLOR_PALETTES.cyan,
+  },
+  'Med-Imaging': {
+    code: 'Med-Imaging',
+    label: 'Medical Imaging',
+    emoji: '🔬',
+    colors: SUBJECT_COLOR_PALETTES.teal,
+  },
 } as const;
 
 /**

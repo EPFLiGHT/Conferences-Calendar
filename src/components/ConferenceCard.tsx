@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import DeadlineCard from './DeadlineCard';
 import ExternalLinkButton from './ExternalLinkButton';
 import SubjectBadge from './SubjectBadge';
+import TypeBadge from './TypeBadge';
 import NoteBadge from './NoteBadge';
 import ConferenceDetails from './ConferenceDetails';
 import { getDeadlineInfo } from '@/utils/parser';
@@ -61,11 +62,14 @@ export default function ConferenceCard({ conference, onClick, index = 0 }: Confe
           <Heading as="h3" size="lg" color="gray.800" flex="1" minW="200px">
             {conference.title} {conference.year}
           </Heading>
-          <SubjectBadge
-            subjects={conference.sub}
-            justify="flex-end"
-            align="center"
-          />
+          <Flex gap="2" align="center" wrap="wrap" justify="flex-end">
+            <TypeBadge type={conference.type} />
+            <SubjectBadge
+              subjects={conference.sub}
+              justify="flex-end"
+              align="center"
+            />
+          </Flex>
         </Flex>
         {conference.note && (
           <NoteBadge note={conference.note} />

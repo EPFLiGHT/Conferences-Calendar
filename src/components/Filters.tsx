@@ -27,6 +27,17 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
     return [...subjectSet].sort();
   }, [conferences]);
 
+  const types = ['conference', 'summit', 'workshop'];
+
+  const getTypeColor = (type: string) => {
+    const colors = {
+      conference: { bg: '#f3e8ff', color: '#9333EA', border: '#d8b4fe' },
+      workshop: { bg: '#ccfbf1', color: '#14B8A6', border: '#5eead4' },
+      summit: { bg: '#fef3c7', color: '#F59E0B', border: '#fde68a' },
+    };
+    return colors[type as keyof typeof colors] || colors.conference;
+  };
+
   return (
     <Box>
       <Grid
@@ -83,6 +94,77 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
             </NativeSelectField>
           </NativeSelectRoot>
         </Flex>
+
+        {/* Type */}
+        <Box gridColumn={{ base: '1', md: '1 / -1' }}>
+          <Text fontSize="sm" fontWeight="600" color="gray.700" mb="2">
+            Type: {filters.type && (
+              <Text as="span" color={getTypeColor(filters.type).color} textTransform="capitalize">
+                {filters.type}
+              </Text>
+            )}
+            {!filters.type && (
+              <Text as="span" color="brand.600">All</Text>
+            )}
+          </Text>
+          <Flex gap="2" wrap="wrap">
+            <Button
+              size="sm"
+              px="4"
+              borderRadius="full"
+              fontWeight="500"
+              bg={filters.type === '' ? 'brand.500' : 'brand.50'}
+              color={filters.type === '' ? 'white' : 'brand.500'}
+              border="1px"
+              borderColor={filters.type === '' ? 'brand.500' : 'brand.200'}
+              onClick={() => onFilterChange({ type: '' })}
+              transition="all 0.2s ease-in-out"
+              position="relative"
+              zIndex="1"
+              _hover={{
+                bg: filters.type === '' ? 'brand.600' : 'brand.100',
+                transform: 'translateY(-1px)',
+              }}
+              _active={{
+                transform: 'scale(0.97)',
+              }}
+            >
+              All
+            </Button>
+            {types.map(type => {
+              const colors = getTypeColor(type);
+              const isSelected = filters.type === type;
+              return (
+                <Button
+                  key={type}
+                  size="sm"
+                  px="4"
+                  borderRadius="full"
+                  fontWeight="500"
+                  textTransform="capitalize"
+                  bg={isSelected ? colors.color : colors.bg}
+                  color={isSelected ? 'white' : colors.color}
+                  border="1px"
+                  borderColor={isSelected ? colors.color : colors.border}
+                  onClick={() => onFilterChange({ type })}
+                  transition="all 0.2s ease-in-out"
+                  position="relative"
+                  zIndex="1"
+                  _hover={{
+                    bg: isSelected ? colors.color : colors.bg,
+                    transform: 'translateY(-1px)',
+                    opacity: 0.9,
+                  }}
+                  _active={{
+                    transform: 'scale(0.97)',
+                  }}
+                >
+                  {type}
+                </Button>
+              );
+            })}
+          </Flex>
+        </Box>
 
         {/* Subject */}
         <Box gridColumn={{ base: '1', md: '1 / -1' }}>

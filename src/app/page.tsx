@@ -28,6 +28,7 @@ export default function Page() {
     sortBy: 'deadline',
     year: '',
     subject: '',
+    type: '',
   });
 
   const scrollToTop = () => {

@@ -28,7 +28,6 @@ export default function Footer(): JSX.Element {
 
   // Animation values that change as you scroll
   const bannerScale = 0.85 + (scrollProgress / 100) * 0.15;
-  const bannerRotate = (100 - scrollProgress) * 0.05;
   const textOpacity = Math.min(scrollProgress / 75, 1);
   const waveOffset = scrollProgress * 1.5;
 
@@ -164,7 +163,7 @@ export default function Footer(): JSX.Element {
                 target="_blank"
                 rel="noopener noreferrer"
                 display="block"
-                transform={`scale(${bannerScale}) rotate(${bannerRotate}deg)`}
+                transform={`scale(${bannerScale})`}
                 transition="transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
                 style={{
                   transformOrigin: 'center',

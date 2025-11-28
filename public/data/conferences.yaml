@@ -164,7 +164,7 @@
   type: conference
 - title: WACV
   year: 2026
-  id: wacv26
+  id: wacv26-dup1
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: "https://wacv.thecvf.com/"
   timezone: UTC
@@ -292,7 +292,7 @@
   type: conference
 - title: WACV
   year: 2026
-  id: wacv26
+  id: wacv26-dup2
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
   link: "https://wacv.thecvf.com/"
   timezone: UTC
@@ -303,21 +303,9 @@
   paperslink: /Conferences/2026/CallForPapers
   sub: CV
   type: conference
-- title: EACL
-  year: 2026
-  id: eacl26
-  full_name: The 18th Conference of the European Chapter of the Association for Computational Linguistics
-  link: "https://2024.eacl.org/"
-  timezone: America/New_York
-  place: "Malta, from"
-  date: "ticsMarch 17-22, 2024"
-  start: "2024-00-17"
-  end: "2024-00-22"
-  sub: NLP
-  type: conference
 - title: ECIR
   year: 2026
-  id: ecir26
+  id: ecir26-dup1
   full_name: European Conference on Information Retrieval
   link: "https://ecir2026.eu/"
   timezone: UTC
@@ -330,7 +318,7 @@
   type: conference
 - title: CHI
   year: 2026
-  id: chi26
+  id: chi26-dup1
   full_name: AAAI Conference on Artificial Intelligence
   link: "https://aaai.org/"
   timezone: UTC
@@ -387,7 +375,7 @@
   type: conference
 - title: AAAI
   year: 2026
-  id: aaai26
+  id: aaai26-dup1
   full_name: AAAI Conference on Artificial Intelligence
   link: "https://aaai.org/"
   timezone: UTC
@@ -424,7 +412,7 @@
   type: conference
 - title: SIGGRAPH Asia
   year: 2026
-  id: siggraphasia26
+  id: siggraphasia26-dup1
   full_name: SIGGRAPH ASIA 2022
   link: "https://sa2022.siggraph.org/en/index.html"
   timezone: UTC
@@ -447,19 +435,6 @@
   end: "2023-04-14"
   paperslink: "https://www.evostar.org/2023/eurogp-accepted-papers/"
   sub: ML
-  type: conference
-- title: LOG
-  year: 2026
-  id: log26
-  full_name: Learning on Graphs Conference
-  link: "https://logconference.org/"
-  timezone: UTC
-  place: "past years, LoG"
-  date: "December 10-12, 2025"
-  start: "2025-12-10"
-  end: "2025-12-12"
-  paperslink: /cfp
-  sub: NLP
   type: conference
 - title: ECML/PKDD
   year: 2026
@@ -646,21 +621,7 @@
   timezone: UTC
   place: "the fields of Network and Cloud Computing. NCA, sponsored by IEEE Computer Society"
   paperslink: "cf-papers.html"
-  sub: 
-  type: conference
-- title: SaTML
-  year: 2026
-  id: satml26
-  full_name: IEEE Conference on Secure and Trustworthy Machine Learning
-  link: "https://satml.org/"
-  deadline: "2025-09-24 23:59"
-  timezone: "UTC-12"
-  place: "developing a unified, coherent scientific community which aims to establish trustworthy machine learning. Topics of interest include"
-  date: "March 23-25, 2026"
-  start: "2026-03-23"
-  end: "2026-03-25"
-  paperslink: "https://satml.org/call-for-papers/"
-  sub: ML
+  sub:
   type: conference
 - title: DevSecOpsRO
   year: 2026
@@ -684,7 +645,7 @@
   note: Scrape failed
 - title: AMLD Africa
   year: 2026
-  id: AI
+  id: AI-dup1
   full_name: Applied Machine Learning Days Africa
   link: "https://appliedmldays.org/"
   timezone: UTC
@@ -694,7 +655,7 @@
   note: Scrape failed
 - title: SDSC Connect
   year: 2026
-  id: AI
+  id: AI-dup2
   full_name: SDSC Connect
   link: "https://www.sdsc-connect.ch"
   timezone: UTC
@@ -706,7 +667,7 @@
   type: conference
 - title: CHIL
   year: 2026
-  id: AI
+  id: AI-dup3
   full_name: "Conference on Health, Inference, and Learning"
   link: "https://chil.ahli.cc/"
   timezone: UTC
@@ -719,7 +680,7 @@
   type: conference
 - title: MLHC
   year: 2026
-  id: AI
+  id: AI-dup4
   full_name: Machine Learning for Healthcare
   link: "https://www.mlforhc.org/"
   timezone: UTC
@@ -731,7 +692,7 @@
   type: conference
 - title: Deep Learning Indaba
   year: 2026
-  id: AI
+  id: AI-dup5
   full_name: Deep Learning Indaba
   link: "https://deeplearningindaba.com/"
   timezone: UTC
@@ -749,7 +710,7 @@
   type: conference
 - title: GDHD
   year: 2026
-  id: Global Health
+  id: Global Health-dup1
   full_name: Geneva Digital Health Day
   link: "https://gdhub.org/gdhd/"
   timezone: UTC
@@ -761,17 +722,17 @@
   type: conference
 - title: ICGH
   year: 2026
-  id: Global Health
+  id: icgh26
   full_name: International Conference on Global Health
   link: "https://waset.org/global-health-conference"
   timezone: UTC
-  place: 
-  sub: 
+  place:
+  sub:
   type: conference
   note: Scrape failed
 - title: Upanzi Seminar Series
   year: 2026
-  id: Global Health
+  id: upanzi26
   full_name: Upanzi Seminar Series
   link: "https://www.africa.engineering.cmu.edu/research/upanzi/webinars.html"
   timezone: UTC
@@ -780,7 +741,7 @@
   type: conference
 - title: CUGH
   year: 2026
-  id: Global Health
+  id: cugh26
   full_name: Consortium of Universities for Global Health Annual Conference
   link: "https://www.cugh.org/"
   timezone: UTC
@@ -792,17 +753,17 @@
   type: conference
 - title: WEF
   year: 2026
-  id: Global Health
+  id: wef26
   full_name: World Economic Forum
   link: "https://www.weforum.org/"
   timezone: UTC
-  place: 
-  sub: 
+  place:
+  sub:
   type: conference
   note: Scrape failed
 - title: WMA
   year: 2026
-  id: Global Health
+  id: wma26
   full_name: World Medical Assembly
   link: "https://www.wma.net/what-we-do/events/"
   timezone: UTC
@@ -814,7 +775,7 @@
   type: conference
 - title: Roche Continents
   year: 2026
-  id: Global Health
+  id: rochecontinents26
   full_name: Roche Continents
   link: "https://www.roche.com/about/philanthropy/arts-and-culture/roche-continents"
   timezone: UTC
@@ -822,21 +783,21 @@
   date: "June 20, 2023"
   start: "2023-06-20"
   end: "2023-06-20"
-  sub: 
+  sub:
   type: conference
 - title: World Health AI
   year: 2026
-  id: Global Health
+  id: worldhealthai26
   full_name: World Health AI
   link: "https://www.worldhealth.ai/"
   timezone: UTC
-  place: 
-  sub: 
+  place:
+  sub:
   type: conference
   note: Scrape failed
 - title: HHL
   year: 2026
-  id: Humanitarian
+  id: hhl26
   full_name: "Health & Humanitarian Logistics Conference"
   link: "https://hhlconference.org/"
   timezone: UTC
@@ -846,7 +807,7 @@
   note: Scrape failed
 - title: INMED HHC
   year: 2026
-  id: Humanitarian
+  id: inmedhhc26
   full_name: Institute for International Medicine Annual Humanitarian Health Conference
   link: "https://www.inmedhhc.com/"
   timezone: UTC
@@ -854,35 +815,23 @@
   date: "May 29-30, 2025"
   start: "2025-05-29"
   end: "2025-05-30"
-  sub: 
+  sub:
   type: conference
 - title: IHSA Conference
   year: 2026
-  id: Humanitarian
+  id: ihsa26
   full_name: International Humanitarian Studies Association Conference
   link: "https://conference.ihsa.info/"
   timezone: UTC
   place: "Bergen, Norway. This decision was made to foster inclusivity"
-  sub: 
+  sub:
   type: conference
 - title: MSF Scientific Days
   year: 2026
-  id: Humanitarian
+  id: msf26
   full_name: Médecins Sans Frontières Scientific Days
   link: "https://msf.org.uk/msf-scientific-days"
   timezone: UTC
   place: "your will Send cards, save lives. Browse our selection of festive card designs to send to your loved ones Browse cards"
-  sub: 
-  type: conference
-- title: WMA
-  year: 2026
-  id: Global Health
-  full_name: World Medical Assembly
-  link: "https://www.wma.net/what-we-do/events/"
-  timezone: UTC
-  place: "the spring and again in autumn immediately preceding the annual WMA General Assembly. The General Assembly is the supreme decision-making body of the WMA and its meetings are open to delegations from all WMA constituent members, as well as observers and other invited guests. In addition to its Council and General Assembly meetings"
-  date: "November 24, 2025"
-  start: "2025-11-24"
-  end: "2025-11-24"
-  sub: SP
+  sub:
   type: conference

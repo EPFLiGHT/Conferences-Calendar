@@ -14,6 +14,7 @@ export interface Conference {
   end?: string;
   place?: string;
   sub: string | string[];
+  type: string;
   note?: string;
   hindex?: number;
   paperslink?: string;

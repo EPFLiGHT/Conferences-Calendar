@@ -19,6 +19,7 @@ export interface ConferenceFiltersState {
   sortBy: string;
   year: string;
   subject: string;
+  type: string;
 }
 
 export function useConferenceFilters(
@@ -51,6 +52,11 @@ export function useConferenceFilters(
         }
         return conf.sub === filters.subject;
       });
+    }
+
+    // Apply type filter
+    if (filters.type) {
+      result = result.filter(conf => conf.type === filters.type);
     }
 
     // Apply sorting

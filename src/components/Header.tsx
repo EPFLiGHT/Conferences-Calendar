@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import NextLink from 'next/link';
 import { Box, Container, Flex, HStack, Link, Text, Image } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { Home, Calendar } from 'lucide-react';
+import { Home, Calendar, Users } from 'lucide-react';
 import { GRADIENTS, brandAlpha } from '@/theme';
 
 export default function Header(): JSX.Element {
@@ -156,10 +156,11 @@ export default function Header(): JSX.Element {
           </Flex>
 
           {/* Navigation */}
-          <HStack gap="3">
+          <HStack gap={{ base: '1.5', sm: '3' }}>
             {[
               { href: '/', label: 'Home', Icon: Home },
               { href: '/calendar', label: 'Calendar', Icon: Calendar },
+              { href: '/speakers', label: 'Speakers', Icon: Users },
             ].map(({ href, label, Icon }) => {
               const isActive = pathname === href;
               return (
@@ -167,8 +168,8 @@ export default function Header(): JSX.Element {
                   key={href}
                   as={NextLink}
                   href={href}
-                  px="5"
-                  py="2.5"
+                  px={{ base: '3', sm: '5' }}
+                  py={{ base: '2', sm: '2.5' }}
                   borderRadius="10px"
                   fontWeight="600"
                   fontSize="sm"
@@ -193,7 +194,7 @@ export default function Header(): JSX.Element {
                   }}
                 >
                   <Flex align="center" gap="2">
-                    <Icon size={18} />
+                    <Icon size={18} strokeWidth={2.5} />
                     <Text as="span" display={{ base: 'none', sm: 'inline' }}>{label}</Text>
                   </Flex>
                 </Link>
