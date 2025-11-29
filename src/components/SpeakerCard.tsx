@@ -1,7 +1,8 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { Box, Flex, Heading, Text, VStack, Badge } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { Speaker, Presentation } from '@/types/speaker';
 import { COLORS } from '@/theme';
@@ -28,8 +29,22 @@ export default function SpeakerCard({ speaker, index = 0, onClick }: SpeakerCard
   const animationDelay = isMobile ? (index % 12) * 0.03 : (index % 12) * 0.02;
   const animationDuration = isMobile ? 0.3 : 0.25;
 
-  const firstPresentation = speaker.presentations[0];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentPresentation = speaker.presentations[currentIndex];
   const hasMultiplePresentations = speaker.presentations.length > 1;
+
+  // Auto-advance carousel for multiple presentations
+  useEffect(() => {
+    if (!hasMultiplePresentations) return;
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) =>
+        prev === speaker.presentations.length - 1 ? 0 : prev + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [hasMultiplePresentations, speaker.presentations.length]);
 
   return (
     <MotionBox
@@ -82,117 +97,90 @@ export default function SpeakerCard({ speaker, index = 0, onClick }: SpeakerCard
               py="0.5"
               borderRadius="md"
               textTransform="capitalize"
-              bg={EVENT_TYPE_COLORS[firstPresentation.eventType]}
+              bg={EVENT_TYPE_COLORS[currentPresentation.eventType]}
               color="white"
             >
-              {firstPresentation.eventType}
+              {currentPresentation.eventType}
             </Badge>
           </VStack>
         </Flex>
 
-        {/* Topic and Event section with stacked effect */}
-        <Box position="relative" pb={hasMultiplePresentations ? "4px" : "0"} pr={hasMultiplePresentations ? "4px" : "0"}>
-          {/* Stacked card effect for multiple presentations */}
-          {hasMultiplePresentations && (
-            <>
-              <Box
-                position="absolute"
-                top="4px"
-                left="4px"
-                right="-4px"
-                bottom="-4px"
-                bg="brand.100"
-                borderRadius="xl"
-                border="2px"
-                borderColor="brand.300"
-                boxShadow="0 2px 6px rgba(46, 95, 169, 0.12)"
-                zIndex={1}
-              />
-              <Box
-                position="absolute"
-                top="2px"
-                left="2px"
-                right="-2px"
-                bottom="-2px"
-                bg="brand.50"
-                borderRadius="xl"
-                border="2px"
-                borderColor="brand.200"
-                boxShadow="0 2px 8px rgba(46, 95, 169, 0.15)"
-                zIndex={2}
-              />
-            </>
-          )}
-
-          <Box
-            position="relative"
-            zIndex={hasMultiplePresentations ? 3 : 1}
-            bg="white"
-            borderRadius="xl"
-            p="4"
-            border="1px"
-            borderColor="brand.100"
-            boxShadow={hasMultiplePresentations ? "none" : "0 1px 3px rgba(46, 95, 169, 0.08)"}
-          >
-            {/* Topic */}
-            <Box mb="3">
-              <Text
-                fontSize="sm"
-                fontWeight="600"
-                color="gray.700"
-                mb="1"
-              >
-                Topic
-              </Text>
-              <Text
-                fontSize="md"
-                color="gray.800"
-                lineHeight="1.5"
-                fontStyle="italic"
-              >
-                &ldquo;{firstPresentation.topic}&rdquo;
-              </Text>
-            </Box>
-
-            {/* Event */}
-            <Box mb={firstPresentation.link ? "3" : "0"}>
-              <Text
-                fontSize="sm"
-                fontWeight="600"
-                color="gray.700"
-                mb="1"
-              >
-                Event
-              </Text>
-              <Text
-                fontSize="md"
-                color="brand.600"
-                fontWeight="500"
-              >
-                {firstPresentation.event}
-              </Text>
-            </Box>
-
-            {/* Link if available */}
-            {firstPresentation.link && (
-              <Box
-                pt="3"
-                borderTop="1px"
-                borderColor="gray.100"
-              >
-                <ExternalLinkButton
-                  href={firstPresentation.link}
-                  variant="secondary"
-                  size="sm"
+        {/* Presentation Content with Auto Carousel */}
+        <Box position="relative">
+          <AnimatePresence mode="wait">
+            <MotionBox
+              key={currentIndex}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.3 }}
+              bg="white"
+              borderRadius="xl"
+              p="4"
+              border="1px"
+              borderColor="brand.100"
+              boxShadow="0 1px 3px rgba(46, 95, 169, 0.08)"
+            >
+              {/* Topic */}
+              <Box mb="3">
+                <Text
+                  fontSize="sm"
+                  fontWeight="600"
+                  color="gray.700"
+                  mb="1"
                 >
-                  <Flex align="center" gap="2">
-                    <ExternalLink size={16} />
-                    <Text>View Presentation</Text>
-                  </Flex>
-                </ExternalLinkButton>
+                  Topic
+                </Text>
+                <Text
+                  fontSize="md"
+                  color="gray.800"
+                  lineHeight="1.5"
+                  fontStyle="italic"
+                >
+                  &ldquo;{currentPresentation.topic}&rdquo;
+                </Text>
               </Box>
-            )}
-          </Box>
+
+              {/* Event */}
+              <Box mb={currentPresentation.link ? "3" : "0"}>
+                <Text
+                  fontSize="sm"
+                  fontWeight="600"
+                  color="gray.700"
+                  mb="1"
+                >
+                  Event
+                </Text>
+                <Text
+                  fontSize="md"
+                  color="brand.600"
+                  fontWeight="500"
+                >
+                  {currentPresentation.event}
+                </Text>
+              </Box>
+
+              {/* Link if available */}
+              {currentPresentation.link && (
+                <Box
+                  pt="3"
+                  borderTop="1px"
+                  borderColor="gray.100"
+                >
+                  <ExternalLinkButton
+                    href={currentPresentation.link}
+                    variant="secondary"
+                    size="sm"
+                  >
+                    <Flex align="center" gap="2">
+                      <ExternalLink size={16} />
+                      <Text>View Presentation</Text>
+                    </Flex>
+                  </ExternalLinkButton>
+                </Box>
+              )}
+            </MotionBox>
+          </AnimatePresence>
         </Box>
       </VStack>
     </MotionBox>
