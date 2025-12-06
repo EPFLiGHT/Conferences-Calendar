@@ -1,3 +1,17 @@
+- title: NDSS Symposium
+  year: 2026
+  id: ndss26
+  full_name: Network and Distributed System Security Symposium
+  link: "https://www.ndss-symposium.org/ndss2026/"
+  deadline: "2025-08-06 23:59"
+  timezone: "UTC-12"
+  place: "San Diego, California, USA"
+  date: "Feb 23-27, 2026"
+  start: "2026-02-23"
+  end: "2026-02-27"
+  paperslink: https://www.ndss-symposium.org/ndss2026/submissions/call-for-papers/
+  sub: General
+  type: conference
 - title: NeurIPS
   year: 2026
   id: neurips26
@@ -12,14 +26,31 @@
   paperslink: /Conferences/2025/PosterInstructions
   sub: ML
   type: conference
+- title: "IEEE ICST"
+  year: 2026
+  id: ieeeicst26
+  full_name: "19th IEEE International Conference on Software Testing, Verification and Validation (ICST) 2026"
+  link: "https://conf.researchr.org/home/icst-2026"
+  abstract_deadline: "2025-12-15 23:59"
+  deadline: "2025-12-22 23:59"
+  timezone: "UTC+9"
+  place: "Daejeon, South Korea"
+  date: "May 18-22, 2026"
+  start: "2026-05-18"
+  end: "2026-05-22"
+  paperslink: "https://conf.researchr.org/track/icst-2026/icst-2026-research#Call-for-Papers"
+  sub: General
+  type: conference
 - title: ICML
   year: 2026
   id: icml26
-  full_name: International Conference on Machine Learning
-  link: "https://icml.cc/"
-  timezone: America/Los_Angeles
-  place: "closely related areas like artificial intelligence, statistics and data science"
-  paperslink: /virtual/2025/papers.html
+  full_name: Forty-Third International Conference on Machine Learning
+  link: "https://icml.cc/Conferences/2026"
+  timezone: UTC+9
+  place: "Seoul, South Korea"
+  abstract_deadline: "2026-01-24 12:00"
+  deadline: "2026-01-29 12:00"
+  paperslink: https://icml.cc/Conferences/2026/CallForPapers
   sub: ML
   type: conference
 - title: CVPR
@@ -85,7 +116,7 @@
   start: "2026-00-29"
   end: "2026-00-29"
   paperslink: "/calls/call-for-full-papers"
-  sub: 
+  sub:
   type: conference
 - title: WACV
   year: 2026
@@ -108,7 +139,7 @@
   start: "2025-05-01"
   end: "2025-05-01"
   paperslink: "https://chi2025.acm.org/for-authors/papers/"
-  sub: 
+  sub:
   type: conference
 - title: COLING
   year: 2026
@@ -136,7 +167,7 @@
   start: "2025-03-10"
   end: "2025-03-14"
   paperslink: "https://www.wsdm-conference.org/2025/accepted-papers/"
-  sub: 
+  sub:
   type: conference
 - title: Iberamia
   year: 2026
@@ -236,7 +267,7 @@
   start: "2025-10-07"
   end: "2025-10-10"
   paperslink: AcceptedPapers.html
-  sub: 
+  sub:
   type: conference
 - title: IJCAI
   year: 2026
@@ -249,7 +280,7 @@
   date: "April 6-9, 2025"
   start: "2025-04-06"
   end: "2025-04-09"
-  sub: 
+  sub:
   type: conference
 - title: CHIL
   year: 2026
@@ -314,7 +345,7 @@
   start: "2026-00-29"
   end: "2026-00-29"
   paperslink: "/calls/call-for-full-papers"
-  sub: 
+  sub:
   type: conference
 - title: CHI
   year: 2026
@@ -358,7 +389,7 @@
   link: "https://sem.org/ev_calendar_day.asp?date=2023-06-15&eventid=34"
   timezone: America/New_York
   place: "digital image and digital volume correlation techniques, speed impacts to shock and blast"
-  sub: 
+  sub:
   type: conference
 - title: SIGGRAPH Asia
   year: 2026
@@ -371,7 +402,7 @@
   start: "2023-12-12"
   end: "2023-12-15"
   paperslink: "https://asia.siggraph.org/2023/submissions/technical-papers/"
-  sub: 
+  sub:
   type: conference
 - title: AAAI
   year: 2026
@@ -408,7 +439,7 @@
   date: "August 22, 2025"
   start: "2025-08-22"
   end: "2025-08-22"
-  sub: 
+  sub:
   type: conference
 - title: SIGGRAPH Asia
   year: 2026
@@ -452,8 +483,8 @@
   full_name: International Semantic Web Conference
   link: "https://iswc2025.semanticweb.org/"
   timezone: UTC
-  place: 
-  sub: 
+  place:
+  sub:
   type: conference
   note: Scrape failed
 - title: CIKM
@@ -463,7 +494,7 @@
   link: "http://www.cikmconference.org/"
   timezone: UTC
   place: "Seoul, Korea. CIKM"
-  sub: 
+  sub:
   type: conference
 - title: AI World Barcelona
   year: 2026
@@ -501,7 +532,7 @@
   start: "2025-07-14"
   end: "2025-07-14"
   paperslink: "/view/mipr-2025/calls/call-for-papers"
-  sub: 
+  sub:
   type: conference
 - title: AIware
   year: 2026
@@ -537,7 +568,7 @@
   start: "2025-08-25"
   end: "2025-08-29"
   paperslink: "https://asiaccs2025.hust.edu.vn/call-for-papers/"
-  sub: 
+  sub:
   type: conference
 - title: PETS
   year: 2026
@@ -547,7 +578,7 @@
   timezone: UTC
   place: "Washington, DC and a concurrent virtual event. Call for Papers Contact Information General Chair"
   paperslink: paperlist.php
-  sub: 
+  sub:
   type: conference
 - title: PrivaCI
   year: 2026
@@ -560,7 +591,7 @@
   date: "September 27-28, 2024"
   start: "2024-09-27"
   end: "2024-09-28"
-  sub: 
+  sub:
   type: conference
 - title: ACM SAC
   year: 2026
@@ -574,7 +605,7 @@
   start: "2026-03-23"
   end: "2026-03-27"
   paperslink: "file2026/SAC2026-CFP.pdf"
-  sub: 
+  sub:
   type: conference
 - title: RAID
   year: 2026
@@ -586,7 +617,7 @@
   date: "October 24-2, 2024"
   start: "2024-10-24"
   end: "2024-10-02"
-  sub: 
+  sub:
   type: conference
 - title: SACMAT
   year: 2026
@@ -599,7 +630,7 @@
   start: "2025-07-08"
   end: "2025-07-10"
   paperslink: "call-for-papers.php"
-  sub: 
+  sub:
   type: conference
 - title: The Web Conference
   year: 2026
@@ -611,7 +642,7 @@
   date: "MAY 13-17, 2024"
   start: "2024-05-13"
   end: "2024-05-17"
-  sub: 
+  sub:
   type: conference
 - title: NCA
   year: 2026
@@ -629,8 +660,8 @@
   full_name: DevSecOps Research and Opportunities
   link: "https://spritz.math.unipd.it/events/2025/devSecOpsRO/"
   timezone: UTC
-  place: 
-  sub: 
+  place:
+  sub:
   type: conference
   note: Scrape failed
 - title: AMLD
@@ -639,7 +670,7 @@
   full_name: Applied Machine Learning Days
   link: "https://appliedmldays.org/"
   timezone: UTC
-  place: 
+  place:
   sub: ML
   type: conference
   note: Scrape failed
@@ -649,7 +680,7 @@
   full_name: Applied Machine Learning Days Africa
   link: "https://appliedmldays.org/"
   timezone: UTC
-  place: 
+  place:
   sub: ML
   type: conference
   note: Scrape failed
@@ -706,7 +737,7 @@
   link: "https://pmaconference.mahidol.ac.th/site"
   timezone: UTC
   place: "the Field of Public Health Professor Doctor Jonathan P. Shepherd D.D.Sc., Ph.D. Emeritus Professor of Oral and Maxillofacial Surgery Direct... Read more"
-  sub: 
+  sub:
   type: conference
 - title: GDHD
   year: 2026
@@ -801,8 +832,8 @@
   full_name: "Health & Humanitarian Logistics Conference"
   link: "https://hhlconference.org/"
   timezone: UTC
-  place: 
-  sub: 
+  place:
+  sub:
   type: conference
   note: Scrape failed
 - title: INMED HHC
