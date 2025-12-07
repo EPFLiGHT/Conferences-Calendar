@@ -12,20 +12,39 @@
   paperslink: https://www.ndss-symposium.org/ndss2026/submissions/call-for-papers/
   sub: General
   type: conference
+
 - title: NeurIPS
-  year: 2026
-  id: neurips26
-  full_name: Conference on Neural Information Processing Systems
+  year: 2025
+  id: neurips25
+  full_name: 39th Annual Conference on Neural Information Processing Systems
   link: "https://neurips.cc/"
-  deadline: "2025-00-02 23:59"
-  timezone: UTC
-  place: "Artificial Intelligence and Machine Learning, principally by hosting an annual interdisciplinary academic conference with the highest ethical standards for a diverse and inclusive community. About the Conference The conference was founded in"
-  date: "Nov 10, 2025"
-  start: "2025-00-10"
-  end: "2025-00-10"
-  paperslink: /Conferences/2025/PosterInstructions
+  abstract_deadline: "2025-05-11 23:59"
+  deadline: "2025-05-15 23:59"
+  timezone: America/Los_Angeles
+  place: "San Diego, California, USA"
+  date: "Dec 2-7, 2025"
+  start: "2025-12-02"
+  end: "2025-12-07"
+  paperslink: "https://neurips.cc/virtual/2025/loc/san-diego/papers.html"
   sub: ML
   type: conference
+
+- title: NeurIPS
+  year: 2025
+  id: neurips25
+  full_name: 39th Annual Conference on Neural Information Processing Systems
+  link: "https://neurips.cc/"
+  abstract_deadline: "2025-05-11 23:59"
+  deadline: "2025-05-15 23:59"
+  timezone: America/Mexico_City
+  place: "Mexico City, Mexico"
+  date: "Nov 10 - Dec 5, 2025"
+  start: "2025-11-10"
+  end: "2025-12-05"
+  paperslink: "https://neurips.cc/virtual/2025/loc/mexico-city/papers.html"
+  sub: ML
+  type: conference
+
 - title: "IEEE ICST"
   year: 2026
   id: ieeeicst26
@@ -41,10 +60,11 @@
   paperslink: "https://conf.researchr.org/track/icst-2026/icst-2026-research#Call-for-Papers"
   sub: General
   type: conference
+
 - title: ICML
   year: 2026
   id: icml26
-  full_name: Forty-Third International Conference on Machine Learning
+  full_name: 43th International Conference on Machine Learning
   link: "https://icml.cc/Conferences/2026"
   timezone: UTC+9
   place: "Seoul, South Korea"
@@ -53,816 +73,560 @@
   paperslink: https://icml.cc/Conferences/2026/CallForPapers
   sub: ML
   type: conference
+
 - title: CVPR
   year: 2026
   id: cvpr26
   full_name: Conference on Computer Vision and Pattern Recognition
   link: "https://cvpr.thecvf.com/"
-  timezone: UTC
-  place: "helping us maintain a stable and efficient submission system. For support requests, please use the Contact Us option below rather than contacting Program Chairs individually. Nov"
-  date: "June 7, 2026"
-  start: "2026-06-07"
+  abstract_deadline: "2025-11-07 23:59"
+  deadline: "2025-11-13 23:59"
+  timezone: AOE
+  place: "Denver, Colorado, USA"
+  date: "June 3-7, 2026"
+  start: "2026-06-03"
   end: "2026-06-07"
-  paperslink: /Conferences/2026/CallForPapers
+  paperslink: "https://cvpr.thecvf.com/Conferences/2026/CallForPapers"
   sub: CV
   type: conference
+
 - title: ICLR
   year: 2026
   id: iclr26
-  full_name: International Conference on Learning Representations
+  full_name: 14th International Conference on Learning Representations
   link: "https://iclr.cc/"
-  deadline: "2025-00-11 23:59"
-  timezone: America/Los_Angeles
-  place: "the fields of artificial intelligence, statistics and data science"
+  abstract_deadline: "2025-09-19 23:59"
+  deadline: "2025-09-24 23:59"
+  timezone: UTC-12
+  place: "Rio de Janeiro, Brazil"
   date: "April 23-27, 2026"
   start: "2026-04-23"
   end: "2026-04-27"
   sub: CV
   type: conference
+
 - title: EACL
   year: 2026
   id: eacl26
   full_name: The 19th Conference of the European Chapter of the Association for Computational Linguistics
   link: "https://2026.eacl.org/"
   deadline: "2025-10-06 23:59"
-  timezone: UTC
-  place: "the field of computational linguistics, EACL welcomes European and international researchers covering a broad spectrum of research areas concerned with computational approaches to natural language. Important Dates"
-  date: "occoMarch 24-29, 2026"
-  start: "2026-00-24"
-  end: "2026-00-29"
+  timezone: UTC-12
+  place: "Rabat, Morocco"
+  date: "March 24-29, 2026"
+  start: "2026-03-24"
+  end: "2026-03-29"
   sub: NLP
   type: conference
+
 - title: LoG
   year: 2026
   id: log26
   full_name: Learning on Graphs Conference
   link: "https://logconference.org/"
-  timezone: UTC
-  place: "past years, LoG"
+  abstract_deadline: "2025-08-24 23:59"
+  deadline: "2025-08-29 23:59"
+  timezone: UTC-12
+  place: "Arizona State University, Phoenix, USA"
   date: "December 10-12, 2025"
   start: "2025-12-10"
   end: "2025-12-12"
-  paperslink: /cfp
+  paperslink: "https://logconference.org/cfp/#call-for-papers"
   sub: NLP
   type: conference
+
 - title: ECIR
   year: 2026
   id: ecir26
-  full_name: European Conference on Information Retrieval
+  full_name: 48th European Conference on Information Retrieval
   link: "https://ecir2026.eu/"
-  timezone: UTC
-  place: "Delft, The Netherlands . The programme will be complemented by tutorials on Sunday"
-  date: "Mar 29, 2026"
-  start: "2026-00-29"
-  end: "2026-00-29"
-  paperslink: "/calls/call-for-full-papers"
-  sub:
+  abstract_deadline: "2025-09-25 23:59"
+  deadline: "2025-10-02 23:59"
+  timezone: UTC-12
+  place: "Delft, The Netherlands"
+  date: "Mar 29 - Apr 1, 2026"
+  start: "2026-03-29"
+  end: "2026-04-01"
+  paperslink: "https://ecir2026.eu/calls/call-for-full-papers"
+  sub: General
   type: conference
+
 - title: WACV
   year: 2026
   id: wacv26
   full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
-  link: "https://wacv2025.thecvf.com/"
-  timezone: UTC
-  place: Online
+  link: "https://wacv.thecvf.com/"
+  abstract_deadline: "2025-09-12 23:59"
+  timezone: UTC-12
+  place: "JW Marriott Starpass in Tucson, Arizona, USA"
+  paperslink: "https://wacv.thecvf.com/Conferences/2026/CallForPapers"
   sub: CV
   type: conference
+
 - title: CHI
   year: 2026
   id: chi26
   full_name: The ACM Conference on Human Factors in Computing Systems
-  link: "https://chi2025.acm.org/"
-  deadline: "2024-09-12 23:59"
-  timezone: UTC
-  place: "Yokohama, Japan Home Blog Authors Reviewers Attendees Accessibility Travel Sponsors and Exhibitors Organizing Home Blog Authors Papers Case Studies Late Breaking Work Interactivity alt.CHI Journals Video Showcase Workshops Panels SIG In-Person Doctoral Consortium Remote Doctoral Consortium Student Design Competition Student Game Competition Student Research Competition Courses Reviewers Guide to Reviewing Code of Conduct in Review Attendees Registration Program at a Glance Program Hybrid Experience Accessibility Travel Visa Transportation and Accommodation Getting Around Yokohama Childcare Support Sponsors and Exhibitors Confirmed Sponsors Call for Sponsors and Exhibitors Code of Conduct for Sponsors and Exhibitors Organizing Organizing Committee Student Volunteers Home Blog Authors Reviewers Attendees Accessibility Sponsors and Exhibitors Press and Media Organizing Upcoming Deadlines All times are in Anywhere on Earth"
-  date: "May 1, 2025"
-  start: "2025-05-01"
-  end: "2025-05-01"
-  paperslink: "https://chi2025.acm.org/for-authors/papers/"
-  sub:
+  link: "https://chi2026.acm.org/"
+  abstract_deadline: "2025-09-04 23:59"
+  deadline: "2025-09-11 23:59"
+  timezone: UTC-12
+  place: "Barcelona, Spain"
+  date: "April 13-17, 2026"
+  start: "2026-04-13"
+  end: "2026-04-17"
+  paperslink: "https://chi2026.acm.org/for-authors/papers/"
+  sub: General
   type: conference
+
 - title: COLING
-  year: 2026
-  id: coling26
+  year: 2025
+  id: coling25
   full_name: The 31st International Conference on Computational Linguistics
   link: "https://coling2025.org/"
-  deadline: "2024-00-24 23:59"
-  timezone: UTC
-  place: "Abu Dhabi, UAE from January"
-  date: "January 19-24, 2025"
-  start: "2025-01-19"
+  deadline: "2024-09-16 23:59"
+  timezone: UTC-12
+  place: "Abu Dhabi, UAE"
+  date: "January 21-24, 2025"
+  start: "2025-01-21"
   end: "2025-01-24"
-  paperslink: /program/main_conference_papers/
+  paperslink: "https://coling2025.org/calls/main_conference_papers/"
   sub: NLP
   type: conference
+
 - title: WSDM
   year: 2026
   id: wsdm26
-  full_name: ACM International Conference on Web Search and Data Mining
-  link: "https://www.wsdm-conference.org/2025/"
-  abstract_deadline: "2024-08-07 23:59"
-  timezone: UTC
-  place: "Hannover, the capital of the German state of Lower Saxony"
-  date: "March 10-14, 2025"
-  start: "2025-03-10"
-  end: "2025-03-14"
-  paperslink: "https://www.wsdm-conference.org/2025/accepted-papers/"
-  sub:
+  full_name: 19th ACM International Conference on Web Search and Data Mining
+  link: "https://wsdm-conference.org/2026/"
+  abstract_deadline: "2025-08-07 23:59"
+  deadline: "2025-08-14 23:59"
+  timezone: UTC-12
+  place: "Boise, Idaho, USA"
+  date: "Feb 22-26, 2026"
+  start: "2026-02-22"
+  end: "2026-02-26"
+  paperslink: "https://wsdm-conference.org/2026/index.php/call-for-papers/"
+  sub: General
   type: conference
+
 - title: Iberamia
   year: 2026
   id: iberamia26
-  full_name: "18th Ibero-American Conference on Artificial Intelligence"
-  link: "https://www.iberamia.org/iberamia/iberamia2024/"
-  timezone: UTC
-  place: "the area, presentations of technical papers"
-  paperslink: "https://www.iberamia.org/iberamia/iberamia2024/cfp/"
+  full_name: "19th Ibero-American Conference on Artificial Intelligence"
+  link: "https://www.iberamia.org/iberamia/iberamia2026/"
+  deadline: "2026-05-31 23:59"
+  timezone: UTC-12
+  place: "Asunción, Paraguay"
+  date: "Nov 18-20, 2026"
+  paperslink: "https://www.iberamia.org/iberamia/iberamia2026/call-for-papers/"
   sub: NLP
   type: conference
-- title: "NeurIPS [Dataset and Benchmarks Track]"
-  year: 2026
-  id: neuripsdatasetandbenchmarkstrack26
-  full_name: "Conference on Neural Information Processing Systems - Dataset and Benchmarks Track"
-  link: "https://neurips.cc/"
-  deadline: "2025-00-02 23:59"
-  timezone: UTC
-  place: "Artificial Intelligence and Machine Learning, principally by hosting an annual interdisciplinary academic conference with the highest ethical standards for a diverse and inclusive community. About the Conference The conference was founded in"
-  date: "Nov 10, 2025"
-  start: "2025-00-10"
-  end: "2025-00-10"
-  paperslink: /Conferences/2025/PosterInstructions
-  sub: ML
-  type: conference
-- title: WACV
-  year: 2026
-  id: wacv26-dup1
-  full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
-  link: "https://wacv.thecvf.com/"
-  timezone: UTC
-  place: "Tucson, Arizona Friday"
-  date: "March 10, 2026"
-  start: "2026-03-10"
-  end: "2026-03-10"
-  paperslink: /Conferences/2026/CallForPapers
-  sub: CV
-  type: conference
+
 - title: AAAI
   year: 2026
   id: aaai26
-  full_name: AAAI Conference on Artificial Intelligence
-  link: "https://aaai.org/"
-  timezone: UTC
-  place: "AI capabilities, as well as AI research methodologies"
-  date: "October 20-22, 2025"
-  start: "2025-10-20"
-  end: "2025-10-22"
+  full_name: 40th Annual AAAI Conference on Artificial Intelligence
+  link: "https://aaai.org/conference/aaai/aaai-26/"
+  abstract_deadline: "2025-07-25 23:59"
+  deadline: "2025-08-01 23:59"
+  timezone: UTC-12
+  place: "Singapore"
+  date: "Jan 20-27, 2026"
+  start: "2026-01-20"
+  end: "2026-01-27"
   sub: ML
   type: conference
-- title: BMVC
-  year: 2026
-  id: bmvc26
-  full_name: The British Machine Vision Conference
-  link: "https://www.bmva.org/bmvc"
-  timezone: Europe/London
-  place: "Manchester,"
-  date: "April 4-6, 2022"
-  start: "2022-04-04"
-  end: "2022-04-06"
-  sub: CV
-  type: conference
+
 - title: AABI
-  year: 2026
-  id: aabi26
+  year: 2025
+  id: aabi25
   full_name: Advances in Approximate Bayesian Inference
   link: "https://approximateinference.org/"
   deadline: "2025-04-29 23:59"
-  timezone: UTC
-  place: "Singapore Tuesday,"
+  timezone: UTC-12
+  place: "NTU College of Computing and Data Science, Singapore"
   date: "April 29, 2025"
   start: "2025-04-29"
   end: "2025-04-29"
-  paperslink: /call
+  paperslink: "https://approximateinference.org/accepted/"
   sub: NLP
   type: conference
-- title: AAAI 2024 Spring Symposium on Clinical Foundation Models
-  year: 2026
-  id: aaai2024springsymposiumonclinicalfoundationmodels26
-  full_name: AAAI 2024 Spring Symposium on Clinical Foundation Models
-  link: "https://aaai.org/"
-  timezone: UTC
-  place: "AI capabilities, as well as AI research methodologies"
-  date: "October 20-22, 2025"
-  start: "2025-10-20"
-  end: "2025-10-22"
-  sub: ML
-  type: conference
+
 - title: COLM
-  year: 2026
-  id: colm26
-  full_name: 1st Conference on Language Modeling
+  year: 2025
+  id: colm25
+  full_name: 2nd Conference on Language Modeling
   link: "https://colmweb.org/"
-  timezone: UTC
-  place: "general-purpose capabilities from language models is a landmark in the development of Artificial Intelligence. The nature of this technology has led to a different set of research questions than are the typical focus of related venues. COLM is an academic venue focused on the study of language modeling, broadly defined"
+  abstract_deadline: "2025-03-22 23:59"
+  deadline: "2025-03-28 23:59"
+  timezone: UTC-12
+  place: "Montreal, Canada"
   date: "October 7-10, 2025"
   start: "2025-10-07"
   end: "2025-10-10"
-  paperslink: AcceptedPapers.html
-  sub:
+  paperslink: "https://colmweb.org/cfp.html"
+  sub: ML
   type: conference
+
 - title: IJCAI
   year: 2026
   id: ijcai26
-  full_name: International Joint Conference on Artificial Intelligence
-  link: "https://2025.ijcai.org/"
-  deadline: "2025-01-16 23:59"
-  timezone: UTC
-  place: "Montreal, Canada"
-  date: "April 6-9, 2025"
-  start: "2025-04-06"
-  end: "2025-04-09"
-  sub:
+  full_name: 35th International Joint Conference on Artificial Intelligence
+  link: "https://2026.ijcai.org/"
+  deadline: "2026-01-19 23:59"
+  timezone: UTC-12
+  place: "Bremen, Germany"
+  date: "August 15-21, 2026"
+  start: "2026-08-15"
+  end: "2026-08-21"
+  paperslink: "https://2026.ijcai.org/ijcai-ecai-2026-call-for-papers-ai-and-health/"
+  sub: ML
   type: conference
+
 - title: CHIL
   year: 2026
   id: chil26
-  full_name: "Conference on Health, Inference, and Learning"
+  full_name: 7th Annual Conference on Health, Inference, and Learning
   link: "https://chil.ahli.cc/"
-  timezone: UTC
-  place: "machine learning, health policy"
+  deadline: "2026-02-04 23:59"
+  timezone: UTC-12
+  place: "Seattle, Washington, USA"
   date: "June 28-30, 2026"
   start: "2026-06-28"
   end: "2026-06-30"
   paperslink: "https://chil.ahli.cc/submit/call-for-papers/"
   sub: ML
   type: conference
+
 - title: SaTML
   year: 2026
   id: satml26
-  full_name: IEEE Conference on Secure and Trustworthy Machine Learning
+  full_name: 4th IEEE Conference on Secure and Trustworthy Machine Learning
   link: "https://satml.org/"
   deadline: "2025-09-24 23:59"
-  timezone: "UTC-12"
-  place: "developing a unified, coherent scientific community which aims to establish trustworthy machine learning. Topics of interest include"
+  timezone: UTC-12
+  place: "Technical University of Munich, Germany"
   date: "March 23-25, 2026"
   start: "2026-03-23"
   end: "2026-03-25"
   paperslink: "https://satml.org/call-for-papers/"
   sub: ML
   type: conference
+
 - title: ICPRAI
   year: 2026
   id: icprai26
-  full_name: International Conference on Pattern Recognition and Artificial Intelligence
-  link: "https://brain.korea.ac.kr/icprai2024/"
-  timezone: UTC
-  place: "Jeju Island, South Korea from June"
-  date: "July 3-6, 2024"
-  start: "2024-07-03"
-  end: "2024-07-06"
+  full_name: 5th International Conference on Pattern Recognition and Artificial Intelligence
+  link: "https://icprai2026.com/"
+  deadline: "2026-01-15 23:59"
+  timezone: UTC-12
+  place: "Montreal, Canada"
+  date: "June 15-18, 2026"
+  start: "2026-06-15"
+  end: "2026-06-18"
+  paperslink: "https://easychair.org/conferences/?conf=icprai2026"
   sub: CV
   type: conference
-- title: WACV
+
+- title: "LREC"
   year: 2026
-  id: wacv26-dup2
-  full_name: IEEE/CVF Winter Conference on Applications of Computer Vision
-  link: "https://wacv.thecvf.com/"
-  timezone: UTC
-  place: "Tucson, Arizona Friday"
-  date: "March 10, 2026"
-  start: "2026-03-10"
-  end: "2026-03-10"
-  paperslink: /Conferences/2026/CallForPapers
+  id: lrec26
+  full_name: "15th Language Resources and Evaluation Conference"
+  link: "https://lrec2026.info/"
+  deadline: "2025-10-17 23:59"
+  timezone: UTC-12
+  place: "Palma, Mallorca, Spain"
+  date: "May 11-16, 2026"
+  start: "2026-05-11"
+  end: "2026-05-16"
+  paperslink: "https://lrec2026.info/calls/second-call-for-papers/"
+  sub: NLP
+  type: conference
+
+- title: "SIGIR"
+  year: 2026
+  id: sigir26
+  full_name: 49th International ACM SIGIR Conference on Research and Development in Information Retrieval
+  link: "https://sigir2026.org/en-AU"
+  deadline: "2026-04-29 23:59"
+  timezone: UTC-12
+  place: "Melbourne, Australia"
+  date: "July 20-24, 2026"
+  start: "2026-07-20"
+  end: "2026-07-24"
+  sub: NLP
+  type: conference
+
+- title: SIGGRAPH
+  year: 2026
+  id: siggraph26
+  full_name: The Premier Conference & Exhibition on Computer Graphics & Interactive Techniques
+  link: "https://s2026.siggraph.org/"
+  abstract_deadline: "2025-01-15 22:00"
+  deadline: "2025-01-22 22:00"
+  timezone: GMT
+  place: "Los Angeles, California, USA"
+  date: "July 19-23, 2026"
+  start: "2026-07-19"
+  end: "2026-07-23"
+  paperslink: "https://s2026.siggraph.org/program/technical-papers/"
   sub: CV
   type: conference
-- title: ECIR
-  year: 2026
-  id: ecir26-dup1
-  full_name: European Conference on Information Retrieval
-  link: "https://ecir2026.eu/"
-  timezone: UTC
-  place: "Delft, The Netherlands . The programme will be complemented by tutorials on Sunday"
-  date: "Mar 29, 2026"
-  start: "2026-00-29"
-  end: "2026-00-29"
-  paperslink: "/calls/call-for-full-papers"
-  sub:
-  type: conference
-- title: CHI
-  year: 2026
-  id: chi26-dup1
-  full_name: AAAI Conference on Artificial Intelligence
-  link: "https://aaai.org/"
-  timezone: UTC
-  place: "AI capabilities, as well as AI research methodologies"
-  date: "October 20-22, 2025"
-  start: "2025-10-20"
-  end: "2025-10-22"
-  sub: ML
-  type: conference
-- title: "LREC-COLING"
-  year: 2026
-  id: lreccoling26
-  full_name: "The 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation"
-  link: "https://lrec-coling-2024.org/"
-  deadline: "2023-09-22 23:59"
-  timezone: UTC
-  place: "the days immediately before and after. Two major international key players in the area of computational linguistics, the ELRA Language Resources Association"
-  date: "January 22-29, 2024"
-  start: "2024-01-22"
-  end: "2024-01-29"
-  paperslink: "https://lrec-coling-2024.org/1st-call-for-papers/"
-  sub: NLP
-  type: conference
-- title: "SIGIR-AP"
-  year: 2026
-  id: sigirap26
-  full_name: 1st International ACM SIGIR Conference on Information Retrieval in the Asia Pacific
-  link: "http://www.sigir-ap.org/"
-  timezone: UTC
-  place: "the days before and after the main conference. Conferences The proceedings of previous SIGIR-APs may be ordered from ACM, or you can go directly to ACM Digital Library for the proceedings."
-  sub: NLP
-  type: conference
-- title: "*SEM"
-  year: 2026
-  id: sem26
-  full_name: "*SEM 2023"
-  link: "https://sem.org/ev_calendar_day.asp?date=2023-06-15&eventid=34"
-  timezone: America/New_York
-  place: "digital image and digital volume correlation techniques, speed impacts to shock and blast"
-  sub:
-  type: conference
-- title: SIGGRAPH Asia
-  year: 2026
-  id: siggraphasia26
-  full_name: SIGGRAPH ASIA 2023
-  link: "https://asia.siggraph.org/2023/"
-  timezone: UTC
-  place: "Computer Science, Keio University in"
-  date: "December 12-15, 2023"
-  start: "2023-12-12"
-  end: "2023-12-15"
-  paperslink: "https://asia.siggraph.org/2023/submissions/technical-papers/"
-  sub:
-  type: conference
-- title: AAAI
-  year: 2026
-  id: aaai26-dup1
-  full_name: AAAI Conference on Artificial Intelligence
-  link: "https://aaai.org/"
-  timezone: UTC
-  place: "AI capabilities, as well as AI research methodologies"
-  date: "October 20-22, 2025"
-  start: "2025-10-20"
-  end: "2025-10-22"
-  sub: ML
-  type: conference
-- title: ICDM
-  year: 2026
-  id: icdm26
-  full_name: IEEE International Conference on Data Mining (ICDM)
-  link: "https://www3.cs.stonybrook.edu/~icdm2025/index.html"
-  timezone: UTC
-  place: "Workshops, Doctoral Forum"
-  date: "November 12-15, 2025"
-  start: "2025-11-12"
-  end: "2025-11-15"
-  paperslink: "authorinstruction-workshops.html"
-  sub: ML
-  type: conference
-- title: "IJCAI-ECAI"
-  year: 2026
-  id: ijcaiecai26
-  full_name: International Joint Conference on Artificial Intelligence and European Conference on Artificial Intelligence
-  link: "https://www.ijcai.org/"
-  timezone: UTC
-  place: "Bremen, Germany from August"
-  date: "August 22, 2025"
-  start: "2025-08-22"
-  end: "2025-08-22"
-  sub:
-  type: conference
-- title: SIGGRAPH Asia
-  year: 2026
-  id: siggraphasia26-dup1
-  full_name: SIGGRAPH ASIA 2022
-  link: "https://sa2022.siggraph.org/en/index.html"
-  timezone: UTC
-  place: "the Silicon Valley. Dr. Luc Julia first went to MIT, then joined SRI International"
-  date: "December 6-9, 2022"
-  start: "2022-12-06"
-  end: "2022-12-09"
-  paperslink: "attend/technical-papers/index.html"
-  sub: SP
-  type: conference
-- title: evoMUSART
-  year: 2026
-  id: evomusart26
-  full_name: "12th International Conference on Artificial Intelligence in Music, Sound, Art and Design"
-  link: "https://www.evostar.org/2023/evomusart/"
-  timezone: UTC
-  place: "Edge, Fog"
-  date: "April 12-14, 2023"
-  start: "2023-04-12"
-  end: "2023-04-14"
-  paperslink: "https://www.evostar.org/2023/eurogp-accepted-papers/"
-  sub: ML
-  type: conference
+
 - title: ECML/PKDD
   year: 2026
   id: ecmlpkdd26
   full_name: European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases
-  link: "https://icml.cc/"
-  timezone: America/Los_Angeles
-  place: "closely related areas like artificial intelligence, statistics and data science"
-  paperslink: /virtual/2025/papers.html
+  link: "https://ecmlpkdd.org/2026/"
+  timezone: UTC-12
+  place: "Nalpes, Italy"
+  date: "Sep 07-11, 2026"
+  start: "2026-09-07"
+  end: "2026-09-11"
+  paperslink: "https://ecmlpkdd.org/2026/submissions-research-track/"
   sub: ML
   type: conference
-- title: ISWC
-  year: 2026
-  id: iswc26
-  full_name: International Semantic Web Conference
-  link: "https://iswc2025.semanticweb.org/"
-  timezone: UTC
-  place:
-  sub:
-  type: conference
-  note: Scrape failed
+
 - title: CIKM
   year: 2026
   id: cikm26
-  full_name: International Conference on Information and Knowledge Managements
+  full_name: Conference on Information and Knowledge Management
   link: "http://www.cikmconference.org/"
-  timezone: UTC
-  place: "Seoul, Korea. CIKM"
-  sub:
+  timezone: UTC-12
+  place: "Rome, Italy"
+  sub: General
   type: conference
-- title: AI World Barcelona
-  year: 2026
-  id: aiworldbarcelona26
-  full_name: "AI World Barcelona - Generative AI Conference"
-  link: "https://gogetgpt.com/en/events/ai-world-barcelona-conference"
-  timezone: UTC
-  place: "Barcelona, ES"
-  date: "Sep 7-8, 2023"
-  start: "2023-00-07"
-  end: "2023-00-08"
-  sub: ML
+
+- title: CIKM
+  year: 2027
+  id: cikm27
+  full_name: Conference on Information and Knowledge Management
+  link: "http://www.cikmconference.org/"
+  timezone: UTC-12
+  place: "Sydney, Australia"
+  sub: General
   type: conference
+
 - title: SPECOM
-  year: 2026
-  id: specom26
-  full_name: International Conference on Speech and Computer
-  link: "http://specom.inf.u-szeged.hu/"
-  timezone: UTC
-  place: "St. Petersburg, Russia. See the presentation for the conference overview"
-  date: "October 13-14, 2025"
+  year: 2025
+  id: specom25
+  full_name: 27th International Conference on Speech and Computer
+  link: "https://specom.nw.ru/2025/"
+  deadline: "2025-07-07 23:59"
+  timezone: UTC-12
+  place: "Szeged, Hungary"
+  date: "October 13-15, 2025"
   start: "2025-10-13"
-  end: "2025-10-14"
+  end: "2025-10-15"
   sub: NLP
   type: conference
-- title: MIPR
-  year: 2026
-  id: mipr26
-  full_name: International Conference on Multimedia Information Processing and Retrieval
-  link: "https://sites.google.com/view/mipr-2025"
-  deadline: "2025-07-14 23:59"
-  timezone: UTC
-  place: "the Next Era of Intelligent Systems Tutorial Program Technical Program Keynote Speakers Services Camera-Ready Instructions Registration Presentation Instruction Visa Request Student Travel Grant Conference hotel History of MIPR More IEEE MIPR Calls Call for Papers Call for Demo Papers Committees Organizing Committee Workshop Panel Innovation Forums AI, Humans"
-  date: "July 14, 2025"
-  start: "2025-07-14"
-  end: "2025-07-14"
-  paperslink: "/view/mipr-2025/calls/call-for-papers"
-  sub:
-  type: conference
-- title: AIware
-  year: 2026
-  id: aiware26
-  full_name: ACM International Conference on AIware
-  link: "https://2025.aiwareconf.org/"
-  timezone: UTC
-  place: "its creation with higher reliability and quality. Over the past decade, software has evolved from human-driven Codeware to the first generation of AIware"
-  date: "Nov 19-20, 2025"
-  start: "2025-00-19"
-  end: "2025-00-20"
-  sub: NLP
-  type: conference
+
 - title: AutoML
-  year: 2026
-  id: automl26
+  year: 2025
+  id: automl25
   full_name: International Conference on Automated Machine Learning
-  link: "https://automl.cc/"
-  timezone: America/New_York
-  place: Online
+  link: "https://2025.automl.cc/"
+  deadline: "2025-03-31 23:59"
+  timezone: UTC-12
+  place: "Roosevelt Island, New York City, USA"
+  date: "Sep 08-11, 2025"
+  start: "2025-09-08"
+  end: "2025-09-11"
   paperslink: "https://2025.automl.cc/call-for-papers/"
   sub: ML
   type: conference
-- title: ASIACCS
-  year: 2026
-  id: asiaccs26
-  full_name: ACM Asia Conference on Computer and Communications Security
-  link: "https://asiaccs2025.hust.edu.vn/"
-  deadline: "2025-08-29 23:59"
-  timezone: UTC
-  place: "Hanoi, Vietnam from"
-  date: "August 25-29, 2025"
-  start: "2025-08-25"
-  end: "2025-08-29"
-  paperslink: "https://asiaccs2025.hust.edu.vn/call-for-papers/"
-  sub:
-  type: conference
+
 - title: PETS
   year: 2026
   id: pets26
-  full_name: Privacy Enhancing Technologies Symposium
-  link: "https://petsymposium.org/2025/"
-  timezone: UTC
-  place: "Washington, DC and a concurrent virtual event. Call for Papers Contact Information General Chair"
-  paperslink: paperlist.php
-  sub:
+  full_name: 26th Privacy Enhancing Technologies Symposium
+  link: "https://petsymposium.org/2026/"
+  deadline: "2026-02-28 23:59"
+  timezone: UTC-12
+  place: "Calgary, Canada"
+  date: "July 20-25, 2026"
+  start: "2026-07-20"
+  end: "2026-07-25"
+  paperslink: "https://petsymposium.org/cfp26.php"
+  sub: General
   type: conference
-- title: PrivaCI
+
+- title: PRIVACY SYMPOSIUM
   year: 2026
-  id: privaci26
-  full_name: The Annual Symposium on Applications of Contextual Integrity
-  link: "https://privaci.info/symposium/2024/cfp.html"
-  deadline: "2024-06-17 23:59"
-  timezone: UTC
-  place: "New Jersey, US"
-  date: "September 27-28, 2024"
-  start: "2024-09-27"
-  end: "2024-09-28"
-  sub:
+  id: privacysymposium26
+  full_name: The Privacy and Data Governance Symposium
+  link: "https://privacysymposium.org/"
+  abstract_deadline: "2025-11-28 23:59"
+  deadline: "2026-02-04 23:59"
+  timezone: UTC-12
+  place: "Venice, Italy"
+  date: "April 20-24, 2026"
+  start: "2026-04-20"
+  end: "2026-04-24"
+  paperslink: "https://privacysymposium.org/call-for-papers/"
+  sub: General
   type: conference
-- title: ACM SAC
-  year: 2026
-  id: acmsac26
-  full_name: ACM/SIGAPP Symposium On Applied Computing
-  link: "https://www.sigapp.org/sac/sac2026/"
-  deadline: "2025-06-20 23:59"
-  timezone: America/New_York
-  place: "ACM Open will need to pay an APC to publish their papers, unless they qualify for a financial or discretionary waiver. To find out whether an APC applies to your article"
-  date: "March 23-27, 2026"
-  start: "2026-03-23"
-  end: "2026-03-27"
-  paperslink: "file2026/SAC2026-CFP.pdf"
-  sub:
-  type: conference
-- title: RAID
-  year: 2026
-  id: raid26
-  full_name: "International Symposium on Research in Attacks, Intrusions and Defenses"
-  link: "https://dl.acm.org/doi/proceedings/10.1145/3678890"
-  timezone: UTC
-  place: "Attacks, Intrusions and Defenses"
-  date: "October 24-2, 2024"
-  start: "2024-10-24"
-  end: "2024-10-02"
-  sub:
-  type: conference
-- title: SACMAT
+
+- title: ACM SACMAT
   year: 2026
   id: sacmat26
-  full_name: ACM Symposium on Access Control Models and Technologies
-  link: "https://sacmat.org/2025/index.php"
-  timezone: UTC
-  place: "the NGAC model, by Brian Tan"
-  date: "July 8-10, 2025"
-  start: "2025-07-08"
-  end: "2025-07-10"
-  paperslink: "call-for-papers.php"
-  sub:
+  full_name: 31st ACM Symposium on Access Control Models and Technologies
+  link: "https://sacmat.org/2026/index.php"
+  deadline: "2026-03-02 23:59"
+  timezone: UTC-12
+  place: "Waterloo, Canada"
+  date: "July 8-10, 2026"
+  start: "2026-07-08"
+  end: "2026-07-10"
+  paperslink: "https://sacmat.org/2026/call-for-papers.php"
+  sub: General
   type: conference
+
 - title: The Web Conference
   year: 2026
   id: thewebconference26
-  full_name: International Conference on the World Wide Web
-  link: "https://www2024.thewebconf.org/"
-  timezone: Etc/GMT
-  place: "research, development"
-  date: "MAY 13-17, 2024"
-  start: "2024-05-13"
-  end: "2024-05-17"
-  sub:
+  full_name: THE ACM WEB CONFERENCE
+  link: "https://www2026.thewebconf.org/"
+  abstract_deadline: "2025-09-30 23:59"
+  deadline: "2025-10-07 23:59"
+  timezone: UTC-12
+  place: "Dubai, UAE"
+  date: "April 13-17, 2026"
+  start: "2026-04-13"
+  end: "2026-04-17"
+  paperslink: "https://www2026.thewebconf.org/calls/research-tracks.html"
+  sub: General
   type: conference
-- title: NCA
-  year: 2026
-  id: nca26
-  full_name: International Symposium on Network Computing and Applications
-  link: "https://www.nca-ieee.org/"
-  timezone: UTC
-  place: "the fields of Network and Cloud Computing. NCA, sponsored by IEEE Computer Society"
-  paperslink: "cf-papers.html"
-  sub:
-  type: conference
-- title: DevSecOpsRO
-  year: 2026
-  id: devsecopsro26
-  full_name: DevSecOps Research and Opportunities
-  link: "https://spritz.math.unipd.it/events/2025/devSecOpsRO/"
-  timezone: UTC
-  place:
-  sub:
-  type: conference
-  note: Scrape failed
-- title: AMLD
-  year: 2026
-  id: AI
-  full_name: Applied Machine Learning Days
-  link: "https://appliedmldays.org/"
-  timezone: UTC
-  place:
-  sub: ML
-  type: conference
-  note: Scrape failed
-- title: AMLD Africa
-  year: 2026
-  id: AI-dup1
-  full_name: Applied Machine Learning Days Africa
-  link: "https://appliedmldays.org/"
-  timezone: UTC
-  place:
-  sub: ML
-  type: conference
-  note: Scrape failed
-- title: SDSC Connect
-  year: 2026
-  id: AI-dup2
-  full_name: SDSC Connect
-  link: "https://www.sdsc-connect.ch"
-  timezone: UTC
-  place: "the health and biomedical domain, participants will gain deep insights and a distinctive learning experience that connects clinical needs with technological innovation"
-  date: "Sept 30, 2025"
-  start: "2025-00-30"
-  end: "2025-00-30"
-  sub: ML
-  type: conference
-- title: CHIL
-  year: 2026
-  id: AI-dup3
-  full_name: "Conference on Health, Inference, and Learning"
-  link: "https://chil.ahli.cc/"
-  timezone: UTC
-  place: "machine learning, health policy"
-  date: "June 28-30, 2026"
-  start: "2026-06-28"
-  end: "2026-06-30"
-  paperslink: "https://chil.ahli.cc/submit/call-for-papers/"
-  sub: ML
-  type: conference
+
 - title: MLHC
   year: 2026
-  id: AI-dup4
+  id: mlhc26
   full_name: Machine Learning for Healthcare
-  link: "https://www.mlforhc.org/"
-  timezone: UTC
-  place: "healthcare, learn from curated speakers"
-  date: "August 15-16, 2025"
-  start: "2025-08-15"
-  end: "2025-08-16"
+  link: "https://www.mlforhc.org/2026-conference"
+  timezone: UTC-12
+  place: "Baltimore, Maryland, USA"
+  paperslink: "https://www.mlforhc.org/paper-submission"
   sub: ML
   type: conference
-- title: Deep Learning Indaba
-  year: 2026
-  id: AI-dup5
-  full_name: Deep Learning Indaba
-  link: "https://deeplearningindaba.com/"
-  timezone: UTC
-  place: "Africa We are a grassroots movement bringing together African AI researchers and practitioners to build the future of AI in Africa. Learn More Community Members African Countries Partners About Us Our Mission Our mission is to support and strengthen Machine Learning and Artificial Intelligence in Africa. We work towards the goal of Africans being not only observers and receivers of the ongoing advances in AI, but active shapers and owners of these technological advances. Learn our story Annual Indaba The Deep Learning Indaba"
-  sub: ML
-  type: conference
+
 - title: PMAC
   year: 2026
-  id: Global Health
+  id: pmac26
   full_name: Prince Mahidol Award Conference
-  link: "https://pmaconference.mahidol.ac.th/site"
-  timezone: UTC
-  place: "the Field of Public Health Professor Doctor Jonathan P. Shepherd D.D.Sc., Ph.D. Emeritus Professor of Oral and Maxillofacial Surgery Direct... Read more"
-  sub:
+  link: "https://pmac-2026.com/"
+  timezone: UTC-12
+  place: "Bangkok, Thailand"
+  date: "January 26-31, 2026"
+  start: "2026-01-26"
+  end: "2026-01-31"
+  paperslink: "https://pmac-2026.com/abstracts/about"
+  sub: General
   type: conference
+
 - title: GDHD
   year: 2026
-  id: Global Health-dup1
+  id: gdhd26
   full_name: Geneva Digital Health Day
   link: "https://gdhub.org/gdhd/"
-  timezone: UTC
-  place: "digital health on a global scale. The inaugural edition of the GDHD took place on Thursday, May"
-  date: "May 30, 2024"
-  start: "2024-05-30"
-  end: "2024-05-30"
+  timezone: UTC-12
+  place: "Geneva, Switzerland"
+  date: "May 21, 2026"
+  start: "2026-05-21"
+  end: "2026-05-21"
   sub: SP
   type: conference
+
 - title: ICGH
   year: 2026
   id: icgh26
-  full_name: International Conference on Global Health
-  link: "https://waset.org/global-health-conference"
-  timezone: UTC
-  place:
-  sub:
+  full_name: 20th International Conference on Global Health
+  link: "https://waset.org/global-health-conference-in-january-2026-in-london?utm_source=conferenceindex&utm_medium=referral&utm_campaign=listing"
+  deadline: "2025-12-21 23:59"
+  timezone: UTC-12
+  place: "London, United Kingdom"
+  date: "Jan 19-20, 2026"
+  start: "2026-01-19"
+  end: "2026-01-20"
+  paperslink: "https://waset.org/profile/submissions/papers/create/142674/9480"
+  sub: Global Health
   type: conference
-  note: Scrape failed
-- title: Upanzi Seminar Series
-  year: 2026
-  id: upanzi26
-  full_name: Upanzi Seminar Series
-  link: "https://www.africa.engineering.cmu.edu/research/upanzi/webinars.html"
-  timezone: UTC
-  place: "Africa and to foster education and public awareness, training"
-  sub: ML
-  type: conference
+
 - title: CUGH
   year: 2026
   id: cugh26
-  full_name: Consortium of Universities for Global Health Annual Conference
-  link: "https://www.cugh.org/"
-  timezone: UTC
-  place: "the Democratic Republic of Congo The Global Fund, Governance and Public Health Campus Representatives Webinar Working with CUGH on Public and Political Engagement in Global Health Vaccines"
-  date: "Dec 2-4, 2025"
-  start: "2025-00-02"
-  end: "2025-00-04"
+  full_name: 17th Consortium of Universities for Global Health Annual Conference
+  link: "https://www.cugh2026.org/"
+  deadline: "2025-10-15 23:59"
+  timezone: EST
+  place: "Washington, D.C., USA"
+  date: "April 09-12, 2026"
+  start: "2026-04-09"
+  end: "2026-04-12"
+  paperslink: "https://www.cugh2026.org/abstract-submissions"
   sub: "Med-Imaging"
   type: conference
-- title: WEF
-  year: 2026
-  id: wef26
-  full_name: World Economic Forum
-  link: "https://www.weforum.org/"
-  timezone: UTC
-  place:
-  sub:
-  type: conference
-  note: Scrape failed
-- title: WMA
-  year: 2026
-  id: wma26
-  full_name: World Medical Assembly
-  link: "https://www.wma.net/what-we-do/events/"
-  timezone: UTC
-  place: "the spring and again in autumn immediately preceding the annual WMA General Assembly. The General Assembly is the supreme decision-making body of the WMA and its meetings are open to delegations from all WMA constituent members, as well as observers and other invited guests. In addition to its Council and General Assembly meetings"
-  date: "November 24, 2025"
-  start: "2025-11-24"
-  end: "2025-11-24"
-  sub: SP
-  type: conference
-- title: Roche Continents
-  year: 2026
-  id: rochecontinents26
-  full_name: Roche Continents
-  link: "https://www.roche.com/about/philanthropy/arts-and-culture/roche-continents"
-  timezone: UTC
-  place: "your country. Please be aware that we do not take any responsibility for accessing such information which may not comply with any legal process, regulation"
-  date: "June 20, 2023"
-  start: "2023-06-20"
-  end: "2023-06-20"
-  sub:
-  type: conference
+
 - title: World Health AI
   year: 2026
   id: worldhealthai26
   full_name: World Health AI
-  link: "https://www.worldhealth.ai/"
-  timezone: UTC
-  place:
-  sub:
+  link: "https://www.worldhealth.ai/events/boston-forum"
+  timezone: UTC-12
+  date: "May 20, 2026"
+  start: "2026-05-20"
+  end: "2026-05-20"
+  place: "Boston, MA, USA"
+  sub: Global Health
   type: conference
-  note: Scrape failed
+  note: "Driving healthcare transformation in the U.S. through seamless technology integration, intelligent systems, and data-informed models for prevention"
+
+- title: World Health AI
+  year: 2026
+  id: worldhealthai26
+  full_name: World Health AI
+  link: "https://www.worldhealth.ai/london"
+  timezone: UTC-12
+  date: "Sep 22, 2026"
+  start: "2026-09-22"
+  end: "2026-09-22"
+  place: "London, UK"
+  sub: Global Health
+  type: conference
+  note: "Advancing healthcare with AI and LLMs through cutting-edge innovations and proactive, data-driven prevention models"
+
 - title: HHL
-  year: 2026
-  id: hhl26
+  year: 2025
+  id: hhl25
   full_name: "Health & Humanitarian Logistics Conference"
-  link: "https://hhlconference.org/"
-  timezone: UTC
-  place:
-  sub:
+  link: "https://www.humanitarianlogistics.org/2025-hhl-annual-conference/"
+  timezone: UTC-12
+  place: Sarit Centre, Nairobi, Kenya
+  date: "Feb 21, 2025"
+  start: "2025-02-21"
+  end: "2025-02-21"
+  sub: General
   type: conference
-  note: Scrape failed
+
 - title: INMED HHC
-  year: 2026
-  id: inmedhhc26
+  year: 2025
+  id: inmedhhc25
   full_name: Institute for International Medicine Annual Humanitarian Health Conference
   link: "https://www.inmedhhc.com/"
   timezone: UTC
-  place: Online
+  place: "Raytown, Missouri, USA"
   date: "May 29-30, 2025"
   start: "2025-05-29"
   end: "2025-05-30"
-  sub:
+  sub: Global Health
   type: conference
-- title: IHSA Conference
-  year: 2026
-  id: ihsa26
-  full_name: International Humanitarian Studies Association Conference
-  link: "https://conference.ihsa.info/"
-  timezone: UTC
-  place: "Bergen, Norway. This decision was made to foster inclusivity"
-  sub:
-  type: conference
+
 - title: MSF Scientific Days
   year: 2026
   id: msf26
   full_name: Médecins Sans Frontières Scientific Days
   link: "https://msf.org.uk/msf-scientific-days"
-  timezone: UTC
-  place: "your will Send cards, save lives. Browse our selection of festive card designs to send to your loved ones Browse cards"
-  sub:
+  deadline: "2026-01-18 23:59"
+  timezone: GMT
+  sub: Global Health
   type: conference
