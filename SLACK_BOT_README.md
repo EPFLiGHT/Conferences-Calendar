@@ -118,7 +118,7 @@ Go to **Event Subscriptions**:
    ```
 
    **Important Notes:**
-   - `CONFERENCES_DATA_URL` - Base URL where your YAML file is hosted (code appends `/data/conferences.yaml`)
+   - `CONFERENCES_DATA_URL` - Base URL where your YAML files are hosted (code appends `/data/conferences.yaml`, `/data/summits.yaml`, `/data/workshops.yaml`)
    - `APP_URL` - Your public Vercel deployment URL (used for generating calendar download links)
    - `CRON_SECRET` - Random string for authenticating cron jobs
 
@@ -217,6 +217,7 @@ Users can customize via `/conf settings`:
    - `SLACK_BOT_TOKEN` - Your bot token from Slack
    - `SLACK_SIGNING_SECRET` - Your signing secret from Slack
    - `CONFERENCES_DATA_URL` - URL to fetch conference data (can use `http://localhost:3000` for local testing)
+     - Bot will fetch from `/data/conferences.yaml`, `/data/summits.yaml`, and `/data/workshops.yaml`
    - `APP_URL` - Your app URL (use `http://localhost:3000` for local, change to Vercel URL for production)
    - `CRON_SECRET` - Random string for cron authentication
    - Vercel KV credentials (get from Vercel dashboard or Upstash)
@@ -341,8 +342,10 @@ User → Slack → Vercel API Route → Command Handler
 
 **4. "Failed to fetch conferences" error**
 - Verify `CONFERENCES_DATA_URL` is set correctly
-- Check YAML file is accessible at the URL
-- Test URL: `curl https://your-domain.com/data/conferences.yaml`
+- Check all three YAML files are accessible at the URLs:
+  - `curl https://your-domain.com/data/conferences.yaml`
+  - `curl https://your-domain.com/data/summits.yaml`
+  - `curl https://your-domain.com/data/workshops.yaml`
 
 **5. Calendar links not working**
 - Verify `APP_URL` is set to your public Vercel URL (not localhost)

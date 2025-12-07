@@ -3,7 +3,6 @@
  * Caches conference data in Vercel KV to reduce YAML parsing overhead
  */
 
-// @ts-ignore - @vercel/kv will be installed when deploying to Vercel
 import { kv } from '@vercel/kv';
 import type { Conference } from '@/types/conference';
 import { parseConferences } from '@/utils/parser';
@@ -44,33 +43,61 @@ export async function getConferences(): Promise<Conference[]> {
  */
 async function fetchAndParseYAML(): Promise<Conference[]> {
   const baseUrl = process.env.CONFERENCES_DATA_URL;
-  const yamlUrl = `${baseUrl}/data/conferences.yaml`;
-  const TIMEOUT_MS = 2000; // 2 second timeout (Slack has 3s limit)
+  const TIMEOUT_MS = 5000;
 
-  logger.info('Fetching conference data', { url: yamlUrl });
+  const urls = {
+    conferences: `${baseUrl}/data/conferences.yaml`,
+    summits: `${baseUrl}/data/summits.yaml`,
+    workshops: `${baseUrl}/data/workshops.yaml`,
+  };
+
+  logger.info('Fetching conference data from multiple sources', { urls });
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
   try {
-    const response = await fetch(yamlUrl, {
-      signal: controller.signal,
-      headers: {
-        'Cache-Control': 'max-age=300',
-      },
-    });
+    const [conferencesRes, summitsRes, workshopsRes] = await Promise.all([
+      fetch(urls.conferences, {
+        signal: controller.signal,
+        headers: { 'Cache-Control': 'max-age=300' },
+      }),
+      fetch(urls.summits, {
+        signal: controller.signal,
+        headers: { 'Cache-Control': 'max-age=300' },
+      }),
+      fetch(urls.workshops, {
+        signal: controller.signal,
+        headers: { 'Cache-Control': 'max-age=300' },
+      }),
+    ]);
 
     clearTimeout(timeoutId);
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch YAML: ${response.status} ${response.statusText}`);
+    if (!conferencesRes.ok || !summitsRes.ok || !workshopsRes.ok) {
+      throw new Error(`Failed to fetch YAML files: ${conferencesRes.status}, ${summitsRes.status}, ${workshopsRes.status}`);
     }
 
-    const yamlText = await response.text();
-    const conferences = parseConferences(yamlText);
+    const [conferencesText, summitsText, workshopsText] = await Promise.all([
+      conferencesRes.text(),
+      summitsRes.text(),
+      workshopsRes.text(),
+    ]);
 
-    logger.info('Conferences parsed successfully', { count: conferences.length });
-    return conferences;
+    const conferencesData = parseConferences(conferencesText);
+    const summitsData = parseConferences(summitsText);
+    const workshopsData = parseConferences(workshopsText);
+
+    const allConferences = [...conferencesData, ...summitsData, ...workshopsData];
+
+    logger.info('All conference data parsed successfully', {
+      conferences: conferencesData.length,
+      summits: summitsData.length,
+      workshops: workshopsData.length,
+      total: allConferences.length
+    });
+
+    return allConferences;
   } catch (error) {
     clearTimeout(timeoutId);
 
@@ -79,7 +106,7 @@ async function fetchAndParseYAML(): Promise<Conference[]> {
       ? 'Request timeout'
       : error instanceof Error ? error.message : String(error);
 
-    logger.error('Failed to fetch and parse YAML', { url: yamlUrl, error: errorMessage });
+    logger.error('Failed to fetch and parse YAML', { urls, error: errorMessage });
     throw new Error(`Failed to fetch conference data: ${errorMessage}`);
   }
 }
