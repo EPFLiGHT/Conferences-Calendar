@@ -41,7 +41,7 @@ function CalendarContent() {
     sortBy: 'deadline',
     year: initialParams.year,
     subject: initialParams.subject,
-    type: '',
+    type: initialParams.type,
   });
   const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
 

@@ -27,8 +27,8 @@ export default function Page() {
   const [filters, setFilters] = useState<ConferenceFiltersState>({
     sortBy: 'deadline',
     year: '',
-    subject: '',
-    type: '',
+    subject: [],
+    type: [],
   });
 
   const scrollToTop = () => {

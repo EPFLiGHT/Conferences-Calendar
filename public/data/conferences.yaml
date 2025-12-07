@@ -15,7 +15,7 @@
 
 - title: NeurIPS
   year: 2025
-  id: neurips25
+  id: neurips25sd
   full_name: 39th Annual Conference on Neural Information Processing Systems
   link: "https://neurips.cc/"
   abstract_deadline: "2025-05-11 23:59"
@@ -31,7 +31,7 @@
 
 - title: NeurIPS
   year: 2025
-  id: neurips25
+  id: neurips25mc
   full_name: 39th Annual Conference on Neural Information Processing Systems
   link: "https://neurips.cc/"
   abstract_deadline: "2025-05-11 23:59"
@@ -569,7 +569,7 @@
 
 - title: World Health AI
   year: 2026
-  id: worldhealthai26
+  id: worldhealthai26bo
   full_name: World Health AI
   link: "https://www.worldhealth.ai/events/boston-forum"
   timezone: UTC-12
@@ -583,7 +583,7 @@
 
 - title: World Health AI
   year: 2026
-  id: worldhealthai26
+  id: worldhealthai26lo
   full_name: World Health AI
   link: "https://www.worldhealth.ai/london"
   timezone: UTC-12

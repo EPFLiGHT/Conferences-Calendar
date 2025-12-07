@@ -9,7 +9,8 @@ import { useSearchParams } from 'next/navigation';
 
 interface URLSyncFilters {
   year?: string;
-  subject?: string;
+  subject?: string[];
+  type?: string[];
 }
 
 interface UseURLSyncReturn {
@@ -29,7 +30,12 @@ export function useURLSync(basePath: string = ''): UseURLSyncReturn {
 
     if (searchQuery) params.set('q', searchQuery);
     if (filters.year) params.set('year', filters.year);
-    if (filters.subject) params.set('subject', filters.subject);
+    if (filters.subject && filters.subject.length > 0) {
+      params.set('subject', filters.subject.join(','));
+    }
+    if (filters.type && filters.type.length > 0) {
+      params.set('type', filters.type.join(','));
+    }
 
     return params;
   };
@@ -59,9 +65,13 @@ export function useURLSync(basePath: string = ''): UseURLSyncReturn {
 export function useInitialURLParams() {
   const searchParams = useSearchParams();
 
+  const subjectParam = searchParams?.get('subject') || '';
+  const typeParam = searchParams?.get('type') || '';
+
   return {
     searchQuery: searchParams?.get('q') || '',
     year: searchParams?.get('year') || '',
-    subject: searchParams?.get('subject') || '',
+    subject: subjectParam ? subjectParam.split(',').filter(s => s.trim()) : [],
+    type: typeParam ? typeParam.split(',').filter(t => t.trim()) : [],
   };
 }

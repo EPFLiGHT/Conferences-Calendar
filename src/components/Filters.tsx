@@ -98,13 +98,18 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
         {/* Type */}
         <Box gridColumn={{ base: '1', md: '1 / -1' }}>
           <Text fontSize="sm" fontWeight="600" color="gray.700" mb="2">
-            Type: {filters.type && (
-              <Text as="span" color={getTypeColor(filters.type).color} textTransform="capitalize">
-                {filters.type}
-              </Text>
-            )}
-            {!filters.type && (
+            Type: {filters.type.length === 0 && (
               <Text as="span" color="brand.600">All</Text>
+            )}
+            {filters.type.length > 0 && (
+              <Text as="span" color="gray.600">
+                {filters.type.map(t => (
+                  <Text key={t} as="span" color={getTypeColor(t).color} textTransform="capitalize" mr="1">
+                    {t}
+                    {filters.type.indexOf(t) < filters.type.length - 1 ? ', ' : ''}
+                  </Text>
+                ))}
+              </Text>
             )}
           </Text>
           <Flex gap="2" wrap="wrap">
@@ -113,16 +118,16 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
               px="4"
               borderRadius="full"
               fontWeight="500"
-              bg={filters.type === '' ? 'brand.500' : 'brand.50'}
-              color={filters.type === '' ? 'white' : 'brand.500'}
+              bg={filters.type.length === 0 ? 'brand.500' : 'brand.50'}
+              color={filters.type.length === 0 ? 'white' : 'brand.500'}
               border="1px"
-              borderColor={filters.type === '' ? 'brand.500' : 'brand.200'}
-              onClick={() => onFilterChange({ type: '' })}
+              borderColor={filters.type.length === 0 ? 'brand.500' : 'brand.200'}
+              onClick={() => onFilterChange({ type: [] })}
               transition="all 0.2s ease-in-out"
               position="relative"
               zIndex="1"
               _hover={{
-                bg: filters.type === '' ? 'brand.600' : 'brand.100',
+                bg: filters.type.length === 0 ? 'brand.600' : 'brand.100',
                 transform: 'translateY(-1px)',
               }}
               _active={{
@@ -133,7 +138,7 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
             </Button>
             {types.map(type => {
               const colors = getTypeColor(type);
-              const isSelected = filters.type === type;
+              const isSelected = filters.type.includes(type);
               return (
                 <Button
                   key={type}
@@ -146,7 +151,12 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
                   color={isSelected ? 'white' : colors.color}
                   border="1px"
                   borderColor={isSelected ? colors.color : colors.border}
-                  onClick={() => onFilterChange({ type })}
+                  onClick={() => {
+                    const newTypes = isSelected
+                      ? filters.type.filter(t => t !== type)
+                      : [...filters.type, type];
+                    onFilterChange({ type: newTypes });
+                  }}
                   transition="all 0.2s ease-in-out"
                   position="relative"
                   zIndex="1"
@@ -169,13 +179,18 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
         {/* Subject */}
         <Box gridColumn={{ base: '1', md: '1 / -1' }}>
           <Text fontSize="sm" fontWeight="600" color="gray.700" mb="2">
-            Subject: {filters.subject && (
-              <Text as="span" color={getSubjectColor(filters.subject).color}>
-                {filters.subject}
-              </Text>
-            )}
-            {!filters.subject && (
+            Subject: {filters.subject.length === 0 && (
               <Text as="span" color="brand.600">All</Text>
+            )}
+            {filters.subject.length > 0 && (
+              <Text as="span" color="gray.600">
+                {filters.subject.map(s => (
+                  <Text key={s} as="span" color={getSubjectColor(s).color} mr="1">
+                    {s}
+                    {filters.subject.indexOf(s) < filters.subject.length - 1 ? ', ' : ''}
+                  </Text>
+                ))}
+              </Text>
             )}
           </Text>
           <Flex gap="2" wrap="wrap">
@@ -184,16 +199,16 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
               px="4"
               borderRadius="full"
               fontWeight="500"
-              bg={filters.subject === '' ? 'brand.500' : 'brand.50'}
-              color={filters.subject === '' ? 'white' : 'brand.500'}
+              bg={filters.subject.length === 0 ? 'brand.500' : 'brand.50'}
+              color={filters.subject.length === 0 ? 'white' : 'brand.500'}
               border="1px"
-              borderColor={filters.subject === '' ? 'brand.500' : 'brand.200'}
-              onClick={() => onFilterChange({ subject: '' })}
+              borderColor={filters.subject.length === 0 ? 'brand.500' : 'brand.200'}
+              onClick={() => onFilterChange({ subject: [] })}
               transition="all 0.2s ease-in-out"
               position="relative"
               zIndex="1"
               _hover={{
-                bg: filters.subject === '' ? 'brand.600' : 'brand.100',
+                bg: filters.subject.length === 0 ? 'brand.600' : 'brand.100',
                 transform: 'translateY(-1px)',
               }}
               _active={{
@@ -204,7 +219,7 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
             </Button>
             {subjects.map(subject => {
               const colors = getSubjectColor(subject);
-              const isSelected = filters.subject === subject;
+              const isSelected = filters.subject.includes(subject);
               return (
                 <InfoTooltip key={subject} label={SUBJECT_LABELS[subject] || subject}>
                   <Button
@@ -216,7 +231,12 @@ export default function Filters({ conferences, filters, onFilterChange }: Filter
                     color={isSelected ? 'white' : colors.color}
                     border="1px"
                     borderColor={isSelected ? colors.color : colors.border}
-                    onClick={() => onFilterChange({ subject })}
+                    onClick={() => {
+                      const newSubjects = isSelected
+                        ? filters.subject.filter(s => s !== subject)
+                        : [...filters.subject, subject];
+                      onFilterChange({ subject: newSubjects });
+                    }}
                     transition="all 0.2s ease-in-out"
                     position="relative"
                     zIndex="1"

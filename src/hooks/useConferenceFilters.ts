@@ -18,8 +18,8 @@ import type { Conference } from '@/types/conference';
 export interface ConferenceFiltersState {
   sortBy: string;
   year: string;
-  subject: string;
-  type: string;
+  subject: string[];
+  type: string[];
 }
 
 export function useConferenceFilters(
@@ -44,19 +44,17 @@ export function useConferenceFilters(
       result = result.filter(conf => conf.year === parseInt(filters.year));
     }
 
-    // Apply subject filter
-    if (filters.subject) {
+    // Apply subject filter (multi-select)
+    if (filters.subject && filters.subject.length > 0) {
       result = result.filter(conf => {
-        if (Array.isArray(conf.sub)) {
-          return conf.sub.includes(filters.subject);
-        }
-        return conf.sub === filters.subject;
+        const confSubjects = Array.isArray(conf.sub) ? conf.sub : [conf.sub];
+        return confSubjects.some(subject => filters.subject.includes(subject));
       });
     }
 
-    // Apply type filter
-    if (filters.type) {
-      result = result.filter(conf => conf.type === filters.type);
+    // Apply type filter (multi-select)
+    if (filters.type && filters.type.length > 0) {
+      result = result.filter(conf => filters.type.includes(conf.type));
     }
 
     // Apply sorting
