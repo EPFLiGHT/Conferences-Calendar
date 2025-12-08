@@ -63,23 +63,11 @@ export const SUBJECTS: Record<string, SubjectConfig> = {
     emoji: '📊',
     colors: SUBJECT_COLOR_PALETTES.orange,
   },
-  SP: {
-    code: 'SP',
-    label: 'Signal Processing',
-    emoji: '📡',
-    colors: SUBJECT_COLOR_PALETTES.red,
-  },
   HCI: {
     code: 'HCI',
     label: 'Human-Computer Interaction',
     emoji: '🖱️',
     colors: SUBJECT_COLOR_PALETTES.pink,
-  },
-  RO: {
-    code: 'RO',
-    label: 'Robotics',
-    emoji: '🦾',
-    colors: SUBJECT_COLOR_PALETTES.cyan,
   },
   SEC: {
     code: 'SEC',
@@ -87,39 +75,9 @@ export const SUBJECTS: Record<string, SubjectConfig> = {
     emoji: '🔒',
     colors: SUBJECT_COLOR_PALETTES.teal,
   },
-  PRIV: {
-    code: 'PRIV',
-    label: 'Privacy',
-    emoji: '🔐',
-    colors: SUBJECT_COLOR_PALETTES.indigo,
-  },
-  CONF: {
-    code: 'CONF',
-    label: 'General Conference',
-    emoji: '🎤',
-    colors: SUBJECT_COLOR_PALETTES.yellow,
-  },
-  SHOP: {
-    code: 'SHOP',
-    label: 'Workshop',
-    emoji: '🛠️',
-    colors: SUBJECT_COLOR_PALETTES.lime,
-  },
-  CG: {
-    code: 'CG',
-    label: 'Computer Graphics',
-    emoji: '🎨',
-    colors: SUBJECT_COLOR_PALETTES.violet,
-  },
-  KR: {
-    code: 'KR',
-    label: 'Knowledge Representation',
-    emoji: '🧠',
-    colors: SUBJECT_COLOR_PALETTES.fuchsia,
-  },
-  AP: {
-    code: 'AP',
-    label: 'Applications',
+  SE: {
+    code: 'SE',
+    label: 'Software Engineering',
     emoji: '⚙️',
     colors: SUBJECT_COLOR_PALETTES.rose,
   },
@@ -135,11 +93,11 @@ export const SUBJECTS: Record<string, SubjectConfig> = {
     emoji: '🏥',
     colors: SUBJECT_COLOR_PALETTES.cyan,
   },
-  'Med-Imaging': {
-    code: 'Med-Imaging',
-    label: 'Medical Imaging',
-    emoji: '🔬',
-    colors: SUBJECT_COLOR_PALETTES.teal,
+  'Health AI': {
+    code: 'Health AI',
+    label: 'Health AI',
+    emoji: '🏥',
+    colors: SUBJECT_COLOR_PALETTES.violet,
   },
 } as const;
 

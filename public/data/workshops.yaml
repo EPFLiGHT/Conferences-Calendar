@@ -8,7 +8,7 @@
   date: "December 12-16, 2022"
   start: "2022-12-12"
   end: "2022-12-16"
-  sub: CV
+  sub: AI
   type: workshop
 
 - title: "SAFE-ML"
@@ -38,7 +38,7 @@
   start: "2026-02-27"
   end: "2026-02-27"
   paperslink: https://lastx2026.hotcrp.com/
-  sub: AI
+  sub: SEC
   type: workshop
 
 - title: SCI
@@ -52,7 +52,7 @@
   date: "June 25, 2025"
   start: "2025-06-23"
   end: "2025-06-26"
-  sub: General
+  sub: SEC
   type: workshop
 
 - title: ARTMAN
@@ -66,7 +66,7 @@
   date: "October 13, 2025"
   start: "2025-10-13"
   end: "2025-10-13"
-  sub: ML
+  sub: SEC
   type: workshop
 
 - title: SafeThings
@@ -79,7 +79,7 @@
   date: "May 15, 2025"
   start: "2025-05-15"
   end: "2025-05-15"
-  sub: General
+  sub: SEC
   type: workshop
 
 - title: DPM
@@ -93,7 +93,7 @@
   date: "September 25, 2025"
   start: "2025-09-25"
   end: "2025-09-25"
-  sub: General
+  sub: SEC
   type: workshop
 
 - title: HAIPS
@@ -107,7 +107,7 @@
   date: "October 17, 2025"
   start: "2025-10-17"
   end: "2025-10-17"
-  sub: NLP
+  sub: SEC
   type: workshop
 
 - title: MenaML

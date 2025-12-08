@@ -10,7 +10,7 @@
   start: "2026-02-23"
   end: "2026-02-27"
   paperslink: https://www.ndss-symposium.org/ndss2026/submissions/call-for-papers/
-  sub: General
+  sub: SEC
   type: conference
 
 - title: NeurIPS
@@ -58,7 +58,7 @@
   start: "2026-05-18"
   end: "2026-05-22"
   paperslink: "https://conf.researchr.org/track/icst-2026/icst-2026-research#Call-for-Papers"
-  sub: General
+  sub: SE
   type: conference
 
 - title: ICML
@@ -102,7 +102,7 @@
   date: "April 23-27, 2026"
   start: "2026-04-23"
   end: "2026-04-27"
-  sub: CV
+  sub: ML
   type: conference
 
 - title: EACL
@@ -132,7 +132,7 @@
   start: "2025-12-10"
   end: "2025-12-12"
   paperslink: "https://logconference.org/cfp/#call-for-papers"
-  sub: NLP
+  sub: ML
   type: conference
 
 - title: ECIR
@@ -148,7 +148,7 @@
   start: "2026-03-29"
   end: "2026-04-01"
   paperslink: "https://ecir2026.eu/calls/call-for-full-papers"
-  sub: General
+  sub: DM
   type: conference
 
 - title: WACV
@@ -176,7 +176,7 @@
   start: "2026-04-13"
   end: "2026-04-17"
   paperslink: "https://chi2026.acm.org/for-authors/papers/"
-  sub: General
+  sub: HCI
   type: conference
 
 - title: COLING
@@ -207,7 +207,7 @@
   start: "2026-02-22"
   end: "2026-02-26"
   paperslink: "https://wsdm-conference.org/2026/index.php/call-for-papers/"
-  sub: General
+  sub: DM
   type: conference
 
 - title: Iberamia
@@ -220,7 +220,7 @@
   place: "Asunción, Paraguay"
   date: "Nov 18-20, 2026"
   paperslink: "https://www.iberamia.org/iberamia/iberamia2026/call-for-papers/"
-  sub: NLP
+  sub: ML
   type: conference
 
 - title: AAAI
@@ -250,7 +250,7 @@
   start: "2025-04-29"
   end: "2025-04-29"
   paperslink: "https://approximateinference.org/accepted/"
-  sub: NLP
+  sub: ML
   type: conference
 
 - title: COLM
@@ -266,7 +266,7 @@
   start: "2025-10-07"
   end: "2025-10-10"
   paperslink: "https://colmweb.org/cfp.html"
-  sub: ML
+  sub: NLP
   type: conference
 
 - title: IJCAI
@@ -296,7 +296,7 @@
   start: "2026-06-28"
   end: "2026-06-30"
   paperslink: "https://chil.ahli.cc/submit/call-for-papers/"
-  sub: ML
+  sub: Health AI
   type: conference
 
 - title: SaTML
@@ -311,7 +311,7 @@
   start: "2026-03-23"
   end: "2026-03-25"
   paperslink: "https://satml.org/call-for-papers/"
-  sub: ML
+  sub: SEC
   type: conference
 
 - title: ICPRAI
@@ -355,7 +355,7 @@
   date: "July 20-24, 2026"
   start: "2026-07-20"
   end: "2026-07-24"
-  sub: NLP
+  sub: DM
   type: conference
 
 - title: SIGGRAPH
@@ -395,7 +395,7 @@
   link: "http://www.cikmconference.org/"
   timezone: UTC-12
   place: "Rome, Italy"
-  sub: General
+  sub: DM
   type: conference
 
 - title: CIKM
@@ -405,7 +405,7 @@
   link: "http://www.cikmconference.org/"
   timezone: UTC-12
   place: "Sydney, Australia"
-  sub: General
+  sub: DM
   type: conference
 
 - title: SPECOM
@@ -449,7 +449,7 @@
   start: "2026-07-20"
   end: "2026-07-25"
   paperslink: "https://petsymposium.org/cfp26.php"
-  sub: General
+  sub: SEC
   type: conference
 
 - title: PRIVACY SYMPOSIUM
@@ -465,7 +465,7 @@
   start: "2026-04-20"
   end: "2026-04-24"
   paperslink: "https://privacysymposium.org/call-for-papers/"
-  sub: General
+  sub: SEC
   type: conference
 
 - title: ACM SACMAT
@@ -480,7 +480,7 @@
   start: "2026-07-08"
   end: "2026-07-10"
   paperslink: "https://sacmat.org/2026/call-for-papers.php"
-  sub: General
+  sub: SEC
   type: conference
 
 - title: The Web Conference
@@ -496,7 +496,7 @@
   start: "2026-04-13"
   end: "2026-04-17"
   paperslink: "https://www2026.thewebconf.org/calls/research-tracks.html"
-  sub: General
+  sub: DM
   type: conference
 
 - title: MLHC
@@ -507,7 +507,7 @@
   timezone: UTC-12
   place: "Baltimore, Maryland, USA"
   paperslink: "https://www.mlforhc.org/paper-submission"
-  sub: ML
+  sub: Health AI
   type: conference
 
 - title: PMAC
@@ -521,7 +521,7 @@
   start: "2026-01-26"
   end: "2026-01-31"
   paperslink: "https://pmac-2026.com/abstracts/about"
-  sub: General
+  sub: Global Health
   type: conference
 
 - title: GDHD
@@ -534,7 +534,7 @@
   date: "May 21, 2026"
   start: "2026-05-21"
   end: "2026-05-21"
-  sub: SP
+  sub: Global Health
   type: conference
 
 - title: ICGH
@@ -564,7 +564,7 @@
   start: "2026-04-09"
   end: "2026-04-12"
   paperslink: "https://www.cugh2026.org/abstract-submissions"
-  sub: "Med-Imaging"
+  sub: Global Health
   type: conference
 
 - title: World Health AI
@@ -577,7 +577,7 @@
   start: "2026-05-20"
   end: "2026-05-20"
   place: "Boston, MA, USA"
-  sub: Global Health
+  sub: Health AI
   type: conference
   note: "Driving healthcare transformation in the U.S. through seamless technology integration, intelligent systems, and data-informed models for prevention"
 
@@ -591,7 +591,7 @@
   start: "2026-09-22"
   end: "2026-09-22"
   place: "London, UK"
-  sub: Global Health
+  sub: Health AI
   type: conference
   note: "Advancing healthcare with AI and LLMs through cutting-edge innovations and proactive, data-driven prevention models"
 
@@ -605,7 +605,7 @@
   date: "Feb 21, 2025"
   start: "2025-02-21"
   end: "2025-02-21"
-  sub: General
+  sub: Global Health
   type: conference
 
 - title: INMED HHC
