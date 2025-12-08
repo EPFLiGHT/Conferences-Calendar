@@ -162,7 +162,7 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                   <ExternalLinkButton href={conference.link} variant="primary" size="md" px="6">
                     <Flex align="center" gap="2">
                       <Globe size={16} />
-                      <span>Conference Website</span>
+                      <span>Event Website</span>
                     </Flex>
                   </ExternalLinkButton>
                 )}
@@ -170,7 +170,7 @@ export default function ConferenceModal({ conference, onClose }: ConferenceModal
                   <ExternalLinkButton href={conference.paperslink} variant="secondary" size="md" px="6">
                     <Flex align="center" gap="2">
                       <FileText size={16} />
-                      <span>Accepted Papers</span>
+                      <span>Paper Submission</span>
                     </Flex>
                   </ExternalLinkButton>
                 )}

@@ -55,13 +55,15 @@ Conference information is stored in three YAML files:
   date: May 21-25, 2025
   start: 2025-05-21             # YYYY-MM-DD
   end: 2025-05-25
+  paperslink: https://...       # Link to submit papers
   hindex: 150.0                 # h5-index from Google Scholar
   sub: ML                       # Subject tag
+  note: Additional information  # Optional notes
   type: conference              # conference, summit, or workshop
 ```
 
 ### Required Fields
-- `title`, `year`, `id`, `timezone`
+- `title`, `year`, `id`, `type`, `timezone`
 
 All other fields are optional and will display as "TBA" if omitted.
 
@@ -76,7 +78,7 @@ All other fields are optional and will display as "TBA" if omitted.
 - **Timezone:** Luxon
 - **YAML Parsing:** js-yaml
 - **Package Manager:** pnpm
-- **Deployment:** Vercel
+- **Deployment:** Github Page + Vercel (API calls)
 - **Database:** Vercel KV (Redis) for Slack bot
 - **Integrations:** Slack API
 
