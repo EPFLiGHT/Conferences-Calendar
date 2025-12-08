@@ -17,7 +17,7 @@ timezone:
 
 full_name:
 link:
-sub: ML | CV | NLP | DM | SP | HCI | RO | SEC | PRIV | CONF | SHOP | CG | KR | AP
+sub: ML | CV | NLP | DM | HCI | SEC | SE | AI | Global Health | Health AI
 
 deadline: YYYY-MM-DD HH:MM
 abstract_deadline: YYYY-MM-DD HH:MM
