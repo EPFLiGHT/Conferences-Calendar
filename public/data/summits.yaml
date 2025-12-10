@@ -8,7 +8,6 @@
   date: "July 7-10, 2026"
   start: "2026-07-07"
   end: "2026-07-10"
-  paperslink: "#"
   sub: AI
   type: summit
 
@@ -158,7 +157,6 @@
   end: "2025-06-20"
   sub: Global Health
   type: summit
-  deadline: "2025-02-23"
 
 - title: World Health Assembly
   year: 2025

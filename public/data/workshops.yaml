@@ -1,6 +1,6 @@
-- title: AI4science NASSMA 2022
+- title: AI4science NASSMA
   year: 2022
-  id: ai4sciencenassma202226
+  id: ai4sciencenassma22
   full_name: "AI for Science, NASSMA workshop"
   link: "https://ai4science.nassma.ai/"
   timezone: "UTC"
@@ -11,7 +11,7 @@
   sub: AI
   type: workshop
 
-- title: "SAFE-ML"
+- title: SAFE-ML
   year: 2025
   id: safeml25
   full_name: "International Workshop on Secure, Accountable, and Verifiable Machine Learning"

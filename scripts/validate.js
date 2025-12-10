@@ -2,13 +2,30 @@ import fs from 'fs';
 import yaml from 'js-yaml';
 import { DateTime } from 'luxon';
 
-const REQUIRED_FIELDS = ['title', 'year', 'id', 'timezone'];
+const REQUIRED_FIELDS = ['title', 'year', 'id', 'timezone', 'type'];
 const OPTIONAL_FIELDS = [
   'full_name', 'link', 'deadline', 'abstract_deadline',
   'place', 'date', 'start', 'end', 'paperslink', 'pwclink',
   'hindex', 'sub', 'note'
 ];
 const ALL_FIELDS = [...REQUIRED_FIELDS, ...OPTIONAL_FIELDS];
+
+// Valid subject tags
+const VALID_SUBJECTS = [
+  'ML',           // Machine Learning
+  'CV',           // Computer Vision
+  'NLP',          // Natural Language Processing
+  'DM',           // Data Mining
+  'HCI',          // Human-Computer Interaction
+  'SEC',          // Security
+  'SE',           // Software Engineering
+  'AI',           // Artificial Intelligence
+  'Global Health', // Global Health
+  'Health AI'     // Health AI
+];
+
+// Valid event types
+const VALID_TYPES = ['conference', 'summit', 'workshop'];
 
 let errorCount = 0;
 let warningCount = 0;
@@ -120,6 +137,22 @@ function validateConference(conf, index) {
     }
   }
 
+  // Validate subject tag
+  if (conf.sub) {
+    // Handle both single subject (string) and multiple subjects (array)
+    const subjects = Array.isArray(conf.sub) ? conf.sub : [conf.sub];
+    subjects.forEach(subject => {
+      if (!VALID_SUBJECTS.includes(subject)) {
+        error(`${confId}: Invalid subject tag '${subject}'. Must be one of: ${VALID_SUBJECTS.join(', ')}`);
+      }
+    });
+  }
+
+  // Validate type
+  if (conf.type && !VALID_TYPES.includes(conf.type)) {
+    error(`${confId}: Invalid type '${conf.type}'. Must be one of: ${VALID_TYPES.join(', ')}`);
+  }
+
   // Validate ID format (should be lowercase alphanumeric + last 2 digits of year)
   if (conf.id && conf.year) {
     const expectedSuffix = String(conf.year).slice(-2);
@@ -162,34 +195,64 @@ function validateConference(conf, index) {
   }
 }
 
+function validateFile(filePath, fileType) {
+  console.log(`\n🔍 Validating ${filePath}...\n`);
+
+  // Read and parse YAML with schema that preserves strings
+  const yamlContent = fs.readFileSync(filePath, 'utf8');
+  const conferences = yaml.load(yamlContent, { schema: yaml.JSON_SCHEMA });
+
+  if (!Array.isArray(conferences)) {
+    error(`${filePath}: YAML file must contain an array of conferences`);
+    return [];
+  }
+
+  success(`Found ${conferences.length} ${fileType} to validate\n`);
+
+  // Validate each conference
+  conferences.forEach((conf, index) => {
+    validateConference(conf, index);
+  });
+
+  // Check for duplicate IDs within this file
+  const ids = conferences.map(c => c.id).filter(Boolean);
+  const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+  const uniqueDuplicates = [...new Set(duplicates)];
+
+  if (uniqueDuplicates.length > 0) {
+    uniqueDuplicates.forEach(id => {
+      error(`${filePath}: Duplicate conference ID found: '${id}'`);
+    });
+  }
+
+  return ids;
+}
+
 function main() {
-  console.log('🔍 Validating conferences.yaml...\n');
+  console.log('🔍 Validating conference data files...\n');
 
   try {
-    // Read and parse YAML with schema that preserves strings
-    const yamlContent = fs.readFileSync('public/data/conferences.yaml', 'utf8');
-    const conferences = yaml.load(yamlContent, { schema: yaml.JSON_SCHEMA });
+    const files = [
+      { path: 'public/data/conferences.yaml', type: 'conferences' },
+      { path: 'public/data/summits.yaml', type: 'summits' },
+      { path: 'public/data/workshops.yaml', type: 'workshops' }
+    ];
 
-    if (!Array.isArray(conferences)) {
-      error('YAML file must contain an array of conferences');
-      process.exit(1);
-    }
+    const allIds = [];
 
-    success(`Found ${conferences.length} conferences to validate\n`);
-
-    // Validate each conference
-    conferences.forEach((conf, index) => {
-      validateConference(conf, index);
+    // Validate each file
+    files.forEach(({ path, type }) => {
+      const ids = validateFile(path, type);
+      allIds.push(...ids);
     });
 
-    // Check for duplicate IDs
-    const ids = conferences.map(c => c.id).filter(Boolean);
-    const duplicates = ids.filter((id, index) => ids.indexOf(id) !== index);
+    // Check for duplicate IDs across all files
+    const duplicates = allIds.filter((id, index) => allIds.indexOf(id) !== index);
     const uniqueDuplicates = [...new Set(duplicates)];
 
     if (uniqueDuplicates.length > 0) {
       uniqueDuplicates.forEach(id => {
-        error(`Duplicate conference ID found: '${id}'`);
+        error(`Duplicate conference ID found across files: '${id}'`);
       });
     }
 
@@ -199,7 +262,7 @@ function main() {
     console.log('='.repeat(50));
 
     if (errorCount === 0 && warningCount === 0) {
-      console.log('✅ All checks passed! The conference data is valid.');
+      console.log('✅ All checks passed! The events data is valid.');
       process.exit(0);
     } else {
       if (errorCount > 0) {
