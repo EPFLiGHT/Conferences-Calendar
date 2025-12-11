@@ -22,7 +22,7 @@
   name: "Michael Zhang, Guillaume Boyé"
   imageUrl:
     - https://media.licdn.com/dms/image/v2/D4D03AQFUSBjeqyCJQQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724349529852?e=1766016000&v=beta&t=PCGKBjoF3y8i6Jmz9rX9jmXKvddSPIGTRjvA_aHDPzU
-    - https://media.licdn.com/dms/image/v2/D4D35AQEfs5WrPptuFQ/profile-framedphoto-shrink_200_200/B4DZoC8FotHwAg-/0/1760985897841?e=1764889200&v=beta&t=R-_IFy4EHHz24T9RxEjiHp8vIsIRXf8TRHZ1hE_eIZs
+    - https://media.licdn.com/dms/image/v2/D4D35AQEfs5WrPptuFQ/profile-framedphoto-shrink_200_200/B4DZoC8FotHwAg-/0/1760985897841?e=1766059200&v=beta&t=Kp7NtwNpgI9hAj3AyRSDfDgp3kEL9Yf8CBklP14c9yc
   presentations:
     - topic: "Meditron: Fine-tuning models for medical use"
       event: AAAI Conference on Artificial Intelligence (AAAI-25)
